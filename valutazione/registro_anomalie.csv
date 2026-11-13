@@ -1,0 +1,2296 @@
+file,id,tipo,famiglia,colonna,prima,dopo
+vendite,12106,promo_periodo_vietato,segnalare,prezzo_venduto,89.0,71.2
+vendite,1065,promo_periodo_vietato,segnalare,prezzo_venduto,309.0,247.2
+vendite,1010,promo_periodo_vietato,segnalare,prezzo_venduto,79.0,63.2
+vendite,863,promo_periodo_vietato,segnalare,prezzo_venduto,119.0,95.2
+vendite,3555,promo_periodo_vietato,segnalare,prezzo_venduto,289.0,231.2
+vendite,14624,promo_periodo_vietato,segnalare,prezzo_venduto,99.0,79.2
+vendite,14827,promo_periodo_vietato,segnalare,prezzo_venduto,39.0,31.2
+vendite,14603,promo_periodo_vietato,segnalare,prezzo_venduto,169.0,135.2
+vendite,3718,promo_periodo_vietato,segnalare,prezzo_venduto,159.0,127.2
+vendite,864,promo_periodo_vietato,segnalare,prezzo_venduto,99.0,79.2
+vendite,11820,promo_periodo_vietato,segnalare,prezzo_venduto,39.0,31.2
+vendite,1169,promo_periodo_vietato,segnalare,prezzo_venduto,119.0,95.2
+vendite,3734,promo_periodo_vietato,segnalare,prezzo_venduto,149.0,119.2
+vendite,14517,promo_periodo_vietato,segnalare,prezzo_venduto,399.0,319.2
+vendite,897,promo_periodo_vietato,segnalare,prezzo_venduto,39.0,31.2
+vendite,5341,sconto_oltre_tetto,segnalare,sconto_pct,10,30
+vendite,626,sconto_oltre_tetto,segnalare,sconto_pct,10,30
+vendite,3095,sconto_oltre_tetto,segnalare,sconto_pct,10,25
+vendite,84,sconto_oltre_tetto,segnalare,sconto_pct,10,20
+vendite,5596,sconto_oltre_tetto,segnalare,sconto_pct,10,20
+vendite,12309,sconto_oltre_tetto,segnalare,sconto_pct,10,20
+vendite,11086,sconto_oltre_tetto,segnalare,sconto_pct,10,20
+vendite,1153,sconto_oltre_tetto,segnalare,sconto_pct,10,20
+vendite,8053,sconto_oltre_tetto,segnalare,sconto_pct,10,30
+vendite,14625,sconto_oltre_tetto,segnalare,sconto_pct,10,25
+vendite,9240,sconto_oltre_tetto,segnalare,sconto_pct,10,30
+vendite,6250,sconto_oltre_tetto,segnalare,sconto_pct,10,20
+vendite,10411,profumo_in_saldo,segnalare,prezzo_venduto,239.0,95.6
+vendite,6795,profumo_in_saldo,segnalare,prezzo_venduto,279.0,195.3
+vendite,6771,profumo_in_saldo,segnalare,prezzo_venduto,269.0,188.3
+vendite,15118,profumo_in_saldo,segnalare,prezzo_venduto,209.0,146.3
+vendite,4639,profumo_in_saldo,segnalare,prezzo_venduto,229.0,114.5
+vendite,15996,vendita_negozio_chiuso,segnalare,data_ora,2026-02-09 17:46:00,2026-02-09 10:36:00
+vendite,4411,vendita_negozio_chiuso,segnalare,data_ora,2024-01-22 16:39:00,2024-01-22 12:42:00
+vendite,14973,vendita_negozio_chiuso,segnalare,data_ora,2026-01-05 18:28:00,2026-01-05 12:26:00
+vendite,3501,vendita_negozio_chiuso,segnalare,data_ora,2023-12-04 17:39:00,2023-12-04 11:39:00
+vendite,8408,vendita_negozio_chiuso,segnalare,data_ora,2024-08-26 17:11:00,2024-08-26 12:44:00
+vendite,8049,vendita_negozio_chiuso,segnalare,data_ora,2024-08-12 17:46:00,2024-08-12 11:06:00
+vendite,13512,taglia_incoerente,pulire,taglia,45,45
+vendite,14974,taglia_incoerente,pulire,taglia,52,52 
+vendite,15451,taglia_incoerente,pulire,taglia,M,Medium
+vendite,3045,taglia_incoerente,pulire,taglia,M,Medium
+vendite,5362,taglia_incoerente,pulire,taglia,52,52
+vendite,13201,taglia_incoerente,pulire,taglia,43,43 
+vendite,2889,taglia_incoerente,pulire,taglia,L,l
+vendite,5771,taglia_incoerente,pulire,taglia,39-42,tg 39-42
+vendite,1996,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,6336,taglia_incoerente,pulire,taglia,L,Large
+vendite,1611,taglia_incoerente,pulire,taglia,M,m
+vendite,2212,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,9799,taglia_incoerente,pulire,taglia,50,50 
+vendite,10097,taglia_incoerente,pulire,taglia,52,52 
+vendite,4308,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,8694,taglia_incoerente,pulire,taglia,L,l
+vendite,4633,taglia_incoerente,pulire,taglia,XXL,xxl
+vendite,8859,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,16111,taglia_incoerente,pulire,taglia,S,s
+vendite,2381,taglia_incoerente,pulire,taglia,M,M 
+vendite,7674,taglia_incoerente,pulire,taglia,L,L 
+vendite,1191,taglia_incoerente,pulire,taglia,42,tg 42
+vendite,576,taglia_incoerente,pulire,taglia,56,56 
+vendite,11953,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,8328,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,3216,taglia_incoerente,pulire,taglia,43-46,43-46 
+vendite,4335,taglia_incoerente,pulire,taglia,50,50
+vendite,5830,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,9973,taglia_incoerente,pulire,taglia,39-42,39-42 
+vendite,9262,taglia_incoerente,pulire,taglia,39-42,tg 39-42
+vendite,8202,taglia_incoerente,pulire,taglia,L,l
+vendite,16277,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,12986,taglia_incoerente,pulire,taglia,46,tg 46
+vendite,12215,taglia_incoerente,pulire,taglia,44,44 
+vendite,135,taglia_incoerente,pulire,taglia,M,M 
+vendite,8928,taglia_incoerente,pulire,taglia,50,50
+vendite,5970,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,14527,taglia_incoerente,pulire,taglia,46,46 
+vendite,7457,taglia_incoerente,pulire,taglia,S,S 
+vendite,7978,taglia_incoerente,pulire,taglia,50,50 
+vendite,9633,taglia_incoerente,pulire,taglia,50,50 
+vendite,3090,taglia_incoerente,pulire,taglia,44,44 
+vendite,9814,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,7650,taglia_incoerente,pulire,taglia,L,l
+vendite,11191,taglia_incoerente,pulire,taglia,XL,xl
+vendite,6710,taglia_incoerente,pulire,taglia,54,54 
+vendite,6646,taglia_incoerente,pulire,taglia,50,50
+vendite,9592,taglia_incoerente,pulire,taglia,M,M 
+vendite,14311,taglia_incoerente,pulire,taglia,46,46
+vendite,11515,taglia_incoerente,pulire,taglia,L,L 
+vendite,11559,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,16174,taglia_incoerente,pulire,taglia,46,tg 46
+vendite,8493,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,7075,taglia_incoerente,pulire,taglia,L,L 
+vendite,10926,taglia_incoerente,pulire,taglia,54,54
+vendite,6166,taglia_incoerente,pulire,taglia,45,45
+vendite,15866,taglia_incoerente,pulire,taglia,43,tg 43
+vendite,5105,taglia_incoerente,pulire,taglia,52,52 
+vendite,11315,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,8279,taglia_incoerente,pulire,taglia,43-46,tg 43-46
+vendite,2241,taglia_incoerente,pulire,taglia,L,L 
+vendite,7997,taglia_incoerente,pulire,taglia,48,48
+vendite,10972,taglia_incoerente,pulire,taglia,43-46,43-46 
+vendite,12144,taglia_incoerente,pulire,taglia,M,m
+vendite,13958,taglia_incoerente,pulire,taglia,43-46,43-46 
+vendite,4836,taglia_incoerente,pulire,taglia,48,48
+vendite,14827,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,13183,taglia_incoerente,pulire,taglia,50,50 
+vendite,16001,taglia_incoerente,pulire,taglia,M,M 
+vendite,10404,taglia_incoerente,pulire,taglia,XL,xl
+vendite,1966,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,3749,taglia_incoerente,pulire,taglia,XXL,xxl
+vendite,13297,taglia_incoerente,pulire,taglia,41,41
+vendite,410,taglia_incoerente,pulire,taglia,M,Medium
+vendite,4174,taglia_incoerente,pulire,taglia,S,S 
+vendite,15281,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,2160,taglia_incoerente,pulire,taglia,M,Medium
+vendite,1072,taglia_incoerente,pulire,taglia,50,50
+vendite,2200,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,14781,taglia_incoerente,pulire,taglia,L,l
+vendite,14027,taglia_incoerente,pulire,taglia,M,m
+vendite,4901,taglia_incoerente,pulire,taglia,M,m
+vendite,3929,taglia_incoerente,pulire,taglia,56,tg 56
+vendite,13604,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,5331,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,1482,taglia_incoerente,pulire,taglia,52,52
+vendite,13194,taglia_incoerente,pulire,taglia,43,43 
+vendite,6202,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,1019,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,3901,taglia_incoerente,pulire,taglia,L,Large
+vendite,2309,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,12649,taglia_incoerente,pulire,taglia,M,M 
+vendite,2766,taglia_incoerente,pulire,taglia,44,tg 44
+vendite,10893,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,5367,taglia_incoerente,pulire,taglia,43,43
+vendite,3882,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,7781,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,686,taglia_incoerente,pulire,taglia,48,48
+vendite,14922,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,13806,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,15070,taglia_incoerente,pulire,taglia,42,42
+vendite,15678,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,12028,taglia_incoerente,pulire,taglia,50,50
+vendite,2704,taglia_incoerente,pulire,taglia,S,S 
+vendite,3139,taglia_incoerente,pulire,taglia,M,Medium
+vendite,14343,taglia_incoerente,pulire,taglia,44,44
+vendite,11161,taglia_incoerente,pulire,taglia,45,45
+vendite,12238,taglia_incoerente,pulire,taglia,50,50 
+vendite,4900,taglia_incoerente,pulire,taglia,48,48
+vendite,11771,taglia_incoerente,pulire,taglia,L,Large
+vendite,2029,taglia_incoerente,pulire,taglia,L,L 
+vendite,13832,taglia_incoerente,pulire,taglia,L,L 
+vendite,10299,taglia_incoerente,pulire,taglia,M,Medium
+vendite,12685,taglia_incoerente,pulire,taglia,M,M 
+vendite,15023,taglia_incoerente,pulire,taglia,50,50 
+vendite,6654,taglia_incoerente,pulire,taglia,52,52 
+vendite,5103,taglia_incoerente,pulire,taglia,48,48 
+vendite,6571,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,3582,taglia_incoerente,pulire,taglia,50,50
+vendite,5192,taglia_incoerente,pulire,taglia,54,54
+vendite,2631,taglia_incoerente,pulire,taglia,48,48 
+vendite,6338,taglia_incoerente,pulire,taglia,56,56 
+vendite,13528,taglia_incoerente,pulire,taglia,50,50
+vendite,2630,taglia_incoerente,pulire,taglia,52,52
+vendite,10420,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,7509,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,10252,taglia_incoerente,pulire,taglia,M,m
+vendite,13820,taglia_incoerente,pulire,taglia,43,tg 43
+vendite,8742,taglia_incoerente,pulire,taglia,M,m
+vendite,4072,taglia_incoerente,pulire,taglia,XL,xl
+vendite,7096,taglia_incoerente,pulire,taglia,M,M 
+vendite,5235,taglia_incoerente,pulire,taglia,50,50
+vendite,8554,taglia_incoerente,pulire,taglia,45,45
+vendite,7513,taglia_incoerente,pulire,taglia,L,l
+vendite,6251,taglia_incoerente,pulire,taglia,S,S 
+vendite,13087,taglia_incoerente,pulire,taglia,52,52
+vendite,16251,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,13676,taglia_incoerente,pulire,taglia,XL,xl
+vendite,9132,taglia_incoerente,pulire,taglia,52,52 
+vendite,2755,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,10556,taglia_incoerente,pulire,taglia,48,48
+vendite,715,taglia_incoerente,pulire,taglia,M,m
+vendite,15498,taglia_incoerente,pulire,taglia,M,m
+vendite,10268,taglia_incoerente,pulire,taglia,L,l
+vendite,12020,taglia_incoerente,pulire,taglia,M,Medium
+vendite,1861,taglia_incoerente,pulire,taglia,M,M 
+vendite,9769,taglia_incoerente,pulire,taglia,S,Small
+vendite,3188,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,1942,taglia_incoerente,pulire,taglia,XL,xl
+vendite,7009,taglia_incoerente,pulire,taglia,43-46,tg 43-46
+vendite,10335,taglia_incoerente,pulire,taglia,54,54
+vendite,9916,taglia_incoerente,pulire,taglia,S,Small
+vendite,9236,taglia_incoerente,pulire,taglia,46,46
+vendite,6972,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,569,taglia_incoerente,pulire,taglia,L,L 
+vendite,10520,taglia_incoerente,pulire,taglia,M,M 
+vendite,6041,taglia_incoerente,pulire,taglia,41,41
+vendite,7301,taglia_incoerente,pulire,taglia,S,s
+vendite,13436,taglia_incoerente,pulire,taglia,XL,xl
+vendite,1743,taglia_incoerente,pulire,taglia,XXL,tg XXL
+vendite,8867,taglia_incoerente,pulire,taglia,48,48
+vendite,9967,taglia_incoerente,pulire,taglia,XL,xl
+vendite,13063,taglia_incoerente,pulire,taglia,45,45 
+vendite,4940,taglia_incoerente,pulire,taglia,L,l
+vendite,3376,taglia_incoerente,pulire,taglia,L,l
+vendite,14399,taglia_incoerente,pulire,taglia,54,54 
+vendite,995,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,12061,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,14147,taglia_incoerente,pulire,taglia,42,42 
+vendite,6385,taglia_incoerente,pulire,taglia,44,44 
+vendite,4406,taglia_incoerente,pulire,taglia,39-42,39-42 
+vendite,7510,taglia_incoerente,pulire,taglia,M,Medium
+vendite,13901,taglia_incoerente,pulire,taglia,M,m
+vendite,12078,taglia_incoerente,pulire,taglia,52,52 
+vendite,9099,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,10563,taglia_incoerente,pulire,taglia,L,l
+vendite,10266,taglia_incoerente,pulire,taglia,M,m
+vendite,307,taglia_incoerente,pulire,taglia,L,L 
+vendite,15589,taglia_incoerente,pulire,taglia,M,Medium
+vendite,3555,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,11101,taglia_incoerente,pulire,taglia,48,48
+vendite,6913,taglia_incoerente,pulire,taglia,L,Large
+vendite,3008,taglia_incoerente,pulire,taglia,50,50
+vendite,2990,taglia_incoerente,pulire,taglia,L,Large
+vendite,3076,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,10631,taglia_incoerente,pulire,taglia,41,41 
+vendite,15377,taglia_incoerente,pulire,taglia,M,M 
+vendite,1568,taglia_incoerente,pulire,taglia,48,48
+vendite,7791,taglia_incoerente,pulire,taglia,L,L 
+vendite,14231,taglia_incoerente,pulire,taglia,50,50 
+vendite,15905,taglia_incoerente,pulire,taglia,S,S 
+vendite,5923,taglia_incoerente,pulire,taglia,M,m
+vendite,13101,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,15112,taglia_incoerente,pulire,taglia,39-42,39-42 
+vendite,15913,taglia_incoerente,pulire,taglia,46,tg 46
+vendite,14479,taglia_incoerente,pulire,taglia,48,48 
+vendite,12477,taglia_incoerente,pulire,taglia,L,Large
+vendite,15562,taglia_incoerente,pulire,taglia,50,50
+vendite,5961,taglia_incoerente,pulire,taglia,M,M 
+vendite,15724,taglia_incoerente,pulire,taglia,S,S 
+vendite,13952,taglia_incoerente,pulire,taglia,39-42,39-42 
+vendite,12053,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,4554,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,12509,taglia_incoerente,pulire,taglia,43,43 
+vendite,644,taglia_incoerente,pulire,taglia,45,45 
+vendite,12652,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,2845,taglia_incoerente,pulire,taglia,M,Medium
+vendite,3391,taglia_incoerente,pulire,taglia,52,52 
+vendite,8235,taglia_incoerente,pulire,taglia,39-42,tg 39-42
+vendite,1602,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,10795,taglia_incoerente,pulire,taglia,S,Small
+vendite,7249,taglia_incoerente,pulire,taglia,42,42
+vendite,1167,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,10983,taglia_incoerente,pulire,taglia,52,52
+vendite,2797,taglia_incoerente,pulire,taglia,L,L 
+vendite,13462,taglia_incoerente,pulire,taglia,L,l
+vendite,13446,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,7794,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,1936,taglia_incoerente,pulire,taglia,L,Large
+vendite,5030,taglia_incoerente,pulire,taglia,43,43
+vendite,11923,taglia_incoerente,pulire,taglia,L,L 
+vendite,14996,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,2143,taglia_incoerente,pulire,taglia,L,Large
+vendite,4765,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,5287,taglia_incoerente,pulire,taglia,52,52 
+vendite,9702,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,7875,taglia_incoerente,pulire,taglia,S,S 
+vendite,3072,taglia_incoerente,pulire,taglia,L,Large
+vendite,14141,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,1104,taglia_incoerente,pulire,taglia,46,tg 46
+vendite,9659,taglia_incoerente,pulire,taglia,XL,xl
+vendite,604,taglia_incoerente,pulire,taglia,M,M 
+vendite,14510,taglia_incoerente,pulire,taglia,L,l
+vendite,7495,taglia_incoerente,pulire,taglia,M,m
+vendite,358,taglia_incoerente,pulire,taglia,43,43
+vendite,11012,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,13456,taglia_incoerente,pulire,taglia,43,43
+vendite,1730,taglia_incoerente,pulire,taglia,XL,xl
+vendite,12034,taglia_incoerente,pulire,taglia,XS,XS 
+vendite,123,taglia_incoerente,pulire,taglia,L,l
+vendite,8486,taglia_incoerente,pulire,taglia,50,50
+vendite,10284,taglia_incoerente,pulire,taglia,M,m
+vendite,9545,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,1537,taglia_incoerente,pulire,taglia,54,tg 54
+vendite,11590,taglia_incoerente,pulire,taglia,52,52 
+vendite,7780,taglia_incoerente,pulire,taglia,52,52
+vendite,6245,taglia_incoerente,pulire,taglia,41,tg 41
+vendite,778,taglia_incoerente,pulire,taglia,43-46,tg 43-46
+vendite,1373,taglia_incoerente,pulire,taglia,M,M 
+vendite,10084,taglia_incoerente,pulire,taglia,XXL,tg XXL
+vendite,2838,taglia_incoerente,pulire,taglia,48,48
+vendite,12490,taglia_incoerente,pulire,taglia,M,M 
+vendite,14715,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,7722,taglia_incoerente,pulire,taglia,L,Large
+vendite,3463,taglia_incoerente,pulire,taglia,M,M 
+vendite,455,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,1445,taglia_incoerente,pulire,taglia,52,52
+vendite,12600,taglia_incoerente,pulire,taglia,S,S 
+vendite,14387,taglia_incoerente,pulire,taglia,S,S 
+vendite,4032,taglia_incoerente,pulire,taglia,43-46,tg 43-46
+vendite,10085,taglia_incoerente,pulire,taglia,50,50 
+vendite,13935,taglia_incoerente,pulire,taglia,L,Large
+vendite,13569,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,12682,taglia_incoerente,pulire,taglia,S,s
+vendite,15790,taglia_incoerente,pulire,taglia,XXL,xxl
+vendite,12023,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,8199,taglia_incoerente,pulire,taglia,L,Large
+vendite,10726,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,13205,taglia_incoerente,pulire,taglia,42,42 
+vendite,4976,taglia_incoerente,pulire,taglia,M,M 
+vendite,13420,taglia_incoerente,pulire,taglia,L,Large
+vendite,12826,taglia_incoerente,pulire,taglia,46,46
+vendite,16380,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,11229,taglia_incoerente,pulire,taglia,52,52 
+vendite,8989,taglia_incoerente,pulire,taglia,M,M 
+vendite,3361,taglia_incoerente,pulire,taglia,48,48 
+vendite,3611,taglia_incoerente,pulire,taglia,M,m
+vendite,15701,taglia_incoerente,pulire,taglia,XL,xl
+vendite,5699,taglia_incoerente,pulire,taglia,44,44 
+vendite,4493,taglia_incoerente,pulire,taglia,50,50 
+vendite,5013,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,4361,taglia_incoerente,pulire,taglia,L,Large
+vendite,10681,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,15086,taglia_incoerente,pulire,taglia,L,l
+vendite,117,taglia_incoerente,pulire,taglia,50,50 
+vendite,13871,taglia_incoerente,pulire,taglia,L,Large
+vendite,12702,taglia_incoerente,pulire,taglia,45,45 
+vendite,10575,taglia_incoerente,pulire,taglia,M,M 
+vendite,2270,taglia_incoerente,pulire,taglia,M,M 
+vendite,15681,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,14156,taglia_incoerente,pulire,taglia,M,M 
+vendite,8441,taglia_incoerente,pulire,taglia,52,52 
+vendite,15439,taglia_incoerente,pulire,taglia,50,50
+vendite,16401,taglia_incoerente,pulire,taglia,39-42,39-42 
+vendite,3517,taglia_incoerente,pulire,taglia,56,tg 56
+vendite,15099,taglia_incoerente,pulire,taglia,48,48 
+vendite,2479,taglia_incoerente,pulire,taglia,50,50
+vendite,8525,taglia_incoerente,pulire,taglia,50,50
+vendite,1223,taglia_incoerente,pulire,taglia,L,L 
+vendite,12868,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,2164,taglia_incoerente,pulire,taglia,50,50
+vendite,4980,taglia_incoerente,pulire,taglia,48,48
+vendite,2397,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,13460,taglia_incoerente,pulire,taglia,M,Medium
+vendite,3717,taglia_incoerente,pulire,taglia,M,M 
+vendite,14451,taglia_incoerente,pulire,taglia,M,Medium
+vendite,14761,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,14981,taglia_incoerente,pulire,taglia,48,48
+vendite,9030,taglia_incoerente,pulire,taglia,52,52 
+vendite,1184,taglia_incoerente,pulire,taglia,L,Large
+vendite,5936,taglia_incoerente,pulire,taglia,54,tg 54
+vendite,9407,taglia_incoerente,pulire,taglia,S,S 
+vendite,4184,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,1419,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,1014,taglia_incoerente,pulire,taglia,44,44
+vendite,5019,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,888,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,5785,taglia_incoerente,pulire,taglia,50,50
+vendite,9549,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,6064,taglia_incoerente,pulire,taglia,42,42
+vendite,2109,taglia_incoerente,pulire,taglia,M,m
+vendite,2253,taglia_incoerente,pulire,taglia,42,tg 42
+vendite,6308,taglia_incoerente,pulire,taglia,L,l
+vendite,5060,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,6867,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,12231,taglia_incoerente,pulire,taglia,M,M 
+vendite,16375,taglia_incoerente,pulire,taglia,46,tg 46
+vendite,6531,taglia_incoerente,pulire,taglia,54,54 
+vendite,9039,taglia_incoerente,pulire,taglia,46,46 
+vendite,15427,taglia_incoerente,pulire,taglia,45,tg 45
+vendite,15233,taglia_incoerente,pulire,taglia,52,52
+vendite,10543,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,3490,taglia_incoerente,pulire,taglia,S,s
+vendite,14521,taglia_incoerente,pulire,taglia,56,56
+vendite,2055,taglia_incoerente,pulire,taglia,L,l
+vendite,5623,taglia_incoerente,pulire,taglia,48,48
+vendite,13033,taglia_incoerente,pulire,taglia,50,50 
+vendite,13443,taglia_incoerente,pulire,taglia,XXL,tg XXL
+vendite,10265,taglia_incoerente,pulire,taglia,50,50
+vendite,2974,taglia_incoerente,pulire,taglia,48,48 
+vendite,10359,taglia_incoerente,pulire,taglia,L,L 
+vendite,5956,taglia_incoerente,pulire,taglia,44,44
+vendite,2247,taglia_incoerente,pulire,taglia,43-46,tg 43-46
+vendite,3527,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,8217,taglia_incoerente,pulire,taglia,44,tg 44
+vendite,12349,taglia_incoerente,pulire,taglia,39-42,39-42 
+vendite,14780,taglia_incoerente,pulire,taglia,43,43
+vendite,14290,taglia_incoerente,pulire,taglia,S,Small
+vendite,10261,taglia_incoerente,pulire,taglia,M,m
+vendite,7635,taglia_incoerente,pulire,taglia,L,L 
+vendite,9947,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,11572,taglia_incoerente,pulire,taglia,M,m
+vendite,13738,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,6112,taglia_incoerente,pulire,taglia,M,Medium
+vendite,3872,taglia_incoerente,pulire,taglia,50,50 
+vendite,281,taglia_incoerente,pulire,taglia,M,M 
+vendite,12789,taglia_incoerente,pulire,taglia,44,44 
+vendite,173,taglia_incoerente,pulire,taglia,L,L 
+vendite,6179,taglia_incoerente,pulire,taglia,L,L 
+vendite,13864,taglia_incoerente,pulire,taglia,XL,xl
+vendite,2085,taglia_incoerente,pulire,taglia,XXL,tg XXL
+vendite,6864,taglia_incoerente,pulire,taglia,L,l
+vendite,7886,taglia_incoerente,pulire,taglia,M,M 
+vendite,7213,taglia_incoerente,pulire,taglia,L,L 
+vendite,4005,taglia_incoerente,pulire,taglia,44,tg 44
+vendite,9782,taglia_incoerente,pulire,taglia,52,52
+vendite,15016,taglia_incoerente,pulire,taglia,M,M 
+vendite,10846,taglia_incoerente,pulire,taglia,S,Small
+vendite,337,taglia_incoerente,pulire,taglia,50,50
+vendite,4289,taglia_incoerente,pulire,taglia,M,m
+vendite,8171,taglia_incoerente,pulire,taglia,54,54
+vendite,7956,taglia_incoerente,pulire,taglia,39-42,tg 39-42
+vendite,9948,taglia_incoerente,pulire,taglia,46,tg 46
+vendite,8544,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,4610,taglia_incoerente,pulire,taglia,43-46,tg 43-46
+vendite,7124,taglia_incoerente,pulire,taglia,45,45
+vendite,3319,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,8357,taglia_incoerente,pulire,taglia,50,50 
+vendite,6092,taglia_incoerente,pulire,taglia,46,tg 46
+vendite,8696,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,3345,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,3448,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,10067,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,9026,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,1467,taglia_incoerente,pulire,taglia,39-42,tg 39-42
+vendite,16205,taglia_incoerente,pulire,taglia,L,L 
+vendite,9118,taglia_incoerente,pulire,taglia,52,52 
+vendite,14586,taglia_incoerente,pulire,taglia,50,50
+vendite,15831,taglia_incoerente,pulire,taglia,52,52
+vendite,205,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,4551,taglia_incoerente,pulire,taglia,S,Small
+vendite,15314,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,12322,taglia_incoerente,pulire,taglia,M,m
+vendite,11074,taglia_incoerente,pulire,taglia,L,L 
+vendite,3145,taglia_incoerente,pulire,taglia,M,Medium
+vendite,8722,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,8850,taglia_incoerente,pulire,taglia,43,tg 43
+vendite,13854,taglia_incoerente,pulire,taglia,43,tg 43
+vendite,2139,taglia_incoerente,pulire,taglia,M,m
+vendite,559,taglia_incoerente,pulire,taglia,S,Small
+vendite,3520,taglia_incoerente,pulire,taglia,XS,XS 
+vendite,6160,taglia_incoerente,pulire,taglia,44,44
+vendite,4549,taglia_incoerente,pulire,taglia,L,L 
+vendite,6588,taglia_incoerente,pulire,taglia,L,Large
+vendite,1666,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,5408,taglia_incoerente,pulire,taglia,50,50
+vendite,11466,taglia_incoerente,pulire,taglia,43-46,tg 43-46
+vendite,10489,taglia_incoerente,pulire,taglia,L,l
+vendite,2194,taglia_incoerente,pulire,taglia,L,L 
+vendite,4711,taglia_incoerente,pulire,taglia,39-42,tg 39-42
+vendite,7121,taglia_incoerente,pulire,taglia,XL,xl
+vendite,3053,taglia_incoerente,pulire,taglia,39-42,tg 39-42
+vendite,4247,taglia_incoerente,pulire,taglia,43-46,43-46 
+vendite,3032,taglia_incoerente,pulire,taglia,L,l
+vendite,9147,taglia_incoerente,pulire,taglia,50,50 
+vendite,12783,taglia_incoerente,pulire,taglia,L,l
+vendite,6673,taglia_incoerente,pulire,taglia,S,S 
+vendite,4743,taglia_incoerente,pulire,taglia,44,44 
+vendite,6135,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,8939,taglia_incoerente,pulire,taglia,L,L 
+vendite,13139,taglia_incoerente,pulire,taglia,L,l
+vendite,12573,taglia_incoerente,pulire,taglia,M,Medium
+vendite,2373,taglia_incoerente,pulire,taglia,XXL,xxl
+vendite,11028,taglia_incoerente,pulire,taglia,50,50
+vendite,9578,taglia_incoerente,pulire,taglia,M,Medium
+vendite,11003,taglia_incoerente,pulire,taglia,L,Large
+vendite,7465,taglia_incoerente,pulire,taglia,56,tg 56
+vendite,5861,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,11733,taglia_incoerente,pulire,taglia,48,48 
+vendite,13,taglia_incoerente,pulire,taglia,43-46,43-46 
+vendite,235,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,7396,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,14068,taglia_incoerente,pulire,taglia,50,50
+vendite,900,taglia_incoerente,pulire,taglia,41,41 
+vendite,6634,taglia_incoerente,pulire,taglia,46,tg 46
+vendite,2624,taglia_incoerente,pulire,taglia,39-42,tg 39-42
+vendite,5203,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,857,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,137,taglia_incoerente,pulire,taglia,S,S 
+vendite,9796,taglia_incoerente,pulire,taglia,48,tg 48
+vendite,934,taglia_incoerente,pulire,taglia,52,tg 52
+vendite,15394,taglia_incoerente,pulire,taglia,L,L 
+vendite,3931,taglia_incoerente,pulire,taglia,48,48
+vendite,269,taglia_incoerente,pulire,taglia,54,tg 54
+vendite,719,taglia_incoerente,pulire,taglia,M,M 
+vendite,225,taglia_incoerente,pulire,taglia,43,43
+vendite,9750,taglia_incoerente,pulire,taglia,S,S 
+vendite,2064,taglia_incoerente,pulire,taglia,S,s
+vendite,8406,taglia_incoerente,pulire,taglia,56,56
+vendite,10811,taglia_incoerente,pulire,taglia,54,tg 54
+vendite,5264,taglia_incoerente,pulire,taglia,M,Medium
+vendite,5521,taglia_incoerente,pulire,taglia,54,54
+vendite,829,taglia_incoerente,pulire,taglia,L,L 
+vendite,8847,taglia_incoerente,pulire,taglia,S,s
+vendite,15538,taglia_incoerente,pulire,taglia,50,50 
+vendite,16279,taglia_incoerente,pulire,taglia,L,Large
+vendite,6587,taglia_incoerente,pulire,taglia,46,46 
+vendite,8944,taglia_incoerente,pulire,taglia,50,50
+vendite,6877,taglia_incoerente,pulire,taglia,L,Large
+vendite,9078,taglia_incoerente,pulire,taglia,M,m
+vendite,9533,taglia_incoerente,pulire,taglia,42,42
+vendite,8065,taglia_incoerente,pulire,taglia,M,m
+vendite,8214,taglia_incoerente,pulire,taglia,43-46,tg 43-46
+vendite,16323,taglia_incoerente,pulire,taglia,XL,Extra Large
+vendite,3248,taglia_incoerente,pulire,taglia,M,Medium
+vendite,9919,taglia_incoerente,pulire,taglia,52,52
+vendite,6970,taglia_incoerente,pulire,taglia,48,48 
+vendite,1784,taglia_incoerente,pulire,taglia,43-46,tg 43-46
+vendite,5387,taglia_incoerente,pulire,taglia,50,50
+vendite,15139,taglia_incoerente,pulire,taglia,S,Small
+vendite,9261,taglia_incoerente,pulire,taglia,50,50 
+vendite,9282,taglia_incoerente,pulire,taglia,39-42,39-42 
+vendite,4106,taglia_incoerente,pulire,taglia,39-42,39-42
+vendite,11083,taglia_incoerente,pulire,taglia,43,tg 43
+vendite,4514,taglia_incoerente,pulire,taglia,M,M 
+vendite,16253,taglia_incoerente,pulire,taglia,43-46,43-46
+vendite,5519,taglia_incoerente,pulire,taglia,S,S 
+vendite,11226,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,5441,taglia_incoerente,pulire,taglia,M,m
+vendite,8780,taglia_incoerente,pulire,taglia,50,tg 50
+vendite,11408,taglia_incoerente,pulire,taglia,M,m
+vendite,2911,taglia_incoerente,pulire,taglia,42,tg 42
+vendite,415,taglia_incoerente,pulire,taglia,S,S 
+vendite,1436,taglia_incoerente,pulire,taglia,M,M 
+vendite,3725,taglia_incoerente,pulire,taglia,XL,XL 
+vendite,2037,taglia_incoerente,pulire,taglia,S,Small
+vendite,11144,taglia_incoerente,pulire,taglia,M,m
+vendite,7521,taglia_incoerente,pulire,taglia,46,46
+vendite,5638,taglia_incoerente,pulire,taglia,M,M 
+vendite,1481,taglia_incoerente,pulire,taglia,39-42,39-42 
+vendite,13699,taglia_incoerente,pulire,taglia,M,m
+vendite,1205,taglia_incoerente,pulire,taglia,L,L 
+vendite,2465,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,8950,brand_incoerente,pulire,brand,Lardoni,Lardoni 
+vendite,5467,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,14899,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,15163,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,926,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,10693,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,8559,brand_incoerente,pulire,brand,Lardoni,Lardoni 
+vendite,14382,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,232,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,15742,brand_incoerente,pulire,brand,Borris Calzature,Borris Calzature 
+vendite,12238,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,8852,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,7905,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,11381,brand_incoerente,pulire,brand,Lido Club,Lido Club 
+vendite,9233,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,16345,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,5063,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,3366,brand_incoerente,pulire,brand,FreePlace Outerwear,FreePlace Outerwear 
+vendite,370,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,12108,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,15147,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,12502,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,12267,brand_incoerente,pulire,brand,Hole,Hole 
+vendite,11920,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,13249,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,15057,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,10449,brand_incoerente,pulire,brand,FreePlace Outerwear,freeplace outerwear
+vendite,1411,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,10031,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,4923,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,15538,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,1285,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,11406,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,5889,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,8436,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,14330,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,9939,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,13550,brand_incoerente,pulire,brand,Hole,Hole 
+vendite,15669,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,7595,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,12399,brand_incoerente,pulire,brand,Borris Calzature,BORRIS CALZATURE
+vendite,14646,brand_incoerente,pulire,brand,FreePlace Outerwear,FreePlace Outerwear 
+vendite,3974,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,1949,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,6508,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,10244,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,15625,brand_incoerente,pulire,brand,Cruciverba,Cruciverba 
+vendite,16268,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,4074,brand_incoerente,pulire,brand,Hole,Hole 
+vendite,3482,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,11505,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,991,brand_incoerente,pulire,brand,Lido Club,Lido Club 
+vendite,14816,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,16197,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,8671,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,1603,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,9587,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,11205,brand_incoerente,pulire,brand,Borris Calzature,borris calzature
+vendite,12014,brand_incoerente,pulire,brand,Lido Club,Lido Club 
+vendite,4824,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,12914,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,8644,brand_incoerente,pulire,brand,Lido Club,Lido Club 
+vendite,14468,brand_incoerente,pulire,brand,Hole,Hole 
+vendite,4149,brand_incoerente,pulire,brand,Cruciverba,Cruciverba 
+vendite,960,brand_incoerente,pulire,brand,Lido Club,Lido Club 
+vendite,12099,brand_incoerente,pulire,brand,Lido Club,Lido Club 
+vendite,6029,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,2358,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,3614,brand_incoerente,pulire,brand,Cruciverba,Cruciverba 
+vendite,8402,brand_incoerente,pulire,brand,Lido Club,Lido Club 
+vendite,11965,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,8092,brand_incoerente,pulire,brand,Cruciverba,Cruciverba 
+vendite,8405,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,11154,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,7439,brand_incoerente,pulire,brand,Cruciverba,Cruciverba 
+vendite,12466,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,7176,brand_incoerente,pulire,brand,Hole,Hole 
+vendite,10646,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,14508,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,4429,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,4145,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,272,brand_incoerente,pulire,brand,Lieve,LIEVE
+vendite,5117,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,6446,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,8466,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,3082,brand_incoerente,pulire,brand,Lieve,Lieve 
+vendite,5570,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,13304,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,9371,brand_incoerente,pulire,brand,Lieve,LIEVE
+vendite,2473,brand_incoerente,pulire,brand,Lido Club,Lido Club 
+vendite,44,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,11212,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,7831,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,8418,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,1982,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,2725,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,451,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,13846,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,7985,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,1953,brand_incoerente,pulire,brand,Lieve,Lieve 
+vendite,12036,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,10115,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,12973,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,979,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,9523,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,14547,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,11348,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,11662,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,13131,brand_incoerente,pulire,brand,Borris Calzature,BORRIS CALZATURE
+vendite,9706,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,13856,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,352,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,9074,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,6864,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,15656,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,11160,brand_incoerente,pulire,brand,Lieve,lieve
+vendite,1904,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,14242,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,6143,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,4121,brand_incoerente,pulire,brand,Borris Calzature,borris calzature
+vendite,6815,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,12768,brand_incoerente,pulire,brand,Hole,Hole 
+vendite,10153,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,570,brand_incoerente,pulire,brand,Lieve,LIEVE
+vendite,8687,brand_incoerente,pulire,brand,Borris Calzature,borris calzature
+vendite,9897,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,4208,brand_incoerente,pulire,brand,Lieve,lieve
+vendite,13445,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,9777,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,15889,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,7365,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,1757,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,11717,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,14370,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,15687,brand_incoerente,pulire,brand,Hole,HOLE
+vendite,13157,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,3959,brand_incoerente,pulire,brand,Cruciverba,Cruciverba 
+vendite,10125,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,7901,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,11223,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,1532,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,3223,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,15208,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,3818,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,11800,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,7046,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,5083,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,8110,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,206,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,3190,brand_incoerente,pulire,brand,Lardoni,Lardoni 
+vendite,14140,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,13215,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,4862,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,11529,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,3858,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,8653,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,9177,brand_incoerente,pulire,brand,Borris Calzature,borris calzature
+vendite,14802,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,3157,brand_incoerente,pulire,brand,Hole,hole
+vendite,13086,brand_incoerente,pulire,brand,Lardoni,Lardoni 
+vendite,8756,brand_incoerente,pulire,brand,FreePlace Outerwear,freeplace outerwear
+vendite,435,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,2050,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,3282,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,16151,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,5095,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,7748,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,6459,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,10957,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,13211,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,2101,brand_incoerente,pulire,brand,Lardoni,Lardoni 
+vendite,1741,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,16275,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,12026,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,10261,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,5047,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,10934,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,2619,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,12779,brand_incoerente,pulire,brand,Hole,Hole 
+vendite,14179,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,1377,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,9283,brand_incoerente,pulire,brand,FreePlace Outerwear,FreePlace Outerwear 
+vendite,12068,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,14682,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,13680,brand_incoerente,pulire,brand,Hole,Hole 
+vendite,1049,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,14039,brand_incoerente,pulire,brand,FreePlace Outerwear,FreePlace Outerwear 
+vendite,11433,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,4192,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,4795,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,6624,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,11615,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,15385,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,6872,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,11923,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,13391,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,97,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,2588,brand_incoerente,pulire,brand,Lardoni,Lardoni 
+vendite,810,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,11457,brand_incoerente,pulire,brand,Lieve,Lieve 
+vendite,1948,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,10424,brand_incoerente,pulire,brand,Lieve,lieve
+vendite,12516,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,5342,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,10053,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,8067,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,2774,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,10457,brand_incoerente,pulire,brand,Borris Calzature,Borris Calzature 
+vendite,15897,brand_incoerente,pulire,brand,FreePlace Outerwear,freeplace outerwear
+vendite,2622,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,2488,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,13818,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,5088,brand_incoerente,pulire,brand,Borris Calzature,Borris Calzature 
+vendite,13756,brand_incoerente,pulire,brand,Lido Club,Lido Club 
+vendite,15320,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,9048,brand_incoerente,pulire,brand,Borris Calzature,borris calzature
+vendite,7274,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,4163,brand_incoerente,pulire,brand,Hole,HOLE
+vendite,14535,brand_incoerente,pulire,brand,Hole,hole
+vendite,8491,brand_incoerente,pulire,brand,FreePlace Outerwear,freeplace outerwear
+vendite,7822,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,3340,brand_incoerente,pulire,brand,Borris Calzature,BORRIS CALZATURE
+vendite,11783,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,13725,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,3130,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,15860,brand_incoerente,pulire,brand,Cruciverba,Cruciverba 
+vendite,3829,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,12231,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,8603,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,5922,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,12395,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,15620,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,9016,brand_incoerente,pulire,brand,Hole,HOLE
+vendite,14542,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,9959,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,15079,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,9699,brand_incoerente,pulire,brand,Cruciverba,Cruciverba 
+vendite,10981,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,9625,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,13555,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,15259,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,7786,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,8547,brand_incoerente,pulire,brand,FreePlace Outerwear,FreePlace Outerwear 
+vendite,12482,brand_incoerente,pulire,brand,Hole,hole
+vendite,11231,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,6457,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,12311,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,10308,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,13479,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,11180,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,15092,brand_incoerente,pulire,brand,Lieve,LIEVE
+vendite,7931,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,3138,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,10532,brand_incoerente,pulire,brand,Borris Calzature,BORRIS CALZATURE
+vendite,11991,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,10639,brand_incoerente,pulire,brand,Borris Calzature,Borris Calzature 
+vendite,9570,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,13317,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,4167,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,10542,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,15779,brand_incoerente,pulire,brand,FreePlace Outerwear,FreePlace Outerwear 
+vendite,12956,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,146,brand_incoerente,pulire,brand,Borris Calzature,Borris Calzature 
+vendite,6117,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,1767,brand_incoerente,pulire,brand,FreePlace Outerwear,freeplace outerwear
+vendite,8594,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,13739,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,13522,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,15786,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,32,brand_incoerente,pulire,brand,Borris Calzature,borris calzature
+vendite,7203,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,15064,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,5426,brand_incoerente,pulire,brand,Hole,HOLE
+vendite,593,brand_incoerente,pulire,brand,Borris Calzature,Borris Calzature 
+vendite,1240,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,12335,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,4945,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,11241,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,3695,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,7705,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,9868,brand_incoerente,pulire,brand,Lieve,Lieve 
+vendite,13624,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,15784,brand_incoerente,pulire,brand,Hole,Hole 
+vendite,1836,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,14224,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,11018,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,1756,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,12404,brand_incoerente,pulire,brand,FreePlace Outerwear,freeplace outerwear
+vendite,12199,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,12207,brand_incoerente,pulire,brand,Lido Club,Lido Club 
+vendite,6237,brand_incoerente,pulire,brand,Lieve,Lieve 
+vendite,15997,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,14541,brand_incoerente,pulire,brand,Ago&Filo,Ago&Filo 
+vendite,6095,brand_incoerente,pulire,brand,Hole,Hole 
+vendite,8804,brand_incoerente,pulire,brand,Grillo,GRILLO
+vendite,13364,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,3295,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,1666,brand_incoerente,pulire,brand,Dipartimento 3,dipartimento 3
+vendite,12010,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,8389,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,847,brand_incoerente,pulire,brand,Lieve,lieve
+vendite,5852,brand_incoerente,pulire,brand,Borris Calzature,borris calzature
+vendite,15476,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,14128,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,5011,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,10076,brand_incoerente,pulire,brand,Lardoni,Lardoni 
+vendite,9941,brand_incoerente,pulire,brand,Cruciverba,cruciverba
+vendite,7053,brand_incoerente,pulire,brand,Borris Calzature,BORRIS CALZATURE
+vendite,12565,brand_incoerente,pulire,brand,Ago&Filo,ago&filo
+vendite,5759,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,3225,brand_incoerente,pulire,brand,Grillo,grillo
+vendite,7917,brand_incoerente,pulire,brand,Cruciverba,CRUCIVERBA
+vendite,9736,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,3228,brand_incoerente,pulire,brand,Hole,hole
+vendite,14583,brand_incoerente,pulire,brand,Hole,HOLE
+vendite,7571,brand_incoerente,pulire,brand,Dipartimento 3,DIPARTIMENTO 3
+vendite,8196,brand_incoerente,pulire,brand,Lardoni,lardoni
+vendite,4641,brand_incoerente,pulire,brand,Lardoni,Lardoni 
+vendite,8512,brand_incoerente,pulire,brand,FreePlace Outerwear,FREEPLACE OUTERWEAR
+vendite,3676,brand_incoerente,pulire,brand,Borris Calzature,borris calzature
+vendite,14475,brand_incoerente,pulire,brand,Lido Club,lido club
+vendite,14172,brand_incoerente,pulire,brand,Lido Club,LIDO CLUB
+vendite,2323,brand_incoerente,pulire,brand,Dipartimento 3,Dipartimento 3 
+vendite,5348,brand_incoerente,pulire,brand,Borris Calzature,borris calzature
+vendite,214,brand_incoerente,pulire,brand,Ago&Filo,AGO&FILO
+vendite,3289,brand_incoerente,pulire,brand,Grillo,Grillo 
+vendite,6651,brand_incoerente,pulire,brand,Lardoni,LARDONI
+vendite,1864,colore_incoerente,pulire,colore,fantasia,Fantasia
+vendite,12893,colore_incoerente,pulire,colore,beige,BEIGE
+vendite,16001,colore_incoerente,pulire,colore,bianco,BIANCO
+vendite,13481,colore_incoerente,pulire,colore,grigio,GRIGIO
+vendite,4046,colore_incoerente,pulire,colore,bianco,bianco 
+vendite,580,colore_incoerente,pulire,colore,rosso,rosso 
+vendite,15462,colore_incoerente,pulire,colore,rosso,Rosso
+vendite,1030,colore_incoerente,pulire,colore,beige,BEIGE
+vendite,7457,colore_incoerente,pulire,colore,blu,blu navy
+vendite,4892,colore_incoerente,pulire,colore,bianco,BIANCO
+vendite,5138,colore_incoerente,pulire,colore,rosso,Rosso
+vendite,14843,colore_incoerente,pulire,colore,blu,blu navy
+vendite,1121,colore_incoerente,pulire,colore,fantasia,fantasia 
+vendite,11366,colore_incoerente,pulire,colore,blu,blu navy
+vendite,12440,colore_incoerente,pulire,colore,blu,blu navy
+vendite,10515,colore_incoerente,pulire,colore,nero,Nero
+vendite,11463,colore_incoerente,pulire,colore,blu,Blu
+vendite,780,colore_incoerente,pulire,colore,bianco,Bianco
+vendite,5435,colore_incoerente,pulire,colore,nero,nero 
+vendite,2094,colore_incoerente,pulire,colore,grigio,grigio 
+vendite,3102,colore_incoerente,pulire,colore,beige,Beige
+vendite,65,colore_incoerente,pulire,colore,nero,Nero
+vendite,9839,colore_incoerente,pulire,colore,verde,Verde
+vendite,13924,colore_incoerente,pulire,colore,bianco,Bianco
+vendite,6689,colore_incoerente,pulire,colore,marrone,Marrone
+vendite,13529,colore_incoerente,pulire,colore,fantasia,Fantasia
+vendite,14089,colore_incoerente,pulire,colore,marrone,Marrone
+vendite,877,colore_incoerente,pulire,colore,bianco,bianco 
+vendite,7649,colore_incoerente,pulire,colore,beige,beige 
+vendite,9105,colore_incoerente,pulire,colore,bianco,Bianco
+vendite,11162,colore_incoerente,pulire,colore,rosso,rosso 
+vendite,11917,colore_incoerente,pulire,colore,nero,Nero
+vendite,2261,colore_incoerente,pulire,colore,bianco,BIANCO
+vendite,5767,colore_incoerente,pulire,colore,beige,BEIGE
+vendite,9969,colore_incoerente,pulire,colore,beige,BEIGE
+vendite,7034,colore_incoerente,pulire,colore,bianco,Bianco
+vendite,5925,colore_incoerente,pulire,colore,bianco,Bianco
+vendite,12951,colore_incoerente,pulire,colore,verde,verde 
+vendite,1414,colore_incoerente,pulire,colore,fantasia,fantasia 
+vendite,11201,colore_incoerente,pulire,colore,grigio,Grigio
+vendite,4140,colore_incoerente,pulire,colore,bianco,BIANCO
+vendite,1458,colore_incoerente,pulire,colore,rosso,Rosso
+vendite,9494,colore_incoerente,pulire,colore,beige,Beige
+vendite,425,colore_incoerente,pulire,colore,blu,BLU
+vendite,16300,colore_incoerente,pulire,colore,fantasia,Fantasia
+vendite,16029,colore_incoerente,pulire,colore,fantasia,Fantasia
+vendite,15683,colore_incoerente,pulire,colore,fantasia,Fantasia
+vendite,9727,colore_incoerente,pulire,colore,marrone,Marrone
+vendite,11558,colore_incoerente,pulire,colore,bianco,BIANCO
+vendite,7299,colore_incoerente,pulire,colore,blu,blu navy
+vendite,125,colore_incoerente,pulire,colore,nero,NERO
+vendite,1200,colore_incoerente,pulire,colore,verde,verde 
+vendite,14844,colore_incoerente,pulire,colore,fantasia,FANTASIA
+vendite,8067,colore_incoerente,pulire,colore,beige,Beige
+vendite,10249,colore_incoerente,pulire,colore,marrone,marrone 
+vendite,12668,colore_incoerente,pulire,colore,fantasia,fantasia 
+vendite,1671,colore_incoerente,pulire,colore,verde,verde 
+vendite,11818,colore_incoerente,pulire,colore,blu,Blu
+vendite,6637,colore_incoerente,pulire,colore,nero,Nero
+vendite,1769,colore_incoerente,pulire,colore,beige,BEIGE
+vendite,7686,colore_incoerente,pulire,colore,beige,beige 
+vendite,14792,colore_incoerente,pulire,colore,bianco,Bianco
+vendite,1441,colore_incoerente,pulire,colore,fantasia,Fantasia
+vendite,14731,colore_incoerente,pulire,colore,beige,beige 
+vendite,5762,colore_incoerente,pulire,colore,bianco,bianco 
+vendite,10687,colore_incoerente,pulire,colore,verde,verde 
+vendite,9645,colore_incoerente,pulire,colore,bianco,BIANCO
+vendite,4698,colore_incoerente,pulire,colore,rosso,Rosso
+vendite,1933,colore_incoerente,pulire,colore,beige,Beige
+vendite,14321,colore_incoerente,pulire,colore,nero,nero 
+vendite,2454,colore_incoerente,pulire,colore,bianco,Bianco
+vendite,5556,colore_incoerente,pulire,colore,beige,beige 
+vendite,5569,colore_incoerente,pulire,colore,fantasia,FANTASIA
+vendite,10081,colore_incoerente,pulire,colore,marrone,Marrone
+vendite,14678,colore_incoerente,pulire,colore,fantasia,fantasia 
+vendite,14574,colore_incoerente,pulire,colore,marrone,marrone 
+vendite,1075,colore_incoerente,pulire,colore,bianco,BIANCO
+vendite,13951,colore_incoerente,pulire,colore,marrone,Marrone
+vendite,15524,colore_incoerente,pulire,colore,rosso,rosso 
+vendite,3306,colore_incoerente,pulire,colore,grigio,Grigio
+vendite,4186,colore_incoerente,pulire,colore,blu,BLU
+vendite,6955,colore_incoerente,pulire,colore,beige,beige 
+vendite,13990,colore_incoerente,pulire,colore,fantasia,fantasia 
+vendite,3583,colore_incoerente,pulire,colore,blu,Blu
+vendite,10763,colore_incoerente,pulire,colore,fantasia,Fantasia
+vendite,5727,colore_incoerente,pulire,colore,grigio,grigio 
+vendite,7531,colore_incoerente,pulire,colore,blu,Blu
+vendite,9254,colore_incoerente,pulire,colore,grigio,Grigio
+vendite,3643,colore_incoerente,pulire,colore,nero,NERO
+vendite,4350,colore_incoerente,pulire,colore,rosso,rosso 
+vendite,14550,colore_incoerente,pulire,colore,blu,blu navy
+vendite,4780,colore_incoerente,pulire,colore,grigio,Grigio
+vendite,455,colore_incoerente,pulire,colore,beige,Beige
+vendite,14465,colore_incoerente,pulire,colore,nero,Nero
+vendite,13937,colore_incoerente,pulire,colore,blu,blu navy
+vendite,11674,colore_incoerente,pulire,colore,marrone,MARRONE
+vendite,14503,colore_incoerente,pulire,colore,fantasia,Fantasia
+vendite,8559,colore_incoerente,pulire,colore,fantasia,FANTASIA
+vendite,2267,colore_incoerente,pulire,colore,blu,BLU
+vendite,14063,colore_incoerente,pulire,colore,nero,nero 
+vendite,15611,colore_incoerente,pulire,colore,bianco,BIANCO
+vendite,6469,colore_incoerente,pulire,colore,fantasia,FANTASIA
+vendite,12493,colore_incoerente,pulire,colore,verde,Verde
+vendite,11853,colore_incoerente,pulire,colore,rosso,Rosso
+vendite,15433,colore_incoerente,pulire,colore,beige,BEIGE
+vendite,4577,colore_incoerente,pulire,colore,rosso,rosso 
+vendite,14601,colore_incoerente,pulire,colore,nero,Nero
+vendite,12160,colore_incoerente,pulire,colore,fantasia,fantasia 
+vendite,12584,colore_incoerente,pulire,colore,nero,NERO
+vendite,8795,colore_incoerente,pulire,colore,nero,nero 
+vendite,16145,colore_incoerente,pulire,colore,blu,Blu
+vendite,15904,colore_incoerente,pulire,colore,blu,BLU
+vendite,6148,colore_incoerente,pulire,colore,beige,BEIGE
+vendite,1248,colore_incoerente,pulire,colore,verde,verde 
+vendite,10979,colore_incoerente,pulire,colore,grigio,grigio 
+vendite,1317,colore_incoerente,pulire,colore,beige,BEIGE
+vendite,15895,colore_incoerente,pulire,colore,rosso,ROSSO
+vendite,16146,colore_incoerente,pulire,colore,fantasia,Fantasia
+vendite,12944,colore_incoerente,pulire,colore,grigio,GRIGIO
+vendite,3135,colore_incoerente,pulire,colore,bianco,Bianco
+vendite,13844,colore_incoerente,pulire,colore,bianco,bianco 
+vendite,14680,colore_incoerente,pulire,colore,blu,Blu
+vendite,16126,colore_incoerente,pulire,colore,bianco,BIANCO
+vendite,8948,colore_incoerente,pulire,colore,grigio,GRIGIO
+vendite,10571,colore_incoerente,pulire,colore,blu,Blu
+vendite,2207,colore_incoerente,pulire,colore,grigio,Grigio
+vendite,10061,colore_incoerente,pulire,colore,marrone,Marrone
+vendite,8046,colore_incoerente,pulire,colore,rosso,ROSSO
+vendite,13733,colore_incoerente,pulire,colore,grigio,GRIGIO
+vendite,4662,colore_incoerente,pulire,colore,nero,nero 
+vendite,5419,colore_incoerente,pulire,colore,rosso,Rosso
+vendite,11954,colore_incoerente,pulire,colore,marrone,Marrone
+vendite,10321,colore_incoerente,pulire,colore,grigio,Grigio
+vendite,685,colore_incoerente,pulire,colore,verde,verde 
+vendite,14077,colore_incoerente,pulire,colore,blu,blu navy
+vendite,14397,colore_incoerente,pulire,colore,bianco,Bianco
+vendite,1100,colore_incoerente,pulire,colore,nero,Nero
+vendite,15035,colore_incoerente,pulire,colore,marrone,MARRONE
+vendite,4784,colore_incoerente,pulire,colore,bianco,bianco 
+vendite,8511,colore_incoerente,pulire,colore,beige,beige 
+vendite,7137,colore_incoerente,pulire,colore,bianco,BIANCO
+vendite,7845,colore_incoerente,pulire,colore,blu,blu navy
+vendite,7647,colore_incoerente,pulire,colore,beige,Beige
+vendite,10019,colore_incoerente,pulire,colore,fantasia,FANTASIA
+vendite,15163,colore_incoerente,pulire,colore,verde,verde 
+vendite,15464,colore_incoerente,pulire,colore,bianco,bianco 
+vendite,1599,colore_incoerente,pulire,colore,rosso,ROSSO
+vendite,11386,colore_incoerente,pulire,colore,fantasia,Fantasia
+vendite,8697,colore_incoerente,pulire,colore,marrone,marrone 
+vendite,11002,colore_incoerente,pulire,colore,grigio,Grigio
+vendite,10678,colore_incoerente,pulire,colore,bianco,bianco 
+vendite,8347,colore_incoerente,pulire,colore,rosso,ROSSO
+vendite,14240,colore_incoerente,pulire,colore,nero,NERO
+vendite,5930,colore_incoerente,pulire,colore,blu,blu navy
+vendite,13003,colore_incoerente,pulire,colore,verde,Verde
+vendite,5549,colore_incoerente,pulire,colore,nero,Nero
+vendite,10402,colore_incoerente,pulire,colore,marrone,marrone 
+vendite,13343,colore_incoerente,pulire,colore,beige,Beige
+vendite,13428,colore_incoerente,pulire,colore,blu,blu navy
+vendite,10889,colore_incoerente,pulire,colore,marrone,marrone 
+vendite,13309,colore_incoerente,pulire,colore,beige,Beige
+vendite,12553,colore_incoerente,pulire,colore,verde,verde 
+vendite,5384,colore_incoerente,pulire,colore,blu,BLU
+vendite,15351,colore_incoerente,pulire,colore,rosso,Rosso
+vendite,15413,prezzo_testo_virgola,pulire,prezzo_venduto,90.3,"90,30"
+vendite,15959,prezzo_testo_virgola,pulire,prezzo_venduto,31.6,"31,60"
+vendite,5575,prezzo_testo_virgola,pulire,prezzo_venduto,38.7,"38,70"
+vendite,1536,prezzo_testo_virgola,pulire,prezzo_venduto,62.3,"62,30"
+vendite,5750,prezzo_testo_virgola,pulire,prezzo_venduto,89.1,"89,10"
+vendite,13953,prezzo_testo_virgola,pulire,prezzo_venduto,98.1,"98,10"
+vendite,15793,prezzo_testo_virgola,pulire,prezzo_venduto,59.6,"59,60"
+vendite,3485,prezzo_testo_virgola,pulire,prezzo_venduto,59.0,"59,00"
+vendite,4208,prezzo_testo_virgola,pulire,prezzo_venduto,219.0,"219,00"
+vendite,2742,prezzo_testo_virgola,pulire,prezzo_venduto,38.7,"38,70"
+vendite,7830,prezzo_testo_virgola,pulire,prezzo_venduto,95.6,"95,60"
+vendite,14499,prezzo_testo_virgola,pulire,prezzo_venduto,369.0,"369,00"
+vendite,16240,prezzo_testo_virgola,pulire,prezzo_venduto,17.7,"17,70"
+vendite,15326,prezzo_testo_virgola,pulire,prezzo_venduto,55.3,"55,30"
+vendite,6057,prezzo_testo_virgola,pulire,prezzo_venduto,239.0,"239,00"
+vendite,8939,prezzo_testo_virgola,pulire,prezzo_venduto,99.0,"99,00"
+vendite,13454,prezzo_testo_virgola,pulire,prezzo_venduto,69.0,"69,00"
+vendite,14811,prezzo_testo_virgola,pulire,prezzo_venduto,116.1,"116,10"
+vendite,5837,prezzo_testo_virgola,pulire,prezzo_venduto,71.1,"71,10"
+vendite,5487,prezzo_testo_virgola,pulire,prezzo_venduto,11.7,"11,70"
+vendite,13615,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,11093,prezzo_testo_virgola,pulire,prezzo_venduto,339.0,"339,00"
+vendite,9051,prezzo_testo_virgola,pulire,prezzo_venduto,39.0,"39,00"
+vendite,8060,prezzo_testo_virgola,pulire,prezzo_venduto,139.0,"139,00"
+vendite,14794,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,3759,prezzo_testo_virgola,pulire,prezzo_venduto,59.0,"59,00"
+vendite,12522,prezzo_testo_virgola,pulire,prezzo_venduto,83.3,"83,30"
+vendite,3000,prezzo_testo_virgola,pulire,prezzo_venduto,259.0,"259,00"
+vendite,7478,prezzo_testo_virgola,pulire,prezzo_venduto,83.4,"83,40"
+vendite,10512,prezzo_testo_virgola,pulire,prezzo_venduto,15.6,"15,60"
+vendite,577,prezzo_testo_virgola,pulire,prezzo_venduto,429.0,"429,00"
+vendite,3325,prezzo_testo_virgola,pulire,prezzo_venduto,149.0,"149,00"
+vendite,12852,prezzo_testo_virgola,pulire,prezzo_venduto,131.4,"131,40"
+vendite,15631,prezzo_testo_virgola,pulire,prezzo_venduto,19.5,"19,50"
+vendite,5789,prezzo_testo_virgola,pulire,prezzo_venduto,259.0,"259,00"
+vendite,8844,prezzo_testo_virgola,pulire,prezzo_venduto,239.0,"239,00"
+vendite,7655,prezzo_testo_virgola,pulire,prezzo_venduto,29.5,"29,50"
+vendite,13758,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,13922,prezzo_testo_virgola,pulire,prezzo_venduto,39.0,"39,00"
+vendite,9478,prezzo_testo_virgola,pulire,prezzo_venduto,76.3,"76,30"
+vendite,506,prezzo_testo_virgola,pulire,prezzo_venduto,59.0,"59,00"
+vendite,6815,prezzo_testo_virgola,pulire,prezzo_venduto,83.3,"83,30"
+vendite,7196,prezzo_testo_virgola,pulire,prezzo_venduto,90.3,"90,30"
+vendite,4606,prezzo_testo_virgola,pulire,prezzo_venduto,189.5,"189,50"
+vendite,122,prezzo_testo_virgola,pulire,prezzo_venduto,369.0,"369,00"
+vendite,12502,prezzo_testo_virgola,pulire,prezzo_venduto,90.3,"90,30"
+vendite,2282,prezzo_testo_virgola,pulire,prezzo_venduto,15.6,"15,60"
+vendite,8205,prezzo_testo_virgola,pulire,prezzo_venduto,35.7,"35,70"
+vendite,5781,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,8517,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,6519,prezzo_testo_virgola,pulire,prezzo_venduto,449.0,"449,00"
+vendite,15088,prezzo_testo_virgola,pulire,prezzo_venduto,55.3,"55,30"
+vendite,6538,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,10005,prezzo_testo_virgola,pulire,prezzo_venduto,53.4,"53,40"
+vendite,15946,prezzo_testo_virgola,pulire,prezzo_venduto,31.6,"31,60"
+vendite,2121,prezzo_testo_virgola,pulire,prezzo_venduto,34.5,"34,50"
+vendite,3714,prezzo_testo_virgola,pulire,prezzo_venduto,219.0,"219,00"
+vendite,15917,prezzo_testo_virgola,pulire,prezzo_venduto,43.6,"43,60"
+vendite,15979,prezzo_testo_virgola,pulire,prezzo_venduto,67.6,"67,60"
+vendite,11313,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,3667,prezzo_testo_virgola,pulire,prezzo_venduto,269.0,"269,00"
+vendite,14132,prezzo_testo_virgola,pulire,prezzo_venduto,169.0,"169,00"
+vendite,10621,prezzo_testo_virgola,pulire,prezzo_venduto,199.6,"199,60"
+vendite,8932,prezzo_testo_virgola,pulire,prezzo_venduto,409.0,"409,00"
+vendite,11501,prezzo_testo_virgola,pulire,prezzo_venduto,139.0,"139,00"
+vendite,4245,prezzo_testo_virgola,pulire,prezzo_venduto,139.3,"139,30"
+vendite,3941,prezzo_testo_virgola,pulire,prezzo_venduto,27.3,"27,30"
+vendite,15439,prezzo_testo_virgola,pulire,prezzo_venduto,107.4,"107,40"
+vendite,9268,prezzo_testo_virgola,pulire,prezzo_venduto,49.0,"49,00"
+vendite,14552,prezzo_testo_virgola,pulire,prezzo_venduto,169.0,"169,00"
+vendite,10144,prezzo_testo_virgola,pulire,prezzo_venduto,44.5,"44,50"
+vendite,14541,prezzo_testo_virgola,pulire,prezzo_venduto,79.0,"79,00"
+vendite,1174,prezzo_testo_virgola,pulire,prezzo_venduto,125.1,"125,10"
+vendite,16231,prezzo_testo_virgola,pulire,prezzo_venduto,229.0,"229,00"
+vendite,6588,prezzo_testo_virgola,pulire,prezzo_venduto,99.0,"99,00"
+vendite,4016,prezzo_testo_virgola,pulire,prezzo_venduto,27.3,"27,30"
+vendite,12070,prezzo_testo_virgola,pulire,prezzo_venduto,39.0,"39,00"
+vendite,1965,prezzo_testo_virgola,pulire,prezzo_venduto,59.5,"59,50"
+vendite,9738,prezzo_testo_virgola,pulire,prezzo_venduto,83.3,"83,30"
+vendite,13377,prezzo_testo_virgola,pulire,prezzo_venduto,19.6,"19,60"
+vendite,14589,prezzo_testo_virgola,pulire,prezzo_venduto,439.0,"439,00"
+vendite,7637,prezzo_testo_virgola,pulire,prezzo_venduto,24.5,"24,50"
+vendite,9865,prezzo_testo_virgola,pulire,prezzo_venduto,27.3,"27,30"
+vendite,6179,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,6296,prezzo_testo_virgola,pulire,prezzo_venduto,79.0,"79,00"
+vendite,14345,prezzo_testo_virgola,pulire,prezzo_venduto,119.0,"119,00"
+vendite,8200,prezzo_testo_virgola,pulire,prezzo_venduto,11.7,"11,70"
+vendite,8001,prezzo_testo_virgola,pulire,prezzo_venduto,195.6,"195,60"
+vendite,16109,prezzo_testo_virgola,pulire,prezzo_venduto,17.7,"17,70"
+vendite,3267,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,253,prezzo_testo_virgola,pulire,prezzo_venduto,39.0,"39,00"
+vendite,2080,prezzo_testo_virgola,pulire,prezzo_venduto,44.5,"44,50"
+vendite,3739,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,3248,prezzo_testo_virgola,pulire,prezzo_venduto,49.0,"49,00"
+vendite,10545,prezzo_testo_virgola,pulire,prezzo_venduto,163.6,"163,60"
+vendite,7558,prezzo_testo_virgola,pulire,prezzo_venduto,79.5,"79,50"
+vendite,11909,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,5713,prezzo_testo_virgola,pulire,prezzo_venduto,69.0,"69,00"
+vendite,2317,prezzo_testo_virgola,pulire,prezzo_venduto,123.6,"123,60"
+vendite,10370,prezzo_testo_virgola,pulire,prezzo_venduto,123.6,"123,60"
+vendite,4334,prezzo_testo_virgola,pulire,prezzo_venduto,83.4,"83,40"
+vendite,13786,prezzo_testo_virgola,pulire,prezzo_venduto,169.0,"169,00"
+vendite,15825,prezzo_testo_virgola,pulire,prezzo_venduto,51.6,"51,60"
+vendite,3241,prezzo_testo_virgola,pulire,prezzo_venduto,39.0,"39,00"
+vendite,3664,prezzo_testo_virgola,pulire,prezzo_venduto,49.0,"49,00"
+vendite,15422,prezzo_testo_virgola,pulire,prezzo_venduto,76.3,"76,30"
+vendite,6724,prezzo_testo_virgola,pulire,prezzo_venduto,55.3,"55,30"
+vendite,13558,prezzo_testo_virgola,pulire,prezzo_venduto,95.7,"95,70"
+vendite,4396,prezzo_testo_virgola,pulire,prezzo_venduto,95.4,"95,40"
+vendite,12313,prezzo_testo_virgola,pulire,prezzo_venduto,279.3,"279,30"
+vendite,11226,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,2877,prezzo_testo_virgola,pulire,prezzo_venduto,139.0,"139,00"
+vendite,3186,prezzo_testo_virgola,pulire,prezzo_venduto,279.0,"279,00"
+vendite,4805,prezzo_testo_virgola,pulire,prezzo_venduto,51.6,"51,60"
+vendite,10056,prezzo_testo_virgola,pulire,prezzo_venduto,257.4,"257,40"
+vendite,11892,prezzo_testo_virgola,pulire,prezzo_venduto,79.0,"79,00"
+vendite,14266,prezzo_testo_virgola,pulire,prezzo_venduto,99.0,"99,00"
+vendite,8788,prezzo_testo_virgola,pulire,prezzo_venduto,109.0,"109,00"
+vendite,2871,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,3868,prezzo_testo_virgola,pulire,prezzo_venduto,27.3,"27,30"
+vendite,6441,prezzo_testo_virgola,pulire,prezzo_venduto,323.1,"323,10"
+vendite,3813,prezzo_testo_virgola,pulire,prezzo_venduto,59.0,"59,00"
+vendite,6550,prezzo_testo_virgola,pulire,prezzo_venduto,449.0,"449,00"
+vendite,11155,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,1326,prezzo_testo_virgola,pulire,prezzo_venduto,27.3,"27,30"
+vendite,15058,prezzo_testo_virgola,pulire,prezzo_venduto,48.3,"48,30"
+vendite,2138,prezzo_testo_virgola,pulire,prezzo_venduto,83.6,"83,60"
+vendite,13002,prezzo_testo_virgola,pulire,prezzo_venduto,64.5,"64,50"
+vendite,10712,prezzo_testo_virgola,pulire,prezzo_venduto,26.7,"26,70"
+vendite,14767,prezzo_testo_virgola,pulire,prezzo_venduto,249.0,"249,00"
+vendite,6278,prezzo_testo_virgola,pulire,prezzo_venduto,119.0,"119,00"
+vendite,3882,prezzo_testo_virgola,pulire,prezzo_venduto,314.3,"314,30"
+vendite,8370,prezzo_testo_virgola,pulire,prezzo_venduto,139.0,"139,00"
+vendite,16124,prezzo_testo_virgola,pulire,prezzo_venduto,11.7,"11,70"
+vendite,10355,prezzo_testo_virgola,pulire,prezzo_venduto,119.0,"119,00"
+vendite,10980,prezzo_testo_virgola,pulire,prezzo_venduto,149.7,"149,70"
+vendite,7503,prezzo_testo_virgola,pulire,prezzo_venduto,19.5,"19,50"
+vendite,1007,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,1614,prezzo_testo_virgola,pulire,prezzo_venduto,97.3,"97,30"
+vendite,12014,prezzo_testo_virgola,pulire,prezzo_venduto,116.1,"116,10"
+vendite,6910,prezzo_testo_virgola,pulire,prezzo_venduto,83.3,"83,30"
+vendite,8780,prezzo_testo_virgola,pulire,prezzo_venduto,419.0,"419,00"
+vendite,10856,prezzo_testo_virgola,pulire,prezzo_venduto,125.7,"125,70"
+vendite,5040,prezzo_testo_virgola,pulire,prezzo_venduto,169.0,"169,00"
+vendite,12387,prezzo_testo_virgola,pulire,prezzo_venduto,41.3,"41,30"
+vendite,2215,prezzo_testo_virgola,pulire,prezzo_venduto,27.6,"27,60"
+vendite,8032,prezzo_testo_virgola,pulire,prezzo_venduto,35.6,"35,60"
+vendite,15889,prezzo_testo_virgola,pulire,prezzo_venduto,39.6,"39,60"
+vendite,7336,prezzo_testo_virgola,pulire,prezzo_venduto,71.4,"71,40"
+vendite,14926,prezzo_testo_virgola,pulire,prezzo_venduto,48.3,"48,30"
+vendite,481,prezzo_testo_virgola,pulire,prezzo_venduto,197.1,"197,10"
+vendite,7879,prezzo_testo_virgola,pulire,prezzo_venduto,39.6,"39,60"
+vendite,13796,prezzo_testo_virgola,pulire,prezzo_venduto,287.1,"287,10"
+vendite,8903,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,1565,prezzo_testo_virgola,pulire,prezzo_venduto,83.3,"83,30"
+vendite,2748,prezzo_testo_virgola,pulire,prezzo_venduto,38.7,"38,70"
+vendite,15225,prezzo_testo_virgola,pulire,prezzo_venduto,27.3,"27,30"
+vendite,9187,prezzo_testo_virgola,pulire,prezzo_venduto,179.0,"179,00"
+vendite,3324,prezzo_testo_virgola,pulire,prezzo_venduto,159.0,"159,00"
+vendite,13404,prezzo_testo_virgola,pulire,prezzo_venduto,59.0,"59,00"
+vendite,10165,prezzo_testo_virgola,pulire,prezzo_venduto,19.5,"19,50"
+vendite,10532,prezzo_testo_virgola,pulire,prezzo_venduto,229.0,"229,00"
+vendite,9253,prezzo_testo_virgola,pulire,prezzo_venduto,119.0,"119,00"
+vendite,7507,prezzo_testo_virgola,pulire,prezzo_venduto,59.5,"59,50"
+vendite,13198,prezzo_testo_virgola,pulire,prezzo_venduto,47.6,"47,60"
+vendite,15718,prezzo_testo_virgola,pulire,prezzo_venduto,251.1,"251,10"
+vendite,6241,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,10012,prezzo_testo_virgola,pulire,prezzo_venduto,71.4,"71,40"
+vendite,2337,prezzo_testo_virgola,pulire,prezzo_venduto,195.6,"195,60"
+vendite,4148,prezzo_testo_virgola,pulire,prezzo_venduto,111.3,"111,30"
+vendite,13966,prezzo_testo_virgola,pulire,prezzo_venduto,139.0,"139,00"
+vendite,16032,prezzo_testo_virgola,pulire,prezzo_venduto,59.6,"59,60"
+vendite,2258,prezzo_testo_virgola,pulire,prezzo_venduto,239.0,"239,00"
+vendite,3187,prezzo_testo_virgola,pulire,prezzo_venduto,299.0,"299,00"
+vendite,3787,prezzo_testo_virgola,pulire,prezzo_venduto,299.0,"299,00"
+vendite,14166,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,9850,prezzo_testo_virgola,pulire,prezzo_venduto,27.3,"27,30"
+vendite,180,prezzo_testo_virgola,pulire,prezzo_venduto,139.0,"139,00"
+vendite,11629,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,9685,prezzo_testo_virgola,pulire,prezzo_venduto,300.3,"300,30"
+vendite,7987,prezzo_testo_virgola,pulire,prezzo_venduto,59.6,"59,60"
+vendite,13146,prezzo_testo_virgola,pulire,prezzo_venduto,39.6,"39,60"
+vendite,5222,prezzo_testo_virgola,pulire,prezzo_venduto,15.6,"15,60"
+vendite,6575,prezzo_testo_virgola,pulire,prezzo_venduto,99.0,"99,00"
+vendite,10524,prezzo_testo_virgola,pulire,prezzo_venduto,47.6,"47,60"
+vendite,11397,prezzo_testo_virgola,pulire,prezzo_venduto,49.0,"49,00"
+vendite,3168,prezzo_testo_virgola,pulire,prezzo_venduto,35.1,"35,10"
+vendite,861,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,12004,prezzo_testo_virgola,pulire,prezzo_venduto,116.1,"116,10"
+vendite,3525,prezzo_testo_virgola,pulire,prezzo_venduto,469.0,"469,00"
+vendite,809,prezzo_testo_virgola,pulire,prezzo_venduto,119.0,"119,00"
+vendite,14171,prezzo_testo_virgola,pulire,prezzo_venduto,69.0,"69,00"
+vendite,24,prezzo_testo_virgola,pulire,prezzo_venduto,59.0,"59,00"
+vendite,13226,prezzo_testo_virgola,pulire,prezzo_venduto,19.6,"19,60"
+vendite,14781,prezzo_testo_virgola,pulire,prezzo_venduto,429.0,"429,00"
+vendite,4586,prezzo_testo_virgola,pulire,prezzo_venduto,39.5,"39,50"
+vendite,15343,prezzo_testo_virgola,pulire,prezzo_venduto,90.3,"90,30"
+vendite,6222,prezzo_testo_virgola,pulire,prezzo_venduto,79.0,"79,00"
+vendite,11814,prezzo_testo_virgola,pulire,prezzo_venduto,389.0,"389,00"
+vendite,11924,prezzo_testo_virgola,pulire,prezzo_venduto,169.0,"169,00"
+vendite,15205,prezzo_testo_virgola,pulire,prezzo_venduto,27.3,"27,30"
+vendite,579,prezzo_testo_virgola,pulire,prezzo_venduto,119.0,"119,00"
+vendite,6096,prezzo_testo_virgola,pulire,prezzo_venduto,39.0,"39,00"
+vendite,3222,prezzo_testo_virgola,pulire,prezzo_venduto,233.1,"233,10"
+vendite,15580,prezzo_testo_virgola,pulire,prezzo_venduto,71.4,"71,40"
+vendite,10105,prezzo_testo_virgola,pulire,prezzo_venduto,64.5,"64,50"
+vendite,14809,prezzo_testo_virgola,pulire,prezzo_venduto,469.0,"469,00"
+vendite,13181,prezzo_testo_virgola,pulire,prezzo_venduto,119.6,"119,60"
+vendite,5971,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,8010,prezzo_testo_virgola,pulire,prezzo_venduto,15.6,"15,60"
+vendite,8250,prezzo_testo_virgola,pulire,prezzo_venduto,41.7,"41,70"
+vendite,5721,prezzo_testo_virgola,pulire,prezzo_venduto,149.0,"149,00"
+vendite,1840,prezzo_testo_virgola,pulire,prezzo_venduto,83.4,"83,40"
+vendite,3197,prezzo_testo_virgola,pulire,prezzo_venduto,229.0,"229,00"
+vendite,15207,prezzo_testo_virgola,pulire,prezzo_venduto,349.3,"349,30"
+vendite,10841,prezzo_testo_virgola,pulire,prezzo_venduto,79.0,"79,00"
+vendite,12973,prezzo_testo_virgola,pulire,prezzo_venduto,24.5,"24,50"
+vendite,6517,prezzo_testo_virgola,pulire,prezzo_venduto,259.0,"259,00"
+vendite,5220,prezzo_testo_virgola,pulire,prezzo_venduto,15.6,"15,60"
+vendite,1940,prezzo_testo_virgola,pulire,prezzo_venduto,29.5,"29,50"
+vendite,10730,prezzo_testo_virgola,pulire,prezzo_venduto,110.7,"110,70"
+vendite,57,prezzo_testo_virgola,pulire,prezzo_venduto,219.0,"219,00"
+vendite,8944,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,14667,prezzo_testo_virgola,pulire,prezzo_venduto,109.0,"109,00"
+vendite,2562,prezzo_testo_virgola,pulire,prezzo_venduto,11.7,"11,70"
+vendite,4593,prezzo_testo_virgola,pulire,prezzo_venduto,19.5,"19,50"
+vendite,6636,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,16292,prezzo_testo_virgola,pulire,prezzo_venduto,11.7,"11,70"
+vendite,12087,prezzo_testo_virgola,pulire,prezzo_venduto,179.0,"179,00"
+vendite,1418,prezzo_testo_virgola,pulire,prezzo_venduto,160.3,"160,30"
+vendite,12323,prezzo_testo_virgola,pulire,prezzo_venduto,62.3,"62,30"
+vendite,11176,prezzo_testo_virgola,pulire,prezzo_venduto,39.0,"39,00"
+vendite,4423,prezzo_testo_virgola,pulire,prezzo_venduto,23.4,"23,40"
+vendite,15864,prezzo_testo_virgola,pulire,prezzo_venduto,19.6,"19,60"
+vendite,11706,prezzo_testo_virgola,pulire,prezzo_venduto,229.0,"229,00"
+vendite,11455,prezzo_testo_virgola,pulire,prezzo_venduto,119.0,"119,00"
+vendite,3298,prezzo_testo_virgola,pulire,prezzo_venduto,59.0,"59,00"
+vendite,11751,prezzo_testo_virgola,pulire,prezzo_venduto,39.0,"39,00"
+vendite,4389,prezzo_testo_virgola,pulire,prezzo_venduto,155.4,"155,40"
+vendite,9644,prezzo_testo_virgola,pulire,prezzo_venduto,97.3,"97,30"
+vendite,13153,prezzo_testo_virgola,pulire,prezzo_venduto,51.6,"51,60"
+vendite,14398,prezzo_testo_virgola,pulire,prezzo_venduto,79.0,"79,00"
+vendite,11948,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,15344,prezzo_testo_virgola,pulire,prezzo_venduto,41.3,"41,30"
+vendite,13750,prezzo_testo_virgola,pulire,prezzo_venduto,109.0,"109,00"
+vendite,328,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,16054,prezzo_testo_virgola,pulire,prezzo_venduto,55.6,"55,60"
+vendite,6126,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,1893,prezzo_testo_virgola,pulire,prezzo_venduto,77.4,"77,40"
+vendite,747,prezzo_testo_virgola,pulire,prezzo_venduto,199.0,"199,00"
+vendite,15613,prezzo_testo_virgola,pulire,prezzo_venduto,23.4,"23,40"
+vendite,10394,prezzo_testo_virgola,pulire,prezzo_venduto,167.6,"167,60"
+vendite,6613,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,7360,prezzo_testo_virgola,pulire,prezzo_venduto,77.4,"77,40"
+vendite,5849,prezzo_testo_virgola,pulire,prezzo_venduto,80.1,"80,10"
+vendite,8663,prezzo_testo_virgola,pulire,prezzo_venduto,209.0,"209,00"
+vendite,10058,prezzo_testo_virgola,pulire,prezzo_venduto,35.4,"35,40"
+vendite,1477,prezzo_testo_virgola,pulire,prezzo_venduto,272.3,"272,30"
+vendite,2403,prezzo_testo_virgola,pulire,prezzo_venduto,43.6,"43,60"
+vendite,5330,prezzo_testo_virgola,pulire,prezzo_venduto,38.7,"38,70"
+vendite,5764,prezzo_testo_virgola,pulire,prezzo_venduto,339.0,"339,00"
+vendite,12447,prezzo_testo_virgola,pulire,prezzo_venduto,239.0,"239,00"
+vendite,9660,prezzo_testo_virgola,pulire,prezzo_venduto,216.3,"216,30"
+vendite,11174,prezzo_testo_virgola,pulire,prezzo_venduto,386.1,"386,10"
+vendite,10645,prezzo_testo_virgola,pulire,prezzo_venduto,219.6,"219,60"
+vendite,12152,prezzo_testo_virgola,pulire,prezzo_venduto,99.0,"99,00"
+vendite,2187,prezzo_testo_virgola,pulire,prezzo_venduto,47.6,"47,60"
+vendite,473,prezzo_testo_virgola,pulire,prezzo_venduto,59.0,"59,00"
+vendite,9005,prezzo_testo_virgola,pulire,prezzo_venduto,39.0,"39,00"
+vendite,16097,prezzo_testo_virgola,pulire,prezzo_venduto,147.6,"147,60"
+vendite,10368,prezzo_testo_virgola,pulire,prezzo_venduto,51.6,"51,60"
+vendite,5663,prezzo_testo_virgola,pulire,prezzo_venduto,53.1,"53,10"
+vendite,11890,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,10245,prezzo_testo_virgola,pulire,prezzo_venduto,24.5,"24,50"
+vendite,4262,prezzo_testo_virgola,pulire,prezzo_venduto,34.3,"34,30"
+vendite,11312,prezzo_testo_virgola,pulire,prezzo_venduto,399.0,"399,00"
+vendite,2225,prezzo_testo_virgola,pulire,prezzo_venduto,31.6,"31,60"
+vendite,3918,prezzo_testo_virgola,pulire,prezzo_venduto,307.3,"307,30"
+vendite,868,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,1631,prezzo_testo_virgola,pulire,prezzo_venduto,55.3,"55,30"
+vendite,7258,prezzo_testo_virgola,pulire,prezzo_venduto,59.4,"59,40"
+vendite,15033,prezzo_testo_virgola,pulire,prezzo_venduto,118.3,"118,30"
+vendite,12614,prezzo_testo_virgola,pulire,prezzo_venduto,104.3,"104,30"
+vendite,14291,prezzo_testo_virgola,pulire,prezzo_venduto,109.0,"109,00"
+vendite,12462,prezzo_testo_virgola,pulire,prezzo_venduto,230.3,"230,30"
+vendite,8171,prezzo_testo_virgola,pulire,prezzo_venduto,109.0,"109,00"
+vendite,15840,prezzo_testo_virgola,pulire,prezzo_venduto,229.0,"229,00"
+vendite,12943,prezzo_testo_virgola,pulire,prezzo_venduto,44.5,"44,50"
+vendite,3922,prezzo_testo_virgola,pulire,prezzo_venduto,104.3,"104,30"
+vendite,14091,prezzo_testo_virgola,pulire,prezzo_venduto,109.0,"109,00"
+vendite,16403,prezzo_testo_virgola,pulire,prezzo_venduto,17.7,"17,70"
+vendite,6756,prezzo_testo_virgola,pulire,prezzo_venduto,76.3,"76,30"
+vendite,15812,prezzo_testo_virgola,pulire,prezzo_venduto,23.6,"23,60"
+vendite,5026,prezzo_testo_virgola,pulire,prezzo_venduto,171.6,"171,60"
+vendite,118,prezzo_testo_virgola,pulire,prezzo_venduto,59.0,"59,00"
+vendite,8260,prezzo_testo_virgola,pulire,prezzo_venduto,26.7,"26,70"
+vendite,6872,prezzo_testo_virgola,pulire,prezzo_venduto,251.3,"251,30"
+vendite,15464,prezzo_testo_virgola,pulire,prezzo_venduto,59.4,"59,40"
+vendite,2916,prezzo_testo_virgola,pulire,prezzo_venduto,209.0,"209,00"
+vendite,2059,prezzo_testo_virgola,pulire,prezzo_venduto,84.5,"84,50"
+vendite,9105,prezzo_testo_virgola,pulire,prezzo_venduto,149.0,"149,00"
+vendite,7660,prezzo_testo_virgola,pulire,prezzo_venduto,59.5,"59,50"
+vendite,7635,prezzo_testo_virgola,pulire,prezzo_venduto,24.5,"24,50"
+vendite,4611,prezzo_testo_virgola,pulire,prezzo_venduto,89.5,"89,50"
+vendite,6917,prezzo_testo_virgola,pulire,prezzo_venduto,69.3,"69,30"
+vendite,10653,prezzo_testo_virgola,pulire,prezzo_venduto,229.0,"229,00"
+vendite,4030,prezzo_testo_virgola,pulire,prezzo_venduto,321.3,"321,30"
+vendite,12316,prezzo_testo_virgola,pulire,prezzo_venduto,174.3,"174,30"
+vendite,14729,prezzo_testo_virgola,pulire,prezzo_venduto,149.0,"149,00"
+vendite,1260,prezzo_testo_virgola,pulire,prezzo_venduto,90.3,"90,30"
+vendite,2303,prezzo_testo_virgola,pulire,prezzo_venduto,23.6,"23,60"
+vendite,4386,prezzo_testo_virgola,pulire,prezzo_venduto,269.4,"269,40"
+vendite,15737,prezzo_testo_virgola,pulire,prezzo_venduto,59.5,"59,50"
+vendite,9878,prezzo_testo_virgola,pulire,prezzo_venduto,23.4,"23,40"
+vendite,15110,prezzo_testo_virgola,pulire,prezzo_venduto,69.3,"69,30"
+vendite,9679,prezzo_testo_virgola,pulire,prezzo_venduto,34.3,"34,30"
+vendite,10558,prezzo_testo_virgola,pulire,prezzo_venduto,389.0,"389,00"
+vendite,6745,prezzo_testo_virgola,pulire,prezzo_venduto,76.3,"76,30"
+vendite,3886,prezzo_testo_virgola,pulire,prezzo_venduto,181.3,"181,30"
+vendite,10672,prezzo_testo_virgola,pulire,prezzo_venduto,89.0,"89,00"
+vendite,15459,prezzo_testo_virgola,pulire,prezzo_venduto,59.4,"59,40"
+vendite,350,prezzo_testo_virgola,pulire,prezzo_venduto,239.0,"239,00"
+vendite,12740,prezzo_testo_virgola,pulire,prezzo_venduto,191.4,"191,40"
+vendite,6758,prezzo_testo_virgola,pulire,prezzo_venduto,41.3,"41,30"
+vendite,11834,prezzo_testo_virgola,pulire,prezzo_venduto,129.0,"129,00"
+vendite,8961,prezzo_testo_virgola,pulire,prezzo_venduto,79.0,"79,00"
+vendite,4720,prezzo_testo_virgola,pulire,prezzo_venduto,24.5,"24,50"
+vendite,10473,prezzo_testo_virgola,pulire,prezzo_venduto,55.6,"55,60"
+vendite,12624,prezzo_mancante,pulire,prezzo_venduto,233.1,
+vendite,5744,prezzo_mancante,pulire,prezzo_venduto,79.0,
+vendite,3881,prezzo_mancante,pulire,prezzo_venduto,219.0,
+vendite,4196,prezzo_mancante,pulire,prezzo_venduto,160.3,
+vendite,5653,prezzo_mancante,pulire,prezzo_venduto,119.0,
+vendite,14796,prezzo_mancante,pulire,prezzo_venduto,179.0,
+vendite,5531,prezzo_mancante,pulire,prezzo_venduto,39.0,
+vendite,8321,prezzo_mancante,pulire,prezzo_venduto,11.7,
+vendite,15417,prezzo_mancante,pulire,prezzo_venduto,139.3,
+vendite,3003,prezzo_mancante,pulire,prezzo_venduto,109.0,
+vendite,13296,prezzo_mancante,pulire,prezzo_venduto,189.0,
+vendite,6287,prezzo_mancante,pulire,prezzo_venduto,129.0,
+vendite,7895,prezzo_mancante,pulire,prezzo_venduto,63.6,
+vendite,302,prezzo_mancante,pulire,prezzo_venduto,139.0,
+vendite,11371,prezzo_mancante,pulire,prezzo_venduto,99.0,
+vendite,4975,prezzo_mancante,pulire,prezzo_venduto,54.5,
+vendite,16158,prezzo_mancante,pulire,prezzo_venduto,11.7,
+vendite,3293,prezzo_mancante,pulire,prezzo_venduto,159.0,
+vendite,3742,prezzo_mancante,pulire,prezzo_venduto,89.0,
+vendite,2060,prezzo_mancante,pulire,prezzo_venduto,29.5,
+vendite,15506,prezzo_mancante,pulire,prezzo_venduto,53.4,
+vendite,7007,prezzo_mancante,pulire,prezzo_venduto,83.3,
+vendite,71,prezzo_mancante,pulire,prezzo_venduto,129.0,
+vendite,6410,prezzo_mancante,pulire,prezzo_venduto,59.0,
+vendite,15392,prezzo_mancante,pulire,prezzo_venduto,27.3,
+vendite,7843,prezzo_mancante,pulire,prezzo_venduto,35.6,
+vendite,10410,prezzo_mancante,pulire,prezzo_venduto,135.6,
+vendite,7952,prezzo_mancante,pulire,prezzo_venduto,147.6,
+vendite,7595,prezzo_mancante,pulire,prezzo_venduto,169.5,
+vendite,10648,prezzo_mancante,pulire,prezzo_venduto,31.6,
+vendite,7628,prezzo_mancante,pulire,prezzo_venduto,19.5,
+vendite,13649,prezzo_mancante,pulire,prezzo_venduto,11.7,
+vendite,12819,prezzo_mancante,pulire,prezzo_venduto,53.4,
+vendite,10431,prezzo_mancante,pulire,prezzo_venduto,39.0,
+vendite,6621,prezzo_mancante,pulire,prezzo_venduto,489.0,
+vendite,3764,prezzo_mancante,pulire,prezzo_venduto,50.0,
+vendite,14864,prezzo_mancante,pulire,prezzo_venduto,259.0,
+vendite,3117,prezzo_mancante,pulire,prezzo_venduto,149.0,
+vendite,12191,prezzo_mancante,pulire,prezzo_venduto,27.3,
+vendite,5219,prezzo_mancante,pulire,prezzo_venduto,39.0,
+vendite,11012,prezzo_mancante,pulire,prezzo_venduto,399.0,
+vendite,6437,prezzo_mancante,pulire,prezzo_venduto,239.0,
+vendite,10208,prezzo_mancante,pulire,prezzo_venduto,239.0,
+vendite,10748,prezzo_mancante,pulire,prezzo_venduto,26.7,
+vendite,3810,prezzo_mancante,pulire,prezzo_venduto,319.0,
+vendite,10842,prezzo_mancante,pulire,prezzo_venduto,17.7,
+vendite,12073,prezzo_mancante,pulire,prezzo_venduto,119.0,
+vendite,14703,prezzo_mancante,pulire,prezzo_venduto,39.0,
+vendite,4738,prezzo_mancante,pulire,prezzo_venduto,29.5,
+vendite,12528,prezzo_mancante,pulire,prezzo_venduto,62.3,
+vendite,14511,prezzo_mancante,pulire,prezzo_venduto,59.0,
+vendite,2609,prezzo_mancante,pulire,prezzo_venduto,50.7,
+vendite,15271,prezzo_mancante,pulire,prezzo_venduto,41.3,
+vendite,12722,prezzo_mancante,pulire,prezzo_venduto,259.0,
+vendite,13334,prezzo_mancante,pulire,prezzo_venduto,47.6,
+vendite,7241,prezzo_mancante,pulire,prezzo_venduto,62.3,
+vendite,7035,prezzo_mancante,pulire,prezzo_venduto,69.3,
+vendite,13968,prezzo_mancante,pulire,prezzo_venduto,509.0,
+vendite,12095,prezzo_mancante,pulire,prezzo_venduto,79.0,
+vendite,13605,prezzo_mancante,pulire,prezzo_venduto,35.7,
+vendite,197,prezzo_mancante,pulire,prezzo_venduto,107.1,
+vendite,8285,prezzo_mancante,pulire,prezzo_venduto,38.7,
+vendite,12209,prezzo_mancante,pulire,prezzo_venduto,69.3,
+vendite,9716,prezzo_mancante,pulire,prezzo_venduto,34.3,
+vendite,13207,prezzo_mancante,pulire,prezzo_venduto,51.6,
+vendite,8975,prezzo_mancante,pulire,prezzo_venduto,369.0,
+vendite,5754,prezzo_mancante,pulire,prezzo_venduto,39.0,
+vendite,12643,prezzo_mancante,pulire,prezzo_venduto,90.3,
+vendite,14330,prezzo_mancante,pulire,prezzo_venduto,469.0,
+vendite,11009,prezzo_mancante,pulire,prezzo_venduto,119.0,
+vendite,12254,prezzo_mancante,pulire,prezzo_venduto,27.3,
+vendite,12905,prezzo_mancante,pulire,prezzo_venduto,59.5,
+vendite,12923,prezzo_mancante,pulire,prezzo_venduto,64.5,
+vendite,11553,prezzo_mancante,pulire,prezzo_venduto,89.0,
+vendite,4683,prezzo_mancante,pulire,prezzo_venduto,114.5,
+vendite,9459,prezzo_mancante,pulire,prezzo_venduto,97.3,
+vendite,5529,prezzo_mancante,pulire,prezzo_venduto,269.0,
+vendite,2597,prezzo_mancante,pulire,prezzo_venduto,65.7,
+vendite,4053,prezzo_mancante,pulire,prezzo_venduto,27.3,
+vendite,65,prezzo_mancante,pulire,prezzo_venduto,119.0,
+vendite,15810,prezzo_mancante,pulire,prezzo_venduto,15.6,
+vendite,9898,prezzo_mancante,pulire,prezzo_venduto,23.4,
+vendite,14476,prezzo_negativo,pulire,prezzo_venduto,89.0,-89.0
+vendite,8007,prezzo_negativo,pulire,prezzo_venduto,39.6,-39.6
+vendite,12616,prezzo_negativo,pulire,prezzo_venduto,90.3,-90.3
+vendite,2525,prezzo_negativo,pulire,prezzo_venduto,41.7,-41.7
+vendite,15185,prezzo_negativo,pulire,prezzo_venduto,139.3,-139.3
+vendite,8145,prezzo_negativo,pulire,prezzo_venduto,111.6,-111.6
+vendite,14407,prezzo_negativo,pulire,prezzo_venduto,139.0,-139.0
+vendite,4965,prezzo_negativo,pulire,prezzo_venduto,99.0,-99.0
+vendite,14601,sconto_fuori_range,pulire,sconto_pct,0,150
+vendite,11470,sconto_fuori_range,pulire,sconto_pct,0,300
+vendite,13851,sconto_fuori_range,pulire,sconto_pct,0,-10
+vendite,4838,sconto_fuori_range,pulire,sconto_pct,60,300
+vendite,4904,sconto_fuori_range,pulire,sconto_pct,60,150
+vendite,4362,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,13470,sconto_incoerente,pulire,sconto_pct,70,60
+vendite,3282,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,10520,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,8070,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,10542,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,6916,sconto_incoerente,pulire,sconto_pct,30,40
+vendite,6886,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,3670,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,3320,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,15492,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,13643,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,3054,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,8224,sconto_incoerente,pulire,sconto_pct,70,60
+vendite,2290,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,13910,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,4817,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,4674,sconto_incoerente,pulire,sconto_pct,50,60
+vendite,8375,sconto_incoerente,pulire,sconto_pct,70,60
+vendite,3973,sconto_incoerente,pulire,sconto_pct,30,40
+vendite,3480,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,468,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,11319,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,12317,sconto_incoerente,pulire,sconto_pct,30,40
+vendite,4719,sconto_incoerente,pulire,sconto_pct,50,60
+vendite,14559,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,2583,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,1378,sconto_incoerente,pulire,sconto_pct,30,40
+vendite,11339,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,7083,sconto_incoerente,pulire,sconto_pct,30,40
+vendite,2737,sconto_incoerente,pulire,sconto_pct,70,60
+vendite,6909,sconto_incoerente,pulire,sconto_pct,30,40
+vendite,5159,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,11250,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,9101,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,2272,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,2966,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,11858,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,9910,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,800,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,13243,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,13006,sconto_incoerente,pulire,sconto_pct,50,60
+vendite,14048,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,13358,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,10024,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,1843,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,15504,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,8911,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,6251,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,3341,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,8130,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,15631,sconto_incoerente,pulire,sconto_pct,50,60
+vendite,4417,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,10438,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,2055,sconto_incoerente,pulire,sconto_pct,50,60
+vendite,4228,sconto_incoerente,pulire,sconto_pct,30,40
+vendite,16109,sconto_incoerente,pulire,sconto_pct,70,60
+vendite,7309,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,12486,sconto_incoerente,pulire,sconto_pct,30,40
+vendite,3230,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,15595,sconto_incoerente,pulire,sconto_pct,50,60
+vendite,5584,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,3121,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,3481,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,10739,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,6067,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,4413,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,8923,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,10378,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,4623,sconto_incoerente,pulire,sconto_pct,50,60
+vendite,10150,sconto_incoerente,pulire,sconto_pct,50,60
+vendite,11127,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,14701,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,8366,sconto_incoerente,pulire,sconto_pct,70,60
+vendite,9126,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,13845,sconto_incoerente,pulire,sconto_pct,0,10
+vendite,7047,sconto_incoerente,pulire,sconto_pct,30,40
+vendite,4385,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,15535,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,15980,sconto_incoerente,pulire,sconto_pct,60,70
+vendite,7687,sconto_incoerente,pulire,sconto_pct,50,60
+vendite,4500,sconto_incoerente,pulire,sconto_pct,40,50
+vendite,7016,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,8367,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,2077,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,2423,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,4708,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,12517,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,7356,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,5513,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,12569,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,7135,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,13654,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,4581,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,10509,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,15016,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,8572,motivo_mancante,pulire,motivo_sconto,cliente_abituale,
+vendite,6769,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,4951,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,5362,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,9562,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,12919,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,9537,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,1296,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,3905,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,9589,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,9860,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,10775,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,1830,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,12862,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,10627,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,1391,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,5462,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,5381,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,15591,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,5440,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,13461,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,6773,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,15978,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,9509,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,9866,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,7208,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,1622,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,14879,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,13523,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,15651,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,10053,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,10173,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,12750,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,6885,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,15531,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,13055,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,7470,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,10429,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,12839,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,9693,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,15236,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,6668,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,7081,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,2127,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,12265,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,14317,motivo_mancante,pulire,motivo_sconto,cliente_abituale,
+vendite,7864,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,7043,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,15672,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,2203,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,5195,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,9929,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,10733,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,6852,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,7912,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,4728,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,10010,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,7326,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,10668,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,15904,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,2642,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,6853,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,7550,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,4794,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,1223,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,15538,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,2372,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,13309,motivo_mancante,pulire,motivo_sconto,saldo,
+vendite,3009,articolo_orfano,pulire,articolo,AGO-CAM-0017,AGO-CAM-9128
+vendite,15641,articolo_orfano,pulire,articolo,LID-PAN-0123,LID-PAN-9513
+vendite,9959,articolo_orfano,pulire,articolo,AGO-CAM-0046,AGO-CAM-9604
+vendite,7158,articolo_orfano,pulire,articolo,DIP-FEL-0054,DIP-FEL-9335
+vendite,13292,articolo_orfano,pulire,articolo,CRU-MAG-0064,CRU-MAG-9269
+vendite,9457,articolo_orfano,pulire,articolo,LID-PAN-0087,LID-PAN-9059
+vendite,12387,articolo_orfano,pulire,articolo,AGO-CRA-0077,AGO-CRA-9988
+vendite,9276,articolo_orfano,pulire,articolo,AGO-CRA-0056,AGO-CRA-9297
+vendite,15361,data_fuori_periodo,pulire,data_ora,2026-01-15 10:44:00,2031-01-15 10:44:00
+vendite,3561,data_fuori_periodo,pulire,data_ora,2023-12-10 17:09:00,2031-12-10 17:09:00
+vendite,3111,data_fuori_periodo,pulire,data_ora,2023-10-17 19:06:00,2019-10-17 19:06:00
+vendite,720,data_formato_misto,pulire,data_ora,2023-06-03 16:46:00,03/06/2023 16:46
+vendite,10935,data_formato_misto,pulire,data_ora,2025-02-26 17:56:00,26/02/2025 17:56
+vendite,2794,data_formato_misto,pulire,data_ora,2023-08-25 19:43:00,25/08/2023 19:43
+vendite,9979,data_formato_misto,pulire,data_ora,2025-01-21 10:16:00,21/01/2025 10:16
+vendite,12591,data_formato_misto,pulire,data_ora,2025-07-15 10:11:00,15/07/2025 10:11
+vendite,15021,data_formato_misto,pulire,data_ora,2026-01-07 11:24:00,07/01/2026 11:24
+vendite,7263,data_formato_misto,pulire,data_ora,2024-07-20 17:35:00,20/07/2024 17:35
+vendite,204,data_formato_misto,pulire,data_ora,2023-04-05 18:24:00,05/04/2023 18:24
+vendite,14204,data_formato_misto,pulire,data_ora,2025-11-11 10:34:00,11/11/2025 10:34
+vendite,14094,data_formato_misto,pulire,data_ora,2025-10-28 10:43:00,28/10/2025 10:43
+vendite,6643,data_formato_misto,pulire,data_ora,2024-07-04 10:02:00,04/07/2024 10:02
+vendite,2414,data_formato_misto,pulire,data_ora,2023-08-06 19:36:00,06/08/2023 19:36
+vendite,12205,data_formato_misto,pulire,data_ora,2025-07-05 18:18:00,05/07/2025 18:18
+vendite,651,data_formato_misto,pulire,data_ora,2023-05-28 18:17:00,28/05/2023 18:17
+vendite,13917,data_formato_misto,pulire,data_ora,2025-09-27 12:01:00,27/09/2025 12:01
+vendite,1488,data_formato_misto,pulire,data_ora,2023-07-08 17:40:00,08/07/2023 17:40
+vendite,14248,data_formato_misto,pulire,data_ora,2025-11-17 19:40:00,17/11/2025 19:40
+vendite,7526,data_formato_misto,pulire,data_ora,2024-07-27 12:29:00,27/07/2024 12:29
+vendite,510,data_formato_misto,pulire,data_ora,2023-05-20 12:47:00,20/05/2023 12:47
+vendite,8201,data_formato_misto,pulire,data_ora,2024-08-18 19:25:00,18/08/2024 19:25
+vendite,10427,data_formato_misto,pulire,data_ora,2025-02-07 19:29:00,07/02/2025 19:29
+vendite,648,data_formato_misto,pulire,data_ora,2023-05-28 17:43:00,28/05/2023 17:43
+vendite,12815,data_formato_misto,pulire,data_ora,2025-07-22 19:02:00,22/07/2025 19:02
+vendite,14729,data_formato_misto,pulire,data_ora,2025-12-24 17:16:00,24/12/2025 17:16
+vendite,4776,data_formato_misto,pulire,data_ora,2024-02-01 19:15:00,01/02/2024 19:15
+vendite,12743,data_formato_misto,pulire,data_ora,2025-07-19 16:30:00,19/07/2025 16:30
+vendite,4439,data_formato_misto,pulire,data_ora,2024-01-23 10:47:00,23/01/2024 10:47
+vendite,1405,data_formato_misto,pulire,data_ora,2023-07-06 12:06:00,06/07/2023 12:06
+vendite,12930,data_formato_misto,pulire,data_ora,2025-07-27 17:38:00,27/07/2025 17:38
+vendite,14489,data_formato_misto,pulire,data_ora,2025-12-08 16:56:00,08/12/2025 16:56
+vendite,1232,data_formato_misto,pulire,data_ora,2023-07-02 10:31:00,02/07/2023 10:31
+vendite,6950,data_formato_misto,pulire,data_ora,2024-07-12 19:41:00,12/07/2024 19:41
+vendite,4790,data_formato_misto,pulire,data_ora,2024-02-01 19:46:00,01/02/2024 19:46
+vendite,12174,data_formato_misto,pulire,data_ora,2025-07-02 11:38:00,02/07/2025 11:38
+vendite,6815,data_formato_misto,pulire,data_ora,2024-07-08 17:40:00,08/07/2024 17:40
+vendite,7635,data_formato_misto,pulire,data_ora,2024-07-28 17:50:00,28/07/2024 17:50
+vendite,3673,data_formato_misto,pulire,data_ora,2023-12-19 11:54:00,19/12/2023 11:54
+vendite,16213,data_formato_misto,pulire,data_ora,2026-02-17 17:32:00,17/02/2026 17:32
+vendite,7260,data_formato_misto,pulire,data_ora,2024-07-20 16:36:00,20/07/2024 16:36
+vendite,14427,data_formato_misto,pulire,data_ora,2025-12-05 10:31:00,05/12/2025 10:31
+vendite,7622,data_formato_misto,pulire,data_ora,2024-07-28 16:51:00,28/07/2024 16:51
+vendite,12292,data_formato_misto,pulire,data_ora,2025-07-06 18:57:00,06/07/2025 18:57
+vendite,1482,data_formato_misto,pulire,data_ora,2023-07-08 12:18:00,08/07/2023 12:18
+vendite,4161,data_formato_misto,pulire,data_ora,2024-01-14 12:08:00,14/01/2024 12:08
+vendite,9587,data_formato_misto,pulire,data_ora,2025-01-10 17:36:00,10/01/2025 17:36
+vendite,14925,data_formato_misto,pulire,data_ora,2026-01-04 12:36:00,04/01/2026 12:36
+vendite,11589,data_formato_misto,pulire,data_ora,2025-05-21 11:30:00,21/05/2025 11:30
+vendite,11999,data_formato_misto,pulire,data_ora,2025-06-21 17:03:00,21/06/2025 17:03
+vendite,5271,data_formato_misto,pulire,data_ora,2024-02-16 19:58:00,16/02/2024 19:58
+vendite,4339,data_formato_misto,pulire,data_ora,2024-01-19 18:17:00,19/01/2024 18:17
+vendite,6319,data_formato_misto,pulire,data_ora,2024-06-09 11:08:00,09/06/2024 11:08
+vendite,16249,data_formato_misto,pulire,data_ora,2026-02-18 18:07:00,18/02/2026 18:07
+vendite,4032,data_formato_misto,pulire,data_ora,2024-01-11 18:39:00,11/01/2024 18:39
+vendite,11553,data_formato_misto,pulire,data_ora,2025-05-18 17:47:00,18/05/2025 17:47
+vendite,2918,data_formato_misto,pulire,data_ora,2023-09-18 17:27:00,18/09/2023 17:27
+vendite,6502,data_formato_misto,pulire,data_ora,2024-06-20 19:46:00,20/06/2024 19:46
+vendite,13294,data_formato_misto,pulire,data_ora,2025-08-12 18:40:00,12/08/2025 18:40
+vendite,552,data_formato_misto,pulire,data_ora,2023-05-21 16:48:00,21/05/2023 16:48
+vendite,478,data_formato_misto,pulire,data_ora,2023-05-17 18:16:00,17/05/2023 18:16
+vendite,13038,data_formato_misto,pulire,data_ora,2025-07-30 18:17:00,30/07/2025 18:17
+vendite,3543,data_formato_misto,pulire,data_ora,2023-12-09 12:11:00,09/12/2023 12:11
+vendite,7626,data_formato_misto,pulire,data_ora,2024-07-28 17:16:00,28/07/2024 17:16
+vendite,3819,data_formato_misto,pulire,data_ora,2023-12-31 19:06:00,31/12/2023 19:06
+vendite,15128,data_formato_misto,pulire,data_ora,2026-01-10 11:03:00,10/01/2026 11:03
+vendite,14056,data_formato_misto,pulire,data_ora,2025-10-21 17:09:00,21/10/2025 17:09
+vendite,14752,data_formato_misto,pulire,data_ora,2025-12-26 10:41:00,26/12/2025 10:41
+vendite,15739,data_formato_misto,pulire,data_ora,2026-01-29 11:22:00,29/01/2026 11:22
+vendite,745,data_formato_misto,pulire,data_ora,2023-06-04 12:33:00,04/06/2023 12:33
+vendite,10416,data_formato_misto,pulire,data_ora,2025-02-07 12:55:00,07/02/2025 12:55
+vendite,10699,data_formato_misto,pulire,data_ora,2025-02-16 12:33:00,16/02/2025 12:33
+vendite,10770,data_formato_misto,pulire,data_ora,2025-02-18 17:16:00,18/02/2025 17:16
+vendite,6943,data_formato_misto,pulire,data_ora,2024-07-12 19:06:00,12/07/2024 19:06
+vendite,551,data_formato_misto,pulire,data_ora,2023-05-21 12:59:00,21/05/2023 12:59
+vendite,8895,data_formato_misto,pulire,data_ora,2024-11-02 19:22:00,02/11/2024 19:22
+vendite,14400,data_formato_misto,pulire,data_ora,2025-12-02 17:44:00,02/12/2025 17:44
+vendite,253,data_formato_misto,pulire,data_ora,2023-04-16 10:22:00,16/04/2023 10:22
+vendite,8646,data_formato_misto,pulire,data_ora,2024-09-22 19:24:00,22/09/2024 19:24
+vendite,1480,data_formato_misto,pulire,data_ora,2023-07-08 11:56:00,08/07/2023 11:56
+vendite,10303,data_formato_misto,pulire,data_ora,2025-02-01 17:34:00,01/02/2025 17:34
+vendite,7103,data_formato_misto,pulire,data_ora,2024-07-16 17:17:00,16/07/2024 17:17
+vendite,9997,data_formato_misto,pulire,data_ora,2025-01-22 11:06:00,22/01/2025 11:06
+vendite,10945,data_formato_misto,pulire,data_ora,2025-02-26 19:52:00,26/02/2025 19:52
+vendite,16080,data_formato_misto,pulire,data_ora,2026-02-12 11:46:00,12/02/2026 11:46
+vendite,11261,data_formato_misto,pulire,data_ora,2025-04-15 19:05:00,15/04/2025 19:05
+vendite,7135,data_formato_misto,pulire,data_ora,2024-07-17 12:23:00,17/07/2024 12:23
+vendite,7855,data_formato_misto,pulire,data_ora,2024-08-05 19:35:00,05/08/2024 19:35
+vendite,11308,data_formato_misto,pulire,data_ora,2025-04-20 17:27:00,20/04/2025 17:27
+vendite,925,data_formato_misto,pulire,data_ora,2023-06-12 19:02:00,12/06/2023 19:02
+vendite,13507,data_formato_misto,pulire,data_ora,2025-08-19 11:28:00,19/08/2025 11:28
+vendite,12327,data_formato_misto,pulire,data_ora,2025-07-08 12:08:00,08/07/2025 12:08
+vendite,12342,data_formato_misto,pulire,data_ora,2025-07-08 17:16:00,08/07/2025 17:16
+vendite,1202,data_formato_misto,pulire,data_ora,2023-07-01 12:45:00,01/07/2023 12:45
+vendite,3386,data_formato_misto,pulire,data_ora,2023-11-24 11:00:00,24/11/2023 11:00
+vendite,1800,data_formato_misto,pulire,data_ora,2023-07-17 16:40:00,17/07/2023 16:40
+vendite,6731,data_formato_misto,pulire,data_ora,2024-07-07 11:07:00,07/07/2024 11:07
+vendite,2425,data_formato_misto,pulire,data_ora,2023-08-07 17:28:00,07/08/2023 17:28
+vendite,15189,data_formato_misto,pulire,data_ora,2026-01-11 11:44:00,11/01/2026 11:44
+vendite,3574,data_formato_misto,pulire,data_ora,2023-12-12 10:56:00,12/12/2023 10:56
+vendite,1896,data_formato_misto,pulire,data_ora,2023-07-21 11:37:00,21/07/2023 11:37
+vendite,5528,data_formato_misto,pulire,data_ora,2024-02-27 18:12:00,27/02/2024 18:12
+vendite,5602,data_formato_misto,pulire,data_ora,2024-03-06 16:59:00,06/03/2024 16:59
+vendite,11974,data_formato_misto,pulire,data_ora,2025-06-19 16:40:00,19/06/2025 16:40
+vendite,6987,data_formato_misto,pulire,data_ora,2024-07-13 16:58:00,13/07/2024 16:58
+vendite,15281,data_formato_misto,pulire,data_ora,2026-01-13 12:32:00,13/01/2026 12:32
+vendite,8226,data_formato_misto,pulire,data_ora,2024-08-20 11:04:00,20/08/2024 11:04
+vendite,15957,data_formato_misto,pulire,data_ora,2026-02-07 19:13:00,07/02/2026 19:13
+vendite,6550,data_formato_misto,pulire,data_ora,2024-06-25 17:03:00,25/06/2024 17:03
+vendite,15110,data_formato_misto,pulire,data_ora,2026-01-09 17:30:00,09/01/2026 17:30
+vendite,15273,data_formato_misto,pulire,data_ora,2026-01-13 11:46:00,13/01/2026 11:46
+vendite,10856,data_formato_misto,pulire,data_ora,2025-02-22 10:39:00,22/02/2025 10:39
+vendite,2654,data_formato_misto,pulire,data_ora,2023-08-19 17:22:00,19/08/2023 17:22
+vendite,2424,data_formato_misto,pulire,data_ora,2023-08-07 17:24:00,07/08/2023 17:24
+vendite,187,data_formato_misto,pulire,data_ora,2023-04-02 11:44:00,02/04/2023 11:44
+vendite,13455,data_formato_misto,pulire,data_ora,2025-08-17 12:35:00,17/08/2025 12:35
+vendite,9492,data_formato_misto,pulire,data_ora,2025-01-08 10:09:00,08/01/2025 10:09
+vendite,3690,data_formato_misto,pulire,data_ora,2023-12-20 11:36:00,20/12/2023 11:36
+vendite,3023,data_formato_misto,pulire,data_ora,2023-10-04 10:52:00,04/10/2023 10:52
+vendite,14482,data_formato_misto,pulire,data_ora,2025-12-07 18:32:00,07/12/2025 18:32
+vendite,10515,data_formato_misto,pulire,data_ora,2025-02-10 18:16:00,10/02/2025 18:16
+vendite,13311,data_formato_misto,pulire,data_ora,2025-08-13 11:40:00,13/08/2025 11:40
+vendite,4257,data_formato_misto,pulire,data_ora,2024-01-15 18:48:00,15/01/2024 18:48
+vendite,1732,data_formato_misto,pulire,data_ora,2023-07-16 10:17:00,16/07/2023 10:17
+vendite,11126,data_formato_misto,pulire,data_ora,2025-03-25 10:16:00,25/03/2025 10:16
+vendite,12,data_formato_misto,pulire,data_ora,2023-03-05 17:25:00,05/03/2023 17:25
+vendite,8139,data_formato_misto,pulire,data_ora,2024-08-16 12:44:00,16/08/2024 12:44
+vendite,2456,data_formato_misto,pulire,data_ora,2023-08-09 17:32:00,09/08/2023 17:32
+vendite,8979,data_formato_misto,pulire,data_ora,2024-11-21 11:41:00,21/11/2024 11:41
+vendite,4286,data_formato_misto,pulire,data_ora,2024-01-17 10:39:00,17/01/2024 10:39
+vendite,10113,data_formato_misto,pulire,data_ora,2025-01-25 12:38:00,25/01/2025 12:38
+vendite,8544,data_formato_misto,pulire,data_ora,2024-09-07 10:16:00,07/09/2024 10:16
+vendite,13377,data_formato_misto,pulire,data_ora,2025-08-15 11:54:00,15/08/2025 11:54
+vendite,580,data_formato_misto,pulire,data_ora,2023-05-24 18:38:00,24/05/2023 18:38
+vendite,9807,data_formato_misto,pulire,data_ora,2025-01-15 17:49:00,15/01/2025 17:49
+vendite,13883,data_formato_misto,pulire,data_ora,2025-09-20 16:50:00,20/09/2025 16:50
+vendite,7973,data_formato_misto,pulire,data_ora,2024-08-10 19:12:00,10/08/2024 19:12
+vendite,13246,data_formato_misto,pulire,data_ora,2025-08-10 18:23:00,10/08/2025 18:23
+vendite,5746,data_formato_misto,pulire,data_ora,2024-03-29 10:53:00,29/03/2024 10:53
+vendite,5760,data_formato_misto,pulire,data_ora,2024-03-31 10:46:00,31/03/2024 10:46
+vendite,12065,data_formato_misto,pulire,data_ora,2025-06-25 11:07:00,25/06/2025 11:07
+vendite,15022,data_formato_misto,pulire,data_ora,2026-01-07 11:25:00,07/01/2026 11:25
+vendite,8898,data_formato_misto,pulire,data_ora,2024-11-03 17:47:00,03/11/2024 17:47
+vendite,9134,data_formato_misto,pulire,data_ora,2024-12-09 17:44:00,09/12/2024 17:44
+vendite,114,data_formato_misto,pulire,data_ora,2023-03-21 18:08:00,21/03/2023 18:08
+vendite,15093,data_formato_misto,pulire,data_ora,2026-01-08 19:09:00,08/01/2026 19:09
+vendite,5024,data_formato_misto,pulire,data_ora,2024-02-07 17:20:00,07/02/2024 17:20
+vendite,5586,data_formato_misto,pulire,data_ora,2024-03-02 18:15:00,02/03/2024 18:15
+vendite,7228,data_formato_misto,pulire,data_ora,2024-07-19 17:26:00,19/07/2024 17:26
+vendite,13432,data_formato_misto,pulire,data_ora,2025-08-16 16:37:00,16/08/2025 16:37
+vendite,10395,data_formato_misto,pulire,data_ora,2025-02-06 18:11:00,06/02/2025 18:11
+vendite,9920,data_formato_misto,pulire,data_ora,2025-01-19 17:27:00,19/01/2025 17:27
+vendite,5156,data_formato_misto,pulire,data_ora,2024-02-12 19:16:00,12/02/2024 19:16
+vendite,11278,data_formato_misto,pulire,data_ora,2025-04-17 19:01:00,17/04/2025 19:01
+vendite,14321,data_formato_misto,pulire,data_ora,2025-11-25 19:17:00,25/11/2025 19:17
+vendite,6517,data_formato_misto,pulire,data_ora,2024-06-22 18:05:00,22/06/2024 18:05
+vendite,2380,data_formato_misto,pulire,data_ora,2023-08-06 12:55:00,06/08/2023 12:55
+vendite,9766,data_formato_misto,pulire,data_ora,2025-01-14 17:53:00,14/01/2025 17:53
+vendite,3144,data_formato_misto,pulire,data_ora,2023-10-24 11:07:00,24/10/2023 11:07
+vendite,12170,data_formato_misto,pulire,data_ora,2025-07-02 11:38:00,02/07/2025 11:38
+vendite,8639,data_formato_misto,pulire,data_ora,2024-09-22 12:48:00,22/09/2024 12:48
+vendite,7977,data_formato_misto,pulire,data_ora,2024-08-10 19:46:00,10/08/2024 19:46
+vendite,14083,data_formato_misto,pulire,data_ora,2025-10-25 16:41:00,25/10/2025 16:41
+vendite,7192,data_formato_misto,pulire,data_ora,2024-07-18 17:58:00,18/07/2024 17:58
+vendite,10501,data_formato_misto,pulire,data_ora,2025-02-09 19:51:00,09/02/2025 19:51
+vendite,16075,data_formato_misto,pulire,data_ora,2026-02-12 10:19:00,12/02/2026 10:19
+vendite,15705,data_formato_misto,pulire,data_ora,2026-01-28 10:52:00,28/01/2026 10:52
+vendite,1529,data_formato_misto,pulire,data_ora,2023-07-09 11:33:00,09/07/2023 11:33
+vendite,14917,data_formato_misto,pulire,data_ora,2026-01-04 10:48:00,04/01/2026 10:48
+vendite,11092,data_formato_misto,pulire,data_ora,2025-03-17 18:54:00,17/03/2025 18:54
+vendite,3151,data_formato_misto,pulire,data_ora,2023-10-25 16:31:00,25/10/2023 16:31
+vendite,8357,data_formato_misto,pulire,data_ora,2024-08-24 19:51:00,24/08/2024 19:51
+vendite,6228,data_formato_misto,pulire,data_ora,2024-06-02 12:58:00,02/06/2024 12:58
+vendite,3042,data_formato_misto,pulire,data_ora,2023-10-08 11:41:00,08/10/2023 11:41
+vendite,11609,data_formato_misto,pulire,data_ora,2025-05-22 16:50:00,22/05/2025 16:50
+vendite,8338,data_formato_misto,pulire,data_ora,2024-08-24 17:31:00,24/08/2024 17:31
+vendite,9830,data_formato_misto,pulire,data_ora,2025-01-16 12:09:00,16/01/2025 12:09
+vendite,14624,data_formato_misto,pulire,data_ora,2025-12-18 17:39:00,18/12/2025 17:39
+vendite,6831,data_formato_misto,pulire,data_ora,2024-07-08 19:42:00,08/07/2024 19:42
+vendite,3112,data_formato_misto,pulire,data_ora,2023-10-17 19:57:00,17/10/2023 19:57
+vendite,4426,data_formato_misto,pulire,data_ora,2024-01-22 18:47:00,22/01/2024 18:47
+vendite,5343,data_formato_misto,pulire,data_ora,2024-02-18 17:06:00,18/02/2024 17:06
+vendite,2419,data_formato_misto,pulire,data_ora,2023-08-06 19:58:00,06/08/2023 19:58
+vendite,2662,data_formato_misto,pulire,data_ora,2023-08-19 18:15:00,19/08/2023 18:15
+vendite,12985,data_formato_misto,pulire,data_ora,2025-07-28 19:46:00,28/07/2025 19:46
+vendite,2827,data_formato_misto,pulire,data_ora,2023-09-01 12:00:00,01/09/2023 12:00
+vendite,16102,data_formato_misto,pulire,data_ora,2026-02-13 18:00:00,13/02/2026 18:00
+vendite,3415,data_formato_misto,pulire,data_ora,2023-11-27 19:02:00,27/11/2023 19:02
+vendite,8271,data_formato_misto,pulire,data_ora,2024-08-22 11:24:00,22/08/2024 11:24
+vendite,15418,data_formato_misto,pulire,data_ora,2026-01-16 16:53:00,16/01/2026 16:53
+vendite,3181,data_formato_misto,pulire,data_ora,2023-10-29 11:31:00,29/10/2023 11:31
+vendite,13400,data_formato_misto,pulire,data_ora,2025-08-15 18:30:00,15/08/2025 18:30
+vendite,2113,data_formato_misto,pulire,data_ora,2023-07-28 12:46:00,28/07/2023 12:46
+vendite,4540,data_formato_misto,pulire,data_ora,2024-01-26 19:27:00,26/01/2024 19:27
+vendite,4006,data_formato_misto,pulire,data_ora,2024-01-11 11:11:00,11/01/2024 11:11
+vendite,4194,data_formato_misto,pulire,data_ora,2024-01-14 17:17:00,14/01/2024 17:17
+vendite,4449,data_formato_misto,pulire,data_ora,2024-01-23 19:29:00,23/01/2024 19:29
+vendite,8392,data_formato_misto,pulire,data_ora,2024-08-25 18:35:00,25/08/2024 18:35
+vendite,6,data_formato_misto,pulire,data_ora,2023-03-03 12:24:00,03/03/2023 12:24
+vendite,11452,data_formato_misto,pulire,data_ora,2025-05-06 12:49:00,06/05/2025 12:49
+vendite,9221,data_formato_misto,pulire,data_ora,2024-12-15 12:54:00,15/12/2024 12:54
+vendite,9229,data_formato_misto,pulire,data_ora,2024-12-15 18:42:00,15/12/2024 18:42
+vendite,8029,data_formato_misto,pulire,data_ora,2024-08-11 18:34:00,11/08/2024 18:34
+vendite,11106,data_formato_misto,pulire,data_ora,2025-03-20 16:46:00,20/03/2025 16:46
+vendite,11013,data_formato_misto,pulire,data_ora,2025-03-04 11:01:00,04/03/2025 11:01
+vendite,2467,data_formato_misto,pulire,data_ora,2023-08-10 18:58:00,10/08/2023 18:58
+vendite,13549,data_formato_misto,pulire,data_ora,2025-08-21 17:32:00,21/08/2025 17:32
+vendite,1256,data_formato_misto,pulire,data_ora,2023-07-02 19:43:00,02/07/2023 19:43
+vendite,517,data_formato_misto,pulire,data_ora,2023-05-20 17:39:00,20/05/2023 17:39
+vendite,3240,data_formato_misto,pulire,data_ora,2023-11-05 17:50:00,05/11/2023 17:50
+vendite,16282,data_formato_misto,pulire,data_ora,2026-02-21 10:33:00,21/02/2026 10:33
+vendite,4536,data_formato_misto,pulire,data_ora,2024-01-26 18:43:00,26/01/2024 18:43
+vendite,11862,data_formato_misto,pulire,data_ora,2025-06-08 18:16:00,08/06/2025 18:16
+vendite,2387,data_formato_misto,pulire,data_ora,2023-08-06 17:16:00,06/08/2023 17:16
+vendite,12336,data_formato_misto,pulire,data_ora,2025-07-08 16:42:00,08/07/2025 16:42
+vendite,16071,data_formato_misto,pulire,data_ora,2026-02-11 19:47:00,11/02/2026 19:47
+vendite,1951,data_formato_misto,pulire,data_ora,2023-07-22 11:38:00,22/07/2023 11:38
+vendite,8246,data_formato_misto,pulire,data_ora,2024-08-21 10:47:00,21/08/2024 10:47
+vendite,2607,data_formato_misto,pulire,data_ora,2023-08-18 10:33:00,18/08/2023 10:33
+vendite,4277,data_formato_misto,pulire,data_ora,2024-01-16 19:02:00,16/01/2024 19:02
+vendite,9831,data_formato_misto,pulire,data_ora,2025-01-16 12:13:00,16/01/2025 12:13
+vendite,11157,data_formato_misto,pulire,data_ora,2025-03-30 10:39:00,30/03/2025 10:39
+vendite,2987,data_formato_misto,pulire,data_ora,2023-09-30 12:38:00,30/09/2023 12:38
+vendite,3173,data_formato_misto,pulire,data_ora,2023-10-28 17:00:00,28/10/2023 17:00
+vendite,12345,data_formato_misto,pulire,data_ora,2025-07-08 18:04:00,08/07/2025 18:04
+vendite,5066,data_formato_misto,pulire,data_ora,2024-02-10 11:53:00,10/02/2024 11:53
+vendite,4942,data_formato_misto,pulire,data_ora,2024-02-04 18:02:00,04/02/2024 18:02
+vendite,8485,data_formato_misto,pulire,data_ora,2024-08-30 19:07:00,30/08/2024 19:07
+vendite,5441,data_formato_misto,pulire,data_ora,2024-02-23 10:14:00,23/02/2024 10:14
+vendite,1214,data_formato_misto,pulire,data_ora,2023-07-01 17:42:00,01/07/2023 17:42
+vendite,11323,data_formato_misto,pulire,data_ora,2025-04-23 11:37:00,23/04/2025 11:37
+vendite,6292,data_formato_misto,pulire,data_ora,2024-06-07 17:02:00,07/06/2024 17:02
+vendite,2586,data_formato_misto,pulire,data_ora,2023-08-16 17:01:00,16/08/2023 17:01
+vendite,10512,data_formato_misto,pulire,data_ora,2025-02-10 18:16:00,10/02/2025 18:16
+vendite,1641,data_formato_misto,pulire,data_ora,2023-07-12 16:52:00,12/07/2023 16:52
+vendite,2557,data_formato_misto,pulire,data_ora,2023-08-14 17:09:00,14/08/2023 17:09
+vendite,2580,data_formato_misto,pulire,data_ora,2023-08-16 12:00:00,16/08/2023 12:00
+vendite,8846,data_formato_misto,pulire,data_ora,2024-10-21 17:04:00,21/10/2024 17:04
+vendite,12864,data_formato_misto,pulire,data_ora,2025-07-24 19:07:00,24/07/2025 19:07
+vendite,10425,data_formato_misto,pulire,data_ora,2025-02-07 17:03:00,07/02/2025 17:03
+vendite,1028,data_formato_misto,pulire,data_ora,2023-06-18 11:40:00,18/06/2023 11:40
+vendite,6282,data_formato_misto,pulire,data_ora,2024-06-07 11:17:00,07/06/2024 11:17
+vendite,6842,data_formato_misto,pulire,data_ora,2024-07-09 11:03:00,09/07/2024 11:03
+vendite,7591,data_formato_misto,pulire,data_ora,2024-07-27 19:49:00,27/07/2024 19:49
+vendite,7476,data_formato_misto,pulire,data_ora,2024-07-26 19:47:00,26/07/2024 19:47
+vendite,8700,data_formato_misto,pulire,data_ora,2024-09-30 16:51:00,30/09/2024 16:51
+vendite,13915,data_formato_misto,pulire,data_ora,2025-09-27 11:14:00,27/09/2025 11:14
+vendite,13840,data_formato_misto,pulire,data_ora,2025-09-14 11:02:00,14/09/2025 11:02
+vendite,9860,data_formato_misto,pulire,data_ora,2025-01-17 12:26:00,17/01/2025 12:26
+vendite,13163,data_formato_misto,pulire,data_ora,2025-08-07 11:20:00,07/08/2025 11:20
+vendite,2442,data_formato_misto,pulire,data_ora,2023-08-08 16:43:00,08/08/2023 16:43
+vendite,13502,data_formato_misto,pulire,data_ora,2025-08-18 19:58:00,18/08/2025 19:58
+vendite,6025,data_formato_misto,pulire,data_ora,2024-05-14 16:52:00,14/05/2024 16:52
+vendite,11461,data_formato_misto,pulire,data_ora,2025-05-08 18:55:00,08/05/2025 18:55
+vendite,599,data_formato_misto,pulire,data_ora,2023-05-25 19:39:00,25/05/2023 19:39
+vendite,14609,data_formato_misto,pulire,data_ora,2025-12-17 18:19:00,17/12/2025 18:19
+vendite,6915,data_formato_misto,pulire,data_ora,2024-07-12 10:53:00,12/07/2024 10:53
+vendite,11690,data_formato_misto,pulire,data_ora,2025-05-28 19:28:00,28/05/2025 19:28
+vendite,11978,data_formato_misto,pulire,data_ora,2025-06-19 17:26:00,19/06/2025 17:26
+vendite,4315,data_formato_misto,pulire,data_ora,2024-01-18 19:42:00,18/01/2024 19:42
+vendite,5551,data_formato_misto,pulire,data_ora,2024-02-28 16:34:00,28/02/2024 16:34
+vendite,3212,data_formato_misto,pulire,data_ora,2023-11-03 10:44:00,03/11/2023 10:44
+vendite,870,data_formato_misto,pulire,data_ora,2023-06-10 19:44:00,10/06/2023 19:44
+vendite,16152,data_formato_misto,pulire,data_ora,2026-02-14 19:31:00,14/02/2026 19:31
+vendite,3610,data_formato_misto,pulire,data_ora,2023-12-14 12:09:00,14/12/2023 12:09
+vendite,16215,data_formato_misto,pulire,data_ora,2026-02-17 17:39:00,17/02/2026 17:39
+vendite,6116,data_formato_misto,pulire,data_ora,2024-05-25 18:00:00,25/05/2024 18:00
+vendite,316,data_formato_misto,pulire,data_ora,2023-04-27 16:47:00,27/04/2023 16:47
+vendite,11639,data_formato_misto,pulire,data_ora,2025-05-25 10:25:00,25/05/2025 10:25
+vendite,2090,data_formato_misto,pulire,data_ora,2023-07-26 17:37:00,26/07/2023 17:37
+vendite,4427,data_formato_misto,pulire,data_ora,2024-01-22 18:47:00,22/01/2024 18:47
+vendite,9157,data_formato_misto,pulire,data_ora,2024-12-11 19:54:00,11/12/2024 19:54
+vendite,8781,data_formato_misto,pulire,data_ora,2024-10-13 16:47:00,13/10/2024 16:47
+vendite,9410,data_formato_misto,pulire,data_ora,2025-01-05 10:36:00,05/01/2025 10:36
+vendite,10775,data_formato_misto,pulire,data_ora,2025-02-18 18:41:00,18/02/2025 18:41
+vendite,10100,data_formato_misto,pulire,data_ora,2025-01-25 11:41:00,25/01/2025 11:41
+vendite,15135,data_formato_misto,pulire,data_ora,2026-01-10 11:27:00,10/01/2026 11:27
+vendite,14257,data_formato_misto,pulire,data_ora,2025-11-21 18:41:00,21/11/2025 18:41
+vendite,6030,data_formato_misto,pulire,data_ora,2024-05-15 18:11:00,15/05/2024 18:11
+vendite,4136,data_formato_misto,pulire,data_ora,2024-01-13 19:18:00,13/01/2024 19:18
+vendite,8927,data_formato_misto,pulire,data_ora,2024-11-10 12:17:00,10/11/2024 12:17
+vendite,7999,data_formato_misto,pulire,data_ora,2024-08-11 11:28:00,11/08/2024 11:28
+vendite,3674,data_formato_misto,pulire,data_ora,2023-12-19 12:52:00,19/12/2023 12:52
+vendite,2895,data_formato_misto,pulire,data_ora,2023-09-14 18:57:00,14/09/2023 18:57
+vendite,2063,data_formato_misto,pulire,data_ora,2023-07-25 18:50:00,25/07/2023 18:50
+vendite,3649,data_formato_misto,pulire,data_ora,2023-12-16 19:25:00,16/12/2023 19:25
+vendite,13421,data_formato_misto,pulire,data_ora,2025-08-16 11:30:00,16/08/2025 11:30
+vendite,1669,data_formato_misto,pulire,data_ora,2023-07-13 19:30:00,13/07/2023 19:30
+vendite,8747,data_formato_misto,pulire,data_ora,2024-10-07 19:35:00,07/10/2024 19:35
+vendite,8155,data_formato_misto,pulire,data_ora,2024-08-17 10:44:00,17/08/2024 10:44
+vendite,4733,data_formato_misto,pulire,data_ora,2024-02-01 12:26:00,01/02/2024 12:26
+vendite,11371,data_formato_misto,pulire,data_ora,2025-04-27 18:16:00,27/04/2025 18:16
+vendite,6377,data_formato_misto,pulire,data_ora,2024-06-13 17:18:00,13/06/2024 17:18
+vendite,14873,data_formato_misto,pulire,data_ora,2026-01-03 16:59:00,03/01/2026 16:59
+vendite,10381,data_formato_misto,pulire,data_ora,2025-02-06 10:03:00,06/02/2025 10:03
+vendite,10043,data_formato_misto,pulire,data_ora,2025-01-23 11:16:00,23/01/2025 11:16
+vendite,4811,data_formato_misto,pulire,data_ora,2024-02-02 16:42:00,02/02/2024 16:42
+vendite,3143,data_formato_misto,pulire,data_ora,2023-10-23 18:23:00,23/10/2023 18:23
+vendite,12491,data_formato_misto,pulire,data_ora,2025-07-12 19:52:00,12/07/2025 19:52
+vendite,7130,data_formato_misto,pulire,data_ora,2024-07-17 11:18:00,17/07/2024 11:18
+vendite,7791,data_formato_misto,pulire,data_ora,2024-08-02 10:16:00,02/08/2024 10:16
+vendite,4734,data_formato_misto,pulire,data_ora,2024-02-01 12:26:00,01/02/2024 12:26
+vendite,15269,data_formato_misto,pulire,data_ora,2026-01-13 11:00:00,13/01/2026 11:00
+vendite,7381,data_formato_misto,pulire,data_ora,2024-07-24 17:37:00,24/07/2024 17:37
+vendite,2902,data_formato_misto,pulire,data_ora,2023-09-15 19:15:00,15/09/2023 19:15
+vendite,8147,data_formato_misto,pulire,data_ora,2024-08-16 18:41:00,16/08/2024 18:41
+vendite,753,data_formato_misto,pulire,data_ora,2023-06-04 18:56:00,04/06/2023 18:56
+vendite,7368,data_formato_misto,pulire,data_ora,2024-07-24 10:14:00,24/07/2024 10:14
+vendite,14271,data_formato_misto,pulire,data_ora,2025-11-22 12:41:00,22/11/2025 12:41
+vendite,916,data_formato_misto,pulire,data_ora,2023-06-11 18:54:00,11/06/2023 18:54
+vendite,7684,data_formato_misto,pulire,data_ora,2024-07-29 16:50:00,29/07/2024 16:50
+vendite,2370,data_formato_misto,pulire,data_ora,2023-08-06 12:23:00,06/08/2023 12:23
+vendite,5036,data_formato_misto,pulire,data_ora,2024-02-07 18:27:00,07/02/2024 18:27
+vendite,16111,data_formato_misto,pulire,data_ora,2026-02-14 11:52:00,14/02/2026 11:52
+vendite,10114,data_formato_misto,pulire,data_ora,2025-01-25 12:50:00,25/01/2025 12:50
+vendite,9734,data_formato_misto,pulire,data_ora,2025-01-14 11:30:00,14/01/2025 11:30
+vendite,9630,data_formato_misto,pulire,data_ora,2025-01-11 17:40:00,11/01/2025 17:40
+vendite,13676,data_formato_misto,pulire,data_ora,2025-08-26 12:51:00,26/08/2025 12:51
+vendite,9548,data_formato_misto,pulire,data_ora,2025-01-10 10:36:00,10/01/2025 10:36
+vendite,13254,data_formato_misto,pulire,data_ora,2025-08-11 16:48:00,11/08/2025 16:48
+vendite,6556,data_formato_misto,pulire,data_ora,2024-06-25 18:43:00,25/06/2024 18:43
+vendite,2757,data_formato_misto,pulire,data_ora,2023-08-24 17:22:00,24/08/2023 17:22
+vendite,1799,data_formato_misto,pulire,data_ora,2023-07-17 16:39:00,17/07/2023 16:39
+vendite,8520,data_formato_misto,pulire,data_ora,2024-09-02 18:31:00,02/09/2024 18:31
+vendite,14474,data_formato_misto,pulire,data_ora,2025-12-07 16:54:00,07/12/2025 16:54
+vendite,7038,data_formato_misto,pulire,data_ora,2024-07-14 16:39:00,14/07/2024 16:39
+vendite,9096,data_formato_misto,pulire,data_ora,2024-12-06 10:16:00,06/12/2024 10:16
+vendite,8817,data_formato_misto,pulire,data_ora,2024-10-19 11:27:00,19/10/2024 11:27
+vendite,2746,data_formato_misto,pulire,data_ora,2023-08-24 10:03:00,24/08/2023 10:03
+vendite,4573,data_formato_misto,pulire,data_ora,2024-01-27 18:05:00,27/01/2024 18:05
+vendite,11876,data_formato_misto,pulire,data_ora,2025-06-09 17:05:00,09/06/2025 17:05
+vendite,6105,data_formato_misto,pulire,data_ora,2024-05-24 19:10:00,24/05/2024 19:10
+vendite,12356,data_formato_misto,pulire,data_ora,2025-07-08 18:52:00,08/07/2025 18:52
+vendite,6245,data_formato_misto,pulire,data_ora,2024-06-04 11:12:00,04/06/2024 11:12
+vendite,5794,data_formato_misto,pulire,data_ora,2024-04-06 10:14:00,06/04/2024 10:14
+vendite,365,data_formato_misto,pulire,data_ora,2023-05-03 12:30:00,03/05/2023 12:30
+vendite,8455,data_formato_misto,pulire,data_ora,2024-08-28 18:43:00,28/08/2024 18:43
+vendite,8983,data_formato_misto,pulire,data_ora,2024-11-23 12:22:00,23/11/2024 12:22
+vendite,3064,data_formato_misto,pulire,data_ora,2023-10-12 12:58:00,12/10/2023 12:58
+vendite,14158,data_formato_misto,pulire,data_ora,2025-11-04 19:03:00,04/11/2025 19:03
+vendite,5637,data_formato_misto,pulire,data_ora,2024-03-14 18:39:00,14/03/2024 18:39
+vendite,8677,data_formato_misto,pulire,data_ora,2024-09-28 11:41:00,28/09/2024 11:41
+vendite,13973,data_formato_misto,pulire,data_ora,2025-10-06 18:38:00,06/10/2025 18:38
+vendite,16325,data_formato_misto,pulire,data_ora,2026-02-23 18:54:00,23/02/2026 18:54
+vendite,14885,data_formato_misto,pulire,data_ora,2026-01-03 17:33:00,03/01/2026 17:33
+vendite,3749,data_formato_misto,pulire,data_ora,2023-12-23 17:15:00,23/12/2023 17:15
+vendite,6889,data_formato_misto,pulire,data_ora,2024-07-10 17:55:00,10/07/2024 17:55
+vendite,12980,data_formato_misto,pulire,data_ora,2025-07-28 19:16:00,28/07/2025 19:16
+vendite,4554,data_formato_misto,pulire,data_ora,2024-01-27 12:44:00,27/01/2024 12:44
+vendite,8901,data_formato_misto,pulire,data_ora,2024-11-05 11:45:00,05/11/2024 11:45
+vendite,11185,data_formato_misto,pulire,data_ora,2025-04-03 12:45:00,03/04/2025 12:45
+vendite,2940,data_formato_misto,pulire,data_ora,2023-09-22 18:10:00,22/09/2023 18:10
+vendite,15165,data_formato_misto,pulire,data_ora,2026-01-10 19:03:00,10/01/2026 19:03
+vendite,776,data_formato_misto,pulire,data_ora,2023-06-06 11:22:00,06/06/2023 11:22
+vendite,3779,data_formato_misto,pulire,data_ora,2023-12-24 10:50:00,24/12/2023 10:50
+vendite,5202,data_formato_misto,pulire,data_ora,2024-02-15 11:34:00,15/02/2024 11:34
+vendite,12813,data_formato_misto,pulire,data_ora,2025-07-22 17:58:00,22/07/2025 17:58
+vendite,4359,data_formato_misto,pulire,data_ora,2024-01-20 17:26:00,20/01/2024 17:26
+vendite,10141,data_formato_misto,pulire,data_ora,2025-01-25 18:36:00,25/01/2025 18:36
+vendite,934,data_formato_misto,pulire,data_ora,2023-06-13 11:37:00,13/06/2023 11:37
+vendite,14395,data_formato_misto,pulire,data_ora,2025-12-02 12:12:00,02/12/2025 12:12
+vendite,15259,data_formato_misto,pulire,data_ora,2026-01-12 18:17:00,12/01/2026 18:17
+vendite,2485,data_formato_misto,pulire,data_ora,2023-08-11 12:00:00,11/08/2023 12:00
+vendite,1561,data_formato_misto,pulire,data_ora,2023-07-09 18:18:00,09/07/2023 18:18
+vendite,14623,data_formato_misto,pulire,data_ora,2025-12-18 17:12:00,18/12/2025 17:12
+vendite,7482,data_formato_misto,pulire,data_ora,2024-07-27 10:18:00,27/07/2024 10:18
+vendite,5290,data_formato_misto,pulire,data_ora,2024-02-17 11:53:00,17/02/2024 11:53
+vendite,8204,data_formato_misto,pulire,data_ora,2024-08-18 19:37:00,18/08/2024 19:37
+vendite,13555,data_formato_misto,pulire,data_ora,2025-08-21 19:19:00,21/08/2025 19:19
+vendite,14755,data_formato_misto,pulire,data_ora,2025-12-26 12:54:00,26/12/2025 12:54
+vendite,12924,data_formato_misto,pulire,data_ora,2025-07-27 16:46:00,27/07/2025 16:46
+vendite,3493,data_formato_misto,pulire,data_ora,2023-12-03 18:49:00,03/12/2023 18:49
+vendite,15958,data_formato_misto,pulire,data_ora,2026-02-07 19:19:00,07/02/2026 19:19
+vendite,2635,data_formato_misto,pulire,data_ora,2023-08-19 10:46:00,19/08/2023 10:46
+vendite,4003,data_formato_misto,pulire,data_ora,2024-01-11 10:45:00,11/01/2024 10:45
+vendite,11541,data_formato_misto,pulire,data_ora,2025-05-18 11:51:00,18/05/2025 11:51
+vendite,1163,data_formato_misto,pulire,data_ora,2023-06-29 12:31:00,29/06/2023 12:31
+vendite,8735,data_formato_misto,pulire,data_ora,2024-10-05 19:14:00,05/10/2024 19:14
+vendite,713,data_formato_misto,pulire,data_ora,2023-06-03 11:44:00,03/06/2023 11:44
+vendite,16370,data_formato_misto,pulire,data_ora,2026-02-26 10:23:00,26/02/2026 10:23
+vendite,14015,data_formato_misto,pulire,data_ora,2025-10-17 12:59:00,17/10/2025 12:59
+vendite,10495,data_formato_misto,pulire,data_ora,2025-02-09 19:34:00,09/02/2025 19:34
+vendite,14405,data_formato_misto,pulire,data_ora,2025-12-02 19:37:00,02/12/2025 19:37
+vendite,13129,data_formato_misto,pulire,data_ora,2025-08-05 18:48:00,05/08/2025 18:48
+vendite,14664,data_formato_misto,pulire,data_ora,2025-12-21 12:16:00,21/12/2025 12:16
+vendite,10509,data_formato_misto,pulire,data_ora,2025-02-10 16:52:00,10/02/2025 16:52
+vendite,7435,data_formato_misto,pulire,data_ora,2024-07-25 19:01:00,25/07/2024 19:01
+vendite,3114,data_formato_misto,pulire,data_ora,2023-10-18 16:34:00,18/10/2023 16:34
+vendite,7488,data_formato_misto,pulire,data_ora,2024-07-27 10:24:00,27/07/2024 10:24
+vendite,3844,data_formato_misto,pulire,data_ora,2024-01-03 19:27:00,03/01/2024 19:27
+vendite,3506,data_formato_misto,pulire,data_ora,2023-12-05 16:34:00,05/12/2023 16:34
+vendite,8791,data_formato_misto,pulire,data_ora,2024-10-13 18:09:00,13/10/2024 18:09
+vendite,7052,data_formato_misto,pulire,data_ora,2024-07-14 17:56:00,14/07/2024 17:56
+vendite,2790,data_formato_misto,pulire,data_ora,2023-08-25 19:01:00,25/08/2023 19:01
+vendite,9621,data_formato_misto,pulire,data_ora,2025-01-11 16:43:00,11/01/2025 16:43
+vendite,9161,data_formato_misto,pulire,data_ora,2024-12-12 10:33:00,12/12/2024 10:33
+vendite,5988,data_formato_misto,pulire,data_ora,2024-05-08 18:02:00,08/05/2024 18:02
+vendite,6687,data_formato_misto,pulire,data_ora,2024-07-06 17:11:00,06/07/2024 17:11
+vendite,9758,data_formato_misto,pulire,data_ora,2025-01-14 16:59:00,14/01/2025 16:59
+vendite,4099,data_formato_misto,pulire,data_ora,2024-01-13 12:53:00,13/01/2024 12:53
+vendite,4773,data_formato_misto,pulire,data_ora,2024-02-01 18:54:00,01/02/2024 18:54
+vendite,5869,data_formato_misto,pulire,data_ora,2024-04-17 19:55:00,17/04/2024 19:55
+vendite,9836,data_formato_misto,pulire,data_ora,2025-01-16 12:42:00,16/01/2025 12:42
+vendite,15856,data_formato_misto,pulire,data_ora,2026-02-04 12:46:00,04/02/2026 12:46
+vendite,15792,data_formato_misto,pulire,data_ora,2026-02-01 11:23:00,01/02/2026 11:23
+vendite,11871,data_formato_misto,pulire,data_ora,2025-06-08 19:06:00,08/06/2025 19:06
+vendite,6975,data_formato_misto,pulire,data_ora,2024-07-13 11:39:00,13/07/2024 11:39
+vendite,8666,data_formato_misto,pulire,data_ora,2024-09-26 18:59:00,26/09/2024 18:59
+vendite,12970,data_formato_misto,pulire,data_ora,2025-07-28 18:27:00,28/07/2025 18:27
+vendite,8358,data_formato_misto,pulire,data_ora,2024-08-25 10:05:00,25/08/2024 10:05
+vendite,13146,data_formato_misto,pulire,data_ora,2025-08-06 16:49:00,06/08/2025 16:49
+vendite,4395,data_formato_misto,pulire,data_ora,2024-01-21 11:23:00,21/01/2024 11:23
+vendite,5241,data_formato_misto,pulire,data_ora,2024-02-16 12:15:00,16/02/2024 12:15
+vendite,8332,data_formato_misto,pulire,data_ora,2024-08-24 12:36:00,24/08/2024 12:36
+vendite,3371,data_formato_misto,pulire,data_ora,2023-11-19 18:42:00,19/11/2023 18:42
+vendite,16068,data_formato_misto,pulire,data_ora,2026-02-11 18:26:00,11/02/2026 18:26
+vendite,11724,data_formato_misto,pulire,data_ora,2025-05-30 11:28:00,30/05/2025 11:28
+vendite,6465,data_formato_misto,pulire,data_ora,2024-06-16 18:03:00,16/06/2024 18:03
+vendite,46,data_formato_misto,pulire,data_ora,2023-03-12 10:59:00,12/03/2023 10:59
+vendite,11328,data_formato_misto,pulire,data_ora,2025-04-23 12:23:00,23/04/2025 12:23
+vendite,15119,data_formato_misto,pulire,data_ora,2026-01-09 19:33:00,09/01/2026 19:33
+vendite,13898,data_formato_misto,pulire,data_ora,2025-09-23 18:59:00,23/09/2025 18:59
+vendite,10437,data_formato_misto,pulire,data_ora,2025-02-08 11:45:00,08/02/2025 11:45
+vendite,9954,data_formato_misto,pulire,data_ora,2025-01-20 16:51:00,20/01/2025 16:51
+vendite,16339,data_formato_misto,pulire,data_ora,2026-02-24 18:36:00,24/02/2026 18:36
+vendite,2883,data_formato_misto,pulire,data_ora,2023-09-12 18:45:00,12/09/2023 18:45
+vendite,10420,data_formato_misto,pulire,data_ora,2025-02-07 16:34:00,07/02/2025 16:34
+vendite,3997,data_formato_misto,pulire,data_ora,2024-01-11 10:16:00,11/01/2024 10:16
+vendite,6357,data_formato_misto,pulire,data_ora,2024-06-12 11:44:00,12/06/2024 11:44
+vendite,9493,data_formato_misto,pulire,data_ora,2025-01-08 10:27:00,08/01/2025 10:27
+vendite,14519,data_formato_misto,pulire,data_ora,2025-12-11 17:40:00,11/12/2025 17:40
+vendite,13921,data_formato_misto,pulire,data_ora,2025-09-28 10:02:00,28/09/2025 10:02
+vendite,15137,data_formato_misto,pulire,data_ora,2026-01-10 11:42:00,10/01/2026 11:42
+vendite,6787,data_formato_misto,pulire,data_ora,2024-07-07 19:08:00,07/07/2024 19:08
+vendite,3595,data_formato_misto,pulire,data_ora,2023-12-13 17:52:00,13/12/2023 17:52
+vendite,2612,data_formato_misto,pulire,data_ora,2023-08-18 11:31:00,18/08/2023 11:31
+vendite,2889,data_formato_misto,pulire,data_ora,2023-09-14 12:12:00,14/09/2023 12:12
+vendite,2013,data_formato_misto,pulire,data_ora,2023-07-23 12:04:00,23/07/2023 12:04
+vendite,15248,data_formato_misto,pulire,data_ora,2026-01-12 17:43:00,12/01/2026 17:43
+vendite,4707,data_formato_misto,pulire,data_ora,2024-01-31 18:55:00,31/01/2024 18:55
+vendite,3180,data_formato_misto,pulire,data_ora,2023-10-29 11:17:00,29/10/2023 11:17
+vendite,4004,data_formato_misto,pulire,data_ora,2024-01-11 10:45:00,11/01/2024 10:45
+vendite,6570,data_formato_misto,pulire,data_ora,2024-06-26 19:54:00,26/06/2024 19:54
+vendite,10075,data_formato_misto,pulire,data_ora,2025-01-24 12:17:00,24/01/2025 12:17
+vendite,12673,data_formato_misto,pulire,data_ora,2025-07-17 18:53:00,17/07/2025 18:53
+vendite,6416,data_formato_misto,pulire,data_ora,2024-06-15 12:00:00,15/06/2024 12:00
+vendite,9647,data_formato_misto,pulire,data_ora,2025-01-12 11:32:00,12/01/2025 11:32
+vendite,13296,data_formato_misto,pulire,data_ora,2025-08-12 19:06:00,12/08/2025 19:06
+vendite,13241,data_formato_misto,pulire,data_ora,2025-08-10 10:04:00,10/08/2025 10:04
+vendite,2920,data_formato_misto,pulire,data_ora,2023-09-18 19:44:00,18/09/2023 19:44
+vendite,16347,data_formato_misto,pulire,data_ora,2026-02-25 10:47:00,25/02/2026 10:47
+vendite,12828,data_formato_misto,pulire,data_ora,2025-07-23 19:59:00,23/07/2025 19:59
+vendite,12258,data_formato_misto,pulire,data_ora,2025-07-06 17:20:00,06/07/2025 17:20
+vendite,14439,data_formato_misto,pulire,data_ora,2025-12-05 19:14:00,05/12/2025 19:14
+vendite,14007,data_formato_misto,pulire,data_ora,2025-10-15 11:00:00,15/10/2025 11:00
+vendite,13609,data_formato_misto,pulire,data_ora,2025-08-23 17:07:00,23/08/2025 17:07
+vendite,10568,data_formato_misto,pulire,data_ora,2025-02-13 10:55:00,13/02/2025 10:55
+vendite,10720,data_formato_misto,pulire,data_ora,2025-02-16 17:30:00,16/02/2025 17:30
+vendite,15723,data_formato_misto,pulire,data_ora,2026-01-28 18:13:00,28/01/2026 18:13
+vendite,11918,data_formato_misto,pulire,data_ora,2025-06-14 10:19:00,14/06/2025 10:19
+vendite,14350,data_formato_misto,pulire,data_ora,2025-11-29 12:28:00,29/11/2025 12:28
+vendite,5337,data_formato_misto,pulire,data_ora,2024-02-18 10:46:00,18/02/2024 10:46
+vendite,1213,data_formato_misto,pulire,data_ora,2023-07-01 17:33:00,01/07/2023 17:33
+vendite,14256,data_formato_misto,pulire,data_ora,2025-11-21 18:17:00,21/11/2025 18:17
+vendite,14747,data_formato_misto,pulire,data_ora,2025-12-25 11:12:00,25/12/2025 11:12
+vendite,8635,data_formato_misto,pulire,data_ora,2024-09-22 10:16:00,22/09/2024 10:16
+vendite,16324,data_formato_misto,pulire,data_ora,2026-02-23 18:41:00,23/02/2026 18:41
+vendite,12439,data_formato_misto,pulire,data_ora,2025-07-11 16:55:00,11/07/2025 16:55
+vendite,5587,data_formato_misto,pulire,data_ora,2024-03-02 18:15:00,02/03/2024 18:15
+vendite,4628,data_formato_misto,pulire,data_ora,2024-01-28 19:44:00,28/01/2024 19:44
+vendite,11128,data_formato_misto,pulire,data_ora,2025-03-25 10:55:00,25/03/2025 10:55
+vendite,15622,data_formato_misto,pulire,data_ora,2026-01-24 19:03:00,24/01/2026 19:03
+vendite,9130,data_formato_misto,pulire,data_ora,2024-12-08 18:35:00,08/12/2024 18:35
+vendite,15323,data_formato_misto,pulire,data_ora,2026-01-14 12:53:00,14/01/2026 12:53
+vendite,7355,data_formato_misto,pulire,data_ora,2024-07-23 16:47:00,23/07/2024 16:47
+vendite,789,data_formato_misto,pulire,data_ora,2023-06-07 17:44:00,07/06/2023 17:44
+vendite,5161,data_formato_misto,pulire,data_ora,2024-02-12 19:35:00,12/02/2024 19:35
+vendite,5896,data_formato_misto,pulire,data_ora,2024-04-20 19:53:00,20/04/2024 19:53
+vendite,3909,data_formato_misto,pulire,data_ora,2024-01-06 18:39:00,06/01/2024 18:39
+vendite,6621,data_formato_misto,pulire,data_ora,2024-06-30 17:01:00,30/06/2024 17:01
+vendite,5158,data_formato_misto,pulire,data_ora,2024-02-12 19:32:00,12/02/2024 19:32
+vendite,2295,data_formato_misto,pulire,data_ora,2023-08-03 11:39:00,03/08/2023 11:39
+vendite,2892,data_formato_misto,pulire,data_ora,2023-09-14 18:23:00,14/09/2023 18:23
+vendite,1380,data_formato_misto,pulire,data_ora,2023-07-05 18:25:00,05/07/2023 18:25
+vendite,6032,data_formato_misto,pulire,data_ora,2024-05-16 10:30:00,16/05/2024 10:30
+vendite,3655,data_formato_misto,pulire,data_ora,2023-12-17 11:57:00,17/12/2023 11:57
+vendite,15221,data_formato_misto,pulire,data_ora,2026-01-11 18:15:00,11/01/2026 18:15
+vendite,6404,data_formato_misto,pulire,data_ora,2024-06-14 17:50:00,14/06/2024 17:50
+vendite,3604,data_formato_misto,pulire,data_ora,2023-12-14 10:45:00,14/12/2023 10:45
+vendite,13174,data_formato_misto,pulire,data_ora,2025-08-07 19:21:00,07/08/2025 19:21
+vendite,5080,data_formato_misto,pulire,data_ora,2024-02-10 19:57:00,10/02/2024 19:57
+vendite,7784,data_formato_misto,pulire,data_ora,2024-08-01 19:02:00,01/08/2024 19:02
+vendite,15214,data_formato_misto,pulire,data_ora,2026-01-11 17:29:00,11/01/2026 17:29
+vendite,2403,data_formato_misto,pulire,data_ora,2023-08-06 18:43:00,06/08/2023 18:43
+vendite,8853,riga_duplicata,pulire,tutte,,
+vendite,11174,riga_duplicata,pulire,tutte,,
+vendite,11085,riga_duplicata,pulire,tutte,,
+vendite,2004,riga_duplicata,pulire,tutte,,
+vendite,12078,riga_duplicata,pulire,tutte,,
+vendite,9674,riga_duplicata,pulire,tutte,,
+vendite,7062,riga_duplicata,pulire,tutte,,
+vendite,7324,riga_duplicata,pulire,tutte,,
+vendite,10206,riga_duplicata,pulire,tutte,,
+vendite,11528,riga_duplicata,pulire,tutte,,
+vendite,4773,riga_duplicata,pulire,tutte,,
+vendite,6419,riga_duplicata,pulire,tutte,,
+vendite,10976,riga_duplicata,pulire,tutte,,
+vendite,7894,riga_duplicata,pulire,tutte,,
+vendite,1886,riga_duplicata,pulire,tutte,,
+vendite,14697,riga_duplicata,pulire,tutte,,
+vendite,5265,riga_duplicata,pulire,tutte,,
+vendite,7397,riga_duplicata,pulire,tutte,,
+vendite,4923,riga_duplicata,pulire,tutte,,
+vendite,14430,riga_duplicata,pulire,tutte,,
+vendite,4963,riga_duplicata,pulire,tutte,,
+vendite,9884,riga_duplicata,pulire,tutte,,
+vendite,668,riga_duplicata,pulire,tutte,,
+vendite,9699,riga_duplicata,pulire,tutte,,
+vendite,7108,riga_duplicata,pulire,tutte,,
+vendite,10533,riga_duplicata,pulire,tutte,,
+vendite,10428,riga_duplicata,pulire,tutte,,
+vendite,9476,riga_duplicata,pulire,tutte,,
+vendite,7596,riga_duplicata,pulire,tutte,,
+vendite,13132,riga_duplicata,pulire,tutte,,
+vendite,15706,riga_duplicata,pulire,tutte,,
+vendite,7717,riga_duplicata,pulire,tutte,,
+vendite,12434,riga_duplicata,pulire,tutte,,
+vendite,14539,riga_duplicata,pulire,tutte,,
+vendite,1488,riga_duplicata,pulire,tutte,,
+vendite,12775,riga_duplicata,pulire,tutte,,
+vendite,2505,riga_duplicata,pulire,tutte,,
+vendite,5830,riga_duplicata,pulire,tutte,,
+vendite,13347,riga_duplicata,pulire,tutte,,
+vendite,7138,riga_duplicata,pulire,tutte,,
+vendite,1231,riga_duplicata,pulire,tutte,,
+vendite,874,riga_duplicata,pulire,tutte,,
+vendite,2724,riga_duplicata,pulire,tutte,,
+vendite,4374,riga_duplicata,pulire,tutte,,
+vendite,8467,riga_duplicata,pulire,tutte,,
+vendite,16102,riga_duplicata,pulire,tutte,,
+vendite,16116,riga_duplicata,pulire,tutte,,
+vendite,16356,riga_duplicata,pulire,tutte,,
+vendite,15686,riga_duplicata,pulire,tutte,,
+vendite,7032,riga_duplicata,pulire,tutte,,
+vendite,1327,riga_duplicata,pulire,tutte,,
+vendite,3375,riga_duplicata,pulire,tutte,,
+vendite,9914,riga_duplicata,pulire,tutte,,
+vendite,1599,riga_duplicata,pulire,tutte,,
+vendite,2192,riga_duplicata,pulire,tutte,,
+vendite,7571,riga_duplicata,pulire,tutte,,
+vendite,5029,riga_duplicata,pulire,tutte,,
+vendite,16192,riga_duplicata,pulire,tutte,,
+vendite,2159,riga_duplicata,pulire,tutte,,
+vendite,5135,riga_duplicata,pulire,tutte,,
+vendite,2495,riga_duplicata,pulire,tutte,,
+vendite,1085,riga_duplicata,pulire,tutte,,
+vendite,74,riga_duplicata,pulire,tutte,,
+vendite,8174,riga_duplicata,pulire,tutte,,
+vendite,6653,riga_duplicata,pulire,tutte,,
+vendite,5317,riga_duplicata,pulire,tutte,,
+vendite,7778,riga_duplicata,pulire,tutte,,
+vendite,6155,riga_duplicata,pulire,tutte,,
+vendite,14561,riga_duplicata,pulire,tutte,,
+vendite,12356,riga_duplicata,pulire,tutte,,
+vendite,6696,riga_duplicata,pulire,tutte,,
+vendite,7291,riga_duplicata,pulire,tutte,,
+vendite,10745,riga_duplicata,pulire,tutte,,
+vendite,5617,riga_duplicata,pulire,tutte,,
+vendite,13252,riga_duplicata,pulire,tutte,,
+vendite,4845,riga_duplicata,pulire,tutte,,
+vendite,3356,riga_duplicata,pulire,tutte,,
+vendite,3812,riga_duplicata,pulire,tutte,,
+vendite,7195,riga_duplicata,pulire,tutte,,
+vendite,10275,riga_duplicata,pulire,tutte,,
+vendite,11703,riga_duplicata,pulire,tutte,,
+vendite,2211,riga_duplicata,pulire,tutte,,
+vendite,16076,riga_duplicata,pulire,tutte,,
+vendite,13096,riga_duplicata,pulire,tutte,,
+vendite,14316,riga_duplicata,pulire,tutte,,
+vendite,3854,riga_duplicata,pulire,tutte,,
+vendite,1139,riga_duplicata,pulire,tutte,,
+vendite,5646,riga_duplicata,pulire,tutte,,
+vendite,8368,riga_duplicata,pulire,tutte,,
+vendite,8609,riga_duplicata,pulire,tutte,,
+vendite,3522,riga_duplicata,pulire,tutte,,
+vendite,13088,riga_duplicata,pulire,tutte,,
+vendite,988,riga_duplicata,pulire,tutte,,
+vendite,12589,riga_duplicata,pulire,tutte,,
+vendite,7393,riga_duplicata,pulire,tutte,,
+vendite,5394,riga_duplicata,pulire,tutte,,
+vendite,9784,riga_duplicata,pulire,tutte,,
+vendite,4150,riga_duplicata,pulire,tutte,,
+vendite,11995,riga_duplicata,pulire,tutte,,
+vendite,16279,riga_duplicata,pulire,tutte,,
+vendite,11556,riga_duplicata,pulire,tutte,,
+vendite,14039,riga_duplicata,pulire,tutte,,
+vendite,12459,riga_duplicata,pulire,tutte,,
+vendite,517,riga_duplicata,pulire,tutte,,
+vendite,10560,riga_duplicata,pulire,tutte,,
+vendite,877,riga_duplicata,pulire,tutte,,
+vendite,4662,riga_duplicata,pulire,tutte,,
+vendite,2082,riga_duplicata,pulire,tutte,,
+vendite,3270,riga_duplicata,pulire,tutte,,
+vendite,7988,riga_duplicata,pulire,tutte,,
+vendite,11003,riga_duplicata,pulire,tutte,,
+vendite,3125,riga_duplicata,pulire,tutte,,
+vendite,13319,riga_duplicata,pulire,tutte,,
+vendite,12757,riga_duplicata,pulire,tutte,,
+vendite,11532,riga_duplicata,pulire,tutte,,
+vendite,15628,riga_duplicata,pulire,tutte,,
+vendite,2105,riga_duplicata,pulire,tutte,,
+vendite,6053,riga_duplicata,pulire,tutte,,
+vendite,11827,riga_duplicata,pulire,tutte,,
+vendite,1162,riga_duplicata,pulire,tutte,,
+vendite,11046,riga_duplicata,pulire,tutte,,
+vendite,13474,riga_duplicata,pulire,tutte,,
+vendite,9962,riga_duplicata,pulire,tutte,,
+vendite,12768,riga_duplicata,pulire,tutte,,
+vendite,6995,riga_duplicata,pulire,tutte,,
+vendite,10596,riga_duplicata,pulire,tutte,,
+vendite,7233,riga_duplicata,pulire,tutte,,
+vendite,6903,riga_duplicata,pulire,tutte,,
+vendite,14736,riga_duplicata,pulire,tutte,,
+vendite,15742,riga_duplicata,pulire,tutte,,
+vendite,7486,riga_duplicata,pulire,tutte,,
+vendite,10641,riga_duplicata,pulire,tutte,,
+vendite,14923,riga_duplicata,pulire,tutte,,
+vendite,413,riga_duplicata,pulire,tutte,,
+vendite,1293,riga_duplicata,pulire,tutte,,
+vendite,6661,riga_duplicata,pulire,tutte,,
+vendite,11155,riga_duplicata,pulire,tutte,,
+vendite,5592,riga_duplicata,pulire,tutte,,
+vendite,10509,riga_duplicata,pulire,tutte,,
+vendite,13951,riga_duplicata,pulire,tutte,,
+vendite,7609,riga_duplicata,pulire,tutte,,
+vendite,7572,riga_duplicata,pulire,tutte,,
+vendite,14035,riga_duplicata,pulire,tutte,,
+vendite,4865,riga_duplicata,pulire,tutte,,
+vendite,1813,riga_duplicata,pulire,tutte,,
+vendite,9207,riga_duplicata,pulire,tutte,,
+vendite,16392,riga_duplicata,pulire,tutte,,
+vendite,13,riga_duplicata,pulire,tutte,,
+vendite,5303,riga_duplicata,pulire,tutte,,
+vendite,2868,riga_duplicata,pulire,tutte,,
+vendite,6745,riga_duplicata,pulire,tutte,,
+vendite,5552,riga_duplicata,pulire,tutte,,
+vendite,9050,riga_duplicata,pulire,tutte,,
+vendite,5572,riga_duplicata,pulire,tutte,,
+vendite,13829,riga_duplicata,pulire,tutte,,
+vendite,12547,riga_duplicata,pulire,tutte,,
+vendite,2472,riga_duplicata,pulire,tutte,,
+vendite,13375,riga_duplicata,pulire,tutte,,
+vendite,9406,riga_duplicata,pulire,tutte,,
+vendite,7923,riga_duplicata,pulire,tutte,,
+vendite,7018,riga_duplicata,pulire,tutte,,
+vendite,13280,riga_duplicata,pulire,tutte,,
+vendite,613,riga_duplicata,pulire,tutte,,
+vendite,9198,riga_duplicata,pulire,tutte,,
+ordini,3397,ricevuta_oltre_ordinata,pulire,qta_ricevuta,4,9
+ordini,466,ricevuta_oltre_ordinata,pulire,qta_ricevuta,1,6
+ordini,2135,ricevuta_oltre_ordinata,pulire,qta_ricevuta,3,7
+ordini,2296,ricevuta_oltre_ordinata,pulire,qta_ricevuta,1,2
+ordini,948,ricevuta_oltre_ordinata,pulire,qta_ricevuta,3,8
+ordini,2025,costo_oltre_listino,pulire,costo_unitario,24.01,70.8
+ordini,1458,costo_oltre_listino,pulire,costo_unitario,130.27,370.8
+ordini,2684,costo_oltre_listino,pulire,costo_unitario,13.74,46.8
+ordini,1430,arrivo_prima_ordine,pulire,data_arrivo,2024-02-03,2023-10-20
+ordini,3346,arrivo_prima_ordine,pulire,data_arrivo,2025-02-23,2024-10-29
+ordini,533,arrivo_prima_ordine,pulire,data_arrivo,2023-02-16,2022-10-23
+ordini,2873,listino_diverso_tra_file,pulire,prezzo_listino,329.0,339.0
+ordini,3457,listino_diverso_tra_file,pulire,prezzo_listino,79.0,89.0
+ordini,244,listino_diverso_tra_file,pulire,prezzo_listino,39.0,49.0
+ordini,1791,listino_diverso_tra_file,pulire,prezzo_listino,99.0,109.0
+ordini,2326,listino_diverso_tra_file,pulire,prezzo_listino,49.0,59.0
+ordini,3531,riga_duplicata,pulire,tutte,,
+ordini,103,riga_duplicata,pulire,tutte,,
+ordini,1666,riga_duplicata,pulire,tutte,,
