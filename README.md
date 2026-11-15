@@ -16,11 +16,11 @@ Ogni risposta riporta le **sezioni del manuale** usate, una **nota sulla qualit�
 │ chat + memoria   │──────▶│ /api/chat                      │──────────▶│ RAG: ChromaDB + BM25         │──▶ la_collina_kb.txt
 │ "sta scrivendo"  │       │ sessione (ultimi 10 messaggi)  │           │                              │
 │ grafici, fonti   │◀──────│ orchestratore ReAct            │ /analizza │ pulizia → agente pandas      │──▶ vendite.csv
-│ "come ho         │ JSON  │ function calling:              │──────────▶│ (LangChain, 10 strumenti)    │──▶ ordini.csv
+│ "come ho         │ JSON  │ function calling:              │──────────▶│ (LangChain, 12 strumenti)    │──▶ ordini.csv
 │  risposto"       │       │ cerca_manuale · analizza_dati  │◀──────────│ grafici PNG su disco         │
 └──────────────────┘       └────────────────────────────────┘           └──────────────────────────────┘
      Vite :5173                     :3001   │                                      :8000   │
-                                            └────────── Groq (gpt-oss-120b) ───────────────┘
+                                            └──── Groq (gpt-oss-120b · gpt-oss-20b) ───────┘
 ```
 
 | Livello | Tecnologia |
@@ -29,9 +29,11 @@ Ogni risposta riporta le **sezioni del manuale** usate, una **nota sulla qualit�
 | Back end | Node.js, Express 5, SDK `openai` (function calling nativo) |
 | Agente dati | Python 3.12, FastAPI, pandas, LangChain (`create_agent`), matplotlib, seaborn |
 | RAG | ChromaDB locale (embedding ONNX `all-MiniLM-L6-v2`) + BM25 |
-| LLM | Groq, `openai/gpt-oss-120b`, API compatibile OpenAI |
+| LLM | Groq, API compatibile OpenAI: `openai/gpt-oss-120b` per l'orchestratore, `openai/gpt-oss-20b` per l'agente dati |
 
 **Perché due modelli e non uno.** L'orchestratore Node vede la conversazione e sceglie gli strumenti; l'agente dati Python vede solo una domanda alla volta, già riscritta in forma completa dall'orchestratore ("e Cruciverba?" diventa "Resi di Cruciverba per motivo, confrontati con gli altri brand"). Così la memoria vive in un posto solo e il servizio Python resta senza stato, facile da testare.
+
+I due agenti usano due modelli diversi perché sul piano gratuito di Groq il limite di token al minuto (8.000) vale per modello: con un modello solo, una domanda ibrida lo superava e le risposte arrivavano oltre i 90 secondi. L'agente dati sceglie gli strumenti e passa i numeri, che arrivano già calcolati: basta il modello più piccolo. Il testo finale lo scrive l'orchestratore, sul modello più grande.
 
 ---
 
@@ -57,6 +59,7 @@ Risposta di `POST /api/chat`:
     { "strumento": "analizza_dati", "domanda": "Resi di Lardoni per motivo, confrontati con gli altri brand", "esito": "resi" },
     { "strumento": "cerca_manuale", "domanda": "Vestibilità di Lardoni e come evitare i resi per taglia", "esito": "SEZ 2.3, SEZ 2.2, SEZ 5.3, SEZ 10.4" }
   ],
+  "controllo": { "esito": "superato", "problemi": [] },
   "nota_dati": "Dati: 16569 righe di vendite e 4514 di ordini; 167 righe duplicate scartate, 1983 valori corretti in pulizia."
 }
 ```
@@ -65,6 +68,7 @@ Risposta di `POST /api/chat`:
 | Metodo | Endpoint | Descrizione |
 |---|---|---|
 | `POST` | `/cerca` | `{ "domanda": "...", "k": 4 }` → sezioni del manuale con codice, titolo e testo |
+| `POST` | `/sezioni` | `{ "codici": ["SEZ 8.6"] }` → testo delle sezioni, per il controllo finale delle citazioni |
 | `POST` | `/analizza` | `{ "domanda": "..." }` → risposta, grafici, passaggi, risultati degli strumenti, nota sui dati |
 | `GET` | `/resoconto-pulizia` | Tutte le correzioni fatte ai dati |
 | `GET` | `/grafici/:nome` | File PNG |
@@ -105,9 +109,21 @@ I dati non arrivano mai sporchi al modello. `data_agent/pulizia.py` applica una 
 Verifica sul riferimento (`notebooks/pulizia.ipynb`): su 16.405 × 19 celle di vendite e 4.511 × 15 di ordini **resta una sola cella diversa**, un codice articolo con due candidati possibili che la pulizia sceglie di non indovinare.
 
 ### 2. I numeri vengono solo dagli strumenti
-L'agente dati non calcola a mente: ha 10 strumenti (`incasso`, `sell_through`, `resi`, `margine`, `sconti`, `controlli_regole`, `resoconto_pulizia`, `crea_grafico`, `info_dati`, `esegui_codice_pandas`). Il codice pandas libero è l'ultima risorsa, con un massimo di 3 tentativi e l'errore restituito al modello perché si corregga.
+L'agente dati non calcola a mente: ha 12 strumenti (`incasso`, `sell_through`, `confronta_stagioni`, `soglie_fornitori`, `resi`, `margine`, `sconti`, `controlli_regole`, `resoconto_pulizia`, `crea_grafico`, `info_dati`, `esegui_codice_pandas`). Il codice pandas libero è l'ultima risorsa, con un massimo di 3 tentativi e l'errore restituito al modello perché si corregga.
 
 All'orchestratore arrivano sia la risposta dell'agente dati sia i **risultati grezzi degli strumenti**, con una regola esplicita: si possono usare solo quei numeri. È la correzione a un errore trovato nei test: quando l'agente dati creava solo il grafico senza leggere i valori, l'orchestratore "riempiva" la risposta con numeri plausibili e inventati.
+
+Anche i confronti arrivano già calcolati: `resi`, `sell_through` e `margine` restituiscono il dato complessivo del negozio e, riga per riga, se il valore è sopra o sotto; `confronta_stagioni` restituisce una stagione contro la stessa stagione dell'anno prima e dopo, con le differenze. Il modello copia il confronto invece di farlo a mente, perché nei test scriveva "inferiore" accanto a un numero più grande.
+
+**Controllo finale della risposta** (`backend/src/services/verifier.js`). Prima dell'invio il codice, non il modello, verifica tre cose:
+
+| Verifica | Se fallisce |
+|---|---|
+| Ogni numero della risposta compare nei risultati degli strumenti, nel manuale letto o nella domanda (con tolleranza sugli arrotondamenti) | la risposta torna al modello con l'elenco dei numeri non trovati |
+| Ogni sezione citata, in qualsiasi forma (`[SEZ 8.6]`, `(SEZ 8.6)`, `【SEZ 8.6】`), è stata letta | se la sezione esiste viene letta e il modello ricontrolla cosa le attribuisce; se non esiste, la citazione sparisce |
+| Il manuale si nomina solo se è stato consultato | la risposta torna al modello |
+
+Il modello ha una sola seconda possibilità: se sbaglia ancora, le frasi con numeri o fonti non verificati vengono tolte. L'esito del controllo compare in *Come ho risposto* e nel log del back end.
 
 ### 3. RAG ibrido: significato + parole
 Il modello di embedding di ChromaDB è addestrato sull'inglese e sull'italiano è debole. La ricerca affianca a ChromaDB un indice **BM25** sulle stesse sezioni (parole ridotte alle prime 5 lettere, così *profumo* e *profumi* coincidono) e fonde le due classifiche con **Reciprocal Rank Fusion**. Con la sola ricerca per parole, la sezione giusta è tra le prime 3 in 17 domande di prova su 17; i test automatici ne controllano 12.
@@ -141,8 +157,8 @@ Nessun test chiama Groq: l'LLM è sostituito da modelli finti che seguono un cop
 
 | Suite | Test | Cosa verifica |
 |---|---|---|
-| `data_agent/tests` (pytest) | 29 | pulizia uguale al riferimento, risposte attese (sell-through, resi, controlli), errori leggibili, limite di tentativi del codice, grafici salvati, RAG su 12 domande, agente e API con LLM finto |
-| `backend/test` (node:test) | 13 | orchestratore: scelta degli strumenti, domande ibride, memoria, retry su 400 e 429, limite di passaggi, agente dati spento; HTTP: validazione, sessione, proxy dei grafici |
+| `data_agent/tests` (pytest) | 33 | pulizia uguale al riferimento, risposte attese (sell-through, resi, controlli, confronto tra stagioni, confronti con il negozio, soglie del sell-through spiegate come nel manuale, brand da segnalare secondo la SEZ 8.6), errori leggibili, limite di tentativi del codice, grafici salvati, RAG su 12 domande, agente e API con LLM finto |
+| `backend/test` (node:test) | 22 | orchestratore: scelta degli strumenti, domande ibride, memoria, retry su 400 e 429, limite di passaggi, agente dati spento; controllo finale: numeri inventati, sezioni non lette, manuale non consultato, citazioni in ogni forma senza unire le righe, numeri scritti dall'agente dati non accettati come fonte; HTTP: validazione, sessione, proxy dei grafici |
 
 ---
 
@@ -158,7 +174,7 @@ cd data_agent
 python -m venv .venv && source .venv/bin/activate   # oppure un ambiente conda
 pip install -r requirements.txt
 cp .env.example .env          # inserisci GROQ_API_KEY
-pytest -q                     # 29 test
+pytest -q                     # 33 test
 python api.py                 # http://127.0.0.1:8000
 ```
 Al primo avvio ChromaDB scarica il modello di embedding (circa 80 MB).
@@ -168,7 +184,7 @@ Al primo avvio ChromaDB scarica il modello di embedding (circa 80 MB).
 cd backend
 npm install
 cp .env.example .env          # inserisci GROQ_API_KEY
-npm test                      # 13 test
+npm test                      # 22 test
 npm start                     # http://localhost:3001
 ```
 
@@ -183,7 +199,7 @@ npm run dev                   # http://localhost:5173
 `data_agent/.env`:
 ```
 GROQ_API_KEY=
-LLM_MODEL=openai/gpt-oss-120b
+LLM_MODEL=openai/gpt-oss-20b
 LLM_BASE_URL=https://api.groq.com/openai/v1
 LLM_REASONING_EFFORT=low
 PORT=8000
@@ -225,7 +241,7 @@ CORS_ORIGIN=http://localhost:5173
 │   │   ├── middleware/        rateLimit, errorHandler
 │   │   ├── prompts/           systemPrompt, definizione degli strumenti
 │   │   ├── routes/            chat
-│   │   └── services/          orchestrator (ReAct), dataAgent, sessions, llm
+│   │   └── services/          orchestrator (ReAct), verifier (controllo finale), dataAgent, sessions, llm
 │   └── test/
 ├── data_agent/                Python + FastAPI
 │   ├── api.py                 endpoint

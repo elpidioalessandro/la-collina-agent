@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createOrchestrator } from '../src/services/orchestrator.js';
+import { createOrchestrator, cleanText } from '../src/services/orchestrator.js';
 import { fakeLlm, fakeDataAgent, call, toolTurn, reply } from './fakes.js';
 
 const setup = (script, agentOptions) => {
@@ -80,4 +80,55 @@ test('strumento inventato dal modello: errore restituito, nessuna chiamata ai se
   const { answer, dataAgent } = setup([toolTurn(call('python', 'print(1)')), reply('Fatto.')]);
   await answer('calcola');
   assert.equal(dataAgent.calls.length, 0);
+});
+
+test('controllo finale: numeri non verificati e manuale non letto, la risposta torna al modello', async () => {
+  const { answer, llm } = setup([
+    toolTurn(call('analizza_dati', 'Resi di Lardoni per motivo')),
+    reply('Il sell-through è sceso al 48,7% 【analizza_dati】. Il manuale dice X [SEZ 4.2].'),
+    reply('Lardoni ha il 3,3% di resi per taglia.'),
+  ]);
+  const out = await answer('perché Lardoni ha tanti resi?');
+  const feedback = llm.requests[2].messages.at(-1).content;
+  assert.match(feedback, /48,7/);
+  assert.match(feedback, /manuale è nominato senza averlo consultato/);
+  assert.equal(out.risposta, 'Lardoni ha il 3,3% di resi per taglia.');
+  assert.equal(out.controllo.esito, 'corretta');
+});
+
+test('controllo finale: i numeri scritti dall\'agente dati non fanno fede, solo i risultati degli strumenti', async () => {
+  const { answer, llm } = setup([
+    toolTurn(call('analizza_dati', 'Resi di Lardoni')),
+    reply('Lardoni ha il 3,3% di resi, 7,7 punti sopra la media.'),
+    reply('Lardoni ha il 3,3% di resi.'),
+  ]);
+  const out = await answer('resi di Lardoni?');
+  assert.match(llm.requests[2].messages.at(-1).content, /7,7/);
+  assert.equal(out.risposta, 'Lardoni ha il 3,3% di resi.');
+});
+
+test('controllo finale: se il modello sbaglia ancora, le frasi non verificate vengono tolte', async () => {
+  const sbagliata = 'Lardoni ha il 3,3% di resi per taglia. Il margine è del 12,5%.';
+  const { answer } = setup([toolTurn(call('analizza_dati', 'Resi di Lardoni')), reply(sbagliata), reply(sbagliata)]);
+  const out = await answer('resi di Lardoni?');
+  assert.equal(out.risposta, 'Lardoni ha il 3,3% di resi per taglia.');
+  assert.equal(out.controllo.esito, 'parti non verificate tolte');
+});
+
+test('controllo finale: una sezione citata senza leggerla viene letta e il modello la ricontrolla', async () => {
+  const { answer, llm, dataAgent } = setup([
+    toolTurn(call('analizza_dati', 'Sell-through di Lardoni')),
+    reply('Lardoni ha il 3,3% di resi e va segnalato (SEZ 8.6).'),
+    reply('Lardoni ha il 3,3% di resi; sotto il 70% l\'ordine è stato troppo alto [SEZ 8.6].'),
+  ]);
+  const out = await answer('come va Lardoni?');
+  assert.deepEqual(dataAgent.calls.at(-1), ['sezioni', 'SEZ 8.6']);
+  assert.match(llm.requests[2].messages.at(-1).content, /Soglie di controllo dei fornitori/);
+  assert.deepEqual(out.fonti, [{ codice: 'SEZ 8.6', titolo: 'Soglie di controllo dei fornitori' }]);
+  assert.equal(out.controllo.esito, 'corretta');
+});
+
+test('le citazioni tra 【】 diventano [SEZ x.y] se la sezione è stata recuperata', () => {
+  const out = cleanText('Il lunedì il negozio è chiuso 【SEZ 7.4】 & 【SEZ 9.9】.', new Set(['SEZ 7.4']));
+  assert.equal(out, 'Il lunedì il negozio è chiuso [SEZ 7.4].');
 });

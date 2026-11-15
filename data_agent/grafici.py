@@ -12,9 +12,9 @@ from matplotlib.ticker import FuncFormatter
 import analisi
 from config import CHART_DIR
 
-sns.set_theme(style="whitegrid")
-COLORE = "#2F4F4F"
-COLORE_TENUE = "#A9B8B8"
+sns.set_theme(style="white", rc={"axes.edgecolor": "#bdb8af", "axes.labelcolor": "#3e3530", "xtick.color": "#3e3530", "ytick.color": "#74706a", "axes.titleweight": "normal", "axes.titlesize": 13, "axes.spines.top": False, "axes.spines.right": False})
+COLORE = "#3E3530"
+COLORE_TENUE = "#CFC9BE"
 
 METRICHE = {
     "incasso": (analisi.incasso, "incasso_euro", "Incasso (€)"),
@@ -59,7 +59,7 @@ def crea_grafico(d, metrica: str, raggruppa_per: str, motivo: str = None, **filt
     fig, ax = plt.subplots(figsize=(10, 4.8))
     if raggruppa_per == "mese":
         t = t.sort_index()
-        ax.plot(range(len(t)), t.values, marker="o", color=COLORE)
+        ax.plot(range(len(t)), t.values, marker="o", markersize=4, linewidth=1.6, color=COLORE)
         passo = max(1, len(t) // 12)
         ax.set_xticks(range(0, len(t), passo), t.index[::passo], rotation=45, ha="right")
     else:

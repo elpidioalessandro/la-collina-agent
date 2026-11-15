@@ -34,7 +34,7 @@ export default function App() {
         sessionId: r.sessionId,
         messages: [
           ...s.messages,
-          { role: 'assistant', content: r.risposta, grafici: r.grafici, fonti: r.fonti, strumenti: r.strumenti, nota_dati: r.nota_dati },
+          { role: 'assistant', content: r.risposta, grafici: r.grafici, fonti: r.fonti, strumenti: r.strumenti, controllo: r.controllo, nota_dati: r.nota_dati },
         ],
       }));
     } catch (err) {
@@ -60,19 +60,16 @@ export default function App() {
 
   return (
     <div className="app">
-      <header className="header">
-        <div className="brand">
-          <img src="/favicon.svg" alt="" width="32" height="32" />
-          <div>
-            <h1>La Collina</h1>
-            <p>Assistente interno · manuale del negozio e dati di vendita</p>
-          </div>
-        </div>
-        {state.messages.length > 0 && (
-          <button className="ghost" onClick={newChat} disabled={loading}>
-            Nuova conversazione
-          </button>
-        )}
+      <header className="topbar">
+        <span className="wordmark">La Collina</span>
+        <nav>
+          <span className="nav-item">Assistente interno</span>
+          {state.messages.length > 0 && (
+            <button className="nav-item link" onClick={newChat} disabled={loading}>
+              Nuova conversazione
+            </button>
+          )}
+        </nav>
       </header>
 
       <main className="chat">
@@ -84,28 +81,30 @@ export default function App() {
         <div ref={endRef} />
       </main>
 
-      <form
-        className="composer"
-        onSubmit={(e) => {
-          e.preventDefault();
-          ask(input);
-        }}
-      >
-        <textarea
-          ref={inputRef}
-          value={input}
-          onChange={(e) => setInput(e.target.value.slice(0, MAX_LENGTH))}
-          onKeyDown={onKeyDown}
-          placeholder="Scrivi una domanda… (Invio per inviare, Maiusc+Invio per andare a capo)"
-          rows={2}
-          disabled={loading}
-          autoFocus
-        />
-        <button type="submit" disabled={loading || !input.trim()}>
-          Invia
-        </button>
-      </form>
-      <p className="footnote">Negozio, brand e dati sono di fantasia. Le risposte sui dati indicano le righe usate e corrette.</p>
+      <div className="composer-wrap">
+        <form
+          className="composer"
+          onSubmit={(e) => {
+            e.preventDefault();
+            ask(input);
+          }}
+        >
+          <textarea
+            ref={inputRef}
+            value={input}
+            onChange={(e) => setInput(e.target.value.slice(0, MAX_LENGTH))}
+            onKeyDown={onKeyDown}
+            placeholder="Scrivi una domanda sul negozio…"
+            rows={1}
+            disabled={loading}
+            autoFocus
+          />
+          <button type="submit" disabled={loading || !input.trim()}>
+            Invia
+          </button>
+        </form>
+        <p className="footnote">Negozio, brand e dati sono di fantasia · Invio per inviare, Maiusc+Invio per andare a capo</p>
+      </div>
 
       {chart && (
         <div className="lightbox" onClick={() => setChart(null)} role="dialog" aria-label="Grafico ingrandito">

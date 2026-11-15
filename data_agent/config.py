@@ -16,7 +16,7 @@ CHART_DIR = Path(os.getenv("CHART_DIR", BASE_DIR / "grafici"))
 CHROMA_DIR = Path(os.getenv("CHROMA_DIR", BASE_DIR / "chroma_db"))
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-120b")
+LLM_MODEL = os.getenv("LLM_MODEL", "openai/gpt-oss-20b")
 LLM_BASE_URL = os.getenv("LLM_BASE_URL", "https://api.groq.com/openai/v1")
 LLM_REASONING_EFFORT = os.getenv("LLM_REASONING_EFFORT") or None
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const PHASES = ['Sta leggendo la domanda', 'Sta consultando manuale e dati', 'Sta scrivendo la risposta'];
+const PHASES = ['Legge la domanda', 'Consulta manuale e dati', 'Scrive la risposta'];
 
 export default function TypingIndicator() {
   const [phase, setPhase] = useState(0);
@@ -9,15 +9,9 @@ export default function TypingIndicator() {
     return () => clearInterval(id);
   }, []);
   return (
-    <div className="message assistant">
-      <div className="bubble typing" aria-live="polite">
-        <span className="dots" aria-hidden="true">
-          <i />
-          <i />
-          <i />
-        </span>
-        {PHASES[phase]}…
-      </div>
+    <div className="answer typing" aria-live="polite">
+      <span className="label">{PHASES[phase]}</span>
+      <span className="progress" aria-hidden="true" />
     </div>
   );
 }

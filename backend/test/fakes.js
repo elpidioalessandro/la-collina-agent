@@ -43,11 +43,17 @@ export function fakeDataAgent({ down = false } = {}) {
       calls.push(['analizza', domanda]);
       if (down) throw new Error('connessione rifiutata');
       return {
-        risposta: 'Lardoni ha il 3,3% di resi per taglia.',
+        risposta: 'Lardoni ha il 3,3% di resi per taglia, 7,7 punti sopra la media.',
         grafici: [{ nome: 'abcdef123456.png', url: '/grafici/abcdef123456.png' }],
         passaggi: [{ strumento: 'resi' }, { strumento: 'crea_grafico' }],
+        risultati_completi: 'resi: {"brand": "Lardoni", "pct_sui_venduti": 3.29}',
         nota_dati: 'Dati: 16569 righe di vendite; 164 righe duplicate scartate.',
       };
+    },
+    async sections(codici) {
+      calls.push(['sezioni', codici.join(', ')]);
+      const manuale = { 'SEZ 8.6': { codice: 'SEZ 8.6', titolo: 'Soglie di controllo dei fornitori', parte: 'PARTE 8', testo: 'Sotto il 70% l\'ordine è stato troppo alto.' } };
+      return { risultati: codici.filter((c) => manuale[c]).map((c) => manuale[c]) };
     },
     async chart() {
       return new Response(new Uint8Array([137, 80, 78, 71]), { status: 200 });

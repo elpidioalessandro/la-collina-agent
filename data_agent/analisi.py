@@ -1,3 +1,5 @@
+import re
+
 import pandas as pd
 
 from calendario import info_saldi, periodi_saldi
@@ -68,6 +70,25 @@ def _tabella(df: pd.DataFrame) -> list:
     return df.reset_index().round(2).to_dict(orient="records")
 
 
+def _rispetto(valore, riferimento) -> str:
+    if valore > riferimento + 0.005:
+        return "sopra"
+    if valore < riferimento - 0.005:
+        return "sotto"
+    return "in linea"
+
+
+def _con_riferimento(t: pd.DataFrame, colonna: str, riferimento: float) -> pd.DataFrame:
+    """Aggiunge a ogni riga se il valore è sopra o sotto il dato complessivo del negozio."""
+    t = t.copy()
+    t["rispetto_al_negozio"] = [_rispetto(x, riferimento) for x in t[colonna]]
+    return t
+
+
+def _it(x: float, decimali=1) -> str:
+    return f"{x:,.{decimali}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
 def info_dati(d: Dati) -> dict:
     v = d.v
     return {
@@ -103,6 +124,12 @@ def incasso(d: Dati, raggruppa_per="nessuno", **filtri) -> dict:
     return out
 
 
+SOGLIE_SELL_THROUGH = ("Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato "
+                       "troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione "
+                       "richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% "
+                       "da solo non basta.")
+
+
 def sell_through(d: Dati, raggruppa_per="brand", stagione=None, brand=None, categoria=None) -> dict:
     """Pezzi venduti diviso pezzi ricevuti, in totale e a prezzo pieno."""
     k = _chiave(raggruppa_per)
@@ -118,8 +145,155 @@ def sell_through(d: Dati, raggruppa_per="brand", stagione=None, brand=None, cate
     t["sell_through_pct"] = t["venduti"] / t["ricevuti"] * 100
     t["sell_through_prezzo_pieno_pct"] = t["venduti_prezzo_pieno"] / t["ricevuti"] * 100
     t = t.sort_values("sell_through_pct")
-    return {"righe_usate": len(v), "righe_ordini_usate": len(o), "tabella": _tabella(t),
-            "nota": "Sell-through = venduti / ricevuti x 100. Soglia di controllo: 70% sul totale della stagione [SEZ 8.6]."}
+    out = {"righe_usate": len(v), "righe_ordini_usate": len(o)}
+    if k:
+        negozio = len(v) / o["qta_ricevuta"].sum() * 100
+        t = _con_riferimento(t, "sell_through_pct", negozio)
+        out["sell_through_del_negozio_pct"] = round(negozio, 2)
+        nomi = t.index.astype(str)
+        out["sotto_70_pct"] = [n for n, x in zip(nomi, t["sell_through_pct"]) if x < 70]
+        out["almeno_80_pct"] = [n for n, x in zip(nomi, t["sell_through_pct"]) if x >= 80]
+    out["tabella"] = _tabella(t)
+    nota = "Sell-through = venduti / ricevuti x 100, saldi compresi. " + SOGLIE_SELL_THROUGH
+    if not stagione and k != "stagione":
+        nota += " Le soglie valgono per una stagione: qui le stagioni sono sommate, quindi il confronto è indicativo."
+    out["nota"] = nota
+    return out
+
+
+def _soglie_stagione(d: Dati, stagione: str) -> list:
+    """Le quattro soglie di controllo dei fornitori [SEZ 8.6], brand per brand, in una stagione."""
+    v = d.vendite[d.vendite["stagione"] == stagione]
+    o = d.o[d.o["stagione"] == stagione]
+    r = d.resi[d.resi["stagione"] == stagione]
+    venduti = v.groupby("brand").size()
+    ricevuti = o.groupby("brand")["qta_ricevuta"].sum()
+    difetti = r[r["motivo_reso"] == "difetto"].groupby("brand").size()
+    incomplete = o[o["qta_ricevuta"] < o["qta_ordinata"]].groupby("brand").size()
+    sconto = v[v["stagione_in_saldo"].isna()].groupby("brand")["sconto_pct"].mean()
+    fine_saldi = d.saldi.loc[d.saldi["stagione"] == stagione, "fine"]
+    conclusa = bool(len(fine_saldi) and fine_saldi.iloc[0] <= d.v["data_ora"].max())
+    righe = []
+    for brand in sorted(ricevuti.index):
+        vend = int(venduti.get(brand, 0))
+        st = vend / ricevuti[brand] * 100 if ricevuti[brand] else 0.0
+        dif = difetti.get(brand, 0) / vend * 100 if vend else 0.0
+        inc = int(incomplete.get(brand, 0))
+        sc = float(sconto.get(brand, 0.0))
+        superate = []
+        if dif > 1:
+            superate.append(f"resi per difetto al {_it(dif, 2)}% dei venduti (soglia 1%)")
+        if st < 70 and conclusa:
+            superate.append(f"sell-through al {_it(st)}% (soglia 70%)")
+        if inc:
+            superate.append(f"{inc} consegne incomplete")
+        if sc > 10:
+            superate.append(f"sconto medio fuori dai saldi al {_it(sc)}% (soglia 10%)")
+        righe.append({"stagione": stagione, "brand": brand, "sell_through_pct": round(st, 2),
+                      "resi_difetto_pct": round(dif, 2), "consegne_incomplete": inc,
+                      "sconto_medio_fuori_saldi_pct": round(sc, 2), "soglie_superate": superate,
+                      "da_segnalare": len(superate) >= 2})
+    return righe
+
+
+def _esito_soglie(r: dict) -> str:
+    n = len(r["soglie_superate"])
+    if n == 0:
+        return f"{r['brand']} in {r['stagione']}: nessuna soglia superata, non va segnalato [SEZ 8.6]."
+    elenco = "; ".join(r["soglie_superate"])
+    if n == 1:
+        return (f"{r['brand']} in {r['stagione']}: una sola soglia superata ({elenco}), quindi non va segnalato "
+                f"per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].")
+    return f"{r['brand']} in {r['stagione']}: {n} soglie superate ({elenco}), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+
+
+def soglie_fornitori(d: Dati, stagione=None) -> dict:
+    """Brand che superano le soglie di controllo dei fornitori e vanno segnalati per rinegoziazione."""
+    stagioni = [str(stagione).strip().upper()] if stagione else _valori(d.o, "stagione")
+    for s in stagioni:
+        if s not in set(_valori(d.o, "stagione")):
+            raise ValueError(f"Nessun dato per la stagione {s}. Stagioni disponibili: {_valori(d.o, 'stagione')}.")
+    righe = [r for s in stagioni for r in _soglie_stagione(d, s)]
+    segnalare = [_esito_soglie(r) for r in righe if r["da_segnalare"]]
+    out = {"righe_usate": len(righe),
+           "da_segnalare": segnalare or ["Nessun brand supera almeno due soglie nella stessa stagione."],
+           "regola": "Un brand va segnalato al titolare per rinegoziazione quando supera almeno due di queste soglie "
+                     "nella stessa stagione: resi per difetto oltre l'1% dei venduti, sell-through sotto il 70% dei "
+                     "ricevuti, consegne incomplete, sconto medio fuori dai saldi oltre il 10% [SEZ 8.6]."}
+    if stagione:
+        out["brand"] = [_esito_soglie(r) for r in righe]
+    else:
+        out["con_una_soglia"] = [_esito_soglie(r) for r in righe if len(r["soglie_superate"]) == 1]
+    return out
+
+
+def _stagioni_vicine(d: Dati, stagione: str) -> list:
+    m = re.fullmatch(r"(PE|AI)(\d{2})", str(stagione).strip().upper())
+    if not m:
+        raise ValueError("La stagione va scritta come PE24 (primavera-estate 2024) o AI24 (autunno-inverno 2024).")
+    tipo, anno = m.group(1), int(m.group(2))
+    disponibili = set(_valori(d.o, "stagione"))
+    if f"{tipo}{anno:02d}" not in disponibili:
+        raise ValueError(f"Nessun dato per la stagione {tipo}{anno:02d}. Stagioni disponibili: {sorted(disponibili)}.")
+    return [s for s in (f"{tipo}{anno - 1:02d}", f"{tipo}{anno:02d}", f"{tipo}{anno + 1:02d}") if s in disponibili]
+
+
+def confronta_stagioni(d: Dati, stagione: str, brand=None, categoria=None) -> dict:
+    """Sell-through e incasso di una stagione confrontati con la stessa stagione dell'anno prima e dopo."""
+    stagione = str(stagione).strip().upper()
+    righe = []
+    for s in _stagioni_vicine(d, stagione):
+        try:
+            st = sell_through(d, "nessuno", stagione=s, brand=brand, categoria=categoria)["tabella"][0]
+        except ValueError:
+            continue
+        v = _filtra(d.vendite, stagione=s, brand=brand, categoria=categoria)
+        fine_saldi = d.saldi.loc[d.saldi["stagione"] == s, "fine"]
+        righe.append({"stagione": s, "ricevuti": int(st["ricevuti"]), "venduti": int(st["venduti"]),
+                      "sell_through_pct": st["sell_through_pct"],
+                      "sell_through_prezzo_pieno_pct": st["sell_through_prezzo_pieno_pct"],
+                      "incasso_euro": round(float(v["prezzo_venduto"].sum()), 2),
+                      "stagione_conclusa": bool(len(fine_saldi) and fine_saldi.iloc[0] <= d.v["data_ora"].max())})
+    if not any(r["stagione"] == stagione for r in righe):
+        raise ValueError(f"Nessun dato per la stagione {stagione} con questi filtri.")
+    chi = " ".join(x for x in (f"dei {categoria}" if categoria else "", f"di {brand}" if brand else "") if x)
+    chi = chi or "del negozio"
+    target = next(r for r in righe if r["stagione"] == stagione)
+    altre = [r for r in righe if r is not target]
+    frasi = []
+    for r in altre:
+        diff = target["sell_through_pct"] - r["sell_through_pct"]
+        frasi.append(f"{_it(abs(diff))} punti {'sopra' if diff > 0 else 'sotto'} {r['stagione']} ({_it(r['sell_through_pct'])}%)")
+    valori = [r["sell_through_pct"] for r in righe]
+    posizione = ("il più basso" if target["sell_through_pct"] == min(valori)
+                 else "il più alto" if target["sell_through_pct"] == max(valori) else "intermedio")
+    sintesi = (f"Sell-through {chi} in {stagione}: {_it(target['sell_through_pct'])}% "
+               f"({target['venduti']} venduti su {target['ricevuti']} ricevuti)")
+    if altre:
+        sintesi += f", {posizione} tra {', '.join(r['stagione'] for r in righe)}: " + " e ".join(frasi)
+    st = target["sell_through_pct"]
+    if st < 70:
+        sintesi += ". Sotto il 70%: per il manuale l'ordine è stato troppo alto e la merce che resta va all'outlet [SEZ 8.6]."
+    elif st >= 80:
+        sintesi += ". Almeno l'80%: per il manuale vuol dire che sta andando bene [SEZ 8.6]."
+    else:
+        sintesi += ". Tra il 70% e l'80%."
+    sintesi += f" Incasso dei capi {stagione}: {_it(target['incasso_euro'], 2)} €"
+    confronti = []
+    for r in altre:
+        diff = target["incasso_euro"] - r["incasso_euro"]
+        confronti.append(f"{_it(abs(diff), 2)} € in {'più' if diff > 0 else 'meno'} di {r['stagione']} "
+                         f"({_it(r['incasso_euro'], 2)} €)")
+    if confronti:
+        sintesi += ", " + " e ".join(confronti)
+    sintesi += "."
+    v_target = _filtra(d.vendite, stagione=stagione, brand=brand, categoria=categoria)
+    brand_target = set(v_target["brand"]) | ({brand} if brand else set())
+    segnalazione = [_esito_soglie(r) for r in _soglie_stagione(d, stagione) if r["brand"] in brand_target]
+    return {"righe_usate": int(sum(r["venduti"] for r in righe)), "sintesi": sintesi, "stagioni": righe,
+            "segnalazione": segnalazione,
+            "nota": "Stagione = collezione del capo (AI24 = autunno-inverno 2024, venduta da settembre 2024 ai saldi "
+                    "di febbraio 2025), non l'anno solare. L'incasso è quello dei capi della stagione."}
 
 
 def resi(d: Dati, raggruppa_per="brand", motivo=None, **filtri) -> dict:
@@ -132,7 +306,12 @@ def resi(d: Dati, raggruppa_per="brand", motivo=None, **filtri) -> dict:
         t = conta.div(v.groupby("brand").size(), axis=0).fillna(0) * 100
         t["totale"] = t.sum(axis=1)
         t = t.sort_values("totale", ascending=False)
+        negozio = (r.groupby("motivo_reso").size() / len(v) * 100).round(2).to_dict()
+        negozio["totale"] = round(len(r) / len(v) * 100, 2)
+        t = _con_riferimento(t, "totale", negozio["totale"])
         return {"righe_usate": len(r) + len(v), "valori": "% di resi sui pezzi venduti del brand",
+                "resi_del_negozio_pct": negozio,
+                "nota": "rispetto_al_negozio confronta il totale del brand con il totale del negozio.",
                 "tabella": _tabella(t)}
     k = _chiave(raggruppa_per)
     if motivo:
@@ -148,7 +327,13 @@ def resi(d: Dati, raggruppa_per="brand", motivo=None, **filtri) -> dict:
         t = pd.DataFrame({"resi": n, "venduti": vend}).fillna(0)
         t["pct_sui_venduti"] = t["resi"] / t["venduti"] * 100
     t = t.sort_values("pct_sui_venduti", ascending=False)
-    return {"righe_usate": len(r) + len(v), "motivo": motivo or "tutti", "tabella": _tabella(t)}
+    out = {"righe_usate": len(r) + len(v), "motivo": motivo or "tutti"}
+    if k and k != "motivo":
+        negozio = len(r) / len(v) * 100
+        t = _con_riferimento(t, "pct_sui_venduti", negozio)
+        out["resi_del_negozio_pct"] = round(negozio, 2)
+    out["tabella"] = _tabella(t)
+    return out
 
 
 def margine(d: Dati, raggruppa_per="brand", **filtri) -> dict:
@@ -163,7 +348,13 @@ def margine(d: Dati, raggruppa_per="brand", **filtri) -> dict:
     t["margine_euro"] = t["incasso_euro"] - t["costo_euro"]
     t["margine_pct"] = t["margine_euro"] / t["incasso_euro"] * 100
     t = t.sort_values("margine_pct")
-    return {"righe_usate": len(v), "righe_escluse_senza_costo": senza_costo, "tabella": _tabella(t)}
+    out = {"righe_usate": len(v), "righe_escluse_senza_costo": senza_costo}
+    if k:
+        negozio = (1 - v["costo"].sum() / v["prezzo_venduto"].sum()) * 100
+        t = _con_riferimento(t, "margine_pct", negozio)
+        out["margine_del_negozio_pct"] = round(negozio, 2)
+    out["tabella"] = _tabella(t)
+    return out
 
 
 def sconti(d: Dati, raggruppa_per="motivo", **filtri) -> dict:
@@ -249,7 +440,8 @@ def controlli(d: Dati) -> dict:
 
     violazioni = [t for t in trovati if t["casi"] > 0]
     return {"righe_usate": len(v),
-            "riepilogo": [f"{t['controllo']}: {t['casi']} casi {t['regola']}" for t in violazioni],
+            "riepilogo": [f"{t['controllo']}: {_it(t['euro'], 2)} € ({t['casi']} resi) {t['regola']}" if "euro" in t
+                          else f"{t['controllo']}: {t['casi']} casi {t['regola']}" for t in violazioni],
             "controlli_senza_violazioni": [t["controllo"] for t in trovati if t["casi"] == 0],
             "violazioni": violazioni,
             "nota": "Una violazione è un fatto da verificare, non una colpa [SEZ 10.1]."}

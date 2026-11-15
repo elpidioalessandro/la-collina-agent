@@ -64,6 +64,24 @@ def sell_through(raggruppa_per: str = "brand", stagione: str | None = None, bran
 
 
 @tool
+def confronta_stagioni(stagione: str, brand: str | None = None, categoria: str | None = None) -> str:
+    """Come è andata una categoria o un brand in una stagione, confrontata con la stessa stagione dell'anno
+    prima e dell'anno dopo: sell-through, pezzi, incasso, con una sintesi già calcolata da riportare.
+    Usalo per "è andato bene/male", "perché X è andato male nel 2024", "com'è andata la stagione".
+    stagione: 'AI24' per l'inverno 2024 (capospalla e maglia si vendono in AI), 'PE24' per l'estate 2024
+    (costumi in PE). Se la categoria si vende tutto l'anno e l'utente dice solo l'anno, chiamalo per PE e per AI."""
+    return _esegui(analisi.confronta_stagioni, stagione, brand=brand, categoria=categoria)
+
+
+@tool
+def soglie_fornitori(stagione: str | None = None) -> str:
+    """Quali brand superano le soglie di controllo dei fornitori e vanno segnalati al titolare per rinegoziazione
+    (almeno due soglie nella stessa stagione): resi per difetto, sell-through, consegne incomplete, sconto medio.
+    stagione: 'AI24', 'PE25'...; senza stagione controlla tutte le stagioni."""
+    return _esegui(analisi.soglie_fornitori, stagione)
+
+
+@tool
 def resi(raggruppa_per: str = "brand", motivo: str | None = None, data_inizio: str | None = None,
          data_fine: str | None = None, brand: str | None = None, categoria: str | None = None,
          stagione: str | None = None) -> str:
@@ -128,10 +146,11 @@ def crea_grafico(metrica: str, raggruppa_per: str, motivo: str | None = None, da
     argomenti = {**filtri, **({"motivo": motivo} if metrica == "resi" and motivo else {})}
     if metrica == "sell_through":
         argomenti = {k: v for k, v in argomenti.items() if k in ("stagione", "brand", "categoria")}
-    tabella = funzione(STATO["dati"], raggruppa_per, **argomenti)["tabella"]
-    valori = {str(r[next(iter(r))]): r[colonna] for r in tabella}
-    return _json({"grafico": f"creato e già mostrato all'utente ({nome})", "valori_nel_grafico": valori,
-                  "nota": "Riporta nella risposta i numeri chiave (il più alto e il più basso), non descrivere il grafico."})
+    risultato = funzione(STATO["dati"], raggruppa_per, **argomenti)
+    valori = {str(r[next(iter(r))]): r[colonna] for r in risultato["tabella"]}
+    contesto = {k: v for k, v in risultato.items() if k not in ("tabella", "righe_usate", "righe_ordini_usate")}
+    return _json({"grafico": f"creato e già mostrato all'utente ({nome})", "valori_nel_grafico": valori, **contesto,
+                  "istruzione": "Riporta nella risposta i numeri chiave (il più alto e il più basso), non descrivere il grafico."})
 
 
 @tool
@@ -171,5 +190,5 @@ def esegui_codice_pandas(codice: str) -> str:
     return str(risultato)[:2000]
 
 
-STRUMENTI = [info_dati, incasso, sell_through, resi, margine, sconti, controlli_regole, resoconto_pulizia,
+STRUMENTI = [info_dati, incasso, sell_through, confronta_stagioni, soglie_fornitori, resi, margine, sconti, controlli_regole, resoconto_pulizia,
              crea_grafico, esegui_codice_pandas]

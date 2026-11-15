@@ -23,7 +23,7 @@ export function chatRoutes({ answer, sessions, dataAgent }) {
       try {
         const result = await answer(message, session.history);
         sessions.append(session.id, { role: 'user', content: message }, { role: 'assistant', content: result.risposta });
-        console.log(`[chat] ${((Date.now() - started) / 1000).toFixed(1)}s · ${result.strumenti.map((s) => s.strumento).join(' + ') || 'nessuno strumento'} · "${message.slice(0, 60)}"`);
+        console.log(`[chat] ${((Date.now() - started) / 1000).toFixed(1)}s · ${result.strumenti.map((s) => s.strumento).join(' + ') || 'nessuno strumento'} · controllo: ${result.controllo?.esito}${result.controllo?.problemi?.length ? ` (${result.controllo.problemi.join('; ')})` : ''} · "${message.slice(0, 60)}"`);
         res.end(JSON.stringify({
           sessionId: session.id,
           ...result,

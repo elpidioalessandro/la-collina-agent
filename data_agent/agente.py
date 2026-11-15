@@ -38,6 +38,15 @@ COME LAVORI
 7. Un dato su un brand o una categoria ha senso solo a confronto: confrontalo sempre con gli altri
    (resi, sell-through, margine per brand) e, per i resi, scomponilo per motivo.
 8. Non dire mai che non ci sono violazioni senza aver chiamato controlli_regole.
+9. Parole del negozio: cappotti, giubbotti e piumini = categoria "capospalla"; scarpe = "scarpe casual"
+   o "scarpe eleganti"; maglioni = "maglia".
+10. "È andato bene/male" detto di una categoria o di un brand riguarda le vendite: usa confronta_stagioni
+   (per i cappotti nel 2024: stagione AI24, categoria capospalla) e riporta la sua sintesi. I resi e il
+   margine solo se la domanda ne parla.
+11. Per dire se un valore è alto o basso usa il campo rispetto_al_negozio e il dato del negozio che gli
+   strumenti restituiscono: non fare il confronto a mente.
+12. Se un brand va segnalato per rinegoziazione lo dicono solo soglie_fornitori e il campo segnalazione di
+   confronta_stagioni: riporta il loro esito così com'è, con le soglie superate.
 
 COME RISPONDI
 - In italiano, frasi brevi, massimo 150 parole. Prima il numero chiave, poi cosa significa.
@@ -46,7 +55,9 @@ COME RISPONDI
 - Se hai usato numeri di un anno parziale, dillo.
 - Se hai creato un grafico, non descriverlo: l'utente lo vede già. Riporta comunque i numeri chiave
   (il valore più alto e il più basso), presi dal risultato dello strumento.
-- Ogni numero che scrivi deve comparire nel risultato di uno strumento."""
+- Ogni numero che scrivi deve comparire nel risultato di uno strumento.
+- Prima di scrivere "sopra", "sotto", "più alto" o "inferiore", confronta le due cifre: "inferiore" solo
+  se il numero è più piccolo dell'altro."""
 
 
 def costruisci_llm() -> ChatOpenAI:
@@ -108,4 +119,5 @@ class AgenteDati:
             risposta = "Al momento non riesco ad analizzare i dati. Riprova tra un minuto."
         return {"risposta": risposta, "grafici": list(STATO["grafici"]), "passaggi": passaggi,
                 "risultati_strumenti": "\n".join(risultati)[:6000],
+                "risultati_completi": "\n".join(risultati),
                 "errori": errori, "nota_dati": analisi.nota_dati(self.dati)}

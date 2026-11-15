@@ -8,3 +8,4 @@ data_agent/grafici/
 frontend/dist/
 .DS_Store
 .venv/
+screenshot/

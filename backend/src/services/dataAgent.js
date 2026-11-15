@@ -13,7 +13,8 @@ async function post(path, body, timeoutMs) {
 
 export const dataAgent = {
   searchManual: (domanda, k = 4) => post('/cerca', { domanda, k }, 20000),
-  analyze: (domanda) => post('/analizza', { domanda }, 120000),
+  analyze: (domanda) => post('/analizza', { domanda }, 170000),
+  sections: (codici) => post('/sezioni', { codici }, 10000),
   chart: (nome) => fetch(`${env.dataAgentUrl}/grafici/${encodeURIComponent(nome)}`, { signal: AbortSignal.timeout(10000) }),
   health: () => fetch(`${env.dataAgentUrl}/salute`, { signal: AbortSignal.timeout(3000) }).then((r) => r.json()),
 };

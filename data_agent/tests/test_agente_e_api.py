@@ -29,3 +29,5 @@ def test_api(dati, manuale):
         assert risposta["risposta"].startswith("Incasso 2025") and risposta["grafici"] == []
         assert client.get("/grafici/../../config.py").status_code == 404
         assert client.post("/cerca", json={"domanda": ""}).status_code == 422
+        sezioni = client.post("/sezioni", json={"codici": ["SEZ 8.6", "9.1", "SEZ 99.9"]}).json()["risultati"]
+        assert [s["codice"] for s in sezioni] == ["SEZ 8.6", "SEZ 9.1"]
