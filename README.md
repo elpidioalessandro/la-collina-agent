@@ -1,4 +1,4 @@
-# La Collina – Assistente AI per il punto vendita
+# La Collina: un agente AI a supporto delle decisioni del punto vendita
 
 Agente AI ibrido per un negozio multimarca di abbigliamento uomo. Commessi e titolare fanno domande in chat: l'LLM decide da solo se cercare la risposta nel **manuale del negozio** (RAG su ChromaDB) o affidarla a un **agente dati Python** che analizza vendite e ordini con pandas e disegna grafici. Per le domande che chiedono numeri e regole insieme usa entrambi.
 
