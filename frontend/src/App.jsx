@@ -11,6 +11,7 @@ export default function App() {
   const [state, setState] = useState(load);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [steps, setSteps] = useState([]);
   const [chart, setChart] = useState(null);
   const endRef = useRef(null);
   const inputRef = useRef(null);
@@ -20,16 +21,17 @@ export default function App() {
   }, [state]);
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [state.messages.length, loading]);
+  }, [state.messages.length, loading, steps.length]);
 
   async function ask(text) {
     const question = text.trim();
     if (!question || loading) return;
     setInput('');
     setLoading(true);
+    setSteps([]);
     setState((s) => ({ ...s, messages: [...s.messages, { role: 'user', content: question }] }));
     try {
-      const r = await sendMessage(question, state.sessionId);
+      const r = await sendMessage(question, state.sessionId, (step) => setSteps((prev) => [...prev, step]));
       setState((s) => ({
         sessionId: r.sessionId,
         messages: [
@@ -77,7 +79,7 @@ export default function App() {
         {state.messages.map((m, i) => (
           <Message key={i} message={m} onOpenChart={setChart} />
         ))}
-        {loading && <TypingIndicator />}
+        {loading && <TypingIndicator steps={steps} />}
         <div ref={endRef} />
       </main>
 

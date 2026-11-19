@@ -1,7 +1,10 @@
 import contextlib
+import contextvars
 import io
 import json
+import threading
 import traceback
+from dataclasses import dataclass, field
 
 import matplotlib
 
@@ -14,16 +17,35 @@ from langchain_core.tools import tool
 import analisi
 import grafici
 
-STATO = {"dati": None, "grafici": [], "tentativi_codice": 0}
 MAX_TENTATIVI_CODICE = 3
 
 
-def imposta_dati(dati: analisi.Dati) -> None:
-    STATO["dati"] = dati
+@dataclass
+class StatoDomanda:
+    """Stato di una sola domanda: dati su cui lavorare, grafici creati e tentativi di codice.
+    Vive in una ContextVar, quindi due domande in parallelo non si vedono a vicenda."""
+    dati: analisi.Dati
+    grafici: list = field(default_factory=list)
+    tentativi_codice: int = 0
 
 
-def nuova_domanda() -> None:
-    STATO["grafici"], STATO["tentativi_codice"] = [], 0
+_STATO: contextvars.ContextVar[StatoDomanda] = contextvars.ContextVar("stato_domanda")
+# pyplot ha uno stato globale (le figure aperte): il codice che lo usa passa da qui una domanda alla volta.
+_PYPLOT = threading.Lock()
+
+
+def nuova_domanda(dati: analisi.Dati) -> StatoDomanda:
+    """Apre lo stato di una domanda nel contesto corrente e lo restituisce."""
+    stato = StatoDomanda(dati)
+    _STATO.set(stato)
+    return stato
+
+
+def stato_corrente() -> StatoDomanda:
+    try:
+        return _STATO.get()
+    except LookupError:
+        raise RuntimeError("Nessuna domanda in corso: chiama nuova_domanda(dati) prima degli strumenti.") from None
 
 
 def _json(risultato) -> str:
@@ -34,7 +56,7 @@ def _esegui(funzione, *args, **kwargs) -> str:
     """Esegue un'analisi e trasforma gli errori in messaggi leggibili per l'agente."""
     try:
         filtri = {k: v for k, v in kwargs.items() if v not in (None, "")}
-        return _json(funzione(STATO["dati"], *args, **filtri))
+        return _json(funzione(stato_corrente().dati, *args, **filtri))
     except ValueError as e:
         return f"ERRORE: {e}"
 
@@ -135,18 +157,19 @@ def crea_grafico(metrica: str, raggruppa_per: str, motivo: str | None = None, da
     metrica: 'incasso', 'sell_through', 'resi', 'margine' o 'sconti'.
     raggruppa_per: 'anno', 'mese' (grafico a linee), 'stagione', 'brand', 'categoria' o 'motivo'.
     motivo: solo per i resi ('taglia', 'difetto', 'ripensamento', 'regalo')."""
+    stato = stato_corrente()
     try:
         filtri = {k: v for k, v in dict(data_inizio=data_inizio, data_fine=data_fine, brand=brand,
                                          categoria=categoria, stagione=stagione).items() if v}
-        nome = grafici.crea_grafico(STATO["dati"], metrica, raggruppa_per, motivo=motivo, **filtri)
+        nome = grafici.crea_grafico(stato.dati, metrica, raggruppa_per, motivo=motivo, **filtri)
     except ValueError as e:
         return f"ERRORE: {e}"
-    STATO["grafici"].append(nome)
+    stato.grafici.append(nome)
     funzione, colonna, _ = grafici.METRICHE[metrica]
     argomenti = {**filtri, **({"motivo": motivo} if metrica == "resi" and motivo else {})}
     if metrica == "sell_through":
         argomenti = {k: v for k, v in argomenti.items() if k in ("stagione", "brand", "categoria")}
-    risultato = funzione(STATO["dati"], raggruppa_per, **argomenti)
+    risultato = funzione(stato.dati, raggruppa_per, **argomenti)
     valori = {str(r[next(iter(r))]): r[colonna] for r in risultato["tabella"]}
     contesto = {k: v for k, v in risultato.items() if k not in ("tabella", "righe_usate", "righe_ordini_usate")}
     return _json({"grafico": f"creato e già mostrato all'utente ({nome})", "valori_nel_grafico": valori, **contesto,
@@ -164,24 +187,27 @@ def esegui_codice_pandas(codice: str) -> str:
     qta_ricevuta, costo_unitario, prezzo_listino). Sono disponibili `pd`, `np` e `plt`.
     Per le vendite filtra tipo_movimento == 'vendita'. Salva il risultato nella variabile `risultato`.
     Se crei una figura con plt, viene salvata e mostrata all'utente."""
-    if STATO["tentativi_codice"] >= MAX_TENTATIVI_CODICE:
+    stato = stato_corrente()
+    if stato.tentativi_codice >= MAX_TENTATIVI_CODICE:
         return ("ERRORE: raggiunto il limite di tentativi. Non riprovare: spiega all'utente che non è stato "
                 "possibile calcolare il dato e proponi una domanda alternativa.")
-    STATO["tentativi_codice"] += 1
-    d = STATO["dati"]
+    stato.tentativi_codice += 1
+    d = stato.dati
     spazio = {"vendite": d.v.copy(), "ordini": d.o.copy(), "pd": pd, "np": np, "plt": plt}
     uscita = io.StringIO()
-    plt.close("all")
-    try:
-        with contextlib.redirect_stdout(uscita):
-            exec(codice, spazio)
-    except Exception:
-        errore = traceback.format_exc(limit=1).strip().splitlines()[-1]
+    # redirect_stdout e le figure di pyplot sono globali al processo: una domanda alla volta.
+    with _PYPLOT:
         plt.close("all")
-        return (f"ERRORE nel codice (tentativo {STATO['tentativi_codice']}/{MAX_TENTATIVI_CODICE}): {errore}. "
-                "Correggi il codice e riprova.")
-    for numero in plt.get_fignums():
-        STATO["grafici"].append(grafici.salva(plt.figure(numero)))
+        try:
+            with contextlib.redirect_stdout(uscita):
+                exec(codice, spazio)
+        except Exception:
+            errore = traceback.format_exc(limit=1).strip().splitlines()[-1]
+            plt.close("all")
+            return (f"ERRORE nel codice (tentativo {stato.tentativi_codice}/{MAX_TENTATIVI_CODICE}): {errore}. "
+                    "Correggi il codice e riprova.")
+        for numero in plt.get_fignums():
+            stato.grafici.append(grafici.salva(plt.figure(numero)))
     risultato = spazio.get("risultato", spazio.get("result"))
     if risultato is None:
         risultato = uscita.getvalue() or "Nessun risultato: assegna il valore alla variabile `risultato`."

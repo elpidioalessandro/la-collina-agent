@@ -1,7 +1,9 @@
 // Controllo finale della risposta, fatto dal codice e non dal modello:
 // - ogni numero deve comparire nei risultati degli strumenti (o nella domanda);
 // - ogni sezione citata deve esistere ed essere stata letta;
-// - il manuale si nomina solo se è stato consultato.
+// - il manuale si nomina solo se è stato consultato;
+// - frequenze e scadenze a parole ("settimanalmente", "ogni mese") devono comparire nelle fonti: il modello
+//   tendeva ad aggiungerle alle azioni anche quando il manuale non le prevede.
 
 const SPACES = /[   ]/g;
 const IT_NUMBER = /(?<![\p{L}\d.,])(\d{1,3}(?:[. ]\d{3})+|\d+(?:\.\d{1,2}(?!\d))?)(?:,(\d+))?(?![\p{L}\d])/gu;
@@ -61,13 +63,33 @@ export function isGrounded(n, sources) {
   return sources.some((s) => Math.abs(Math.abs(s) - n.value) <= tolerance);
 }
 
-export function findProblems(text, { sources, knownCodes, manualRead }) {
+const RENEGOTIATION = /rinegozi/i;
+const FREQUENCY = /\b(?:settimanal\p{L}*|mensil\p{L}*|giornalier\p{L}*|quotidian\p{L}*|trimestral\p{L}*|annual\p{L}*|ogni\s+(?:giorno|settimana|mese|anno|trimestre|sera|mattina)|tutti\s+i\s+(?:giorni|mesi)|tutte\s+le\s+settimane)\b/giu;
+
+// "settimanalmente" e "settimanale" valgono come "settimanal": basta che la radice sia nelle fonti.
+const frequencyStem = (word) => word.toLowerCase().replace(/\s+/g, ' ').replace(/mente$/, '').replace(/[aeio]$/, '');
+
+export function answerFrequencies(text) {
+  return [...new Set([...text.matchAll(FREQUENCY)].map((m) => m[0].toLowerCase().replace(/\s+/g, ' ')))];
+}
+
+export function findProblems(text, { sources, knownCodes, manualRead, sourceText = null }) {
   const problems = [];
   const ungrounded = [...new Set(answerNumbers(text).filter((n) => !isGrounded(n, sources)).map((n) => n.raw.trim()))];
   if (ungrounded.length) problems.push({ tipo: 'numeri', valori: ungrounded });
   const unknown = citedCodes(text).filter((c) => !knownCodes.has(c));
   if (unknown.length) problems.push({ tipo: 'sezioni', valori: unknown });
   if (!manualRead && /\bmanual[ei]\b/i.test(text)) problems.push({ tipo: 'manuale', valori: [] });
+  if (sourceText !== null) {
+    const invented = answerFrequencies(text).filter((f) => !sourceText.includes(frequencyStem(f)));
+    if (invented.length) problems.push({ tipo: 'frequenze', valori: invented });
+    // Chi va segnalato per rinegoziare lo decide il calcolo delle soglie (SEZ 8.6): senza quel calcolo in questo
+    // turno, una frase sulla rinegoziazione è un'ipotesi del modello. Nei test diceva "supera la soglia dell'1%"
+    // confondendo i resi totali con quelli per difetto.
+    if (RENEGOTIATION.test(text) && !/soglie superate|nessun brand supera/i.test(sourceText)) {
+      problems.push({ tipo: 'rinegoziazione', valori: [] });
+    }
+  }
   return problems;
 }
 
@@ -75,18 +97,25 @@ export function describeProblems(problems) {
   return problems.map((p) => {
     if (p.tipo === 'numeri') return `numeri che non compaiono nei risultati: ${p.valori.join(', ')}`;
     if (p.tipo === 'sezioni') return `sezioni inesistenti o non lette: ${p.valori.join(', ')}`;
+    if (p.tipo === 'frequenze') return `frequenze che non sono né nel manuale né nei dati: ${p.valori.join(', ')}`;
+    if (p.tipo === 'rinegoziazione') return 'rinegoziazione proposta senza il calcolo delle soglie dei fornitori';
     return 'il manuale è nominato senza averlo consultato';
   });
 }
 
-// Ultima difesa: toglie le frasi che contengono un numero non verificato o che nominano un manuale non letto,
-// e le citazioni di sezioni non lette.
+// Ultima difesa: toglie le frasi che contengono un numero o una frequenza non verificati o che nominano un
+// manuale non letto, e le citazioni di sezioni non lette.
 export function removeProblems(text, problems) {
   const numbers = new Set(problems.find((p) => p.tipo === 'numeri')?.valori || []);
   const codes = new Set(problems.find((p) => p.tipo === 'sezioni')?.valori || []);
   const manual = problems.some((p) => p.tipo === 'manuale');
+  const frequencies = new Set(problems.find((p) => p.tipo === 'frequenze')?.valori || []);
+  const renegotiation = problems.some((p) => p.tipo === 'rinegoziazione');
   const bad = (sentence) =>
-    answerNumbers(sentence).some((n) => numbers.has(n.raw.trim())) || (manual && /\bmanual[ei]\b/i.test(sentence));
+    answerNumbers(sentence).some((n) => numbers.has(n.raw.trim()))
+    || (manual && /\bmanual[ei]\b/i.test(sentence))
+    || answerFrequencies(sentence).some((f) => frequencies.has(f))
+    || (renegotiation && RENEGOTIATION.test(sentence));
   return text
     .replace(/[ \t]*\[SEZ (\d+\.\d+)\]/g, (m, n) => (codes.has(`SEZ ${n}`) ? '' : m))
     .split('\n')
@@ -109,6 +138,10 @@ export function tidy(text) {
     .replace(/&\s*(?=\|)/g, '')
     .replace(/[ \t]+([.,;:])/g, '$1')
     .replace(/(\d)[ \t\u00a0\u202f\u2009]+%/g, '$1%')
+    // "1 098,37 €" → "1.098,37 €": migliaia con il punto quando il numero ha i decimali con la virgola.
+    .replace(/(?<![\d.,])(\d{1,3})(?:[ \u00a0\u202f\u2009](\d{3}))(?:[ \u00a0\u202f\u2009](\d{3}))?(,\d{1,2})(?!\d)/g,
+      (m, a, b, c, dec) => [a, b, c].filter(Boolean).join('.') + dec)
     .replace(/^[ \t]+(?=\[SEZ)/gm, '')
+    .replace(/[ \t]*\[(?:sopra|sotto|in linea)\]/gi, '') // etichette dei risultati copiate tali e quali
     .trim();
 }

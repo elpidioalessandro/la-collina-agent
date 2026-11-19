@@ -57,3 +57,39 @@ test('POST /api/chat: errore del modello restituito come JSON leggibile', async 
   const body = await (await post({ message: 'ciao' })).json();
   assert.match(body.error, /Limite di richieste di Groq/);
 });
+
+test('POST /api/chat in streaming: passi in SSE, poi la risposta completa', async () => {
+  const script = [toolTurn(call('analizza_dati', 'Resi per taglia con grafico')), reply('Lardoni è primo.')];
+  llm.chat.completions.create = async () => ({ choices: [{ message: script.shift() }] });
+  const res = await fetch(`${base}/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'text/event-stream' },
+    body: JSON.stringify({ message: 'chi ha più resi per taglia?' }),
+  });
+  assert.match(res.headers.get('content-type'), /^text\/event-stream/);
+  const { readSse } = await import('../src/services/sse.js');
+  const events = [];
+  await readSse(res.body, (type, data) => events.push([type, data]));
+  const types = events.map(([t]) => t);
+  assert.equal(types.at(-1), 'risposta');
+  assert.ok(types.slice(0, -1).every((t) => t === 'passo') && types.length > 3);
+  assert.deepEqual(events[0][1], { testo: 'Leggo la domanda e scelgo dove cercare' });
+  const body = events.at(-1)[1];
+  assert.equal(body.risposta, 'Lardoni è primo.');
+  assert.deepEqual(body.grafici, [{ nome: 'abcdef123456.png', url: '/api/grafici/abcdef123456.png' }]);
+});
+
+test('POST /api/chat in streaming: errore del modello come evento leggibile', async () => {
+  llm.chat.completions.create = async () => {
+    throw Object.assign(new Error('rate limit'), { status: 429 });
+  };
+  const res = await fetch(`${base}/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'text/event-stream' },
+    body: JSON.stringify({ message: 'ciao' }),
+  });
+  const { readSse } = await import('../src/services/sse.js');
+  const events = [];
+  await readSse(res.body, (type, data) => events.push([type, data]));
+  assert.deepEqual(events.at(-1), ['errore', { error: 'Limite di richieste di Groq raggiunto: riprova tra un minuto.' }]);
+});

@@ -2,6 +2,7 @@ import re
 
 import pandas as pd
 
+from caricamento import leggi_ordini, leggi_vendite
 from calendario import info_saldi, periodi_saldi
 from pulizia import pulisci
 
@@ -25,7 +26,8 @@ class Dati:
 
     @classmethod
     def da_csv(cls, vendite_csv, ordini_csv):
-        return cls(pd.read_csv(vendite_csv), pd.read_csv(ordini_csv))
+        """Legge e pulisce i due CSV. Un file mancante o malformato solleva ErroreDati con un messaggio chiaro."""
+        return cls(leggi_vendite(vendite_csv), leggi_ordini(ordini_csv))
 
     @property
     def vendite(self):
@@ -153,8 +155,16 @@ def sell_through(d: Dati, raggruppa_per="brand", stagione=None, brand=None, cate
         nomi = t.index.astype(str)
         out["sotto_70_pct"] = [n for n, x in zip(nomi, t["sell_through_pct"]) if x < 70]
         out["almeno_80_pct"] = [n for n, x in zip(nomi, t["sell_through_pct"]) if x >= 80]
+        # Chi va davvero segnalato per rinegoziare: calcolato con le quattro soglie, non con il solo sell-through.
+        try:
+            out["da_segnalare_per_rinegoziare"] = soglie_fornitori(d, stagione)["da_segnalare"]
+        except ValueError:
+            pass  # stagione senza ordini: il sell-through resta, la segnalazione non si può calcolare
     out["tabella"] = _tabella(t)
     nota = "Sell-through = venduti / ricevuti x 100, saldi compresi. " + SOGLIE_SELL_THROUGH
+    if k:
+        nota += (" I brand da segnalare per rinegoziare sono solo quelli in da_segnalare_per_rinegoziare: per un "
+                 "brand che è soltanto sotto il 70% il manuale prevede l'outlet per la merce che resta, non la segnalazione.")
     if not stagione and k != "stagione":
         nota += " Le soglie valgono per una stagione: qui le stagioni sono sommate, quindi il confronto è indicativo."
     out["nota"] = nota
@@ -296,6 +306,22 @@ def confronta_stagioni(d: Dati, stagione: str, brand=None, categoria=None) -> di
                     "di febbraio 2025), non l'anno solare. L'incasso è quello dei capi della stagione."}
 
 
+def _posizione_resi(d: Dati, brand: str, motivo=None, **filtri) -> str | None:
+    """«4° su 10 brand per tasso di resi»: il confronto vero, perché il modello non lo inventi."""
+    classifica = resi(d, "brand", motivo=motivo, **filtri)["tabella"]
+    nomi = [r["brand"] for r in classifica]
+    if brand not in nomi:
+        return None
+    pos, primo, ultimo = nomi.index(brand) + 1, classifica[0], classifica[-1]
+    testo = f"{pos}° su {len(nomi)} brand per tasso di resi{f' per {motivo}' if motivo else ''} (1° = più resi)"
+    if pos == 1:
+        return testo + ": è il più alto del negozio."
+    if pos == len(nomi):
+        return testo + ": è il più basso del negozio."
+    return (testo + f": non è né il più alto ({primo['brand']}, {_it(primo['pct_sui_venduti'], 2)}%) "
+            f"né il più basso ({ultimo['brand']}, {_it(ultimo['pct_sui_venduti'], 2)}%).")
+
+
 def resi(d: Dati, raggruppa_per="brand", motivo=None, **filtri) -> dict:
     """Resi per gruppo, in numero e in percentuale sui pezzi venduti dello stesso gruppo.
     raggruppa_per='brand_motivo' dà una tabella brand x motivo, in % sui venduti di ogni brand."""
@@ -309,7 +335,13 @@ def resi(d: Dati, raggruppa_per="brand", motivo=None, **filtri) -> dict:
         negozio = (r.groupby("motivo_reso").size() / len(v) * 100).round(2).to_dict()
         negozio["totale"] = round(len(r) / len(v) * 100, 2)
         t = _con_riferimento(t, "totale", negozio["totale"])
-        return {"righe_usate": len(r) + len(v), "valori": "% di resi sui pezzi venduti del brand",
+        extra = {}
+        if filtri.get("brand"):
+            altri = {c: x for c, x in filtri.items() if c != "brand"}
+            posizione = _posizione_resi(d, filtri["brand"], **altri)
+            if posizione:
+                extra["posizione_tra_i_brand"] = posizione
+        return {"righe_usate": len(r) + len(v), "valori": "% di resi sui pezzi venduti del brand", **extra,
                 "resi_del_negozio_pct": negozio,
                 "nota": "rispetto_al_negozio confronta il totale del brand con il totale del negozio.",
                 "tabella": _tabella(t)}
@@ -332,6 +364,19 @@ def resi(d: Dati, raggruppa_per="brand", motivo=None, **filtri) -> dict:
         negozio = len(r) / len(v) * 100
         t = _con_riferimento(t, "pct_sui_venduti", negozio)
         out["resi_del_negozio_pct"] = round(negozio, 2)
+    if k == "motivo":
+        # Il totale serve sempre: senza, il modello somma da solo e il controllo finale toglie il numero.
+        out["totale_resi"] = len(r)
+        out["totale_pct_sui_venduti"] = round(len(r) / len(v) * 100, 2) if len(v) else 0.0
+        if filtri:
+            negozio = len(d.resi) / len(d.vendite) * 100
+            out["resi_del_negozio_pct"] = round(negozio, 2)
+            out["rispetto_al_negozio"] = _rispetto(out["totale_pct_sui_venduti"], round(negozio, 2))
+    if filtri.get("brand") and k != "brand":
+        altri = {c: x for c, x in filtri.items() if c != "brand"}
+        posizione = _posizione_resi(d, filtri["brand"], motivo=motivo, **altri)
+        if posizione:
+            out["posizione_tra_i_brand"] = posizione
     out["tabella"] = _tabella(t)
     return out
 

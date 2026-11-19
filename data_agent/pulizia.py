@@ -31,6 +31,10 @@ def pulisci_vendite(vendite):
     v["data_ora"] = iso.fillna(ita)
     nota("date in formato italiano", italiane.sum(), "convertite")
 
+    illeggibili = v["data_ora"].isna()
+    v = v[~illeggibili].copy()
+    nota("date illeggibili", illeggibili.sum(), "righe scartate: senza data non si sa a che periodo appartengono")
+
     fuori = (v["data_ora"] < INIZIO) | (v["data_ora"] >= FINE)
     anno = v.loc[fuori, "scontrino"].str[1:5].astype(int)
     if fuori.any():

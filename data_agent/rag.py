@@ -62,17 +62,22 @@ class IndiceParole:
 
 
 class Manuale:
-    """Ricerca ibrida nel manuale: ChromaDB (significato) + BM25 (parole), fuse con Reciprocal Rank Fusion."""
+    """Ricerca ibrida nel manuale: ChromaDB (significato) + BM25 (parole), fuse con Reciprocal Rank Fusion.
+    L'embedding predefinito è multilingue (embedding.py): quello inglese di ChromaDB non capiva i sinonimi."""
 
     def __init__(self, percorso=KB_TXT, cartella=CHROMA_DIR, embedding_function=None):
         self.sezioni = leggi_sezioni(percorso)
         self.per_id = {s["id"]: s for s in self.sezioni}
         self.parole = IndiceParole(self.sezioni)
+        if embedding_function is None:
+            from embedding import EmbeddingMultilingue
+            embedding_function = EmbeddingMultilingue()
         impronta = hashlib.md5(Path(percorso).read_bytes()).hexdigest()[:10]
         client = (chromadb.PersistentClient(path=str(cartella)) if cartella
                   else chromadb.EphemeralClient())
-        argomenti = {"embedding_function": embedding_function} if embedding_function else {}
-        nome = f"{COLLEZIONE}_{impronta}"
+        argomenti = {"embedding_function": embedding_function}
+        # Il nome cambia se cambiano il manuale o il modello: l'indice si ricostruisce da solo.
+        nome = f"{COLLEZIONE}_{embedding_function.name()}_{impronta}"[:63]
         esistenti = [c.name for c in client.list_collections()]
         for vecchia in [c for c in esistenti if c.startswith(COLLEZIONE) and c != nome]:
             client.delete_collection(vecchia)
@@ -84,16 +89,25 @@ class Manuale:
                 metadatas=[{"codice": s["codice"], "titolo": s["titolo"], "parte": s["parte"]} for s in self.sezioni],
             )
 
-    def cerca(self, domanda: str, k: int = 4) -> list[dict]:
-        semantica = self.collezione.query(query_texts=[domanda], n_results=min(10, len(self.sezioni)))
-        ordine_sem = semantica["ids"][0]
-        distanze = dict(zip(ordine_sem, semantica["distances"][0]))
-        ordine_par = self.parole.classifica(domanda)[:10]
+    def classifica_significato(self, domanda: str, n: int = 10) -> tuple[list[str], dict]:
+        """Sezioni ordinate per vicinanza di significato (embedding), con le distanze coseno."""
+        semantica = self.collezione.query(query_texts=[domanda], n_results=min(n, len(self.sezioni)))
+        ordine = semantica["ids"][0]
+        return ordine, dict(zip(ordine, semantica["distances"][0]))
+
+    @staticmethod
+    def fondi(*classifiche: list[str]) -> list[str]:
+        """Reciprocal Rank Fusion: conta la posizione in ogni classifica, non il punteggio grezzo."""
         punteggio = Counter()
-        for classifica in (ordine_sem, ordine_par):
+        for classifica in classifiche:
             for pos, i in enumerate(classifica):
                 punteggio[i] += 1 / (60 + pos + 1)
-        migliori = [i for i, _ in punteggio.most_common(k)]
+        return [i for i, _ in punteggio.most_common()]
+
+    def cerca(self, domanda: str, k: int = 4) -> list[dict]:
+        ordine_sem, distanze = self.classifica_significato(domanda)
+        ordine_par = self.parole.classifica(domanda)[:10]
+        migliori = self.fondi(ordine_sem, ordine_par)[:k]
         return [{"codice": self.per_id[i]["codice"], "titolo": self.per_id[i]["titolo"],
                  "parte": self.per_id[i]["parte"], "testo": self.per_id[i]["testo"],
                  "similarita": round(1 - distanze[i], 3) if i in distanze else None,

@@ -25,9 +25,9 @@ export const call = (name, domanda, id = `c-${name}`) => ({
 export const toolTurn = (...calls) => ({ role: 'assistant', content: '', tool_calls: calls });
 export const reply = (content) => ({ role: 'assistant', content });
 
-export function fakeDataAgent({ down = false } = {}) {
+export function fakeDataAgent({ down = false, streaming = false } = {}) {
   const calls = [];
-  return {
+  const agent = {
     calls,
     async searchManual(domanda) {
       calls.push(['cerca', domanda]);
@@ -62,4 +62,13 @@ export function fakeDataAgent({ down = false } = {}) {
       return { stato: 'ok' };
     },
   };
+  // Versione in streaming: annuncia gli strumenti dell'agente dati prima del risultato, come /analizza/stream.
+  if (streaming) {
+    agent.analyzeStream = async (domanda, onStep) => {
+      onStep('Analizzo i resi (Lardoni)');
+      onStep('Disegno il grafico');
+      return agent.analyze(domanda);
+    };
+  }
+  return agent;
 }

@@ -1,3 +1,4 @@
+import re
 import time
 
 from langchain.agents import create_agent
@@ -7,7 +8,36 @@ from openai import BadRequestError, RateLimitError
 
 import analisi
 import config
-from strumenti import STATO, STRUMENTI, imposta_dati, nuova_domanda
+import grafici
+from registro import registro
+from strumenti import STRUMENTI, nuova_domanda
+
+log = registro("agente")
+CHIEDE_GRAFICO = re.compile(r"grafic|mostrami|visualizza|fammi vedere|andamento", re.IGNORECASE)
+FILTRI_GRAFICO = ("stagione", "brand", "categoria", "data_inizio", "data_fine", "motivo")
+
+# Come si annuncia ogni strumento nei passi mostrati in chat mentre l'agente lavora.
+PASSI = {
+    "info_dati": "Controllo periodo, brand e stagioni disponibili",
+    "incasso": "Calcolo l'incasso",
+    "sell_through": "Calcolo il sell-through",
+    "confronta_stagioni": "Confronto la stagione con quelle vicine",
+    "soglie_fornitori": "Controllo le soglie dei fornitori",
+    "resi": "Analizzo i resi",
+    "margine": "Calcolo il margine",
+    "sconti": "Analizzo gli sconti",
+    "controlli_regole": "Incrocio i dati con le regole del negozio",
+    "resoconto_pulizia": "Leggo il resoconto della pulizia dei dati",
+    "crea_grafico": "Disegno il grafico",
+    "esegui_codice_pandas": "Scrivo un calcolo su misura in pandas",
+}
+
+
+def descrivi_passo(nome: str, argomenti: dict) -> str:
+    """«Analizzo i resi (Lardoni, AI24)»: il nome dello strumento in italiano, con i filtri principali."""
+    dettagli = [str(argomenti[k]) for k in ("brand", "categoria", "stagione", "motivo") if argomenti.get(k)]
+    testo = PASSI.get(nome, f"Uso lo strumento {nome}")
+    return f"{testo} ({', '.join(dettagli)})" if dettagli else testo
 
 
 def prompt_di_sistema(d: analisi.Dati) -> str:
@@ -44,7 +74,8 @@ COME LAVORI
    (per i cappotti nel 2024: stagione AI24, categoria capospalla) e riporta la sua sintesi. I resi e il
    margine solo se la domanda ne parla.
 11. Per dire se un valore è alto o basso usa il campo rispetto_al_negozio e il dato del negozio che gli
-   strumenti restituiscono: non fare il confronto a mente.
+   strumenti restituiscono; per dire che un brand è il più alto o il più basso usa solo posizione_tra_i_brand.
+   Non fare il confronto a mente.
 12. Se un brand va segnalato per rinegoziazione lo dicono solo soglie_fornitori e il campo segnalazione di
    confronta_stagioni: riporta il loro esito così com'è, con le soglie superate.
 
@@ -77,31 +108,71 @@ class AgenteDati:
     Non ha memoria: la conversazione la tiene il back end, che gli passa domande complete."""
 
     def __init__(self, dati: analisi.Dati, llm=None):
-        imposta_dati(dati)
         self.dati = dati
         self.llm = llm or costruisci_llm()
         self.agente = create_agent(self.llm, STRUMENTI, system_prompt=prompt_di_sistema(dati))
 
-    def chiedi(self, domanda: str) -> dict:
+    def _esegui(self, messaggi, al_passo) -> list:
+        """Esegue il ciclo ReAct e restituisce i messaggi nuovi. Annuncia ogni strumento appena il modello lo sceglie."""
+        visti, ultimo = len(messaggi), None
+        for ultimo in self.agente.stream({"messages": messaggi}, {"recursion_limit": 16}, stream_mode="values"):
+            tutti = ultimo["messages"]
+            for m in tutti[visti:]:
+                if isinstance(m, AIMessage):
+                    for c in m.tool_calls:
+                        log.debug("strumento scelto", extra={"strumento": c["name"], "argomenti": c["args"]})
+                        if al_passo:
+                            al_passo(descrivi_passo(c["name"], c["args"]))
+            visti = len(tutti)
+        return ultimo["messages"][len(messaggi):] if ultimo else []
+
+    @staticmethod
+    def _grafico_mancante(stato, passaggi, al_passo) -> None:
+        """La domanda chiede un grafico ma il modello non l'ha creato: lo disegna il codice, con la stessa metrica,
+        lo stesso raggruppamento e gli stessi filtri dell'ultimo calcolo fatto."""
+        calcolo = next((p for p in reversed(passaggi) if p["strumento"] in grafici.METRICHE), None)
+        if not calcolo:
+            return
+        argomenti = calcolo["argomenti"]
+        raggruppa_per = argomenti.get("raggruppa_per") or "brand"
+        if raggruppa_per in ("nessuno", "brand_motivo"):
+            raggruppa_per = "brand"
+        filtri = {k: argomenti[k] for k in FILTRI_GRAFICO if argomenti.get(k)}
+        try:
+            nome = grafici.crea_grafico(stato.dati, calcolo["strumento"], raggruppa_per, **filtri)
+        except ValueError as e:
+            log.warning("grafico automatico non riuscito", extra={"motivo": str(e)})
+            return
+        stato.grafici.append(nome)
+        log.info("grafico creato dal codice", extra={"metrica": calcolo["strumento"], "raggruppa_per": raggruppa_per})
+        if al_passo:
+            al_passo("Disegno il grafico")
+
+    def chiedi(self, domanda: str, al_passo=None) -> dict:
+        """Risponde a una domanda sui dati. al_passo(testo), se c'è, riceve i passi mentre l'agente lavora."""
         suggerimento, errori, risposta, passaggi, risultati = "", [], "", [], []
         for tentativo in range(3):
-            nuova_domanda()
+            stato = nuova_domanda(self.dati)
             try:
                 messaggi = [HumanMessage(domanda + suggerimento)]
-                esito = self.agente.invoke({"messages": messaggi}, {"recursion_limit": 16})
+                nuovi = self._esegui(messaggi, al_passo)
             except RateLimitError:
                 errori.append(f"Tentativo {tentativo + 1}: limite di richieste di Groq, attendo 20 secondi")
+                log.warning("limite di Groq", extra={"tentativo": tentativo + 1, "attesa_s": 20})
+                if al_passo:
+                    al_passo("Limite di richieste di Groq: riprovo tra 20 secondi")
                 time.sleep(20)
                 continue
             except BadRequestError as e:
                 errori.append(f"Tentativo {tentativo + 1}: richiesta non valida ({str(e)[:150]})")
+                log.warning("richiesta rifiutata da Groq", extra={"tentativo": tentativo + 1, "dettaglio": str(e)[:150]})
                 suggerimento = ("\n\n[Nota] Usa solo gli strumenti elencati, con i nomi esatti. Per calcoli "
                                 "personalizzati usa esegui_codice_pandas.")
                 continue
             except Exception as e:
                 errori.append(f"Errore imprevisto: {type(e).__name__}: {str(e)[:150]}")
+                log.exception("errore imprevisto dell'agente", extra={"tentativo": tentativo + 1})
                 break
-            nuovi = esito["messages"][len(messaggi):]
             passaggi, risultati = [], []
             for m in nuovi:
                 if isinstance(m, AIMessage):
@@ -114,10 +185,13 @@ class AgenteDati:
             if risposta:
                 break
             errori.append(f"Tentativo {tentativo + 1}: risposta vuota del modello")
+            log.warning("risposta vuota del modello", extra={"tentativo": tentativo + 1})
             suggerimento = "\n\n[Nota] Chiama subito gli strumenti necessari e poi rispondi in modo breve."
         if not risposta:
             risposta = "Al momento non riesco ad analizzare i dati. Riprova tra un minuto."
-        return {"risposta": risposta, "grafici": list(STATO["grafici"]), "passaggi": passaggi,
+        elif not stato.grafici and CHIEDE_GRAFICO.search(domanda):
+            self._grafico_mancante(stato, passaggi, al_passo)
+        return {"risposta": risposta, "grafici": list(stato.grafici), "passaggi": passaggi,
                 "risultati_strumenti": "\n".join(risultati)[:6000],
                 "risultati_completi": "\n".join(risultati),
                 "errori": errori, "nota_dati": analisi.nota_dati(self.dati)}

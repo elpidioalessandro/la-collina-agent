@@ -1,5 +1,5 @@
 import { systemPrompt, TOOLS } from '../prompts/systemPrompt.js';
-import { citedCodes, describeProblems, findProblems, normalizeCitations, removeProblems, sourceNumbers, tidy } from './verifier.js';
+import { answerNumbers, citedCodes, describeProblems, findProblems, isGrounded, normalizeCitations, removeProblems, sourceNumbers, tidy } from './verifier.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -34,7 +34,7 @@ export function createOrchestrator({ llm, dataAgent, model, maxSteps = 5, reason
     }
   }
 
-  async function runTool(call, trace) {
+  async function runTool(call, trace, onStep) {
     let args;
     try {
       args = JSON.parse(call.function.arguments || '{}');
@@ -47,14 +47,19 @@ export function createOrchestrator({ llm, dataAgent, model, maxSteps = 5, reason
     trace.steps.push(step);
     try {
       if (call.function.name === 'cerca_manuale') {
+        onStep({ testo: `Cerco nel manuale: «${domanda}»` });
         const { risultati } = await dataAgent.searchManual(domanda);
+        onStep({ testo: `Sezioni trovate: ${risultati.map((r) => r.codice.replace('SEZ ', '')).join(', ')}`, livello: 2 });
         for (const r of risultati) trace.sources.set(r.codice, { codice: r.codice, titolo: r.titolo });
         trace.manualTexts.push(...risultati.map((r) => r.testo));
         step.esito = risultati.map((r) => r.codice).join(', ');
         return formatSections(risultati);
       }
       if (call.function.name === 'analizza_dati') {
-        const esito = await dataAgent.analyze(domanda);
+        onStep({ testo: `Chiedo all'agente dati: «${domanda}»` });
+        const esito = dataAgent.analyzeStream
+          ? await dataAgent.analyzeStream(domanda, (testo) => onStep({ testo, livello: 2 }))
+          : await dataAgent.analyze(domanda);
         trace.charts.push(...(esito.grafici || []).map((g) => g.nome));
         trace.dataNote = esito.nota_dati;
         trace.groundTexts.push(esito.risultati_completi ?? esito.risultati_strumenti ?? '', esito.nota_dati || '');
@@ -70,19 +75,43 @@ export function createOrchestrator({ llm, dataAgent, model, maxSteps = 5, reason
     }
   }
 
-  return async function answer(question, history = []) {
+  // Numeri scritti senza aver chiamato l'agente dati in questa domanda: vengono dalla memoria della conversazione,
+  // cioè da un altro brand o da un altro periodo ("E Cruciverba?" con i numeri di Lardoni). Restituisce quelli sospetti.
+  function numbersWithoutData(text, trace, question) {
+    if (trace.steps.some((s) => s.strumento === 'analizza_dati' && !s.errore)) return [];
+    const sources = sourceNumbers([...trace.manualTexts, question]);
+    return [...new Set(answerNumbers(text).filter((n) => !isGrounded(n, sources)).map((n) => n.raw.trim()))];
+  }
+
+  // onStep({ testo, livello }) riceve i passi intermedi mentre l'assistente lavora: livello 1 per le scelte
+  // dell'orchestratore, 2 per i dettagli (sezioni trovate, strumenti dell'agente dati).
+  return async function answer(question, history = [], { onStep = () => {} } = {}) {
     const trace = { steps: [], sources: new Map(), charts: [], dataNote: null, groundTexts: [], manualTexts: [] };
     const messages = [{ role: 'system', content: systemPrompt() }, ...history, { role: 'user', content: question }];
     let text = '';
+    let nudged = false;
+    onStep({ testo: 'Leggo la domanda e scelgo dove cercare' });
     for (let step = 0; step < maxSteps; step++) {
       const msg = await complete(messages);
       if (msg.tool_calls?.length) {
         messages.push({ role: 'assistant', content: msg.content || '', tool_calls: msg.tool_calls });
-        const results = await Promise.all(msg.tool_calls.map((c) => runTool(c, trace)));
+        const results = await Promise.all(msg.tool_calls.map((c) => runTool(c, trace, onStep)));
+        onStep({ testo: 'Ragiono sui risultati' });
         msg.tool_calls.forEach((c, i) => messages.push({ role: 'tool', tool_call_id: c.id, content: results[i] }));
         continue;
       }
       text = (msg.content || '').trim();
+      const suspicious = text && !nudged && step < maxSteps - 1 ? numbersWithoutData(text, trace, question) : [];
+      if (suspicious.length) {
+        nudged = true;
+        onStep({ testo: 'Ci sono numeri senza i dati di questa domanda: li chiedo all\'agente dati', livello: 2 });
+        messages.push({ role: 'assistant', content: text });
+        messages.push({ role: 'user', content: `CONTROLLO: la risposta contiene numeri (${suspicious.join(', ')}) senza che tu abbia `
+          + 'chiamato analizza_dati per questa domanda. I numeri dei messaggi precedenti valgono per altri brand o periodi. '
+          + 'Chiama analizza_dati con una domanda completa e autosufficiente, poi riscrivi la risposta con i suoi numeri.' });
+        text = '';
+        continue;
+      }
       if (text) break;
       messages.push({ role: 'system', content: 'Rispondi ora all\'utente in modo breve, con le informazioni raccolte.' });
     }
@@ -93,7 +122,8 @@ export function createOrchestrator({ llm, dataAgent, model, maxSteps = 5, reason
       );
       text = (final.content || '').trim() || 'Non sono riuscito a completare la risposta. Prova a riformulare la domanda.';
     }
-    const verified = await verify(text, { messages, trace, question, history });
+    onStep({ testo: 'Controllo numeri e fonti' });
+    const verified = await verify(text, { messages, trace, question, history, onStep });
     return {
       risposta: verified.text,
       grafici: trace.charts,
@@ -107,7 +137,7 @@ export function createOrchestrator({ llm, dataAgent, model, maxSteps = 5, reason
   // Controllo finale: numeri, sezioni e manuale vengono verificati dal codice. Se qualcosa non torna,
   // la risposta torna al modello una volta con l'elenco dei problemi; se sbaglia ancora, le parti
   // non verificate vengono tolte.
-  async function verify(draft, { messages, trace, question, history }) {
+  async function verify(draft, { messages, trace, question, history, onStep = () => {} }) {
     let text = normalizeCitations(draft);
     const toRead = citedCodes(text).filter((c) => !trace.sources.has(c));
     const read = new Map();
@@ -120,9 +150,12 @@ export function createOrchestrator({ llm, dataAgent, model, maxSteps = 5, reason
     }
     const known = new Set([...trace.sources.keys(), ...read.keys()]);
     const manualTexts = [...trace.manualTexts, ...[...read.values()].map((s) => s.testo)];
+    // Valgono solo le fonti di questa domanda: i numeri della conversazione precedente parlano d'altro.
+    const groundTexts = [...trace.groundTexts, ...manualTexts, question];
     const context = {
       // Solo risultati grezzi degli strumenti e testo del manuale: il testo scritto dall'agente dati non fa fede.
-      sources: sourceNumbers([...trace.groundTexts, ...manualTexts, question, ...history.map((m) => m.content)]),
+      sources: sourceNumbers(groundTexts),
+      sourceText: groundTexts.filter(Boolean).join('\n').toLowerCase(),
       knownCodes: known,
       manualRead: known.size > 0,
     };
@@ -131,6 +164,7 @@ export function createOrchestrator({ llm, dataAgent, model, maxSteps = 5, reason
 
     if (problems.length || read.size) {
       controllo.problemi = describeProblems(problems);
+      onStep({ testo: 'Qualcosa non torna: la risposta torna al modello per la correzione', livello: 2 });
       const feedback = ['CONTROLLO DELLA RISPOSTA PRIMA DELL\'INVIO.'];
       if (problems.length) feedback.push(`Problemi trovati: ${controllo.problemi.join('; ')}.`);
       if (read.size) {
@@ -138,7 +172,8 @@ export function createOrchestrator({ llm, dataAgent, model, maxSteps = 5, reason
           + `e togli le frasi che il testo non sostiene.\n\n${formatSections([...read.values()])}`);
       }
       feedback.push('Riscrivi la risposta completa correggendo solo questi punti. Usa solo numeri presenti nei risultati '
-        + 'degli strumenti, copiati senza cambiarli. Non aggiungere altro.');
+        + 'degli strumenti, copiati senza cambiarli, e togli le frequenze ("settimanalmente", "ogni mese") che il '
+        + 'manuale non prevede. Non aggiungere altro.');
       try {
         const fixed = await complete(
           [...messages, { role: 'assistant', content: draft }, { role: 'user', content: feedback.join('\n\n') }],

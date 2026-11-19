@@ -1,5 +1,6 @@
 import { createApp } from './app.js';
 import { env } from './config/env.js';
+import { log } from './services/log.js';
 
 createApp().listen(env.port, (err) => {
   if (err) {
@@ -10,6 +11,5 @@ createApp().listen(env.port, (err) => {
     }
     process.exit(1);
   }
-  console.log(`La Collina API su http://localhost:${env.port}`);
-  console.log(`Modello orchestratore: ${env.llmModel} · agente dati: ${env.dataAgentUrl}`);
+  log.info('back end avviato', { url: `http://localhost:${env.port}`, modello: env.llmModel, agente_dati: env.dataAgentUrl });
 });

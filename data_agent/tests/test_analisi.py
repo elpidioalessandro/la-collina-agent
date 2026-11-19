@@ -90,3 +90,29 @@ def test_soglie_fornitori_come_la_sez_8_6(dati):
     assert "non va segnalato" in cappotti[0]
     tutte = analisi.soglie_fornitori(dati)["da_segnalare"]
     assert [x.split(":")[0] for x in tutte] == ["Dipartimento 3 in AI23", "Lido Club in AI23", "Hole in AI24", "Hole in PE23"]
+
+
+def test_resi_per_motivo_di_un_brand_con_totale(dati):
+    """Il totale c'è sempre: senza, il modello somma da solo e il controllo finale toglie il numero."""
+    r = analisi.resi(dati, raggruppa_per="motivo", brand="Cruciverba")
+    assert r["totale_resi"] == sum(riga["resi"] for riga in r["tabella"]) == 51
+    assert r["totale_pct_sui_venduti"] == 2.89
+    assert r["resi_del_negozio_pct"] == 3.03 and r["rispetto_al_negozio"] == "sotto"
+
+
+def test_sell_through_dice_chi_va_segnalato_davvero(dati):
+    st = analisi.sell_through(dati, "brand")
+    assert st["da_segnalare_per_rinegoziare"] == analisi.soglie_fornitori(dati)["da_segnalare"]
+    assert "soltanto sotto il 70%" in st["nota"]
+    segnalati = " ".join(st["da_segnalare_per_rinegoziare"])
+    assert "FreePlace" not in segnalati  # sotto il 70% ma con una sola soglia
+
+
+def test_resi_di_un_brand_con_la_sua_posizione(dati):
+    """Il confronto con gli altri brand arriva calcolato: «il più basso» il modello non lo può inventare."""
+    cruciverba = analisi.resi(dati, raggruppa_per="motivo", brand="Cruciverba")["posizione_tra_i_brand"]
+    assert cruciverba == ("4° su 10 brand per tasso di resi (1° = più resi): non è né il più alto "
+                          "(Lardoni, 4,73%) né il più basso (Lieve, 0,50%).")
+    lardoni = analisi.resi(dati, raggruppa_per="brand_motivo", brand="Lardoni")["posizione_tra_i_brand"]
+    assert lardoni.startswith("1° su 10") and lardoni.endswith("è il più alto del negozio.")
+    assert "posizione_tra_i_brand" not in analisi.resi(dati, raggruppa_per="brand")

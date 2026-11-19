@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -20,6 +21,20 @@ function formatCitations(text) {
     });
 }
 
+// I PNG vengono cancellati dopo un giorno (GRAFICI_MAX_ORE): in una conversazione vecchia il grafico non c'è più.
+function Chart({ chart, onOpen }) {
+  const [missing, setMissing] = useState(false);
+  if (missing) {
+    return <p className="chart-missing">Grafico non più disponibile: i grafici si cancellano dopo un giorno. Rifai la domanda per rivederlo.</p>;
+  }
+  return (
+    <button className="chart" onClick={() => onOpen(chart.url)} title="Ingrandisci">
+      <img src={chart.url} alt="Grafico generato dall'agente dati" loading="lazy" onError={() => setMissing(true)} />
+      <span className="chart-hint">Ingrandisci</span>
+    </button>
+  );
+}
+
 export default function Message({ message, onOpenChart }) {
   if (message.role === 'user') {
     return <h3 className="question">{message.content}</h3>;
@@ -38,10 +53,7 @@ export default function Message({ message, onOpenChart }) {
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{formatCitations(message.content)}</ReactMarkdown>
       </div>
       {grafici.map((g) => (
-        <button key={g.nome} className="chart" onClick={() => onOpenChart(g.url)} title="Ingrandisci">
-          <img src={g.url} alt="Grafico generato dall'agente dati" loading="lazy" />
-          <span className="chart-hint">Ingrandisci</span>
-        </button>
+        <Chart key={g.nome} chart={g} onOpen={onOpenChart} />
       ))}
       {(fonti.length > 0 || notaDati || strumenti.length > 0) && (
         <footer className="meta">

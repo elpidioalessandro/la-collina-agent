@@ -132,3 +132,34 @@ test('le citazioni tra 【】 diventano [SEZ x.y] se la sezione è stata recuper
   const out = cleanText('Il lunedì il negozio è chiuso 【SEZ 7.4】 & 【SEZ 9.9】.', new Set(['SEZ 7.4']));
   assert.equal(out, 'Il lunedì il negozio è chiuso [SEZ 7.4].');
 });
+
+test('domanda di seguito: numeri presi dalla conversazione invece che dai dati, il modello deve chiamare l\'agente dati', async () => {
+  const llm = fakeLlm([
+    reply('Cruciverba: difetto 8 resi (0,4%).'), // numeri della risposta su Lardoni, senza dati nuovi
+    toolTurn(call('analizza_dati', 'Resi di Cruciverba per motivo')),
+    reply('Cruciverba: 3,29% di resi per taglia.'),
+  ]);
+  const dataAgent = fakeDataAgent();
+  const answer = createOrchestrator({ llm, dataAgent, model: 'finto', maxSteps: 5, waitMs: 0 });
+  const steps = [];
+  const history = [{ role: 'user', content: 'Lardoni ha troppi resi?' }, { role: 'assistant', content: 'Regalo: 8 resi (0,4%).' }];
+  const out = await answer('E Cruciverba?', history, { onStep: (s) => steps.push(s.testo) });
+  assert.deepEqual(dataAgent.calls.map((c) => c[0]), ['analizza']);
+  assert.ok(steps.some((t) => t.startsWith('Ci sono numeri senza i dati')));
+  assert.match(llm.requests[1].messages.at(-1).content, /numeri \(8, 0,4\) senza che tu abbia chiamato analizza_dati/);
+  assert.equal(out.risposta, 'Cruciverba: 3,29% di resi per taglia.');
+  assert.equal(out.controllo.esito, 'superato');
+});
+
+test('i numeri dei messaggi precedenti non fanno fede nel controllo finale', async () => {
+  const llm = fakeLlm([
+    toolTurn(call('analizza_dati', 'Resi di Cruciverba per motivo')),
+    reply('Cruciverba: 3,29% per taglia e 8 resi per difetto.'),
+    reply('Cruciverba: 3,29% per taglia e 8 resi per difetto.'),
+  ]);
+  const answer = createOrchestrator({ llm, dataAgent: fakeDataAgent(), model: 'finto', maxSteps: 5, waitMs: 0 });
+  const history = [{ role: 'assistant', content: 'Lardoni: 8 resi per regalo.' }];
+  const out = await answer('E Cruciverba?', history);
+  assert.equal(out.controllo.esito, 'parti non verificate tolte');
+  assert.deepEqual(out.controllo.problemi, ['numeri che non compaiono nei risultati: 8']);
+});

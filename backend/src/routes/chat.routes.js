@@ -2,42 +2,75 @@ import { Router } from 'express';
 import { Readable } from 'node:stream';
 import { httpError } from '../middleware/errorHandler.js';
 import { chatGlobal, chatPerIp } from '../middleware/rateLimit.js';
+import { log } from '../services/log.js';
+import { sseEvent } from '../services/sse.js';
 
 const MAX_LENGTH = 1000;
+const KEEPALIVE_MS = 10000;
+
+function errorText(err) {
+  return err.status === 429 ? 'Limite di richieste di Groq raggiunto: riprova tra un minuto.' : 'Errore durante la risposta. Riprova.';
+}
 
 export function chatRoutes({ answer, sessions, dataAgent }) {
   const router = Router();
 
   router.post('/chat', chatPerIp, chatGlobal, async (req, res, next) => {
+    let session;
+    let message;
     try {
-      const message = typeof req.body?.message === 'string' ? req.body.message.trim() : '';
+      message = typeof req.body?.message === 'string' ? req.body.message.trim() : '';
       if (!message) throw httpError(400, 'Scrivi una domanda.');
       if (message.length > MAX_LENGTH) throw httpError(400, `Domanda troppo lunga (massimo ${MAX_LENGTH} caratteri).`);
-      const session = sessions.get(req.body?.sessionId);
-      const started = Date.now();
-      // Le risposte possono superare il minuto: si inviano subito le intestazioni e uno spazio ogni 10 secondi,
-      // così il browser (Safari chiude le richieste inattive dopo circa 60 secondi) non interrompe la connessione.
-      res.status(200).type('application/json');
-      res.flushHeaders();
-      const heartbeat = setInterval(() => res.write(' '), 10000);
-      try {
-        const result = await answer(message, session.history);
-        sessions.append(session.id, { role: 'user', content: message }, { role: 'assistant', content: result.risposta });
-        console.log(`[chat] ${((Date.now() - started) / 1000).toFixed(1)}s · ${result.strumenti.map((s) => s.strumento).join(' + ') || 'nessuno strumento'} · controllo: ${result.controllo?.esito}${result.controllo?.problemi?.length ? ` (${result.controllo.problemi.join('; ')})` : ''} · "${message.slice(0, 60)}"`);
-        res.end(JSON.stringify({
-          sessionId: session.id,
-          ...result,
-          grafici: result.grafici.map((nome) => ({ nome, url: `/api/grafici/${encodeURIComponent(nome)}` })),
-        }));
-      } catch (err) {
-        console.error(`[chat] errore dopo ${((Date.now() - started) / 1000).toFixed(1)}s:`, err.status || '', err.message);
-        const text = err.status === 429 ? 'Limite di richieste di Groq raggiunto: riprova tra un minuto.' : 'Errore durante la risposta. Riprova.';
-        res.end(JSON.stringify({ error: text }));
-      } finally {
-        clearInterval(heartbeat);
-      }
+      session = sessions.get(req.body?.sessionId);
     } catch (err) {
-      next(err);
+      return next(err);
+    }
+
+    // Con "Accept: text/event-stream" la risposta arriva in Server-Sent Events: un evento "passo" per ogni
+    // cosa che l'assistente fa (cerca nel manuale, chiede all'agente dati, controlla), poi "risposta".
+    // Senza, resta la risposta JSON unica, per chi usa l'API direttamente.
+    const streaming = (req.get('accept') || '').includes('text/event-stream');
+    const started = Date.now();
+    res.status(200);
+    if (streaming) {
+      res.set({ 'Content-Type': 'text/event-stream; charset=utf-8', 'Cache-Control': 'no-cache', 'X-Accel-Buffering': 'no' });
+    } else {
+      res.type('application/json');
+    }
+    res.flushHeaders();
+    // Un segnale ogni 10 secondi: Safari chiude le richieste ferme da circa 60 secondi, e il modello può
+    // ragionare a lungo senza produrre passi. In SSE è un commento, in JSON uno spazio prima del corpo.
+    const keepalive = setInterval(() => res.write(streaming ? ': in corso\n\n' : ' '), KEEPALIVE_MS);
+    const send = (type, data) => {
+      if (streaming && !res.writableEnded) res.write(sseEvent(type, data));
+    };
+
+    try {
+      const result = await answer(message, session.history, { onStep: (step) => send('passo', step) });
+      sessions.append(session.id, { role: 'user', content: message }, { role: 'assistant', content: result.risposta });
+      log.info('chat', {
+        durata_s: ((Date.now() - started) / 1000).toFixed(1),
+        strumenti: result.strumenti.map((s) => s.strumento).join('+') || 'nessuno',
+        controllo: result.controllo?.esito,
+        problemi: result.controllo?.problemi?.length ? result.controllo.problemi.join('; ') : undefined,
+        sessione: session.id.slice(0, 8),
+        domanda: message.slice(0, 80),
+      });
+      const body = {
+        sessionId: session.id,
+        ...result,
+        grafici: result.grafici.map((nome) => ({ nome, url: `/api/grafici/${encodeURIComponent(nome)}` })),
+      };
+      if (streaming) send('risposta', body);
+      else res.write(JSON.stringify(body));
+    } catch (err) {
+      log.error('chat fallita', { durata_s: ((Date.now() - started) / 1000).toFixed(1), stato: err.status, errore: err.message });
+      if (streaming) send('errore', { error: errorText(err) });
+      else res.write(JSON.stringify({ error: errorText(err) }));
+    } finally {
+      clearInterval(keepalive);
+      res.end();
     }
   });
 

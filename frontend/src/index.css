@@ -115,6 +115,12 @@ button:disabled { cursor: not-allowed; opacity: 0.45; }
 .progress { display: block; height: 1px; width: 100%; background: var(--line); position: relative; overflow: hidden; }
 .progress::after { content: ''; position: absolute; left: -30%; width: 30%; height: 100%; background: var(--ink); animation: slide 1.4s ease-in-out infinite; }
 @keyframes slide { to { left: 100%; } }
+.steps { list-style: none; margin: 0; padding: 0; font-size: 0.7rem; line-height: 1.5; }
+.step { position: relative; padding-left: 16px; }
+.step::before { content: '✓'; position: absolute; left: 0; color: var(--brown); }
+.step.sub { padding-left: 32px; }
+.step.sub::before { content: '·'; left: 18px; }
+.chart-missing { margin: 18px 0 6px; padding: 18px 24px; background: var(--panel); color: var(--muted); font-size: 0.75rem; }
 
 /* composizione */
 .composer-wrap { background: var(--paper); border-top: 1px solid var(--line); }
