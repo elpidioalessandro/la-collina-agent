@@ -1,0 +1,3830 @@
+[
+ {
+  "argomenti": {
+   "raggruppa_per": "nessuno"
+  },
+  "esito": {
+   "righe_usate": 15834,
+   "tabella": [
+    {
+     "incasso_euro": 1711151.3,
+     "index": "totale",
+     "pezzi": 15834,
+     "sconto_medio_pct": 24.8,
+     "scontrini": 11376
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "brand": "Lardoni",
+   "data_fine": "2024-12-31",
+   "data_inizio": "2024-01-01",
+   "raggruppa_per": "nessuno"
+  },
+  "esito": {
+   "righe_usate": 746,
+   "tabella": [
+    {
+     "incasso_euro": 140157.7,
+     "index": "totale",
+     "pezzi": 746,
+     "sconto_medio_pct": 27.9,
+     "scontrini": 698
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "anno"
+  },
+  "esito": {
+   "nota": "Anni completi: [2024, 2025]. Gli altri anni sono parziali e non si confrontano.",
+   "righe_usate": 15834,
+   "tabella": [
+    {
+     "anno": 2023,
+     "incasso_euro": 437536.35,
+     "pezzi": 3681,
+     "sconto_medio_pct": 17.16,
+     "scontrini": 2677
+    },
+    {
+     "anno": 2024,
+     "incasso_euro": 544005.4,
+     "pezzi": 5350,
+     "sconto_medio_pct": 26.6,
+     "scontrini": 3840
+    },
+    {
+     "anno": 2025,
+     "incasso_euro": 606127.75,
+     "pezzi": 5286,
+     "sconto_medio_pct": 22.58,
+     "scontrini": 3816
+    },
+    {
+     "anno": 2026,
+     "incasso_euro": 123481.8,
+     "pezzi": 1517,
+     "sconto_medio_pct": 44.7,
+     "scontrini": 1043
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "brand": "Lardoni",
+   "data_fine": "2024-12-31",
+   "data_inizio": "2024-01-01",
+   "raggruppa_per": "anno"
+  },
+  "esito": {
+   "nota": "Anni completi: [2024, 2025]. Gli altri anni sono parziali e non si confrontano.",
+   "righe_usate": 746,
+   "tabella": [
+    {
+     "anno": 2024,
+     "incasso_euro": 140157.7,
+     "pezzi": 746,
+     "sconto_medio_pct": 27.9,
+     "scontrini": 698
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "mese"
+  },
+  "esito": {
+   "righe_usate": 15834,
+   "tabella": [
+    {
+     "incasso_euro": 23460.5,
+     "mese": "2023-03",
+     "pezzi": 169,
+     "sconto_medio_pct": 0.17,
+     "scontrini": 121
+    },
+    {
+     "incasso_euro": 22959.1,
+     "mese": "2023-04",
+     "pezzi": 171,
+     "sconto_medio_pct": 0.91,
+     "scontrini": 127
+    },
+    {
+     "incasso_euro": 46107.3,
+     "mese": "2023-05",
+     "pezzi": 321,
+     "sconto_medio_pct": 0.41,
+     "scontrini": 234
+    },
+    {
+     "incasso_euro": 69533.8,
+     "mese": "2023-06",
+     "pezzi": 486,
+     "sconto_medio_pct": 0.81,
+     "scontrini": 348
+    },
+    {
+     "incasso_euro": 87973.6,
+     "mese": "2023-07",
+     "pezzi": 984,
+     "sconto_medio_pct": 35.14,
+     "scontrini": 705
+    },
+    {
+     "incasso_euro": 38987.0,
+     "mese": "2023-08",
+     "pezzi": 609,
+     "sconto_medio_pct": 51.18,
+     "scontrini": 447
+    },
+    {
+     "incasso_euro": 25463.6,
+     "mese": "2023-09",
+     "pezzi": 156,
+     "sconto_medio_pct": 0.55,
+     "scontrini": 121
+    },
+    {
+     "incasso_euro": 33445.95,
+     "mese": "2023-10",
+     "pezzi": 205,
+     "sconto_medio_pct": 0.8,
+     "scontrini": 145
+    },
+    {
+     "incasso_euro": 34726.1,
+     "mese": "2023-11",
+     "pezzi": 221,
+     "sconto_medio_pct": 0.52,
+     "scontrini": 170
+    },
+    {
+     "incasso_euro": 54879.4,
+     "mese": "2023-12",
+     "pezzi": 359,
+     "sconto_medio_pct": 0.92,
+     "scontrini": 259
+    },
+    {
+     "incasso_euro": 88727.8,
+     "mese": "2024-01",
+     "pezzi": 870,
+     "sconto_medio_pct": 33.96,
+     "scontrini": 602
+    },
+    {
+     "incasso_euro": 58150.3,
+     "mese": "2024-02",
+     "pezzi": 829,
+     "sconto_medio_pct": 48.26,
+     "scontrini": 585
+    },
+    {
+     "incasso_euro": 23785.5,
+     "mese": "2024-03",
+     "pezzi": 186,
+     "sconto_medio_pct": 1.03,
+     "scontrini": 146
+    },
+    {
+     "incasso_euro": 21980.4,
+     "mese": "2024-04",
+     "pezzi": 165,
+     "sconto_medio_pct": 0.47,
+     "scontrini": 124
+    },
+    {
+     "incasso_euro": 32187.2,
+     "mese": "2024-05",
+     "pezzi": 251,
+     "sconto_medio_pct": 0.41,
+     "scontrini": 193
+    },
+    {
+     "incasso_euro": 51963.0,
+     "mese": "2024-06",
+     "pezzi": 422,
+     "sconto_medio_pct": 0.6,
+     "scontrini": 313
+    },
+    {
+     "incasso_euro": 92569.6,
+     "mese": "2024-07",
+     "pezzi": 1094,
+     "sconto_medio_pct": 34.48,
+     "scontrini": 764
+    },
+    {
+     "incasso_euro": 44997.1,
+     "mese": "2024-08",
+     "pezzi": 707,
+     "sconto_medio_pct": 51.25,
+     "scontrini": 500
+    },
+    {
+     "incasso_euro": 36261.6,
+     "mese": "2024-09",
+     "pezzi": 195,
+     "sconto_medio_pct": 0.42,
+     "scontrini": 145
+    },
+    {
+     "incasso_euro": 26431.5,
+     "mese": "2024-10",
+     "pezzi": 184,
+     "sconto_medio_pct": 0.28,
+     "scontrini": 139
+    },
+    {
+     "incasso_euro": 20997.8,
+     "mese": "2024-11",
+     "pezzi": 134,
+     "sconto_medio_pct": 0.28,
+     "scontrini": 105
+    },
+    {
+     "incasso_euro": 45953.6,
+     "mese": "2024-12",
+     "pezzi": 313,
+     "sconto_medio_pct": 0.44,
+     "scontrini": 224
+    },
+    {
+     "incasso_euro": 85113.8,
+     "mese": "2025-01",
+     "pezzi": 911,
+     "sconto_medio_pct": 34.64,
+     "scontrini": 669
+    },
+    {
+     "incasso_euro": 50606.0,
+     "mese": "2025-02",
+     "pezzi": 676,
+     "sconto_medio_pct": 49.57,
+     "scontrini": 489
+    },
+    {
+     "incasso_euro": 27916.0,
+     "mese": "2025-03",
+     "pezzi": 177,
+     "sconto_medio_pct": 0.59,
+     "scontrini": 131
+    },
+    {
+     "incasso_euro": 33240.1,
+     "mese": "2025-04",
+     "pezzi": 214,
+     "sconto_medio_pct": 0.41,
+     "scontrini": 169
+    },
+    {
+     "incasso_euro": 48668.4,
+     "mese": "2025-05",
+     "pezzi": 329,
+     "sconto_medio_pct": 0.37,
+     "scontrini": 235
+    },
+    {
+     "incasso_euro": 58844.0,
+     "mese": "2025-06",
+     "pezzi": 406,
+     "sconto_medio_pct": 0.66,
+     "scontrini": 269
+    },
+    {
+     "incasso_euro": 86677.5,
+     "mese": "2025-07",
+     "pezzi": 885,
+     "sconto_medio_pct": 32.96,
+     "scontrini": 619
+    },
+    {
+     "incasso_euro": 56451.1,
+     "mese": "2025-08",
+     "pezzi": 683,
+     "sconto_medio_pct": 39.8,
+     "scontrini": 489
+    },
+    {
+     "incasso_euro": 23554.3,
+     "mese": "2025-09",
+     "pezzi": 164,
+     "sconto_medio_pct": 0.89,
+     "scontrini": 122
+    },
+    {
+     "incasso_euro": 27992.0,
+     "mese": "2025-10",
+     "pezzi": 173,
+     "sconto_medio_pct": 0.52,
+     "scontrini": 134
+    },
+    {
+     "incasso_euro": 40360.1,
+     "mese": "2025-11",
+     "pezzi": 254,
+     "sconto_medio_pct": 0.53,
+     "scontrini": 189
+    },
+    {
+     "incasso_euro": 66704.45,
+     "mese": "2025-12",
+     "pezzi": 414,
+     "sconto_medio_pct": 0.88,
+     "scontrini": 301
+    },
+    {
+     "incasso_euro": 91546.8,
+     "mese": "2026-01",
+     "pezzi": 916,
+     "sconto_medio_pct": 33.76,
+     "scontrini": 631
+    },
+    {
+     "incasso_euro": 31935.0,
+     "mese": "2026-02",
+     "pezzi": 601,
+     "sconto_medio_pct": 62.46,
+     "scontrini": 412
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "brand": "Lardoni",
+   "data_fine": "2024-12-31",
+   "data_inizio": "2024-01-01",
+   "raggruppa_per": "mese"
+  },
+  "esito": {
+   "righe_usate": 746,
+   "tabella": [
+    {
+     "incasso_euro": 26217.8,
+     "mese": "2024-01",
+     "pezzi": 156,
+     "sconto_medio_pct": 34.66,
+     "scontrini": 145
+    },
+    {
+     "incasso_euro": 8415.6,
+     "mese": "2024-02",
+     "pezzi": 89,
+     "sconto_medio_pct": 59.81,
+     "scontrini": 82
+    },
+    {
+     "incasso_euro": 4321.4,
+     "mese": "2024-03",
+     "pezzi": 15,
+     "sconto_medio_pct": 2.56,
+     "scontrini": 14
+    },
+    {
+     "incasso_euro": 5471.0,
+     "mese": "2024-04",
+     "pezzi": 19,
+     "sconto_medio_pct": 0.0,
+     "scontrini": 18
+    },
+    {
+     "incasso_euro": 10495.1,
+     "mese": "2024-05",
+     "pezzi": 38,
+     "sconto_medio_pct": 0.16,
+     "scontrini": 36
+    },
+    {
+     "incasso_euro": 12275.2,
+     "mese": "2024-06",
+     "pezzi": 45,
+     "sconto_medio_pct": 0.65,
+     "scontrini": 43
+    },
+    {
+     "incasso_euro": 26866.4,
+     "mese": "2024-07",
+     "pezzi": 154,
+     "sconto_medio_pct": 34.51,
+     "scontrini": 146
+    },
+    {
+     "incasso_euro": 10159.6,
+     "mese": "2024-08",
+     "pezzi": 96,
+     "sconto_medio_pct": 56.65,
+     "scontrini": 90
+    },
+    {
+     "incasso_euro": 14853.3,
+     "mese": "2024-09",
+     "pezzi": 52,
+     "sconto_medio_pct": 0.43,
+     "scontrini": 48
+    },
+    {
+     "incasso_euro": 5984.1,
+     "mese": "2024-10",
+     "pezzi": 27,
+     "sconto_medio_pct": 0.65,
+     "scontrini": 27
+    },
+    {
+     "incasso_euro": 6376.0,
+     "mese": "2024-11",
+     "pezzi": 24,
+     "sconto_medio_pct": 0.0,
+     "scontrini": 23
+    },
+    {
+     "incasso_euro": 8722.2,
+     "mese": "2024-12",
+     "pezzi": 31,
+     "sconto_medio_pct": 0.65,
+     "scontrini": 26
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "stagione"
+  },
+  "esito": {
+   "righe_usate": 15834,
+   "tabella": [
+    {
+     "incasso_euro": 289362.35,
+     "pezzi": 2518,
+     "sconto_medio_pct": 25.88,
+     "scontrini": 1832,
+     "stagione": "AI23"
+    },
+    {
+     "incasso_euro": 263927.0,
+     "pezzi": 2400,
+     "sconto_medio_pct": 26.55,
+     "scontrini": 1793,
+     "stagione": "AI24"
+    },
+    {
+     "incasso_euro": 313383.75,
+     "pezzi": 2754,
+     "sconto_medio_pct": 24.4,
+     "scontrini": 1992,
+     "stagione": "AI25"
+    },
+    {
+     "incasso_euro": 275377.8,
+     "pezzi": 2675,
+     "sconto_medio_pct": 24.5,
+     "scontrini": 1947,
+     "stagione": "PE23"
+    },
+    {
+     "incasso_euro": 272161.4,
+     "pezzi": 2918,
+     "sconto_medio_pct": 26.25,
+     "scontrini": 2152,
+     "stagione": "PE24"
+    },
+    {
+     "incasso_euro": 296939.0,
+     "pezzi": 2569,
+     "sconto_medio_pct": 21.35,
+     "scontrini": 1871,
+     "stagione": "PE25"
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "brand": "Lardoni",
+   "data_fine": "2024-12-31",
+   "data_inizio": "2024-01-01",
+   "raggruppa_per": "stagione"
+  },
+  "esito": {
+   "righe_usate": 746,
+   "tabella": [
+    {
+     "incasso_euro": 34633.4,
+     "pezzi": 245,
+     "sconto_medio_pct": 43.28,
+     "scontrini": 227,
+     "stagione": "AI23"
+    },
+    {
+     "incasso_euro": 38536.6,
+     "pezzi": 143,
+     "sconto_medio_pct": 0.41,
+     "scontrini": 132,
+     "stagione": "AI24"
+    },
+    {
+     "incasso_euro": 66987.7,
+     "pezzi": 358,
+     "sconto_medio_pct": 29.21,
+     "scontrini": 339,
+     "stagione": "PE24"
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "righe_usate": 15834,
+   "tabella": [
+    {
+     "brand": "Ago&Filo",
+     "incasso_euro": 138040.5,
+     "pezzi": 1902,
+     "sconto_medio_pct": 23.96,
+     "scontrini": 1814
+    },
+    {
+     "brand": "Borris Calzature",
+     "incasso_euro": 164629.6,
+     "pezzi": 841,
+     "sconto_medio_pct": 25.12,
+     "scontrini": 824
+    },
+    {
+     "brand": "Cruciverba",
+     "incasso_euro": 147519.7,
+     "pezzi": 1764,
+     "sconto_medio_pct": 26.98,
+     "scontrini": 1680
+    },
+    {
+     "brand": "Dipartimento 3",
+     "incasso_euro": 196311.45,
+     "pezzi": 2871,
+     "sconto_medio_pct": 30.4,
+     "scontrini": 2668
+    },
+    {
+     "brand": "FreePlace Outerwear",
+     "incasso_euro": 190512.9,
+     "pezzi": 738,
+     "sconto_medio_pct": 28.95,
+     "scontrini": 721
+    },
+    {
+     "brand": "Grillo",
+     "incasso_euro": 91437.2,
+     "pezzi": 2246,
+     "sconto_medio_pct": 22.68,
+     "scontrini": 2106
+    },
+    {
+     "brand": "Hole",
+     "incasso_euro": 69640.7,
+     "pezzi": 649,
+     "sconto_medio_pct": 23.18,
+     "scontrini": 638
+    },
+    {
+     "brand": "Lardoni",
+     "incasso_euro": 446520.15,
+     "pezzi": 2222,
+     "sconto_medio_pct": 24.89,
+     "scontrini": 2087
+    },
+    {
+     "brand": "Lido Club",
+     "incasso_euro": 116492.7,
+     "pezzi": 1997,
+     "sconto_medio_pct": 30.31,
+     "scontrini": 1879
+    },
+    {
+     "brand": "Lieve",
+     "incasso_euro": 150046.4,
+     "pezzi": 604,
+     "sconto_medio_pct": 0.89,
+     "scontrini": 596
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "brand": "Lardoni",
+   "data_fine": "2024-12-31",
+   "data_inizio": "2024-01-01",
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "righe_usate": 746,
+   "tabella": [
+    {
+     "brand": "Lardoni",
+     "incasso_euro": 140157.7,
+     "pezzi": 746,
+     "sconto_medio_pct": 27.9,
+     "scontrini": 698
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "categoria"
+  },
+  "esito": {
+   "righe_usate": 15834,
+   "tabella": [
+    {
+     "categoria": "abito",
+     "incasso_euro": 186780.85,
+     "pezzi": 577,
+     "sconto_medio_pct": 24.15,
+     "scontrini": 571
+    },
+    {
+     "categoria": "calzini",
+     "incasso_euro": 38512.5,
+     "pezzi": 1458,
+     "sconto_medio_pct": 32.27,
+     "scontrini": 1395
+    },
+    {
+     "categoria": "camicia",
+     "incasso_euro": 87269.3,
+     "pezzi": 1139,
+     "sconto_medio_pct": 27.69,
+     "scontrini": 1111
+    },
+    {
+     "categoria": "capospalla",
+     "incasso_euro": 74906.9,
+     "pezzi": 257,
+     "sconto_medio_pct": 31.31,
+     "scontrini": 255
+    },
+    {
+     "categoria": "costume",
+     "incasso_euro": 20158.3,
+     "pezzi": 424,
+     "sconto_medio_pct": 27.82,
+     "scontrini": 417
+    },
+    {
+     "categoria": "cravatta",
+     "incasso_euro": 103695.9,
+     "pezzi": 1551,
+     "sconto_medio_pct": 15.18,
+     "scontrini": 1471
+    },
+    {
+     "categoria": "felpa",
+     "incasso_euro": 134537.0,
+     "pezzi": 1802,
+     "sconto_medio_pct": 28.62,
+     "scontrini": 1707
+    },
+    {
+     "categoria": "giacca",
+     "incasso_euro": 293188.1,
+     "pezzi": 1201,
+     "sconto_medio_pct": 24.58,
+     "scontrini": 1164
+    },
+    {
+     "categoria": "jeans",
+     "incasso_euro": 96112.7,
+     "pezzi": 986,
+     "sconto_medio_pct": 30.63,
+     "scontrini": 966
+    },
+    {
+     "categoria": "maglia",
+     "incasso_euro": 77754.4,
+     "pezzi": 819,
+     "sconto_medio_pct": 25.16,
+     "scontrini": 807
+    },
+    {
+     "categoria": "pantalone",
+     "incasso_euro": 149484.4,
+     "pezzi": 1674,
+     "sconto_medio_pct": 30.77,
+     "scontrini": 1596
+    },
+    {
+     "categoria": "profumo",
+     "incasso_euro": 150046.4,
+     "pezzi": 604,
+     "sconto_medio_pct": 0.89,
+     "scontrini": 596
+    },
+    {
+     "categoria": "scarpe casual",
+     "incasso_euro": 69640.7,
+     "pezzi": 649,
+     "sconto_medio_pct": 23.18,
+     "scontrini": 638
+    },
+    {
+     "categoria": "scarpe eleganti",
+     "incasso_euro": 164629.6,
+     "pezzi": 841,
+     "sconto_medio_pct": 25.12,
+     "scontrini": 824
+    },
+    {
+     "categoria": "t-shirt",
+     "incasso_euro": 64434.25,
+     "pezzi": 1852,
+     "sconto_medio_pct": 32.21,
+     "scontrini": 1774
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "brand": "Lardoni",
+   "data_fine": "2024-12-31",
+   "data_inizio": "2024-01-01",
+   "raggruppa_per": "categoria"
+  },
+  "esito": {
+   "righe_usate": 746,
+   "tabella": [
+    {
+     "categoria": "abito",
+     "incasso_euro": 56281.5,
+     "pezzi": 186,
+     "sconto_medio_pct": 25.94,
+     "scontrini": 185
+    },
+    {
+     "categoria": "giacca",
+     "incasso_euro": 53981.8,
+     "pezzi": 220,
+     "sconto_medio_pct": 27.54,
+     "scontrini": 216
+    },
+    {
+     "categoria": "pantalone",
+     "incasso_euro": 29894.4,
+     "pezzi": 340,
+     "sconto_medio_pct": 31.9,
+     "scontrini": 329
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "motivo"
+  },
+  "esito": {
+   "righe_usate": 15834,
+   "tabella": [
+    {
+     "incasso_euro": 52975.6,
+     "motivo_sconto": "cliente_abituale",
+     "pezzi": 364,
+     "sconto_medio_pct": 10.39,
+     "scontrini": 359
+    },
+    {
+     "incasso_euro": 1021057.0,
+     "motivo_sconto": "nessuno",
+     "pezzi": 6743,
+     "sconto_medio_pct": 0.0,
+     "scontrini": 5177
+    },
+    {
+     "incasso_euro": 637118.7,
+     "motivo_sconto": "saldo",
+     "pezzi": 8727,
+     "sconto_medio_pct": 46.7,
+     "scontrini": 6317
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "brand": "Lardoni",
+   "data_fine": "2024-12-31",
+   "data_inizio": "2024-01-01",
+   "raggruppa_per": "motivo"
+  },
+  "esito": {
+   "righe_usate": 746,
+   "tabella": [
+    {
+     "incasso_euro": 3668.4,
+     "motivo_sconto": "cliente_abituale",
+     "pezzi": 14,
+     "sconto_medio_pct": 10.0,
+     "scontrini": 14
+    },
+    {
+     "incasso_euro": 71119.0,
+     "motivo_sconto": "nessuno",
+     "pezzi": 261,
+     "sconto_medio_pct": 0.0,
+     "scontrini": 247
+    },
+    {
+     "incasso_euro": 65370.3,
+     "motivo_sconto": "saldo",
+     "pezzi": 471,
+     "sconto_medio_pct": 45.16,
+     "scontrini": 440
+    }
+   ]
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "nessuno"
+  },
+  "esito": {
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. Le soglie valgono per una stagione: qui le stagioni sono sommate, quindi il confronto è indicativo.",
+   "righe_ordini_usate": 4511,
+   "righe_usate": 15834,
+   "tabella": [
+    {
+     "index": "totale",
+     "ricevuti": 21014,
+     "sell_through_pct": 75.35,
+     "sell_through_prezzo_pieno_pct": 32.09,
+     "venduti": 15834,
+     "venduti_prezzo_pieno": 6743
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "nessuno",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta.",
+   "righe_ordini_usate": 765,
+   "righe_usate": 2400,
+   "tabella": [
+    {
+     "index": "totale",
+     "ricevuti": 3360,
+     "sell_through_pct": 71.43,
+     "sell_through_prezzo_pieno_pct": 27.98,
+     "venduti": 2400,
+     "venduti_prezzo_pieno": 940
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "categoria": "capospalla",
+   "raggruppa_per": "nessuno"
+  },
+  "esito": {
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. Le soglie valgono per una stagione: qui le stagioni sono sommate, quindi il confronto è indicativo.",
+   "righe_ordini_usate": 148,
+   "righe_usate": 257,
+   "tabella": [
+    {
+     "index": "totale",
+     "ricevuti": 422,
+     "sell_through_pct": 60.9,
+     "sell_through_prezzo_pieno_pct": 22.51,
+     "venduti": 257,
+     "venduti_prezzo_pieno": 95
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "stagione"
+  },
+  "esito": {
+   "almeno_80_pct": [
+    "PE24"
+   ],
+   "da_segnalare_per_rinegoziare": [
+    "Dipartimento 3 in AI23: 2 soglie superate (resi per difetto al 1,72% dei venduti (soglia 1%); sell-through al 62,9% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Lido Club in AI23: 2 soglie superate (resi per difetto al 1,30% dei venduti (soglia 1%); sell-through al 49,4% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in AI24: 2 soglie superate (resi per difetto al 2,13% dei venduti (soglia 1%); 15 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in PE23: 2 soglie superate (resi per difetto al 1,41% dei venduti (soglia 1%); 16 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+   ],
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. I brand da segnalare per rinegoziare sono solo quelli in da_segnalare_per_rinegoziare: per un brand che è soltanto sotto il 70% il manuale prevede l'outlet per la merce che resta, non la segnalazione.",
+   "righe_ordini_usate": 4511,
+   "righe_usate": 15834,
+   "sell_through_del_negozio_pct": 75.35,
+   "sotto_70_pct": [
+    "PE23"
+   ],
+   "tabella": [
+    {
+     "ricevuti": 3842,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 69.63,
+     "sell_through_prezzo_pieno_pct": 29.72,
+     "stagione": "PE23",
+     "venduti": 2675,
+     "venduti_prezzo_pieno": 1142
+    },
+    {
+     "ricevuti": 3360,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 71.43,
+     "sell_through_prezzo_pieno_pct": 27.98,
+     "stagione": "AI24",
+     "venduti": 2400,
+     "venduti_prezzo_pieno": 940
+    },
+    {
+     "ricevuti": 3426,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 73.5,
+     "sell_through_prezzo_pieno_pct": 29.83,
+     "stagione": "AI23",
+     "venduti": 2518,
+     "venduti_prezzo_pieno": 1022
+    },
+    {
+     "ricevuti": 3523,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 78.17,
+     "sell_through_prezzo_pieno_pct": 34.43,
+     "stagione": "AI25",
+     "venduti": 2754,
+     "venduti_prezzo_pieno": 1213
+    },
+    {
+     "ricevuti": 3273,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 78.49,
+     "sell_through_prezzo_pieno_pct": 37.55,
+     "stagione": "PE25",
+     "venduti": 2569,
+     "venduti_prezzo_pieno": 1229
+    },
+    {
+     "ricevuti": 3590,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 81.28,
+     "sell_through_prezzo_pieno_pct": 33.34,
+     "stagione": "PE24",
+     "venduti": 2918,
+     "venduti_prezzo_pieno": 1197
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "stagione",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "almeno_80_pct": [],
+   "da_segnalare_per_rinegoziare": [
+    "Hole in AI24: 2 soglie superate (resi per difetto al 2,13% dei venduti (soglia 1%); 15 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+   ],
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. I brand da segnalare per rinegoziare sono solo quelli in da_segnalare_per_rinegoziare: per un brand che è soltanto sotto il 70% il manuale prevede l'outlet per la merce che resta, non la segnalazione.",
+   "righe_ordini_usate": 765,
+   "righe_usate": 2400,
+   "sell_through_del_negozio_pct": 71.43,
+   "sotto_70_pct": [],
+   "tabella": [
+    {
+     "ricevuti": 3360,
+     "rispetto_al_negozio": "in linea",
+     "sell_through_pct": 71.43,
+     "sell_through_prezzo_pieno_pct": 27.98,
+     "stagione": "AI24",
+     "venduti": 2400,
+     "venduti_prezzo_pieno": 940
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "categoria": "capospalla",
+   "raggruppa_per": "stagione"
+  },
+  "esito": {
+   "almeno_80_pct": [],
+   "da_segnalare_per_rinegoziare": [
+    "Dipartimento 3 in AI23: 2 soglie superate (resi per difetto al 1,72% dei venduti (soglia 1%); sell-through al 62,9% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Lido Club in AI23: 2 soglie superate (resi per difetto al 1,30% dei venduti (soglia 1%); sell-through al 49,4% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in AI24: 2 soglie superate (resi per difetto al 2,13% dei venduti (soglia 1%); 15 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in PE23: 2 soglie superate (resi per difetto al 1,41% dei venduti (soglia 1%); 16 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+   ],
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. I brand da segnalare per rinegoziare sono solo quelli in da_segnalare_per_rinegoziare: per un brand che è soltanto sotto il 70% il manuale prevede l'outlet per la merce che resta, non la segnalazione.",
+   "righe_ordini_usate": 148,
+   "righe_usate": 257,
+   "sell_through_del_negozio_pct": 60.9,
+   "sotto_70_pct": [
+    "AI24",
+    "AI23",
+    "AI25"
+   ],
+   "tabella": [
+    {
+     "ricevuti": 150,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 48.67,
+     "sell_through_prezzo_pieno_pct": 17.33,
+     "stagione": "AI24",
+     "venduti": 73,
+     "venduti_prezzo_pieno": 26
+    },
+    {
+     "ricevuti": 138,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 65.94,
+     "sell_through_prezzo_pieno_pct": 22.46,
+     "stagione": "AI23",
+     "venduti": 91,
+     "venduti_prezzo_pieno": 31
+    },
+    {
+     "ricevuti": 134,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 69.4,
+     "sell_through_prezzo_pieno_pct": 28.36,
+     "stagione": "AI25",
+     "venduti": 93,
+     "venduti_prezzo_pieno": 38
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "almeno_80_pct": [
+    "Lardoni",
+    "Borris Calzature",
+    "Grillo",
+    "Hole",
+    "Cruciverba",
+    "Lieve",
+    "Ago&Filo"
+   ],
+   "da_segnalare_per_rinegoziare": [
+    "Dipartimento 3 in AI23: 2 soglie superate (resi per difetto al 1,72% dei venduti (soglia 1%); sell-through al 62,9% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Lido Club in AI23: 2 soglie superate (resi per difetto al 1,30% dei venduti (soglia 1%); sell-through al 49,4% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in AI24: 2 soglie superate (resi per difetto al 2,13% dei venduti (soglia 1%); 15 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in PE23: 2 soglie superate (resi per difetto al 1,41% dei venduti (soglia 1%); 16 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+   ],
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. I brand da segnalare per rinegoziare sono solo quelli in da_segnalare_per_rinegoziare: per un brand che è soltanto sotto il 70% il manuale prevede l'outlet per la merce che resta, non la segnalazione. Le soglie valgono per una stagione: qui le stagioni sono sommate, quindi il confronto è indicativo.",
+   "righe_ordini_usate": 4511,
+   "righe_usate": 15834,
+   "sell_through_del_negozio_pct": 75.35,
+   "sotto_70_pct": [
+    "Lido Club",
+    "FreePlace Outerwear",
+    "Dipartimento 3"
+   ],
+   "tabella": [
+    {
+     "brand": "Lido Club",
+     "ricevuti": 3552,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 56.22,
+     "sell_through_prezzo_pieno_pct": 20.55,
+     "venduti": 1997,
+     "venduti_prezzo_pieno": 730
+    },
+    {
+     "brand": "FreePlace Outerwear",
+     "ricevuti": 1085,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 68.02,
+     "sell_through_prezzo_pieno_pct": 27.1,
+     "venduti": 738,
+     "venduti_prezzo_pieno": 294
+    },
+    {
+     "brand": "Dipartimento 3",
+     "ricevuti": 4145,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 69.26,
+     "sell_through_prezzo_pieno_pct": 23.98,
+     "venduti": 2871,
+     "venduti_prezzo_pieno": 994
+    },
+    {
+     "brand": "Lardoni",
+     "ricevuti": 2768,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 80.27,
+     "sell_through_prezzo_pieno_pct": 32.95,
+     "venduti": 2222,
+     "venduti_prezzo_pieno": 912
+    },
+    {
+     "brand": "Borris Calzature",
+     "ricevuti": 1033,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 81.41,
+     "sell_through_prezzo_pieno_pct": 35.72,
+     "venduti": 841,
+     "venduti_prezzo_pieno": 369
+    },
+    {
+     "brand": "Grillo",
+     "ricevuti": 2746,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 81.79,
+     "sell_through_prezzo_pieno_pct": 36.45,
+     "venduti": 2246,
+     "venduti_prezzo_pieno": 1001
+    },
+    {
+     "brand": "Hole",
+     "ricevuti": 786,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 82.57,
+     "sell_through_prezzo_pieno_pct": 39.44,
+     "venduti": 649,
+     "venduti_prezzo_pieno": 310
+    },
+    {
+     "brand": "Cruciverba",
+     "ricevuti": 2080,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 84.81,
+     "sell_through_prezzo_pieno_pct": 33.85,
+     "venduti": 1764,
+     "venduti_prezzo_pieno": 704
+    },
+    {
+     "brand": "Lieve",
+     "ricevuti": 704,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 85.8,
+     "sell_through_prezzo_pieno_pct": 80.54,
+     "venduti": 604,
+     "venduti_prezzo_pieno": 567
+    },
+    {
+     "brand": "Ago&Filo",
+     "ricevuti": 2115,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 89.93,
+     "sell_through_prezzo_pieno_pct": 40.76,
+     "venduti": 1902,
+     "venduti_prezzo_pieno": 862
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "brand",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "almeno_80_pct": [
+    "Ago&Filo",
+    "Hole"
+   ],
+   "da_segnalare_per_rinegoziare": [
+    "Hole in AI24: 2 soglie superate (resi per difetto al 2,13% dei venduti (soglia 1%); 15 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+   ],
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. I brand da segnalare per rinegoziare sono solo quelli in da_segnalare_per_rinegoziare: per un brand che è soltanto sotto il 70% il manuale prevede l'outlet per la merce che resta, non la segnalazione.",
+   "righe_ordini_usate": 765,
+   "righe_usate": 2400,
+   "sell_through_del_negozio_pct": 71.43,
+   "sotto_70_pct": [
+    "Lido Club",
+    "FreePlace Outerwear",
+    "Dipartimento 3"
+   ],
+   "tabella": [
+    {
+     "brand": "Lido Club",
+     "ricevuti": 469,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 55.86,
+     "sell_through_prezzo_pieno_pct": 23.67,
+     "venduti": 262,
+     "venduti_prezzo_pieno": 111
+    },
+    {
+     "brand": "FreePlace Outerwear",
+     "ricevuti": 310,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 60.0,
+     "sell_through_prezzo_pieno_pct": 23.87,
+     "venduti": 186,
+     "venduti_prezzo_pieno": 74
+    },
+    {
+     "brand": "Dipartimento 3",
+     "ricevuti": 605,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 66.61,
+     "sell_through_prezzo_pieno_pct": 17.36,
+     "venduti": 403,
+     "venduti_prezzo_pieno": 105
+    },
+    {
+     "brand": "Lieve",
+     "ricevuti": 127,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 70.08,
+     "sell_through_prezzo_pieno_pct": 66.93,
+     "venduti": 89,
+     "venduti_prezzo_pieno": 85
+    },
+    {
+     "brand": "Borris Calzature",
+     "ricevuti": 158,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 72.78,
+     "sell_through_prezzo_pieno_pct": 31.65,
+     "venduti": 115,
+     "venduti_prezzo_pieno": 50
+    },
+    {
+     "brand": "Grillo",
+     "ricevuti": 427,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 75.64,
+     "sell_through_prezzo_pieno_pct": 24.36,
+     "venduti": 323,
+     "venduti_prezzo_pieno": 104
+    },
+    {
+     "brand": "Cruciverba",
+     "ricevuti": 311,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 75.88,
+     "sell_through_prezzo_pieno_pct": 30.55,
+     "venduti": 236,
+     "venduti_prezzo_pieno": 95
+    },
+    {
+     "brand": "Lardoni",
+     "ricevuti": 431,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 77.03,
+     "sell_through_prezzo_pieno_pct": 31.79,
+     "venduti": 332,
+     "venduti_prezzo_pieno": 137
+    },
+    {
+     "brand": "Ago&Filo",
+     "ricevuti": 426,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 84.51,
+     "sell_through_prezzo_pieno_pct": 28.64,
+     "venduti": 360,
+     "venduti_prezzo_pieno": 122
+    },
+    {
+     "brand": "Hole",
+     "ricevuti": 96,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 97.92,
+     "sell_through_prezzo_pieno_pct": 59.38,
+     "venduti": 94,
+     "venduti_prezzo_pieno": 57
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "categoria": "capospalla",
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "almeno_80_pct": [],
+   "da_segnalare_per_rinegoziare": [
+    "Dipartimento 3 in AI23: 2 soglie superate (resi per difetto al 1,72% dei venduti (soglia 1%); sell-through al 62,9% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Lido Club in AI23: 2 soglie superate (resi per difetto al 1,30% dei venduti (soglia 1%); sell-through al 49,4% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in AI24: 2 soglie superate (resi per difetto al 2,13% dei venduti (soglia 1%); 15 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in PE23: 2 soglie superate (resi per difetto al 1,41% dei venduti (soglia 1%); 16 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+   ],
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. I brand da segnalare per rinegoziare sono solo quelli in da_segnalare_per_rinegoziare: per un brand che è soltanto sotto il 70% il manuale prevede l'outlet per la merce che resta, non la segnalazione. Le soglie valgono per una stagione: qui le stagioni sono sommate, quindi il confronto è indicativo.",
+   "righe_ordini_usate": 148,
+   "righe_usate": 257,
+   "sell_through_del_negozio_pct": 60.9,
+   "sotto_70_pct": [
+    "FreePlace Outerwear"
+   ],
+   "tabella": [
+    {
+     "brand": "FreePlace Outerwear",
+     "ricevuti": 422,
+     "rispetto_al_negozio": "in linea",
+     "sell_through_pct": 60.9,
+     "sell_through_prezzo_pieno_pct": 22.51,
+     "venduti": 257,
+     "venduti_prezzo_pieno": 95
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "categoria"
+  },
+  "esito": {
+   "almeno_80_pct": [
+    "scarpe eleganti",
+    "giacca",
+    "felpa",
+    "scarpe casual",
+    "camicia",
+    "maglia",
+    "profumo",
+    "abito",
+    "cravatta"
+   ],
+   "da_segnalare_per_rinegoziare": [
+    "Dipartimento 3 in AI23: 2 soglie superate (resi per difetto al 1,72% dei venduti (soglia 1%); sell-through al 62,9% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Lido Club in AI23: 2 soglie superate (resi per difetto al 1,30% dei venduti (soglia 1%); sell-through al 49,4% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in AI24: 2 soglie superate (resi per difetto al 2,13% dei venduti (soglia 1%); 15 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in PE23: 2 soglie superate (resi per difetto al 1,41% dei venduti (soglia 1%); 16 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+   ],
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. I brand da segnalare per rinegoziare sono solo quelli in da_segnalare_per_rinegoziare: per un brand che è soltanto sotto il 70% il manuale prevede l'outlet per la merce che resta, non la segnalazione. Le soglie valgono per una stagione: qui le stagioni sono sommate, quindi il confronto è indicativo.",
+   "righe_ordini_usate": 4511,
+   "righe_usate": 15834,
+   "sell_through_del_negozio_pct": 75.35,
+   "sotto_70_pct": [
+    "t-shirt",
+    "capospalla",
+    "costume",
+    "pantalone",
+    "jeans"
+   ],
+   "tabella": [
+    {
+     "categoria": "t-shirt",
+     "ricevuti": 3125,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 59.26,
+     "sell_through_prezzo_pieno_pct": 19.9,
+     "venduti": 1852,
+     "venduti_prezzo_pieno": 622
+    },
+    {
+     "categoria": "capospalla",
+     "ricevuti": 422,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 60.9,
+     "sell_through_prezzo_pieno_pct": 22.51,
+     "venduti": 257,
+     "venduti_prezzo_pieno": 95
+    },
+    {
+     "categoria": "costume",
+     "ricevuti": 668,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 63.47,
+     "sell_through_prezzo_pieno_pct": 25.6,
+     "venduti": 424,
+     "venduti_prezzo_pieno": 171
+    },
+    {
+     "categoria": "pantalone",
+     "ricevuti": 2620,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 63.89,
+     "sell_through_prezzo_pieno_pct": 22.25,
+     "venduti": 1674,
+     "venduti_prezzo_pieno": 583
+    },
+    {
+     "categoria": "jeans",
+     "ricevuti": 1505,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 65.51,
+     "sell_through_prezzo_pieno_pct": 22.92,
+     "venduti": 986,
+     "venduti_prezzo_pieno": 345
+    },
+    {
+     "categoria": "calzini",
+     "ricevuti": 1966,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 74.16,
+     "sell_through_prezzo_pieno_pct": 25.89,
+     "venduti": 1458,
+     "venduti_prezzo_pieno": 509
+    },
+    {
+     "categoria": "scarpe eleganti",
+     "ricevuti": 1033,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 81.41,
+     "sell_through_prezzo_pieno_pct": 35.72,
+     "venduti": 841,
+     "venduti_prezzo_pieno": 369
+    },
+    {
+     "categoria": "giacca",
+     "ricevuti": 1472,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 81.59,
+     "sell_through_prezzo_pieno_pct": 36.75,
+     "venduti": 1201,
+     "venduti_prezzo_pieno": 541
+    },
+    {
+     "categoria": "felpa",
+     "ricevuti": 2205,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 81.72,
+     "sell_through_prezzo_pieno_pct": 31.02,
+     "venduti": 1802,
+     "venduti_prezzo_pieno": 684
+    },
+    {
+     "categoria": "scarpe casual",
+     "ricevuti": 786,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 82.57,
+     "sell_through_prezzo_pieno_pct": 39.44,
+     "venduti": 649,
+     "venduti_prezzo_pieno": 310
+    },
+    {
+     "categoria": "camicia",
+     "ricevuti": 1353,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 84.18,
+     "sell_through_prezzo_pieno_pct": 33.33,
+     "venduti": 1139,
+     "venduti_prezzo_pieno": 451
+    },
+    {
+     "categoria": "maglia",
+     "ricevuti": 971,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 84.35,
+     "sell_through_prezzo_pieno_pct": 35.32,
+     "venduti": 819,
+     "venduti_prezzo_pieno": 343
+    },
+    {
+     "categoria": "profumo",
+     "ricevuti": 704,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 85.8,
+     "sell_through_prezzo_pieno_pct": 80.54,
+     "venduti": 604,
+     "venduti_prezzo_pieno": 567
+    },
+    {
+     "categoria": "abito",
+     "ricevuti": 642,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 89.88,
+     "sell_through_prezzo_pieno_pct": 38.94,
+     "venduti": 577,
+     "venduti_prezzo_pieno": 250
+    },
+    {
+     "categoria": "cravatta",
+     "ricevuti": 1542,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 100.58,
+     "sell_through_prezzo_pieno_pct": 58.56,
+     "venduti": 1551,
+     "venduti_prezzo_pieno": 903
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "categoria",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "almeno_80_pct": [
+    "abito",
+    "scarpe casual",
+    "cravatta"
+   ],
+   "da_segnalare_per_rinegoziare": [
+    "Hole in AI24: 2 soglie superate (resi per difetto al 2,13% dei venduti (soglia 1%); 15 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+   ],
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. I brand da segnalare per rinegoziare sono solo quelli in da_segnalare_per_rinegoziare: per un brand che è soltanto sotto il 70% il manuale prevede l'outlet per la merce che resta, non la segnalazione.",
+   "righe_ordini_usate": 765,
+   "righe_usate": 2400,
+   "sell_through_del_negozio_pct": 71.43,
+   "sotto_70_pct": [
+    "capospalla",
+    "t-shirt",
+    "pantalone",
+    "maglia",
+    "jeans",
+    "calzini"
+   ],
+   "tabella": [
+    {
+     "categoria": "capospalla",
+     "ricevuti": 150,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 48.67,
+     "sell_through_prezzo_pieno_pct": 17.33,
+     "venduti": 73,
+     "venduti_prezzo_pieno": 26
+    },
+    {
+     "categoria": "t-shirt",
+     "ricevuti": 539,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 60.85,
+     "sell_through_prezzo_pieno_pct": 20.04,
+     "venduti": 328,
+     "venduti_prezzo_pieno": 108
+    },
+    {
+     "categoria": "pantalone",
+     "ricevuti": 419,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 63.72,
+     "sell_through_prezzo_pieno_pct": 24.11,
+     "venduti": 267,
+     "venduti_prezzo_pieno": 101
+    },
+    {
+     "categoria": "maglia",
+     "ricevuti": 161,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 65.22,
+     "sell_through_prezzo_pieno_pct": 25.47,
+     "venduti": 105,
+     "venduti_prezzo_pieno": 41
+    },
+    {
+     "categoria": "jeans",
+     "ricevuti": 211,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 65.4,
+     "sell_through_prezzo_pieno_pct": 18.01,
+     "venduti": 138,
+     "venduti_prezzo_pieno": 38
+    },
+    {
+     "categoria": "calzini",
+     "ricevuti": 336,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 69.05,
+     "sell_through_prezzo_pieno_pct": 19.05,
+     "venduti": 232,
+     "venduti_prezzo_pieno": 64
+    },
+    {
+     "categoria": "profumo",
+     "ricevuti": 127,
+     "rispetto_al_negozio": "sotto",
+     "sell_through_pct": 70.08,
+     "sell_through_prezzo_pieno_pct": 66.93,
+     "venduti": 89,
+     "venduti_prezzo_pieno": 85
+    },
+    {
+     "categoria": "scarpe eleganti",
+     "ricevuti": 158,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 72.78,
+     "sell_through_prezzo_pieno_pct": 31.65,
+     "venduti": 115,
+     "venduti_prezzo_pieno": 50
+    },
+    {
+     "categoria": "giacca",
+     "ricevuti": 265,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 73.96,
+     "sell_through_prezzo_pieno_pct": 30.94,
+     "venduti": 196,
+     "venduti_prezzo_pieno": 82
+    },
+    {
+     "categoria": "camicia",
+     "ricevuti": 280,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 77.86,
+     "sell_through_prezzo_pieno_pct": 23.57,
+     "venduti": 218,
+     "venduti_prezzo_pieno": 66
+    },
+    {
+     "categoria": "felpa",
+     "ricevuti": 276,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 79.35,
+     "sell_through_prezzo_pieno_pct": 28.99,
+     "venduti": 219,
+     "venduti_prezzo_pieno": 80
+    },
+    {
+     "categoria": "abito",
+     "ricevuti": 105,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 88.57,
+     "sell_through_prezzo_pieno_pct": 43.81,
+     "venduti": 93,
+     "venduti_prezzo_pieno": 46
+    },
+    {
+     "categoria": "scarpe casual",
+     "ricevuti": 96,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 97.92,
+     "sell_through_prezzo_pieno_pct": 59.38,
+     "venduti": 94,
+     "venduti_prezzo_pieno": 57
+    },
+    {
+     "categoria": "cravatta",
+     "ricevuti": 237,
+     "rispetto_al_negozio": "sopra",
+     "sell_through_pct": 98.31,
+     "sell_through_prezzo_pieno_pct": 40.51,
+     "venduti": 233,
+     "venduti_prezzo_pieno": 96
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "categoria": "capospalla",
+   "raggruppa_per": "categoria"
+  },
+  "esito": {
+   "almeno_80_pct": [],
+   "da_segnalare_per_rinegoziare": [
+    "Dipartimento 3 in AI23: 2 soglie superate (resi per difetto al 1,72% dei venduti (soglia 1%); sell-through al 62,9% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Lido Club in AI23: 2 soglie superate (resi per difetto al 1,30% dei venduti (soglia 1%); sell-through al 49,4% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in AI24: 2 soglie superate (resi per difetto al 2,13% dei venduti (soglia 1%); 15 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in PE23: 2 soglie superate (resi per difetto al 1,41% dei venduti (soglia 1%); 16 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+   ],
+   "nota": "Sell-through = venduti / ricevuti x 100, saldi compresi. Per il manuale [SEZ 8.6]: almeno l'80% = sta andando bene; sotto il 70% = l'ordine è stato troppo alto e la merce che resta va all'outlet. La segnalazione al titolare per rinegoziazione richiede almeno due soglie di controllo superate nella stessa stagione: il sell-through sotto il 70% da solo non basta. I brand da segnalare per rinegoziare sono solo quelli in da_segnalare_per_rinegoziare: per un brand che è soltanto sotto il 70% il manuale prevede l'outlet per la merce che resta, non la segnalazione. Le soglie valgono per una stagione: qui le stagioni sono sommate, quindi il confronto è indicativo.",
+   "righe_ordini_usate": 148,
+   "righe_usate": 257,
+   "sell_through_del_negozio_pct": 60.9,
+   "sotto_70_pct": [
+    "capospalla"
+   ],
+   "tabella": [
+    {
+     "categoria": "capospalla",
+     "ricevuti": 422,
+     "rispetto_al_negozio": "in linea",
+     "sell_through_pct": 60.9,
+     "sell_through_prezzo_pieno_pct": 22.51,
+     "venduti": 257,
+     "venduti_prezzo_pieno": 95
+    }
+   ]
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "nessuno"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "righe_usate": 16313,
+   "tabella": [
+    {
+     "index": "totale",
+     "pct_sui_venduti": 3.03,
+     "resi": 479,
+     "venduti": 15834
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "brand": "Cruciverba",
+   "raggruppa_per": "nessuno"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "posizione_tra_i_brand": "4° su 10 brand per tasso di resi (1° = più resi): non è né il più alto (Lardoni, 4,73%) né il più basso (Lieve, 0,50%).",
+   "righe_usate": 1815,
+   "tabella": [
+    {
+     "index": "totale",
+     "pct_sui_venduti": 2.89,
+     "resi": 51,
+     "venduti": 1764
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "nessuno",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "righe_usate": 2465,
+   "tabella": [
+    {
+     "index": "totale",
+     "pct_sui_venduti": 2.71,
+     "resi": 65,
+     "venduti": 2400
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "motivo": "taglia",
+   "raggruppa_per": "nessuno"
+  },
+  "esito": {
+   "motivo": "taglia",
+   "righe_usate": 16076,
+   "tabella": [
+    {
+     "index": "totale",
+     "pct_sui_venduti": 1.53,
+     "resi": 242,
+     "venduti": 15834
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "anno"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "resi_del_negozio_pct": 3.03,
+   "righe_usate": 16313,
+   "tabella": [
+    {
+     "anno": 2026,
+     "pct_sui_venduti": 3.56,
+     "resi": 54,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1517
+    },
+    {
+     "anno": 2024,
+     "pct_sui_venduti": 3.07,
+     "resi": 164,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 5350
+    },
+    {
+     "anno": 2023,
+     "pct_sui_venduti": 2.99,
+     "resi": 110,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 3681
+    },
+    {
+     "anno": 2025,
+     "pct_sui_venduti": 2.86,
+     "resi": 151,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 5286
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "brand": "Cruciverba",
+   "raggruppa_per": "anno"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "posizione_tra_i_brand": "4° su 10 brand per tasso di resi (1° = più resi): non è né il più alto (Lardoni, 4,73%) né il più basso (Lieve, 0,50%).",
+   "resi_del_negozio_pct": 2.89,
+   "righe_usate": 1815,
+   "tabella": [
+    {
+     "anno": 2026,
+     "pct_sui_venduti": 4.02,
+     "resi": 7,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 174
+    },
+    {
+     "anno": 2025,
+     "pct_sui_venduti": 3.21,
+     "resi": 19,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 592
+    },
+    {
+     "anno": 2024,
+     "pct_sui_venduti": 2.72,
+     "resi": 16,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 588
+    },
+    {
+     "anno": 2023,
+     "pct_sui_venduti": 2.2,
+     "resi": 9,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 410
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "anno",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "resi_del_negozio_pct": 2.71,
+   "righe_usate": 2465,
+   "tabella": [
+    {
+     "anno": 2024,
+     "pct_sui_venduti": 2.83,
+     "resi": 26,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 920
+    },
+    {
+     "anno": 2025,
+     "pct_sui_venduti": 2.64,
+     "resi": 39,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1480
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "motivo": "taglia",
+   "raggruppa_per": "anno"
+  },
+  "esito": {
+   "motivo": "taglia",
+   "resi_del_negozio_pct": 1.53,
+   "righe_usate": 16076,
+   "tabella": [
+    {
+     "anno": 2026,
+     "pct_sui_venduti": 2.04,
+     "resi": 31,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1517
+    },
+    {
+     "anno": 2025,
+     "pct_sui_venduti": 1.53,
+     "resi": 81,
+     "rispetto_al_negozio": "in linea",
+     "venduti": 5286
+    },
+    {
+     "anno": 2023,
+     "pct_sui_venduti": 1.52,
+     "resi": 56,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 3681
+    },
+    {
+     "anno": 2024,
+     "pct_sui_venduti": 1.38,
+     "resi": 74,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 5350
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "stagione"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "resi_del_negozio_pct": 3.03,
+   "righe_usate": 16313,
+   "tabella": [
+    {
+     "pct_sui_venduti": 3.38,
+     "resi": 93,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "AI25",
+     "venduti": 2754
+    },
+    {
+     "pct_sui_venduti": 3.34,
+     "resi": 84,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "AI23",
+     "venduti": 2518
+    },
+    {
+     "pct_sui_venduti": 3.03,
+     "resi": 81,
+     "rispetto_al_negozio": "in linea",
+     "stagione": "PE23",
+     "venduti": 2675
+    },
+    {
+     "pct_sui_venduti": 2.84,
+     "resi": 83,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE24",
+     "venduti": 2918
+    },
+    {
+     "pct_sui_venduti": 2.84,
+     "resi": 73,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE25",
+     "venduti": 2569
+    },
+    {
+     "pct_sui_venduti": 2.71,
+     "resi": 65,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "AI24",
+     "venduti": 2400
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "brand": "Cruciverba",
+   "raggruppa_per": "stagione"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "posizione_tra_i_brand": "4° su 10 brand per tasso di resi (1° = più resi): non è né il più alto (Lardoni, 4,73%) né il più basso (Lieve, 0,50%).",
+   "resi_del_negozio_pct": 2.89,
+   "righe_usate": 1815,
+   "tabella": [
+    {
+     "pct_sui_venduti": 4.55,
+     "resi": 14,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "AI25",
+     "venduti": 308
+    },
+    {
+     "pct_sui_venduti": 3.81,
+     "resi": 9,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "AI24",
+     "venduti": 236
+    },
+    {
+     "pct_sui_venduti": 2.7,
+     "resi": 7,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "AI23",
+     "venduti": 259
+    },
+    {
+     "pct_sui_venduti": 2.56,
+     "resi": 8,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE23",
+     "venduti": 312
+    },
+    {
+     "pct_sui_venduti": 2.12,
+     "resi": 7,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE24",
+     "venduti": 330
+    },
+    {
+     "pct_sui_venduti": 1.88,
+     "resi": 6,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE25",
+     "venduti": 319
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "stagione",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "resi_del_negozio_pct": 2.71,
+   "righe_usate": 2465,
+   "tabella": [
+    {
+     "pct_sui_venduti": 2.71,
+     "resi": 65,
+     "rispetto_al_negozio": "in linea",
+     "stagione": "AI24",
+     "venduti": 2400
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "motivo": "taglia",
+   "raggruppa_per": "stagione"
+  },
+  "esito": {
+   "motivo": "taglia",
+   "resi_del_negozio_pct": 1.53,
+   "righe_usate": 16076,
+   "tabella": [
+    {
+     "pct_sui_venduti": 1.78,
+     "resi": 49,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "AI25",
+     "venduti": 2754
+    },
+    {
+     "pct_sui_venduti": 1.57,
+     "resi": 42,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "PE23",
+     "venduti": 2675
+    },
+    {
+     "pct_sui_venduti": 1.55,
+     "resi": 39,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "AI23",
+     "venduti": 2518
+    },
+    {
+     "pct_sui_venduti": 1.5,
+     "resi": 36,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "AI24",
+     "venduti": 2400
+    },
+    {
+     "pct_sui_venduti": 1.48,
+     "resi": 38,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE25",
+     "venduti": 2569
+    },
+    {
+     "pct_sui_venduti": 1.3,
+     "resi": 38,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE24",
+     "venduti": 2918
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "resi_del_negozio_pct": 3.03,
+   "righe_usate": 16313,
+   "tabella": [
+    {
+     "brand": "Lardoni",
+     "pct_sui_venduti": 4.73,
+     "resi": 105,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 2222
+    },
+    {
+     "brand": "Hole",
+     "pct_sui_venduti": 4.01,
+     "resi": 26,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 649
+    },
+    {
+     "brand": "Dipartimento 3",
+     "pct_sui_venduti": 3.62,
+     "resi": 104,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 2871
+    },
+    {
+     "brand": "Cruciverba",
+     "pct_sui_venduti": 2.89,
+     "resi": 51,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1764
+    },
+    {
+     "brand": "FreePlace Outerwear",
+     "pct_sui_venduti": 2.85,
+     "resi": 21,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 738
+    },
+    {
+     "brand": "Borris Calzature",
+     "pct_sui_venduti": 2.73,
+     "resi": 23,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 841
+    },
+    {
+     "brand": "Lido Club",
+     "pct_sui_venduti": 2.5,
+     "resi": 50,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1997
+    },
+    {
+     "brand": "Grillo",
+     "pct_sui_venduti": 2.45,
+     "resi": 55,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 2246
+    },
+    {
+     "brand": "Ago&Filo",
+     "pct_sui_venduti": 2.16,
+     "resi": 41,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1902
+    },
+    {
+     "brand": "Lieve",
+     "pct_sui_venduti": 0.5,
+     "resi": 3,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 604
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "brand": "Cruciverba",
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "resi_del_negozio_pct": 2.89,
+   "righe_usate": 1815,
+   "tabella": [
+    {
+     "brand": "Cruciverba",
+     "pct_sui_venduti": 2.89,
+     "resi": 51,
+     "rispetto_al_negozio": "in linea",
+     "venduti": 1764
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "brand",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "resi_del_negozio_pct": 2.71,
+   "righe_usate": 2465,
+   "tabella": [
+    {
+     "brand": "Hole",
+     "pct_sui_venduti": 9.57,
+     "resi": 9.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 94
+    },
+    {
+     "brand": "Lardoni",
+     "pct_sui_venduti": 4.22,
+     "resi": 14.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 332
+    },
+    {
+     "brand": "Cruciverba",
+     "pct_sui_venduti": 3.81,
+     "resi": 9.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 236
+    },
+    {
+     "brand": "Lido Club",
+     "pct_sui_venduti": 3.44,
+     "resi": 9.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 262
+    },
+    {
+     "brand": "Dipartimento 3",
+     "pct_sui_venduti": 2.48,
+     "resi": 10.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 403
+    },
+    {
+     "brand": "Grillo",
+     "pct_sui_venduti": 1.86,
+     "resi": 6.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 323
+    },
+    {
+     "brand": "Borris Calzature",
+     "pct_sui_venduti": 1.74,
+     "resi": 2.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 115
+    },
+    {
+     "brand": "Ago&Filo",
+     "pct_sui_venduti": 1.11,
+     "resi": 4.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 360
+    },
+    {
+     "brand": "FreePlace Outerwear",
+     "pct_sui_venduti": 1.08,
+     "resi": 2.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 186
+    },
+    {
+     "brand": "Lieve",
+     "pct_sui_venduti": 0.0,
+     "resi": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 89
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "motivo": "taglia",
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "motivo": "taglia",
+   "resi_del_negozio_pct": 1.53,
+   "righe_usate": 16076,
+   "tabella": [
+    {
+     "brand": "Lardoni",
+     "pct_sui_venduti": 3.29,
+     "resi": 73.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 2222
+    },
+    {
+     "brand": "Cruciverba",
+     "pct_sui_venduti": 2.21,
+     "resi": 39.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1764
+    },
+    {
+     "brand": "FreePlace Outerwear",
+     "pct_sui_venduti": 1.76,
+     "resi": 13.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 738
+    },
+    {
+     "brand": "Hole",
+     "pct_sui_venduti": 1.69,
+     "resi": 11.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 649
+    },
+    {
+     "brand": "Dipartimento 3",
+     "pct_sui_venduti": 1.36,
+     "resi": 39.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 2871
+    },
+    {
+     "brand": "Borris Calzature",
+     "pct_sui_venduti": 1.31,
+     "resi": 11.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 841
+    },
+    {
+     "brand": "Grillo",
+     "pct_sui_venduti": 1.11,
+     "resi": 25.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 2246
+    },
+    {
+     "brand": "Lido Club",
+     "pct_sui_venduti": 0.95,
+     "resi": 19.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1997
+    },
+    {
+     "brand": "Ago&Filo",
+     "pct_sui_venduti": 0.63,
+     "resi": 12.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1902
+    },
+    {
+     "brand": "Lieve",
+     "pct_sui_venduti": 0.0,
+     "resi": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 604
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "categoria"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "resi_del_negozio_pct": 3.03,
+   "righe_usate": 16313,
+   "tabella": [
+    {
+     "categoria": "abito",
+     "pct_sui_venduti": 6.07,
+     "resi": 35,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 577
+    },
+    {
+     "categoria": "giacca",
+     "pct_sui_venduti": 4.25,
+     "resi": 51,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1201
+    },
+    {
+     "categoria": "scarpe casual",
+     "pct_sui_venduti": 4.01,
+     "resi": 26,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 649
+    },
+    {
+     "categoria": "t-shirt",
+     "pct_sui_venduti": 3.83,
+     "resi": 71,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1852
+    },
+    {
+     "categoria": "felpa",
+     "pct_sui_venduti": 3.27,
+     "resi": 59,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1802
+    },
+    {
+     "categoria": "pantalone",
+     "pct_sui_venduti": 3.17,
+     "resi": 53,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1674
+    },
+    {
+     "categoria": "jeans",
+     "pct_sui_venduti": 3.04,
+     "resi": 30,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 986
+    },
+    {
+     "categoria": "calzini",
+     "pct_sui_venduti": 3.02,
+     "resi": 44,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1458
+    },
+    {
+     "categoria": "camicia",
+     "pct_sui_venduti": 2.9,
+     "resi": 33,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1139
+    },
+    {
+     "categoria": "scarpe eleganti",
+     "pct_sui_venduti": 2.73,
+     "resi": 23,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 841
+    },
+    {
+     "categoria": "capospalla",
+     "pct_sui_venduti": 2.72,
+     "resi": 7,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 257
+    },
+    {
+     "categoria": "maglia",
+     "pct_sui_venduti": 2.69,
+     "resi": 22,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 819
+    },
+    {
+     "categoria": "cravatta",
+     "pct_sui_venduti": 1.23,
+     "resi": 19,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1551
+    },
+    {
+     "categoria": "costume",
+     "pct_sui_venduti": 0.71,
+     "resi": 3,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 424
+    },
+    {
+     "categoria": "profumo",
+     "pct_sui_venduti": 0.5,
+     "resi": 3,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 604
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "brand": "Cruciverba",
+   "raggruppa_per": "categoria"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "posizione_tra_i_brand": "4° su 10 brand per tasso di resi (1° = più resi): non è né il più alto (Lardoni, 4,73%) né il più basso (Lieve, 0,50%).",
+   "resi_del_negozio_pct": 2.89,
+   "righe_usate": 1815,
+   "tabella": [
+    {
+     "categoria": "felpa",
+     "pct_sui_venduti": 3.07,
+     "resi": 29,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 945
+    },
+    {
+     "categoria": "maglia",
+     "pct_sui_venduti": 2.69,
+     "resi": 22,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 819
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "categoria",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "resi_del_negozio_pct": 2.71,
+   "righe_usate": 2465,
+   "tabella": [
+    {
+     "categoria": "scarpe casual",
+     "pct_sui_venduti": 9.57,
+     "resi": 9.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 94
+    },
+    {
+     "categoria": "pantalone",
+     "pct_sui_venduti": 4.49,
+     "resi": 12.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 267
+    },
+    {
+     "categoria": "abito",
+     "pct_sui_venduti": 4.3,
+     "resi": 4.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 93
+    },
+    {
+     "categoria": "t-shirt",
+     "pct_sui_venduti": 3.35,
+     "resi": 11.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 328
+    },
+    {
+     "categoria": "felpa",
+     "pct_sui_venduti": 3.2,
+     "resi": 7.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 219
+    },
+    {
+     "categoria": "maglia",
+     "pct_sui_venduti": 2.86,
+     "resi": 3.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 105
+    },
+    {
+     "categoria": "calzini",
+     "pct_sui_venduti": 2.16,
+     "resi": 5.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 232
+    },
+    {
+     "categoria": "giacca",
+     "pct_sui_venduti": 2.04,
+     "resi": 4.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 196
+    },
+    {
+     "categoria": "camicia",
+     "pct_sui_venduti": 1.83,
+     "resi": 4.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 218
+    },
+    {
+     "categoria": "scarpe eleganti",
+     "pct_sui_venduti": 1.74,
+     "resi": 2.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 115
+    },
+    {
+     "categoria": "jeans",
+     "pct_sui_venduti": 1.45,
+     "resi": 2.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 138
+    },
+    {
+     "categoria": "capospalla",
+     "pct_sui_venduti": 1.37,
+     "resi": 1.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 73
+    },
+    {
+     "categoria": "cravatta",
+     "pct_sui_venduti": 0.43,
+     "resi": 1.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 233
+    },
+    {
+     "categoria": "profumo",
+     "pct_sui_venduti": 0.0,
+     "resi": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 89
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "motivo": "taglia",
+   "raggruppa_per": "categoria"
+  },
+  "esito": {
+   "motivo": "taglia",
+   "resi_del_negozio_pct": 1.53,
+   "righe_usate": 16076,
+   "tabella": [
+    {
+     "categoria": "abito",
+     "pct_sui_venduti": 4.33,
+     "resi": 25.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 577
+    },
+    {
+     "categoria": "giacca",
+     "pct_sui_venduti": 2.58,
+     "resi": 31.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1201
+    },
+    {
+     "categoria": "maglia",
+     "pct_sui_venduti": 2.2,
+     "resi": 18.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 819
+    },
+    {
+     "categoria": "pantalone",
+     "pct_sui_venduti": 1.91,
+     "resi": 32.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1674
+    },
+    {
+     "categoria": "felpa",
+     "pct_sui_venduti": 1.83,
+     "resi": 33.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1802
+    },
+    {
+     "categoria": "calzini",
+     "pct_sui_venduti": 1.71,
+     "resi": 25.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1458
+    },
+    {
+     "categoria": "scarpe casual",
+     "pct_sui_venduti": 1.69,
+     "resi": 11.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 649
+    },
+    {
+     "categoria": "t-shirt",
+     "pct_sui_venduti": 1.57,
+     "resi": 29.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 1852
+    },
+    {
+     "categoria": "capospalla",
+     "pct_sui_venduti": 1.56,
+     "resi": 4.0,
+     "rispetto_al_negozio": "sopra",
+     "venduti": 257
+    },
+    {
+     "categoria": "scarpe eleganti",
+     "pct_sui_venduti": 1.31,
+     "resi": 11.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 841
+    },
+    {
+     "categoria": "jeans",
+     "pct_sui_venduti": 1.12,
+     "resi": 11.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 986
+    },
+    {
+     "categoria": "camicia",
+     "pct_sui_venduti": 1.05,
+     "resi": 12.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1139
+    },
+    {
+     "categoria": "costume",
+     "pct_sui_venduti": 0.0,
+     "resi": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 424
+    },
+    {
+     "categoria": "cravatta",
+     "pct_sui_venduti": 0.0,
+     "resi": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 1551
+    },
+    {
+     "categoria": "profumo",
+     "pct_sui_venduti": 0.0,
+     "resi": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "venduti": 604
+    }
+   ]
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "motivo"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "righe_usate": 16313,
+   "tabella": [
+    {
+     "motivo_reso": "taglia",
+     "pct_sui_venduti": 1.53,
+     "resi": 242
+    },
+    {
+     "motivo_reso": "difetto",
+     "pct_sui_venduti": 0.55,
+     "resi": 87
+    },
+    {
+     "motivo_reso": "ripensamento",
+     "pct_sui_venduti": 0.55,
+     "resi": 87
+    },
+    {
+     "motivo_reso": "regalo",
+     "pct_sui_venduti": 0.4,
+     "resi": 63
+    }
+   ],
+   "totale_pct_sui_venduti": 3.03,
+   "totale_resi": 479
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "brand": "Cruciverba",
+   "raggruppa_per": "motivo"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "posizione_tra_i_brand": "4° su 10 brand per tasso di resi (1° = più resi): non è né il più alto (Lardoni, 4,73%) né il più basso (Lieve, 0,50%).",
+   "resi_del_negozio_pct": 3.03,
+   "righe_usate": 1815,
+   "rispetto_al_negozio": "sotto",
+   "tabella": [
+    {
+     "motivo_reso": "taglia",
+     "pct_sui_venduti": 2.21,
+     "resi": 39
+    },
+    {
+     "motivo_reso": "regalo",
+     "pct_sui_venduti": 0.34,
+     "resi": 6
+    },
+    {
+     "motivo_reso": "ripensamento",
+     "pct_sui_venduti": 0.23,
+     "resi": 4
+    },
+    {
+     "motivo_reso": "difetto",
+     "pct_sui_venduti": 0.11,
+     "resi": 2
+    }
+   ],
+   "totale_pct_sui_venduti": 2.89,
+   "totale_resi": 51
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "motivo",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "motivo": "tutti",
+   "resi_del_negozio_pct": 3.03,
+   "righe_usate": 2465,
+   "rispetto_al_negozio": "sotto",
+   "tabella": [
+    {
+     "motivo_reso": "taglia",
+     "pct_sui_venduti": 1.5,
+     "resi": 36
+    },
+    {
+     "motivo_reso": "difetto",
+     "pct_sui_venduti": 0.46,
+     "resi": 11
+    },
+    {
+     "motivo_reso": "regalo",
+     "pct_sui_venduti": 0.38,
+     "resi": 9
+    },
+    {
+     "motivo_reso": "ripensamento",
+     "pct_sui_venduti": 0.38,
+     "resi": 9
+    }
+   ],
+   "totale_pct_sui_venduti": 2.71,
+   "totale_resi": 65
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "motivo": "taglia",
+   "raggruppa_per": "motivo"
+  },
+  "esito": {
+   "motivo": "taglia",
+   "righe_usate": 16076,
+   "tabella": [
+    {
+     "motivo_reso": "taglia",
+     "pct_sui_venduti": 1.53,
+     "resi": 242
+    }
+   ],
+   "totale_pct_sui_venduti": 1.53,
+   "totale_resi": 242
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "brand_motivo"
+  },
+  "esito": {
+   "nota": "rispetto_al_negozio confronta il totale del brand con il totale del negozio.",
+   "resi_del_negozio_pct": {
+    "difetto": 0.55,
+    "regalo": 0.4,
+    "ripensamento": 0.55,
+    "taglia": 1.53,
+    "totale": 3.03
+   },
+   "righe_usate": 16313,
+   "tabella": [
+    {
+     "brand": "Lardoni",
+     "difetto": 0.54,
+     "regalo": 0.36,
+     "ripensamento": 0.54,
+     "rispetto_al_negozio": "sopra",
+     "taglia": 3.29,
+     "totale": 4.73
+    },
+    {
+     "brand": "Hole",
+     "difetto": 0.62,
+     "regalo": 0.92,
+     "ripensamento": 0.77,
+     "rispetto_al_negozio": "sopra",
+     "taglia": 1.69,
+     "totale": 4.01
+    },
+    {
+     "brand": "Dipartimento 3",
+     "difetto": 1.22,
+     "regalo": 0.38,
+     "ripensamento": 0.66,
+     "rispetto_al_negozio": "sopra",
+     "taglia": 1.36,
+     "totale": 3.62
+    },
+    {
+     "brand": "Cruciverba",
+     "difetto": 0.11,
+     "regalo": 0.34,
+     "ripensamento": 0.23,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 2.21,
+     "totale": 2.89
+    },
+    {
+     "brand": "FreePlace Outerwear",
+     "difetto": 0.14,
+     "regalo": 0.41,
+     "ripensamento": 0.54,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 1.76,
+     "totale": 2.85
+    },
+    {
+     "brand": "Borris Calzature",
+     "difetto": 0.12,
+     "regalo": 0.36,
+     "ripensamento": 0.95,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 1.31,
+     "totale": 2.73
+    },
+    {
+     "brand": "Lido Club",
+     "difetto": 0.6,
+     "regalo": 0.45,
+     "ripensamento": 0.5,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 0.95,
+     "totale": 2.5
+    },
+    {
+     "brand": "Grillo",
+     "difetto": 0.45,
+     "regalo": 0.31,
+     "ripensamento": 0.58,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 1.11,
+     "totale": 2.45
+    },
+    {
+     "brand": "Ago&Filo",
+     "difetto": 0.37,
+     "regalo": 0.53,
+     "ripensamento": 0.63,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 0.63,
+     "totale": 2.16
+    },
+    {
+     "brand": "Lieve",
+     "difetto": 0.5,
+     "regalo": 0.0,
+     "ripensamento": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 0.0,
+     "totale": 0.5
+    }
+   ],
+   "valori": "% di resi sui pezzi venduti del brand"
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "brand": "Cruciverba",
+   "raggruppa_per": "brand_motivo"
+  },
+  "esito": {
+   "nota": "rispetto_al_negozio confronta il totale del brand con il totale del negozio.",
+   "posizione_tra_i_brand": "4° su 10 brand per tasso di resi (1° = più resi): non è né il più alto (Lardoni, 4,73%) né il più basso (Lieve, 0,50%).",
+   "resi_del_negozio_pct": {
+    "difetto": 0.11,
+    "regalo": 0.34,
+    "ripensamento": 0.23,
+    "taglia": 2.21,
+    "totale": 2.89
+   },
+   "righe_usate": 1815,
+   "tabella": [
+    {
+     "brand": "Cruciverba",
+     "difetto": 0.11,
+     "regalo": 0.34,
+     "ripensamento": 0.23,
+     "rispetto_al_negozio": "in linea",
+     "taglia": 2.21,
+     "totale": 2.89
+    }
+   ],
+   "valori": "% di resi sui pezzi venduti del brand"
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "brand_motivo",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "nota": "rispetto_al_negozio confronta il totale del brand con il totale del negozio.",
+   "resi_del_negozio_pct": {
+    "difetto": 0.46,
+    "regalo": 0.38,
+    "ripensamento": 0.38,
+    "taglia": 1.5,
+    "totale": 2.71
+   },
+   "righe_usate": 2465,
+   "tabella": [
+    {
+     "brand": "Hole",
+     "difetto": 2.13,
+     "regalo": 2.13,
+     "ripensamento": 1.06,
+     "rispetto_al_negozio": "sopra",
+     "taglia": 4.26,
+     "totale": 9.57
+    },
+    {
+     "brand": "Lardoni",
+     "difetto": 0.3,
+     "regalo": 0.6,
+     "ripensamento": 0.3,
+     "rispetto_al_negozio": "sopra",
+     "taglia": 3.01,
+     "totale": 4.22
+    },
+    {
+     "brand": "Cruciverba",
+     "difetto": 0.42,
+     "regalo": 0.0,
+     "ripensamento": 0.0,
+     "rispetto_al_negozio": "sopra",
+     "taglia": 3.39,
+     "totale": 3.81
+    },
+    {
+     "brand": "Lido Club",
+     "difetto": 0.38,
+     "regalo": 0.38,
+     "ripensamento": 1.15,
+     "rispetto_al_negozio": "sopra",
+     "taglia": 1.53,
+     "totale": 3.44
+    },
+    {
+     "brand": "Dipartimento 3",
+     "difetto": 0.74,
+     "regalo": 0.25,
+     "ripensamento": 0.5,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 0.99,
+     "totale": 2.48
+    },
+    {
+     "brand": "Grillo",
+     "difetto": 0.62,
+     "regalo": 0.31,
+     "ripensamento": 0.62,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 0.31,
+     "totale": 1.86
+    },
+    {
+     "brand": "Borris Calzature",
+     "difetto": 0.0,
+     "regalo": 0.87,
+     "ripensamento": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 0.87,
+     "totale": 1.74
+    },
+    {
+     "brand": "Ago&Filo",
+     "difetto": 0.28,
+     "regalo": 0.28,
+     "ripensamento": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 0.56,
+     "totale": 1.11
+    },
+    {
+     "brand": "FreePlace Outerwear",
+     "difetto": 0.0,
+     "regalo": 0.0,
+     "ripensamento": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 1.08,
+     "totale": 1.08
+    },
+    {
+     "brand": "Lieve",
+     "difetto": 0.0,
+     "regalo": 0.0,
+     "ripensamento": 0.0,
+     "rispetto_al_negozio": "sotto",
+     "taglia": 0.0,
+     "totale": 0.0
+    }
+   ],
+   "valori": "% di resi sui pezzi venduti del brand"
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "nessuno"
+  },
+  "esito": {
+   "righe_escluse_senza_costo": 1,
+   "righe_usate": 15833,
+   "tabella": [
+    {
+     "costo_euro": 978273.84,
+     "incasso_euro": 1711091.8,
+     "index": "totale",
+     "margine_euro": 732817.96,
+     "margine_pct": 42.83
+    }
+   ]
+  },
+  "funzione": "margine"
+ },
+ {
+  "argomenti": {
+   "brand": "Hole",
+   "raggruppa_per": "nessuno"
+  },
+  "esito": {
+   "righe_escluse_senza_costo": 0,
+   "righe_usate": 649,
+   "tabella": [
+    {
+     "costo_euro": 41018.31,
+     "incasso_euro": 69640.7,
+     "index": "totale",
+     "margine_euro": 28622.39,
+     "margine_pct": 41.1
+    }
+   ]
+  },
+  "funzione": "margine"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "anno"
+  },
+  "esito": {
+   "margine_del_negozio_pct": 42.83,
+   "righe_escluse_senza_costo": 1,
+   "righe_usate": 15833,
+   "tabella": [
+    {
+     "anno": 2026,
+     "costo_euro": 95454.66,
+     "incasso_euro": 123422.3,
+     "margine_euro": 27967.64,
+     "margine_pct": 22.66,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "anno": 2024,
+     "costo_euro": 317526.82,
+     "incasso_euro": 544005.4,
+     "margine_euro": 226478.58,
+     "margine_pct": 41.63,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "anno": 2025,
+     "costo_euro": 337938.52,
+     "incasso_euro": 606127.75,
+     "margine_euro": 268189.23,
+     "margine_pct": 44.25,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "anno": 2023,
+     "costo_euro": 227353.84,
+     "incasso_euro": 437536.35,
+     "margine_euro": 210182.51,
+     "margine_pct": 48.04,
+     "rispetto_al_negozio": "sopra"
+    }
+   ]
+  },
+  "funzione": "margine"
+ },
+ {
+  "argomenti": {
+   "brand": "Hole",
+   "raggruppa_per": "anno"
+  },
+  "esito": {
+   "margine_del_negozio_pct": 41.1,
+   "righe_escluse_senza_costo": 0,
+   "righe_usate": 649,
+   "tabella": [
+    {
+     "anno": 2026,
+     "costo_euro": 4139.41,
+     "incasso_euro": 4868.2,
+     "margine_euro": 728.79,
+     "margine_pct": 14.97,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "anno": 2024,
+     "costo_euro": 13320.0,
+     "incasso_euro": 22043.3,
+     "margine_euro": 8723.3,
+     "margine_pct": 39.57,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "anno": 2025,
+     "costo_euro": 15606.45,
+     "incasso_euro": 27632.6,
+     "margine_euro": 12026.15,
+     "margine_pct": 43.52,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "anno": 2023,
+     "costo_euro": 7952.45,
+     "incasso_euro": 15096.6,
+     "margine_euro": 7144.15,
+     "margine_pct": 47.32,
+     "rispetto_al_negozio": "sopra"
+    }
+   ]
+  },
+  "funzione": "margine"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "margine_del_negozio_pct": 42.83,
+   "righe_escluse_senza_costo": 1,
+   "righe_usate": 15833,
+   "tabella": [
+    {
+     "brand": "Cruciverba",
+     "costo_euro": 101362.38,
+     "incasso_euro": 147519.7,
+     "margine_euro": 46157.32,
+     "margine_pct": 31.29,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "brand": "Borris Calzature",
+     "costo_euro": 104081.23,
+     "incasso_euro": 164629.6,
+     "margine_euro": 60548.37,
+     "margine_pct": 36.78,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "brand": "FreePlace Outerwear",
+     "costo_euro": 116286.95,
+     "incasso_euro": 190512.9,
+     "margine_euro": 74225.95,
+     "margine_pct": 38.96,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "brand": "Hole",
+     "costo_euro": 41018.31,
+     "incasso_euro": 69640.7,
+     "margine_euro": 28622.39,
+     "margine_pct": 41.1,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "brand": "Dipartimento 3",
+     "costo_euro": 113080.7,
+     "incasso_euro": 196311.45,
+     "margine_euro": 83230.75,
+     "margine_pct": 42.4,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "brand": "Lido Club",
+     "costo_euro": 66745.87,
+     "incasso_euro": 116433.2,
+     "margine_euro": 49687.33,
+     "margine_pct": 42.67,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "brand": "Lardoni",
+     "costo_euro": 247657.73,
+     "incasso_euro": 446520.15,
+     "margine_euro": 198862.42,
+     "margine_pct": 44.54,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "brand": "Ago&Filo",
+     "costo_euro": 70017.85,
+     "incasso_euro": 138040.5,
+     "margine_euro": 68022.65,
+     "margine_pct": 49.28,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "brand": "Lieve",
+     "costo_euro": 75665.11,
+     "incasso_euro": 150046.4,
+     "margine_euro": 74381.29,
+     "margine_pct": 49.57,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "brand": "Grillo",
+     "costo_euro": 42357.71,
+     "incasso_euro": 91437.2,
+     "margine_euro": 49079.49,
+     "margine_pct": 53.68,
+     "rispetto_al_negozio": "sopra"
+    }
+   ]
+  },
+  "funzione": "margine"
+ },
+ {
+  "argomenti": {
+   "brand": "Hole",
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "margine_del_negozio_pct": 41.1,
+   "righe_escluse_senza_costo": 0,
+   "righe_usate": 649,
+   "tabella": [
+    {
+     "brand": "Hole",
+     "costo_euro": 41018.31,
+     "incasso_euro": 69640.7,
+     "margine_euro": 28622.39,
+     "margine_pct": 41.1,
+     "rispetto_al_negozio": "in linea"
+    }
+   ]
+  },
+  "funzione": "margine"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "categoria"
+  },
+  "esito": {
+   "margine_del_negozio_pct": 42.83,
+   "righe_escluse_senza_costo": 1,
+   "righe_usate": 15833,
+   "tabella": [
+    {
+     "categoria": "maglia",
+     "costo_euro": 52364.16,
+     "incasso_euro": 77754.4,
+     "margine_euro": 25390.24,
+     "margine_pct": 32.65,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "categoria": "felpa",
+     "costo_euro": 85254.94,
+     "incasso_euro": 134537.0,
+     "margine_euro": 49282.06,
+     "margine_pct": 36.63,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "categoria": "scarpe eleganti",
+     "costo_euro": 104081.23,
+     "incasso_euro": 164629.6,
+     "margine_euro": 60548.37,
+     "margine_pct": 36.78,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "categoria": "capospalla",
+     "costo_euro": 46850.18,
+     "incasso_euro": 74906.9,
+     "margine_euro": 28056.72,
+     "margine_pct": 37.46,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "categoria": "t-shirt",
+     "costo_euro": 38087.12,
+     "incasso_euro": 64434.25,
+     "margine_euro": 26347.13,
+     "margine_pct": 40.89,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "categoria": "pantalone",
+     "costo_euro": 88263.29,
+     "incasso_euro": 149424.9,
+     "margine_euro": 61161.61,
+     "margine_pct": 40.93,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "categoria": "scarpe casual",
+     "costo_euro": 41018.31,
+     "incasso_euro": 69640.7,
+     "margine_euro": 28622.39,
+     "margine_pct": 41.1,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "categoria": "jeans",
+     "costo_euro": 55517.62,
+     "incasso_euro": 96112.7,
+     "margine_euro": 40595.08,
+     "margine_pct": 42.24,
+     "rispetto_al_negozio": "sotto"
+    },
+    {
+     "categoria": "costume",
+     "costo_euro": 11352.06,
+     "incasso_euro": 20158.3,
+     "margine_euro": 8806.24,
+     "margine_pct": 43.69,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "categoria": "giacca",
+     "costo_euro": 164848.02,
+     "incasso_euro": 293188.1,
+     "margine_euro": 128340.08,
+     "margine_pct": 43.77,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "categoria": "abito",
+     "costo_euro": 102596.24,
+     "incasso_euro": 186780.85,
+     "margine_euro": 84184.61,
+     "margine_pct": 45.07,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "categoria": "camicia",
+     "costo_euro": 46627.3,
+     "incasso_euro": 87269.3,
+     "margine_euro": 40642.0,
+     "margine_pct": 46.57,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "categoria": "calzini",
+     "costo_euro": 20337.25,
+     "incasso_euro": 38512.5,
+     "margine_euro": 18175.25,
+     "margine_pct": 47.19,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "categoria": "profumo",
+     "costo_euro": 75665.11,
+     "incasso_euro": 150046.4,
+     "margine_euro": 74381.29,
+     "margine_pct": 49.57,
+     "rispetto_al_negozio": "sopra"
+    },
+    {
+     "categoria": "cravatta",
+     "costo_euro": 45411.01,
+     "incasso_euro": 103695.9,
+     "margine_euro": 58284.89,
+     "margine_pct": 56.21,
+     "rispetto_al_negozio": "sopra"
+    }
+   ]
+  },
+  "funzione": "margine"
+ },
+ {
+  "argomenti": {
+   "brand": "Hole",
+   "raggruppa_per": "categoria"
+  },
+  "esito": {
+   "margine_del_negozio_pct": 41.1,
+   "righe_escluse_senza_costo": 0,
+   "righe_usate": 649,
+   "tabella": [
+    {
+     "categoria": "scarpe casual",
+     "costo_euro": 41018.31,
+     "incasso_euro": 69640.7,
+     "margine_euro": 28622.39,
+     "margine_pct": 41.1,
+     "rispetto_al_negozio": "in linea"
+    }
+   ]
+  },
+  "funzione": "margine"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "stagione"
+  },
+  "esito": {
+   "margine_del_negozio_pct": 42.83,
+   "righe_escluse_senza_costo": 1,
+   "righe_usate": 15833,
+   "tabella": [
+    {
+     "costo_euro": 154090.0,
+     "incasso_euro": 263927.0,
+     "margine_euro": 109837.0,
+     "margine_pct": 41.62,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "AI24"
+    },
+    {
+     "costo_euro": 168671.85,
+     "incasso_euro": 289362.35,
+     "margine_euro": 120690.5,
+     "margine_pct": 41.71,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "AI23"
+    },
+    {
+     "costo_euro": 156844.46,
+     "incasso_euro": 272161.4,
+     "margine_euro": 115316.94,
+     "margine_pct": 42.37,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE24"
+    },
+    {
+     "costo_euro": 156891.38,
+     "incasso_euro": 275377.8,
+     "margine_euro": 118486.42,
+     "margine_pct": 43.03,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "PE23"
+    },
+    {
+     "costo_euro": 178012.76,
+     "incasso_euro": 313324.25,
+     "margine_euro": 135311.49,
+     "margine_pct": 43.19,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "AI25"
+    },
+    {
+     "costo_euro": 163763.39,
+     "incasso_euro": 296939.0,
+     "margine_euro": 133175.61,
+     "margine_pct": 44.85,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "PE25"
+    }
+   ]
+  },
+  "funzione": "margine"
+ },
+ {
+  "argomenti": {
+   "brand": "Hole",
+   "raggruppa_per": "stagione"
+  },
+  "esito": {
+   "margine_del_negozio_pct": 41.1,
+   "righe_escluse_senza_costo": 0,
+   "righe_usate": 649,
+   "tabella": [
+    {
+     "costo_euro": 5200.82,
+     "incasso_euro": 8350.3,
+     "margine_euro": 3149.48,
+     "margine_pct": 37.72,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE24"
+    },
+    {
+     "costo_euro": 7902.04,
+     "incasso_euro": 13071.0,
+     "margine_euro": 5168.96,
+     "margine_pct": 39.55,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "AI23"
+    },
+    {
+     "costo_euro": 9044.31,
+     "incasso_euro": 15018.5,
+     "margine_euro": 5974.19,
+     "margine_pct": 39.78,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE25"
+    },
+    {
+     "costo_euro": 4390.56,
+     "incasso_euro": 7340.0,
+     "margine_euro": 2949.44,
+     "margine_pct": 40.18,
+     "rispetto_al_negozio": "sotto",
+     "stagione": "PE23"
+    },
+    {
+     "costo_euro": 8654.43,
+     "incasso_euro": 14939.6,
+     "margine_euro": 6285.17,
+     "margine_pct": 42.07,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "AI25"
+    },
+    {
+     "costo_euro": 5826.15,
+     "incasso_euro": 10921.3,
+     "margine_euro": 5095.15,
+     "margine_pct": 46.65,
+     "rispetto_al_negozio": "sopra",
+     "stagione": "AI24"
+    }
+   ]
+  },
+  "funzione": "margine"
+ },
+ {
+  "argomenti": {
+   "brand": "Inesistente",
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "errore": "ValueError: Nessun dato per brand = 'Inesistente'. Valori disponibili: ['Ago&Filo', 'Borris Calzature', 'Cruciverba', 'Dipartimento 3', 'FreePlace Outerwear', 'Grillo', 'Hole', 'Lardoni', 'Lido Club', 'Lieve']."
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "data_inizio": "2030-01-01"
+  },
+  "esito": {
+   "errore": "ValueError: Nessun dato nel periodo 2030-01-01 - None. Dati disponibili dal 2023-03-02 al 2026-02-27."
+  },
+  "funzione": "incasso"
+ },
+ {
+  "argomenti": {
+   "motivo": "boh",
+   "raggruppa_per": "brand"
+  },
+  "esito": {
+   "errore": "ValueError: Nessun reso con motivo 'boh'. Motivi: ['difetto', 'regalo', 'ripensamento', 'taglia']."
+  },
+  "funzione": "resi"
+ },
+ {
+  "argomenti": {
+   "raggruppa_per": "mese"
+  },
+  "esito": {
+   "errore": "ValueError: Il sell-through si calcola per brand, categoria o stagione."
+  },
+  "funzione": "sell_through"
+ },
+ {
+  "argomenti": {},
+  "esito": {
+   "con_una_soglia": [
+    "FreePlace Outerwear in AI23: una sola soglia superata (sell-through al 66,8% (soglia 70%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Hole in AI23: una sola soglia superata (16 consegne incomplete), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Lieve in AI23: una sola soglia superata (resi per difetto al 1,01% dei venduti (soglia 1%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Dipartimento 3 in AI24: una sola soglia superata (sell-through al 66,6% (soglia 70%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "FreePlace Outerwear in AI24: una sola soglia superata (sell-through al 60,0% (soglia 70%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Lido Club in AI24: una sola soglia superata (sell-through al 55,9% (soglia 70%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Dipartimento 3 in AI25: una sola soglia superata (resi per difetto al 1,22% dei venduti (soglia 1%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Hole in AI25: una sola soglia superata (21 consegne incomplete), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Lido Club in AI25: una sola soglia superata (sell-through al 51,8% (soglia 70%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Dipartimento 3 in PE23: una sola soglia superata (sell-through al 65,7% (soglia 70%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "FreePlace Outerwear in PE23: una sola soglia superata (sell-through al 67,1% (soglia 70%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Lido Club in PE23: una sola soglia superata (sell-through al 51,7% (soglia 70%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Dipartimento 3 in PE24: una sola soglia superata (resi per difetto al 1,54% dei venduti (soglia 1%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Hole in PE24: una sola soglia superata (19 consegne incomplete), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Lardoni in PE24: una sola soglia superata (resi per difetto al 1,12% dei venduti (soglia 1%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Lieve in PE24: una sola soglia superata (resi per difetto al 1,30% dei venduti (soglia 1%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Dipartimento 3 in PE25: una sola soglia superata (resi per difetto al 1,09% dei venduti (soglia 1%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "FreePlace Outerwear in PE25: una sola soglia superata (resi per difetto al 1,41% dei venduti (soglia 1%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Hole in PE25: una sola soglia superata (22 consegne incomplete), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6].",
+    "Lido Club in PE25: una sola soglia superata (sell-through al 54,1% (soglia 70%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6]."
+   ],
+   "da_segnalare": [
+    "Dipartimento 3 in AI23: 2 soglie superate (resi per difetto al 1,72% dei venduti (soglia 1%); sell-through al 62,9% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Lido Club in AI23: 2 soglie superate (resi per difetto al 1,30% dei venduti (soglia 1%); sell-through al 49,4% (soglia 70%)), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in AI24: 2 soglie superate (resi per difetto al 2,13% dei venduti (soglia 1%); 15 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6].",
+    "Hole in PE23: 2 soglie superate (resi per difetto al 1,41% dei venduti (soglia 1%); 16 consegne incomplete), va segnalato al titolare per rinegoziazione [SEZ 8.6]."
+   ],
+   "regola": "Un brand va segnalato al titolare per rinegoziazione quando supera almeno due di queste soglie nella stessa stagione: resi per difetto oltre l'1% dei venduti, sell-through sotto il 70% dei ricevuti, consegne incomplete, sconto medio fuori dai saldi oltre il 10% [SEZ 8.6].",
+   "righe_usate": 60
+  },
+  "funzione": "soglie_fornitori"
+ },
+ {
+  "argomenti": {
+   "categoria": "capospalla",
+   "stagione": "AI24"
+  },
+  "esito": {
+   "nota": "Stagione = collezione del capo (AI24 = autunno-inverno 2024, venduta da settembre 2024 ai saldi di febbraio 2025), non l'anno solare. L'incasso è quello dei capi della stagione.",
+   "righe_usate": 257,
+   "segnalazione": [
+    "FreePlace Outerwear in AI24: una sola soglia superata (sell-through al 60,0% (soglia 70%)), quindi non va segnalato per rinegoziazione: ne servono almeno due nella stessa stagione [SEZ 8.6]."
+   ],
+   "sintesi": "Sell-through dei capospalla in AI24: 48,7% (73 venduti su 150 ricevuti), il più basso tra AI23, AI24, AI25: 17,3 punti sotto AI23 (65,9%) e 20,7 punti sotto AI25 (69,4%). Sotto il 70%: per il manuale l'ordine è stato troppo alto e la merce che resta va all'outlet [SEZ 8.6]. Incasso dei capi AI24: 19.936,60 €, 5.178,40 € in meno di AI23 (25.115,00 €) e 9.918,70 € in meno di AI25 (29.855,30 €).",
+   "stagioni": [
+    {
+     "incasso_euro": 25115.0,
+     "ricevuti": 138,
+     "sell_through_pct": 65.94,
+     "sell_through_prezzo_pieno_pct": 22.46,
+     "stagione": "AI23",
+     "stagione_conclusa": true,
+     "venduti": 91
+    },
+    {
+     "incasso_euro": 19936.6,
+     "ricevuti": 150,
+     "sell_through_pct": 48.67,
+     "sell_through_prezzo_pieno_pct": 17.33,
+     "stagione": "AI24",
+     "stagione_conclusa": true,
+     "venduti": 73
+    },
+    {
+     "incasso_euro": 29855.3,
+     "ricevuti": 134,
+     "sell_through_pct": 69.4,
+     "sell_through_prezzo_pieno_pct": 28.36,
+     "stagione": "AI25",
+     "stagione_conclusa": true,
+     "venduti": 93
+    }
+   ]
+  },
+  "funzione": "confronta_stagioni"
+ }
+]

@@ -14,6 +14,7 @@ from pydantic import BaseModel, Field
 
 import analisi
 import config
+from archivio import Archivio
 import grafici
 import registro
 from caricamento import ErroreDati
@@ -37,16 +38,35 @@ class DomandaDati(BaseModel):
     domanda: str = Field(min_length=2, max_length=1500)
 
 
+class Movimenti(BaseModel):
+    tabella: str = Field(pattern="^(vendite|ordini)$")
+    righe: list[dict] = Field(min_length=1, max_length=500)
+    ricarica: bool = False
+
+
 def _impronta_file() -> dict:
     return {nome: p.stat().st_mtime if p.is_file() else None
             for nome, p in (("vendite", Path(config.VENDITE_CSV)), ("ordini", Path(config.ORDINI_CSV)))}
 
 
+def _archivio() -> Archivio:
+    if SERVIZI.get("archivio") is None or SERVIZI["archivio"].percorso != str(config.ARCHIVIO_DB):
+        SERVIZI["archivio"] = Archivio(config.ARCHIVIO_DB)
+    return SERVIZI["archivio"]
+
+
 def _carica_dati() -> analisi.Dati:
+    """CSV (se ci sono e sono cambiati) → archivio SQLite → pulizia → base analitica DuckDB."""
     inizio = time.time()
-    dati = analisi.Dati.da_csv(config.VENDITE_CSV, config.ORDINI_CSV)
-    SERVIZI["caricati"] = {"alle": datetime.now().isoformat(timespec="seconds"), "file": _impronta_file()}
+    archivio = _archivio()
+    importate = {nome: archivio.importa_csv(percorso, nome)
+                 for nome, percorso in (("vendite", config.VENDITE_CSV), ("ordini", config.ORDINI_CSV))
+                 if Path(percorso).is_file()}
+    dati = analisi.Dati.da_archivio(archivio, config.ANALITICO_DB)
+    SERVIZI["caricati"] = {"alle": datetime.now().isoformat(timespec="seconds"), "file": _impronta_file(),
+                           "archivio": archivio.versione()}
     log.info("dati caricati", extra={"righe_vendite": len(dati.v), "righe_ordini": len(dati.o),
+                                     "importate_da_csv": sum(importate.values()),
                                      "durata_s": round(time.time() - inizio, 1)})
     return dati
 
@@ -59,7 +79,8 @@ def avvia(dati=None, manuale=None, agente=None):
     if dati is None:
         dati = _carica_dati()
     else:
-        SERVIZI["caricati"] = {"alle": datetime.now().isoformat(timespec="seconds"), "file": _impronta_file()}
+        SERVIZI["caricati"] = {"alle": datetime.now().isoformat(timespec="seconds"), "file": _impronta_file(),
+                               "archivio": None}
     SERVIZI["dati"] = dati
     SERVIZI["manuale"] = manuale or Manuale()
     SERVIZI["agente"] = agente or AgenteDati(dati)
@@ -87,11 +108,14 @@ app = FastAPI(title="La Collina – agente dati e manuale", lifespan=ciclo_di_vi
 def salute():
     d = SERVIZI["dati"]
     caricati = SERVIZI.get("caricati", {})
+    archivio = SERVIZI.get("archivio")
     return {"stato": "ok", "righe_vendite": len(d.v), "righe_ordini": len(d.o),
             "sezioni_manuale": len(SERVIZI["manuale"].sezioni),
             "dati_caricati_alle": caricati.get("alle"),
-            # True se i CSV sono cambiati dopo il caricamento: basta chiamare POST /ricarica.
-            "file_cambiati": caricati.get("file") != _impronta_file()}
+            # True se i CSV o l'archivio sono cambiati dopo il caricamento: basta chiamare POST /ricarica.
+            "file_cambiati": caricati.get("file") != _impronta_file(),
+            "archivio_cambiato": bool(archivio and caricati.get("archivio") not in (None, archivio.versione())),
+            "archivio": archivio.conteggi() if archivio else None}
 
 
 @app.post("/ricarica")
@@ -110,6 +134,23 @@ def ricarica():
     SERVIZI["dati"] = dati
     return {"stato": "ricaricati", "righe_vendite": len(dati.v), "righe_ordini": len(dati.o),
             "dati_caricati_alle": SERVIZI["caricati"]["alle"]}
+
+
+@app.post("/movimenti")
+def movimenti(richiesta: Movimenti):
+    """Registra righe di cassa (vendite, resi) o di ordini nell'archivio SQLite, come farebbe la cassa.
+    Con ricarica=true le analisi si aggiornano subito; altrimenti al prossimo POST /ricarica."""
+    try:
+        registrate = _archivio().registra(richiesta.tabella, richiesta.righe)
+    except ErroreDati as e:
+        raise HTTPException(status_code=422, detail=str(e)) from None
+    log.info("movimenti registrati", extra={"tabella": richiesta.tabella, "righe": registrate})
+    esito = {"registrate": registrate, "tabella": richiesta.tabella}
+    if richiesta.ricarica:
+        esito["ricarica"] = ricarica()
+    else:
+        esito["nota"] = "Righe salvate nell'archivio: POST /ricarica aggiorna le analisi."
+    return esito
 
 
 @app.post("/cerca")

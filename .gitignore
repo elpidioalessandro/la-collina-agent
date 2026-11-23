@@ -9,3 +9,5 @@ frontend/dist/
 .DS_Store
 .venv/
 screenshot/
+data_agent/archivio.sqlite*
+data_agent/analitico*.duckdb*

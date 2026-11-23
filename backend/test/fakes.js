@@ -46,7 +46,7 @@ export function fakeDataAgent({ down = false, streaming = false } = {}) {
         risposta: 'Lardoni ha il 3,3% di resi per taglia, 7,7 punti sopra la media.',
         grafici: [{ nome: 'abcdef123456.png', url: '/grafici/abcdef123456.png' }],
         passaggi: [{ strumento: 'resi' }, { strumento: 'crea_grafico' }],
-        risultati_completi: 'resi: {"brand": "Lardoni", "pct_sui_venduti": 3.29}',
+        risultati_completi: 'resi: {"brand": "Lardoni", "motivo_reso": "taglia", "resi": 73, "pct_sui_venduti": 3.29, "pct_sui_resi": 69.52}',
         nota_dati: 'Dati: 16569 righe di vendite; 164 righe duplicate scartate.',
       };
     },

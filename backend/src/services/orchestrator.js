@@ -1,5 +1,5 @@
 import { systemPrompt, TOOLS } from '../prompts/systemPrompt.js';
-import { answerNumbers, citedCodes, describeProblems, findProblems, isGrounded, normalizeCitations, removeProblems, sourceNumbers, tidy } from './verifier.js';
+import { HOW_TO_FIX, answerNumbers, citedCodes, describeProblems, findProblems, isGrounded, normalizeCitations, percentSources, removeProblems, sourceNumbers, tidy } from './verifier.js';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -156,6 +156,7 @@ export function createOrchestrator({ llm, dataAgent, model, maxSteps = 5, reason
       // Solo risultati grezzi degli strumenti e testo del manuale: il testo scritto dall'agente dati non fa fede.
       sources: sourceNumbers(groundTexts),
       sourceText: groundTexts.filter(Boolean).join('\n').toLowerCase(),
+      percents: percentSources(groundTexts),
       knownCodes: known,
       manualRead: known.size > 0,
     };
@@ -167,13 +168,14 @@ export function createOrchestrator({ llm, dataAgent, model, maxSteps = 5, reason
       onStep({ testo: 'Qualcosa non torna: la risposta torna al modello per la correzione', livello: 2 });
       const feedback = ['CONTROLLO DELLA RISPOSTA PRIMA DELL\'INVIO.'];
       if (problems.length) feedback.push(`Problemi trovati: ${controllo.problemi.join('; ')}.`);
+      for (const p of problems) if (HOW_TO_FIX[p.tipo]) feedback.push(HOW_TO_FIX[p.tipo]);
       if (read.size) {
         feedback.push('Hai citato sezioni che non avevi letto. Eccole: attribuisci a ognuna solo quello che dice davvero, '
           + `e togli le frasi che il testo non sostiene.\n\n${formatSections([...read.values()])}`);
       }
       feedback.push('Riscrivi la risposta completa correggendo solo questi punti. Usa solo numeri presenti nei risultati '
-        + 'degli strumenti, copiati senza cambiarli, e togli le frequenze ("settimanalmente", "ogni mese") che il '
-        + 'manuale non prevede. Non aggiungere altro.');
+        + 'degli strumenti, copiati senza cambiarli: un numero di resi o di casi non è una percentuale. Togli le '
+        + 'frequenze ("settimanalmente", "ogni mese") e le azioni che il manuale non prevede. Non aggiungere altro.');
       try {
         const fixed = await complete(
           [...messages, { role: 'assistant', content: draft }, { role: 'user', content: feedback.join('\n\n') }],

@@ -23,13 +23,17 @@ class ErroreDati(ValueError):
 
 
 def leggi_csv(percorso, colonne: list[str], nome: str) -> pd.DataFrame:
-    p = Path(percorso)
-    if not p.is_file():
-        raise ErroreDati(f"{nome}: file non trovato ({p}).")
-    if p.stat().st_size == 0:
-        raise ErroreDati(f"{nome}: il file è vuoto.")
+    """Legge un CSV da file o da un testo già aperto (le righe che escono dall'archivio SQLite)."""
+    if hasattr(percorso, "read"):
+        sorgente = percorso
+    else:
+        sorgente = Path(percorso)
+        if not sorgente.is_file():
+            raise ErroreDati(f"{nome}: file non trovato ({sorgente}).")
+        if sorgente.stat().st_size == 0:
+            raise ErroreDati(f"{nome}: il file è vuoto.")
     try:
-        df = pd.read_csv(p)
+        df = pd.read_csv(sorgente)
     except pd.errors.EmptyDataError:
         raise ErroreDati(f"{nome}: il file è vuoto.") from None
     except UnicodeDecodeError:

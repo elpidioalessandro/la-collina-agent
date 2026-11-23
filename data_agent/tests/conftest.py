@@ -29,3 +29,11 @@ def grafici_temporanei(tmp_path, monkeypatch):
     monkeypatch.setattr(grafici, "CHART_DIR", tmp_path)
     monkeypatch.setattr(config, "CHART_DIR", tmp_path)
     return tmp_path
+
+
+@pytest.fixture(autouse=True)
+def database_temporanei(tmp_path, monkeypatch):
+    """Archivio SQLite e base DuckDB dei test in una cartella temporanea, mai accanto al codice."""
+    monkeypatch.setattr(config, "ARCHIVIO_DB", tmp_path / "archivio.sqlite")
+    monkeypatch.setattr(config, "ANALITICO_DB", tmp_path / "analitico.duckdb")
+    return tmp_path

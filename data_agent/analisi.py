@@ -2,6 +2,7 @@ import re
 
 import pandas as pd
 
+from analitico import Analitico, raggruppa
 from caricamento import leggi_ordini, leggi_vendite
 from calendario import info_saldi, periodi_saldi
 from pulizia import pulisci
@@ -15,7 +16,7 @@ VALIDITA_BUONO = 180
 class Dati:
     """Dati puliti di vendite e ordini, con le colonne derivate usate dalle analisi."""
 
-    def __init__(self, vendite_grezze: pd.DataFrame, ordini_grezzi: pd.DataFrame):
+    def __init__(self, vendite_grezze: pd.DataFrame, ordini_grezzi: pd.DataFrame, percorso_db=None):
         self.righe_grezze = {"vendite": len(vendite_grezze), "ordini": len(ordini_grezzi)}
         self.v, self.o, self.resoconto = pulisci(vendite_grezze, ordini_grezzi)
         self.saldi = periodi_saldi(self.v["data_ora"].dt.year.min(), self.v["data_ora"].dt.year.max())
@@ -23,11 +24,18 @@ class Dati:
         self.v["anno"] = self.v["data_ora"].dt.year
         self.v["mese"] = self.v["data_ora"].dt.to_period("M").astype(str)
         self.costo = self.o.groupby("articolo")["costo_unitario"].agg(lambda s: s.mode()[0])
+        # I dati puliti vanno in DuckDB: incasso, sell-through, resi e margine si calcolano lì, in SQL.
+        self.db = Analitico(self.v, self.o, self.costo, percorso_db)
 
     @classmethod
-    def da_csv(cls, vendite_csv, ordini_csv):
+    def da_csv(cls, vendite_csv, ordini_csv, percorso_db=None):
         """Legge e pulisce i due CSV. Un file mancante o malformato solleva ErroreDati con un messaggio chiaro."""
-        return cls(leggi_vendite(vendite_csv), leggi_ordini(ordini_csv))
+        return cls(leggi_vendite(vendite_csv), leggi_ordini(ordini_csv), percorso_db)
+
+    @classmethod
+    def da_archivio(cls, archivio, percorso_db=None):
+        """Legge le righe grezze dall'archivio SQLite (file importati e righe della cassa) e le pulisce."""
+        return cls(archivio.leggi("vendite"), archivio.leggi("ordini"), percorso_db)
 
     @property
     def vendite(self):
@@ -36,6 +44,13 @@ class Dati:
     @property
     def resi(self):
         return self.v[self.v["tipo_movimento"] == "reso"]
+
+
+VENDITA, RESO = "tipo_movimento = 'vendita'", "tipo_movimento = 'reso'"
+
+
+def _conta(d: "Dati", tabella: str, dove: str, parametri: list) -> int:
+    return int(d.db.valore(f"SELECT COUNT(*) FROM {tabella} {dove}", parametri))
 
 
 def _valori(df, col):
@@ -107,19 +122,14 @@ def info_dati(d: Dati) -> dict:
 
 def incasso(d: Dati, raggruppa_per="nessuno", **filtri) -> dict:
     """Incasso delle vendite (esclusi buoni regalo e resi), pezzi, scontrini e sconto medio."""
-    v = _filtra(d.vendite, **filtri)
     k = _chiave(raggruppa_per)
     k = "motivo_sconto" if k == "motivo" else k
-    g = v.groupby(k) if k else v.groupby(lambda _: "totale")
-    t = pd.DataFrame({
-        "incasso_euro": g["prezzo_venduto"].sum(),
-        "pezzi": g.size(),
-        "scontrini": g["scontrino"].nunique(),
-        "listino_euro": g["prezzo_listino"].sum(),
-    })
+    dove, par = d.db.dove("movimenti", [VENDITA], **filtri)
+    t = raggruppa(d.db, "movimenti", k, "SUM(prezzo_venduto) AS incasso_euro, COUNT(*) AS pezzi, "
+                  "COUNT(DISTINCT scontrino) AS scontrini, SUM(prezzo_listino) AS listino_euro", dove, par)
     t["sconto_medio_pct"] = (1 - t["incasso_euro"] / t["listino_euro"]) * 100
     t = t.drop(columns="listino_euro")
-    out = {"righe_usate": len(v), "tabella": _tabella(t)}
+    out = {"righe_usate": _conta(d, "movimenti", dove, par), "tabella": _tabella(t)}
     if raggruppa_per == "anno":
         completi = info_dati(d)["anni_completi"]
         out["nota"] = f"Anni completi: {completi}. Gli altri anni sono parziali e non si confrontano."
@@ -137,19 +147,21 @@ def sell_through(d: Dati, raggruppa_per="brand", stagione=None, brand=None, cate
     k = _chiave(raggruppa_per)
     if k in ("anno", "mese", "motivo"):
         raise ValueError("Il sell-through si calcola per brand, categoria o stagione.")
-    v = _filtra(d.vendite, stagione=stagione, brand=brand, categoria=categoria)
-    o = _filtra(d.o, stagione=stagione, brand=brand, categoria=categoria, col_data="data_arrivo")
-    ricevuti = o.groupby(k)["qta_ricevuta"].sum() if k else pd.Series({"totale": o["qta_ricevuta"].sum()})
-    venduti = v.groupby(k).size() if k else pd.Series({"totale": len(v)})
-    pieni = v[v["sconto_pct"] == 0]
-    pieni = pieni.groupby(k).size() if k else pd.Series({"totale": len(pieni)})
+    filtri = dict(stagione=stagione, brand=brand, categoria=categoria)
+    dv, pv = d.db.dove("movimenti", [VENDITA], **filtri)
+    do, po = d.db.dove("ordini", **filtri)
+    ricevuti = raggruppa(d.db, "ordini", k, "CAST(SUM(qta_ricevuta) AS BIGINT) AS ricevuti", do, po)["ricevuti"]
+    venduti = raggruppa(d.db, "movimenti", k, "COUNT(*) AS venduti", dv, pv)["venduti"]
+    pieni = raggruppa(d.db, "movimenti", k, "COUNT(*) AS venduti_prezzo_pieno", dv + " AND sconto_pct = 0",
+                      pv)["venduti_prezzo_pieno"]
     t = pd.DataFrame({"ricevuti": ricevuti, "venduti": venduti, "venduti_prezzo_pieno": pieni}).fillna(0)
+    totale_venduti = _conta(d, "movimenti", dv, pv)
     t["sell_through_pct"] = t["venduti"] / t["ricevuti"] * 100
     t["sell_through_prezzo_pieno_pct"] = t["venduti_prezzo_pieno"] / t["ricevuti"] * 100
     t = t.sort_values("sell_through_pct")
-    out = {"righe_usate": len(v), "righe_ordini_usate": len(o)}
+    out = {"righe_usate": totale_venduti, "righe_ordini_usate": _conta(d, "ordini", do, po)}
     if k:
-        negozio = len(v) / o["qta_ricevuta"].sum() * 100
+        negozio = totale_venduti / d.db.valore(f"SELECT SUM(qta_ricevuta) FROM ordini {do}", po) * 100
         t = _con_riferimento(t, "sell_through_pct", negozio)
         out["sell_through_del_negozio_pct"] = round(negozio, 2)
         nomi = t.index.astype(str)
@@ -324,16 +336,23 @@ def _posizione_resi(d: Dati, brand: str, motivo=None, **filtri) -> str | None:
 
 def resi(d: Dati, raggruppa_per="brand", motivo=None, **filtri) -> dict:
     """Resi per gruppo, in numero e in percentuale sui pezzi venduti dello stesso gruppo.
+    Per motivo c'è anche la quota sul totale dei resi (pct_sui_resi).
     raggruppa_per='brand_motivo' dà una tabella brand x motivo, in % sui venduti di ogni brand."""
-    r = _filtra(d.resi, **filtri)
-    v = _filtra(d.vendite, **filtri)
+    dr, pr = d.db.dove("movimenti", [RESO], **filtri)
+    dv, pv = d.db.dove("movimenti", [VENDITA], **filtri)
+    n_venduti = _conta(d, "movimenti", dv, pv)
     if raggruppa_per == "brand_motivo":
-        conta = r.groupby(["brand", "motivo_reso"]).size().unstack(fill_value=0)
-        t = conta.div(v.groupby("brand").size(), axis=0).fillna(0) * 100
+        lungo = d.db.interroga(f"SELECT brand, motivo_reso, COUNT(*) AS n FROM movimenti {dr} AND motivo_reso IS NOT NULL "
+                               f"AND brand IS NOT NULL GROUP BY brand, motivo_reso ORDER BY brand, motivo_reso", pr)
+        conta = lungo.pivot(index="brand", columns="motivo_reso", values="n").fillna(0).astype(int)
+        conta.columns.name = "motivo_reso"
+        vend_brand = raggruppa(d.db, "movimenti", "brand", "COUNT(*) AS venduti", dv, pv)["venduti"]
+        t = conta.div(vend_brand, axis=0).fillna(0) * 100
         t["totale"] = t.sum(axis=1)
         t = t.sort_values("totale", ascending=False)
-        negozio = (r.groupby("motivo_reso").size() / len(v) * 100).round(2).to_dict()
-        negozio["totale"] = round(len(r) / len(v) * 100, 2)
+        per_motivo = raggruppa(d.db, "movimenti", "motivo_reso", "COUNT(*) AS n", dr, pr)["n"]
+        negozio = (per_motivo / n_venduti * 100).round(2).to_dict()
+        negozio["totale"] = round(_conta(d, "movimenti", dr, pr) / n_venduti * 100, 2)
         t = _con_riferimento(t, "totale", negozio["totale"])
         extra = {}
         if filtri.get("brand"):
@@ -341,35 +360,40 @@ def resi(d: Dati, raggruppa_per="brand", motivo=None, **filtri) -> dict:
             posizione = _posizione_resi(d, filtri["brand"], **altri)
             if posizione:
                 extra["posizione_tra_i_brand"] = posizione
-        return {"righe_usate": len(r) + len(v), "valori": "% di resi sui pezzi venduti del brand", **extra,
+        return {"righe_usate": _conta(d, "movimenti", dr, pr) + n_venduti,
+                "valori": "% di resi sui pezzi venduti del brand", **extra,
                 "resi_del_negozio_pct": negozio,
                 "nota": "rispetto_al_negozio confronta il totale del brand con il totale del negozio.",
                 "tabella": _tabella(t)}
     k = _chiave(raggruppa_per)
     if motivo:
-        r = r[r["motivo_reso"] == motivo]
-        if r.empty:
+        if not d.db.valore(f"SELECT COUNT(*) FROM movimenti {dr} AND motivo_reso = ?", pr + [motivo]):
             raise ValueError(f"Nessun reso con motivo '{motivo}'. Motivi: {_valori(d.resi, 'motivo_reso')}.")
+        dr, pr = dr + " AND motivo_reso = ?", pr + [motivo]
+    n_resi = _conta(d, "movimenti", dr, pr)
     if k == "motivo":
-        t = r.groupby("motivo_reso").size().to_frame("resi")
-        t["pct_sui_venduti"] = t["resi"] / len(v) * 100
+        t = raggruppa(d.db, "movimenti", "motivo_reso", "COUNT(*) AS resi", dr, pr)
+        t["pct_sui_venduti"] = t["resi"] / n_venduti * 100
+        # Quota del motivo sul totale dei resi: senza, il modello scriveva il numero di resi come se fosse una
+        # percentuale ("taglia: 73%" con 73 resi su 105).
+        t["pct_sui_resi"] = t["resi"] / n_resi * 100 if n_resi else 0.0
     else:
-        n = r.groupby(k).size() if k else pd.Series({"totale": len(r)})
-        vend = v.groupby(k).size() if k else pd.Series({"totale": len(v)})
+        n = raggruppa(d.db, "movimenti", k, "COUNT(*) AS resi", dr, pr)["resi"]
+        vend = raggruppa(d.db, "movimenti", k, "COUNT(*) AS venduti", dv, pv)["venduti"]
         t = pd.DataFrame({"resi": n, "venduti": vend}).fillna(0)
         t["pct_sui_venduti"] = t["resi"] / t["venduti"] * 100
     t = t.sort_values("pct_sui_venduti", ascending=False)
-    out = {"righe_usate": len(r) + len(v), "motivo": motivo or "tutti"}
+    out = {"righe_usate": n_resi + n_venduti, "motivo": motivo or "tutti"}
     if k and k != "motivo":
-        negozio = len(r) / len(v) * 100
+        negozio = n_resi / n_venduti * 100
         t = _con_riferimento(t, "pct_sui_venduti", negozio)
         out["resi_del_negozio_pct"] = round(negozio, 2)
     if k == "motivo":
         # Il totale serve sempre: senza, il modello somma da solo e il controllo finale toglie il numero.
-        out["totale_resi"] = len(r)
-        out["totale_pct_sui_venduti"] = round(len(r) / len(v) * 100, 2) if len(v) else 0.0
+        out["totale_resi"] = n_resi
+        out["totale_pct_sui_venduti"] = round(n_resi / n_venduti * 100, 2) if n_venduti else 0.0
         if filtri:
-            negozio = len(d.resi) / len(d.vendite) * 100
+            negozio = _conta(d, "movimenti", f"WHERE {RESO}", []) / _conta(d, "movimenti", f"WHERE {VENDITA}", []) * 100
             out["resi_del_negozio_pct"] = round(negozio, 2)
             out["rispetto_al_negozio"] = _rispetto(out["totale_pct_sui_venduti"], round(negozio, 2))
     if filtri.get("brand") and k != "brand":
@@ -384,18 +408,20 @@ def resi(d: Dati, raggruppa_per="brand", motivo=None, **filtri) -> dict:
 def margine(d: Dati, raggruppa_per="brand", **filtri) -> dict:
     """Margine lordo: (incasso - costo dei pezzi venduti) / incasso."""
     k = _chiave(raggruppa_per)
-    v = _filtra(d.vendite, **filtri).copy()
-    v["costo"] = v["articolo"].map(d.costo)
-    senza_costo = int(v["costo"].isna().sum())
-    v = v[v["costo"].notna()]
-    g = v.groupby(k) if k else v.groupby(lambda _: "totale")
-    t = pd.DataFrame({"incasso_euro": g["prezzo_venduto"].sum(), "costo_euro": g["costo"].sum()})
+    dove, par = d.db.dove("movimenti", [VENDITA], **filtri)
+    unione = "movimenti LEFT JOIN costi USING (articolo)"
+    senza_costo = int(d.db.valore(f"SELECT COUNT(*) FROM {unione} {dove} AND costo_unitario IS NULL", par))
+    con_costo = dove + " AND costo_unitario IS NOT NULL"
+    t = raggruppa(d.db, unione, k, "SUM(prezzo_venduto) AS incasso_euro, SUM(costo_unitario) AS costo_euro",
+                  con_costo, par)
     t["margine_euro"] = t["incasso_euro"] - t["costo_euro"]
     t["margine_pct"] = t["margine_euro"] / t["incasso_euro"] * 100
     t = t.sort_values("margine_pct")
-    out = {"righe_usate": len(v), "righe_escluse_senza_costo": senza_costo}
+    out = {"righe_usate": _conta(d, unione, con_costo, par), "righe_escluse_senza_costo": senza_costo}
     if k:
-        negozio = (1 - v["costo"].sum() / v["prezzo_venduto"].sum()) * 100
+        incasso_tot, costo_tot = d.db.interroga(
+            f"SELECT SUM(prezzo_venduto) AS i, SUM(costo_unitario) AS c FROM {unione} {con_costo}", par).iloc[0]
+        negozio = (1 - costo_tot / incasso_tot) * 100
         t = _con_riferimento(t, "margine_pct", negozio)
         out["margine_del_negozio_pct"] = round(negozio, 2)
     out["tabella"] = _tabella(t)

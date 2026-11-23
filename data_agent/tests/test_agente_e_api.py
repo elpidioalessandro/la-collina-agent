@@ -119,3 +119,19 @@ def test_grafico_chiesto_ma_dimenticato_lo_crea_il_codice(dati):
     assert len(esito["grafici"]) == 1 and passi[-1] == "Disegno il grafico"
     llm = llm_con_copione(chiamata("sell_through", {"raggruppa_per": "brand"}), AIMessage(content="Ecco il sell-through."))
     assert AgenteDati(dati, llm=llm).chiedi("Sell-through per brand")["grafici"] == []
+
+
+def test_movimenti_dalla_cassa_e_ricarica(dati, manuale):
+    from test_archivio_e_duckdb import VENDITA
+
+    client = _client_con_copione(dati, manuale)
+    with client:
+        ok = client.post("/movimenti", json={"tabella": "vendite", "righe": [VENDITA], "ricarica": True}).json()
+        assert ok["registrate"] == 1 and ok["ricarica"]["righe_vendite"] == len(dati.v) + 1
+        salute = client.get("/salute").json()
+        assert salute["archivio"]["vendite"] == {"csv": 16569, "cassa": 1} and salute["archivio_cambiato"] is False
+        client.post("/movimenti", json={"tabella": "vendite", "righe": [{**VENDITA, "id_riga": "99998"}]})
+        assert client.get("/salute").json()["archivio_cambiato"] is True
+        rifiutata = client.post("/movimenti", json={"tabella": "vendite", "righe": [{"brand": "Lardoni"}]})
+        assert rifiutata.status_code == 422 and rifiutata.json()["detail"].startswith("Riga 1: mancano id_riga")
+        assert client.post("/movimenti", json={"tabella": "clienti", "righe": [VENDITA]}).status_code == 422

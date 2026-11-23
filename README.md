@@ -2,7 +2,7 @@
 
 [![Test](https://github.com/elpidioalessandro/la-collina-agent/actions/workflows/test.yml/badge.svg)](https://github.com/elpidioalessandro/la-collina-agent/actions/workflows/test.yml)
 
-Agente AI ibrido per un negozio multimarca di abbigliamento uomo. Commessi e titolare fanno domande in chat: l'LLM decide da solo se cercare la risposta nel **manuale del negozio** (RAG su ChromaDB) o affidarla a un **agente dati Python** che analizza vendite e ordini con pandas e disegna grafici. Per le domande che chiedono numeri e regole insieme usa entrambi.
+Agente AI ibrido per un negozio multimarca di abbigliamento uomo. Commessi e titolare fanno domande in chat: l'LLM decide da solo se cercare la risposta nel **manuale del negozio** (RAG su ChromaDB) o affidarla a un **agente dati Python** che analizza vendite e ordini (archivio SQLite, analisi in SQL su DuckDB, pulizia in pandas) e disegna grafici. Per le domande che chiedono numeri e regole insieme usa entrambi.
 
 Ogni risposta riporta le **sezioni del manuale** usate, una **nota sulla qualità dei dati** (righe usate, scartate e corrette) e gli **strumenti chiamati**. Mentre lavora, la chat mostra in diretta cosa sta facendo: «Cerco nel manuale…», «Analizzo i resi (Lardoni)…», «Controllo numeri e fonti…».
 
@@ -22,9 +22,9 @@ cp .env.example .env    # inserisci la GROQ_API_KEY
 ┌──────────────────┐ POST  ┌────────────────────────────────┐  /cerca   ┌──────────────────────────────┐
 │ chat + memoria   │──────▶│ /api/chat                      │──────────▶│ RAG: ChromaDB + BM25         │──▶ la_collina_kb.txt
 │ passi in diretta │       │ sessione (ultimi 10 messaggi)  │           │                              │
-│ grafici, fonti   │◀──────│ orchestratore ReAct            │ /analizza │ pulizia → agente pandas      │──▶ vendite.csv
-│ "come ho         │  SSE  │ function calling:              │ /stream   │ (LangChain, 12 strumenti)    │──▶ ordini.csv
-│  risposto"       │       │ cerca_manuale · analizza_dati  │◀── SSE ───│ grafici PNG su disco         │
+│ grafici, fonti   │◀──────│ orchestratore ReAct            │ /analizza │ agente LangChain, 12 strum.  │
+│ "come ho         │  SSE  │ function calling:              │ /stream   │ analisi in SQL su DuckDB     │◀── pulizia ◀── SQLite ◀── CSV
+│  risposto"       │       │ cerca_manuale · analizza_dati  │◀── SSE ───│ grafici PNG su disco         │   (pandas)    (archivio)   cassa
 └──────────────────┘       └────────────────────────────────┘           └──────────────────────────────┘
      Vite :5173                     :3001   │                                      :8000   │
                                             └──── Groq (gpt-oss-120b · gpt-oss-20b) ───────┘
@@ -35,6 +35,7 @@ cp .env.example .env    # inserisci la GROQ_API_KEY
 | Front end | React 19, Vite, react-markdown |
 | Back end | Node.js, Express 5, SDK `openai` (function calling nativo) |
 | Agente dati | Python 3.12, FastAPI, pandas, LangChain (`create_agent`), matplotlib, seaborn |
+| Dati | **SQLite** (archivio dei movimenti grezzi) e **DuckDB** (dati puliti, analisi in SQL) |
 | RAG | ChromaDB locale (embedding multilingue ONNX `paraphrase-multilingual-MiniLM-L12-v2`) + BM25 |
 | LLM | Groq, API compatibile OpenAI: `openai/gpt-oss-120b` per l'orchestratore, `openai/gpt-oss-20b` per l'agente dati |
 
@@ -91,10 +92,11 @@ Il JSON della risposta:
 | `POST` | `/sezioni` | `{ "codici": ["SEZ 8.6"] }` → testo delle sezioni, per il controllo finale delle citazioni |
 | `POST` | `/analizza` | `{ "domanda": "..." }` → risposta, grafici, passaggi, risultati degli strumenti, nota sui dati |
 | `POST` | `/analizza/stream` | Come `/analizza`, in SSE: un evento `passo` per ogni strumento scelto, poi `risultato` |
-| `POST` | `/ricarica` | Rilegge e ripulisce i CSV senza riavviare (vedi *Aggiornare i dati*) |
+| `POST` | `/ricarica` | Rilegge e ripulisce i dati senza riavviare (vedi *Aggiornare i dati*) |
+| `POST` | `/movimenti` | `{ "tabella": "vendite", "righe": [ {...} ], "ricarica": false }` → registra righe di cassa o d'ordine nell'archivio SQLite, come farebbe la cassa |
 | `GET` | `/resoconto-pulizia` | Tutte le correzioni fatte ai dati |
 | `GET` | `/grafici/:nome` | File PNG |
-| `GET` | `/salute` | Righe caricate, sezioni del manuale, ora del caricamento e se i CSV sono cambiati da allora |
+| `GET` | `/salute` | Righe caricate, sezioni del manuale, ora del caricamento, se CSV o archivio sono cambiati da allora, righe dell'archivio per origine |
 
 ---
 
@@ -121,12 +123,26 @@ Sopra ci sono due famiglie di anomalie:
 
 Regola: nel dubbio, si segnala e non si corregge.
 
-### Aggiornare i dati
-I CSV si leggono e si puliscono **una volta, all'avvio** (`api.py` → `analisi.Dati.da_csv`), non a ogni domanda: la pulizia di 16.000 righe richiede meno di un secondo, ma ripeterla a ogni richiesta non avrebbe senso. Quando i file cambiano:
+### Archivio SQLite e analisi in DuckDB
+I dati passano da due database, ognuno per il lavoro per cui è fatto:
 
-1. si sostituiscono `data/vendite.csv` e `data/ordini.csv` (stesse colonne);
-2. `GET /salute` risponde `"file_cambiati": true`;
-3. `curl -X POST http://127.0.0.1:8000/ricarica` rilegge e ripulisce i file senza riavviare. Le domande già in corso finiscono con i dati vecchi, le nuove usano quelli nuovi. In alternativa basta riavviare il servizio.
+```
+CSV (importazione) ─┐
+                    ├─▶ SQLite: archivio grezzo ─▶ pulizia (pandas) ─▶ DuckDB: dati puliti ─▶ analisi in SQL
+cassa (POST /movimenti) ┘
+```
+
+- **SQLite, l'archivio operativo** (`data_agent/archivio.py`, file `archivio.sqlite`). In un negozio la cassa scrive una riga alla volta, a ogni scontrino o reso: è un carico transazionale, fatto di tante piccole scritture. Le righe si conservano grezze, così come arrivano, e ognuna ha la sua origine (`csv` o `cassa`). I CSV fanno da importazione iniziale e si reimportano solo se il file cambia (impronta SHA-256), senza toccare le righe arrivate dalla cassa. `POST /movimenti` aggiunge righe controllando colonne sconosciute e campi obbligatori: una riga sbagliata fa scartare tutto il blocco, mai metà.
+- **DuckDB, la base analitica** (`data_agent/analitico.py`, file `analitico-<id>.duckdb`). Dopo la pulizia vendite, ordini e costi finiscono in DuckDB, un database colonnare fatto per somme, conteggi e raggruppamenti su molte righe. **Incasso, sell-through, resi e margine sono query SQL** (`GROUP BY`, `COUNT(DISTINCT)`, `LEFT JOIN` con i costi), con i filtri passati come parametri. pandas resta per la pulizia, che è logica riga per riga con resoconto, e per i controlli sulle regole.
+- **Stessi numeri di prima.** Prima del passaggio ho salvato i risultati della versione pandas su 69 casi (`valutazione/analisi_attese.json`): ogni metrica con ogni raggruppamento, con e senza filtri, compresi i messaggi di errore. Un test controlla che la versione DuckDB li riproduca identici.
+- **Più domande e ricariche insieme.** Ogni interrogazione usa il suo cursore. Ogni caricamento scrive un file DuckDB nuovo, lo riapre in sola lettura e solo dopo cancella il precedente: le domande già in corso finiscono sul file vecchio e un caricamento a metà non tocca mai quello in uso.
+
+### Aggiornare i dati
+I dati si leggono e si puliscono **una volta, all'avvio** (`api.py` → CSV → archivio → pulizia → DuckDB), non a ogni domanda. Quando cambiano:
+
+1. si sostituiscono `data/vendite.csv` e `data/ordini.csv` (stesse colonne), oppure si registrano righe nuove con `POST /movimenti`;
+2. `GET /salute` risponde `"file_cambiati": true` o `"archivio_cambiato": true`;
+3. `curl -X POST http://127.0.0.1:8000/ricarica` reimporta i CSV cambiati, rilegge l'archivio, ripulisce e ricostruisce DuckDB senza riavviare. Le domande già in corso finiscono con i dati vecchi, le nuove usano quelli nuovi. In alternativa basta riavviare, oppure passare `"ricarica": true` a `/movimenti`.
 
 Se i file nuovi sono malformati, `/ricarica` risponde 422 e **restano i dati di prima**. `data_agent/caricamento.py` controlla la struttura prima della pulizia e dice quale file e cosa correggere: file mancante o vuoto, solo intestazione, separatore `;`, colonne mancanti, righe con campi in più, valori non numerici in prezzi e quantità (con il numero di riga), codifica diversa da UTF-8. Le righe con una data illeggibile vengono scartate e dichiarate nel resoconto della pulizia.
 
@@ -148,7 +164,7 @@ Se la domanda chiede un grafico e il modello si limita al calcolo, il grafico lo
 
 Anche i confronti arrivano già calcolati: `resi`, `sell_through` e `margine` restituiscono il dato complessivo del negozio e, riga per riga, se il valore è sopra o sotto; `confronta_stagioni` restituisce una stagione contro la stessa stagione dell'anno prima e dopo, con le differenze. Il modello copia il confronto invece di farlo a mente, perché nei test scriveva "inferiore" accanto a un numero più grande.
 
-**Controllo finale della risposta** (`backend/src/services/verifier.js`). Prima dell'invio il codice, non il modello, verifica cinque cose:
+**Controllo finale della risposta** (`backend/src/services/verifier.js`). Prima dell'invio il codice, non il modello, verifica sette cose:
 
 | Verifica | Se fallisce |
 |---|---|
@@ -157,10 +173,12 @@ Anche i confronti arrivano già calcolati: `resi`, `sell_through` e `margine` re
 | Il manuale si nomina solo se è stato consultato | la risposta torna al modello |
 | Una rinegoziazione con un fornitore si propone solo se in questo turno sono state calcolate le soglie della SEZ 8.6 | la risposta torna al modello; se ci riprova, la frase sparisce. Nei test il modello scriveva che Lardoni «supera la soglia dell'1%», confondendo i resi totali con quelli per difetto |
 | Frequenze e scadenze a parole («settimanalmente», «ogni mese») compaiono nel manuale letto o nei dati | la risposta torna al modello; se ci riprova, la frase sparisce. Nei test il modello aggiungeva alle azioni un «monitorare settimanalmente» che il manuale non dice |
+| Un numero scritto con il % è una percentuale nei risultati o nelle fonti, non un conteggio o un importo | la risposta torna al modello; se ci riprova, la frase sparisce. Nei test il modello scriveva «taglia: 73%» con 73 resi su 105 (il 69,5%). Da allora i resi per motivo hanno anche `pct_sui_resi`, la quota sul totale dei resi |
+| Registrazioni, procedure e sistemi nelle azioni («registrare», «annotare», «procedura», «sistema») compaiono nel manuale letto o nei dati | la risposta torna al modello; se ci riprova, la frase sparisce. Nei test il modello aggiungeva «registrare l'avviso nel sistema di vendita», che la SEZ 2.3 non prevede |
 
 Prima ancora del controllo finale c'è un controllo sulle domande di seguito: se la risposta contiene numeri e in questo turno l'agente dati non è stato chiamato, il modello deve chiamarlo prima di rispondere. Nei test, a *«E Cruciverba?»* rispondeva con i numeri di Lardoni presi dalla conversazione.
 
-Il modello ha una sola seconda possibilità: se sbaglia ancora, le frasi con numeri, frequenze, rinegoziazioni o fonti non verificati vengono tolte. L'esito del controllo compare in *Come ho risposto* e nel log del back end.
+Il modello ha una sola seconda possibilità: se sbaglia ancora, le frasi con numeri, percentuali, frequenze, azioni, rinegoziazioni o fonti non verificati vengono tolte. L'esito del controllo compare in *Come ho risposto* e nel log del back end.
 
 ### 3. RAG ibrido: significato + parole, e quanto pesa davvero
 La ricerca fonde due classifiche con **Reciprocal Rank Fusion**: un indice **BM25** sulle sezioni (parole ridotte alle prime 5 lettere, così *profumo* e *profumi* coincidono) e la ricerca per significato di **ChromaDB**. L'embedding è `paraphrase-multilingual-MiniLM-L12-v2` in ONNX quantizzato (`data_agent/embedding.py`), eseguito con onnxruntime e tokenizers che arrivano già con chromadb: nessuna dipendenza in più, niente PyTorch.
@@ -229,8 +247,8 @@ Nessun test chiama Groq: l'LLM è sostituito da modelli finti che seguono un cop
 
 | Suite | Test | Cosa verifica |
 |---|---|---|
-| `data_agent/tests` (pytest) | 57 | pulizia uguale al riferimento, risposte attese (sell-through con i brand da segnalare davvero, resi per motivo con il totale e la posizione del brand, controlli, confronto tra stagioni, confronti con il negozio, soglie del sell-through spiegate come nel manuale, brand da segnalare secondo la SEZ 8.6), CSV malformati (file vuoto, solo intestazione, separatore `;`, colonne mancanti, campi in più, valori non numerici, codifica, date illeggibili), errori leggibili, limite di tentativi del codice, grafici salvati e cancellati dopo la scadenza, due domande in parallelo, RAG su 12 domande e validità del set di valutazione, agente e API con LLM finto, grafico creato dal codice se il modello lo dimentica, streaming, ricarica dei dati, formato dei log |
-| `backend/test` (node:test) | 32 | orchestratore: scelta degli strumenti, domande ibride, memoria, retry su 400 e 429, limite di passaggi, agente dati spento; controllo finale: numeri inventati, sezioni non lette, manuale non consultato, citazioni in ogni forma senza unire le righe, numeri scritti dall'agente dati non accettati come fonte, frequenze inventate, numeri presi dalla conversazione precedente, rinegoziazione senza il calcolo delle soglie; streaming: passi nell'ordine, eventi spezzati, errori come evento; HTTP: validazione, sessione, proxy dei grafici, SSE |
+| `data_agent/tests` (pytest) | 65 | analisi in DuckDB identiche alla versione pandas su 69 casi, quota di ogni motivo sul totale dei resi, archivio SQLite (importazione una volta sola, stesse righe dopo il passaggio, riga di cassa nelle analisi e conservata quando il CSV cambia, righe sbagliate rifiutate in blocco), file DuckDB sostituito mentre si legge, query in parallelo, pulizia uguale al riferimento, risposte attese (sell-through con i brand da segnalare davvero, resi per motivo con il totale e la posizione del brand, controlli, confronto tra stagioni, confronti con il negozio, soglie del sell-through spiegate come nel manuale, brand da segnalare secondo la SEZ 8.6), CSV malformati (file vuoto, solo intestazione, separatore `;`, colonne mancanti, campi in più, valori non numerici, codifica, date illeggibili), errori leggibili, limite di tentativi del codice, grafici salvati e cancellati dopo la scadenza, due domande in parallelo, RAG su 12 domande e validità del set di valutazione, agente e API con LLM finto, grafico creato dal codice se il modello lo dimentica, streaming, ricarica dei dati, formato dei log |
+| `backend/test` (node:test) | 35 | orchestratore: scelta degli strumenti, domande ibride, memoria, retry su 400 e 429, limite di passaggi, agente dati spento; controllo finale: numeri inventati, sezioni non lette, manuale non consultato, citazioni in ogni forma senza unire le righe, numeri scritti dall'agente dati non accettati come fonte, frequenze inventate, conteggi scritti come percentuali (con il formato da usare nella correzione), registrazioni e procedure non previste dal manuale, numeri presi dalla conversazione precedente, rinegoziazione senza il calcolo delle soglie; streaming: passi nell'ordine, eventi spezzati, errori come evento; HTTP: validazione, sessione, proxy dei grafici, SSE |
 
 ---
 
@@ -318,7 +336,9 @@ Chi aveva già `data_agent/.env` e `backend/.env` delle versioni precedenti può
 │   ├── agente.py              agente LangChain e prompt
 │   ├── strumenti.py           i 12 strumenti, con lo stato di ogni domanda separato
 │   ├── caricamento.py         lettura dei CSV con errori chiari se sono malformati
-│   ├── analisi.py             calcoli: incasso, sell-through, resi, margine, sconti, controlli
+│   ├── archivio.py            archivio SQLite dei movimenti grezzi (CSV e cassa)
+│   ├── analitico.py           base DuckDB dei dati puliti e query di raggruppamento
+│   ├── analisi.py             incasso, sell-through, resi e margine in SQL; sconti e controlli in pandas
 │   ├── pulizia.py             pulizia deterministica con resoconto
 │   ├── calendario.py          date dei saldi e scaglioni
 │   ├── grafici.py             grafici matplotlib/seaborn e pulizia dei PNG vecchi
@@ -354,7 +374,8 @@ Scelte giuste per un dimostratore, da cambiare prima di usarlo davvero in negozi
 
 | Tema | Oggi | In produzione |
 |---|---|---|
-| Archivio dei dati | due CSV letti in pandas all'avvio: 16.000 righe, meno di un secondo | **DuckDB** sui file (CSV o Parquet) se lo storico cresce o i negozi diventano più di uno: stesse analisi in SQL colonnare, senza server. **SQLite** se i dati arrivano dalla cassa riga per riga. Gli strumenti dell'agente non cambiano: cambia l'interno di `analisi.py` |
+| Archivio dei movimenti | SQLite su un file, con le scritture serializzate | con più casse o più negozi in scrittura contemporanea, un database client-server (PostgreSQL) con lo stesso schema |
+| Base analitica | DuckDB ricostruito a ogni caricamento (meno di un secondo con 16.000 righe) | con anni di storico, aggiornamento incrementale delle sole righe nuove, oppure DuckDB su file Parquet partizionati per mese |
 | Aggiornamento | `POST /ricarica` a mano | caricamento automatico, per esempio di notte dopo la chiusura di cassa |
 | Sessioni e rate limit | in RAM, si azzerano a ogni riavvio | Redis, condiviso tra più istanze |
 | Grafici | PNG su disco locale | storage condiviso, o grafici disegnati dal front end con i dati |

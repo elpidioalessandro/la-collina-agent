@@ -19,6 +19,9 @@ CHART_DIR = Path(os.getenv("CHART_DIR", BASE_DIR / "grafici"))
 # I PNG più vecchi di così vengono cancellati (all'avvio e, al massimo ogni 10 minuti, quando se ne salva uno nuovo).
 GRAFICI_MAX_ORE = float(os.getenv("GRAFICI_MAX_ORE", 24))
 CHROMA_DIR = Path(os.getenv("CHROMA_DIR", BASE_DIR / "chroma_db"))
+# Archivio operativo dei movimenti grezzi (SQLite) e base analitica dei dati puliti (DuckDB).
+ARCHIVIO_DB = Path(os.getenv("ARCHIVIO_DB", BASE_DIR / "archivio.sqlite"))
+ANALITICO_DB = Path(os.getenv("ANALITICO_DB", BASE_DIR / "analitico.duckdb"))
 # Modello di embedding multilingue per il manuale: si scarica qui al primo avvio (circa 135 MB).
 EMBEDDING_DIR = Path(os.getenv("EMBEDDING_DIR", Path.home() / ".cache" / "chroma" / "onnx_models" / "multilingue"))
 

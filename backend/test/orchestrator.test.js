@@ -107,6 +107,20 @@ test('controllo finale: i numeri scritti dall\'agente dati non fanno fede, solo 
   assert.equal(out.risposta, 'Lardoni ha il 3,3% di resi.');
 });
 
+test('controllo finale: un conteggio scritto come percentuale torna al modello con il formato da usare', async () => {
+  const { answer, llm } = setup([
+    toolTurn(call('analizza_dati', 'Resi di Lardoni per motivo')),
+    reply('Il 73% dei resi di Lardoni è per taglia.'),
+    reply('- Taglia: 73 resi (69,5% dei resi)'),
+  ]);
+  const out = await answer('perché Lardoni ha tanti resi?');
+  const feedback = llm.requests[2].messages.at(-1).content;
+  assert.match(feedback, /conteggi o euro: 73%/);
+  assert.match(feedback, /"N resi \(X% dei resi\)" con X da pct_sui_resi/);
+  assert.equal(out.risposta, '- Taglia: 73 resi (69,5% dei resi)');
+  assert.equal(out.controllo.esito, 'corretta');
+});
+
 test('controllo finale: se il modello sbaglia ancora, le frasi non verificate vengono tolte', async () => {
   const sbagliata = 'Lardoni ha il 3,3% di resi per taglia. Il margine è del 12,5%.';
   const { answer } = setup([toolTurn(call('analizza_dati', 'Resi di Lardoni')), reply(sbagliata), reply(sbagliata)]);

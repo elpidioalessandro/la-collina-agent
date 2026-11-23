@@ -110,7 +110,8 @@ def resi(raggruppa_per: str = "brand", motivo: str | None = None, data_inizio: s
     """Resi in numero e in percentuale sui pezzi venduti dello stesso gruppo.
     raggruppa_per: 'nessuno', 'anno', 'mese', 'stagione', 'brand', 'categoria', 'motivo' o
     'brand_motivo' (tabella brand x motivo: la scelta migliore per confrontare i resi di un brand con gli altri).
-    motivo: 'taglia', 'difetto', 'ripensamento' o 'regalo'; se omesso, tutti i resi."""
+    motivo: 'taglia', 'difetto', 'ripensamento' o 'regalo'; se omesso, tutti i resi.
+    Con 'motivo', pct_sui_resi è la quota di ogni motivo sul totale dei resi; resi è un numero di capi, non una %."""
     return _esegui(analisi.resi, raggruppa_per, motivo=motivo, data_inizio=data_inizio, data_fine=data_fine,
                    brand=brand, categoria=categoria, stagione=stagione)
 

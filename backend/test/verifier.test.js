@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { answerNumbers, describeProblems, findProblems, isGrounded, normalizeCitations, removeProblems, sourceNumbers, tidy } from '../src/services/verifier.js';
+import { answerNumbers, describeProblems, findProblems, isGrounded, normalizeCitations, percentSources, removeProblems, sourceNumbers, tidy } from '../src/services/verifier.js';
 
 test('le citazioni in ogni forma diventano [SEZ x.y]', () => {
   assert.equal(normalizeCitations('soglia del 70% (SEZ 8.6).'), 'soglia del 70% [SEZ 8.6].');
@@ -58,4 +58,34 @@ test('rinegoziazione: ammessa solo se in questo turno sono state calcolate le so
 
 test('le etichette sopra/sotto copiate dai risultati spariscono', () => {
   assert.equal(tidy('tasso più alto del negozio (1° su 10 brand) [sopra].'), 'tasso più alto del negozio (1° su 10 brand).');
+});
+
+test('un conteggio scritto come percentuale viene segnalato e tolto, le percentuali vere restano', () => {
+  // Risposta reale del 23/11: 73 sono i resi per taglia su 105, non il 73%.
+  const risultati = '{"totale_resi": 105, "totale_pct_sui_venduti": 4.73, "tabella": [{"motivo_reso": "taglia", "resi": 73, '
+    + '"pct_sui_venduti": 3.29, "pct_sui_resi": 69.52}, {"motivo_reso": "difetto", "resi": 12, "pct_sui_venduti": 0.54, "pct_sui_resi": 11.43}]}';
+  const manuale = 'Oltre il 10% di sconto serve il titolare. Il reso si fa entro 14 giorni.';
+  const fonti = [risultati, manuale];
+  const base = { sources: sourceNumbers(fonti), percents: percentSources(fonti), knownCodes: new Set(), manualRead: true };
+  const text = '- Taglia: 73% (3,3% dei venduti)\n- Difetto: 12 resi, l\'11,4% dei resi\n- Sconto oltre il 10%.';
+  const problems = findProblems(text, base);
+  assert.deepEqual(problems, [{ tipo: 'percentuali', valori: ['73%'] }]);
+  assert.deepEqual(describeProblems(problems), ['numeri scritti come percentuale che nei risultati sono conteggi o euro: 73%']);
+  assert.equal(removeProblems(text, problems), '- Difetto: 12 resi, l\'11,4% dei resi\n- Sconto oltre il 10%.');
+  assert.deepEqual(findProblems('Taglia: 73 resi, il 69,5% dei resi. Reso entro 14 giorni.', base), []);
+  assert.deepEqual(findProblems('Il 14% dei resi.', base), [{ tipo: 'percentuali', valori: ['14%'] }]);
+});
+
+test('registrazioni, procedure e sistemi nelle azioni: ammessi solo se le fonti li nominano', () => {
+  // Risposta reale del 23/11: la SEZ 2.3 non parla di registrare niente.
+  const sez23 = 'prima di battere lo scontrino di un capo lardoni o cruciverba, il commesso propone al cliente di provare anche la taglia superiore.';
+  const base = { sources: [], knownCodes: new Set(['SEZ 2.3']), manualRead: true, sourceText: sez23 };
+  const text = '- Far provare la taglia superiore [SEZ 2.3].\n- Registrare l’avviso nel sistema di vendita, come previsto dalla procedura.';
+  const problems = findProblems(text, base);
+  assert.deepEqual(problems, [{ tipo: 'procedure', valori: ['registrare', 'sistema', 'procedura'] }]);
+  assert.equal(removeProblems(text, problems), '- Far provare la taglia superiore [SEZ 2.3].');
+  // Se la sezione lo dice va bene; "resi registrati" descrive i dati e non è un'azione.
+  const sez63 = 'il commesso che registra il reso per difetto annota "reso al fornitore: sì" quando il capo è stato spedito.';
+  assert.deepEqual(findProblems('Annotare "reso al fornitore: sì" [SEZ 2.3].', { ...base, sourceText: sez63 }), []);
+  assert.deepEqual(findProblems('Resi registrati nel 2024.', base), []);
 });
